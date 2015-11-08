@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Nightscape Staff Assistant">
+</Property><Property Name="Solution File" Value="E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant.sln">
+</Property><Property Name="Date" Value="Wednesday, May 27, 2009">
+</Property><Property Name="Time" Value="4:19 AM">
+</Property></Properties><Event ErrorLevel="2" Project="Nightscape Staff Tool" Source="Nightscape GM Tool\Nightscape Staff Tool.vbproj" Description="Unable to open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="0" Project="" Source="Nightscape Staff Assistant.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Nightscape Staff Assistant.sln" Description="Converted">
+</Event></UpgradeLog>

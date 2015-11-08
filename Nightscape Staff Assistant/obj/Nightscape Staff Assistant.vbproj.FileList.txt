@@ -1,0 +1,73 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Nightscape Staff Assistant.vbproj.GenerateResource.Cache
+bin\Debug\Nightscape Staff Assistant.exe.config
+bin\Debug\Nightscape Staff Assistant.exe
+bin\Debug\Nightscape Staff Assistant.pdb
+bin\Debug\Nightscape Staff Assistant.xml
+obj\Debug\Nightscape_Staff_Assistant.AboutBox.resources
+obj\Debug\Nightscape_Staff_Assistant.AddAccountDialog.resources
+obj\Debug\Nightscape_Staff_Assistant.AdvancedSettingsDialog.resources
+obj\Debug\Nightscape_Staff_Assistant.BroadcastDialog.resources
+obj\Debug\Nightscape_Staff_Assistant.Form1.resources
+obj\Debug\Nightscape_Staff_Assistant.GenericNumericDialog.resources
+obj\Debug\Nightscape_Staff_Assistant.GenericStringDialog.resources
+obj\Debug\Nightscape_Staff_Assistant.GoXYZDialog.resources
+obj\Debug\Nightscape_Staff_Assistant.Resources.resources
+obj\Debug\Nightscape_Staff_Assistant.PerformActionDialog.resources
+obj\Debug\Nightscape_Staff_Assistant.PrivledgesDialog.resources
+obj\Debug\Nightscape_Staff_Assistant.PromptToUpdate.resources
+obj\Debug\Nightscape_Staff_Assistant.RandomTileDialog.resources
+obj\Debug\Nightscape_Staff_Assistant.SetCmdLvlDialog.resources
+obj\Debug\Nightscape_Staff_Assistant.SetSkillDialog.resources
+obj\Debug\Nightscape_Staff_Assistant.SetStatDialog.resources
+obj\Debug\Nightscape_Staff_Assistant.SplashScreen.resources
+obj\Debug\Nightscape Staff Assistant.exe
+obj\Debug\Nightscape Staff Assistant.xml
+obj\Debug\Nightscape Staff Assistant.pdb
+obj\Debug\Nightscape_Staff_Assistant.ProgramLauncherSetupDialog.resources
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\Nightscape_Staff_Assistant.AboutBox.resources
+obj\Release\Nightscape_Staff_Assistant.AddAccountDialog.resources
+obj\Release\Nightscape_Staff_Assistant.AdvancedSettingsDialog.resources
+obj\Release\Nightscape_Staff_Assistant.BroadcastDialog.resources
+obj\Release\Nightscape_Staff_Assistant.ProgramLauncherSetupDialog.resources
+obj\Release\Nightscape_Staff_Assistant.Form1.resources
+obj\Release\Nightscape_Staff_Assistant.GenericNumericDialog.resources
+obj\Release\Nightscape_Staff_Assistant.GenericStringDialog.resources
+obj\Release\Nightscape_Staff_Assistant.GoXYZDialog.resources
+obj\Release\Nightscape_Staff_Assistant.Resources.resources
+obj\Release\Nightscape_Staff_Assistant.PerformActionDialog.resources
+obj\Release\Nightscape_Staff_Assistant.PrivledgesDialog.resources
+obj\Release\Nightscape_Staff_Assistant.PromptToUpdate.resources
+obj\Release\Nightscape_Staff_Assistant.RandomTileDialog.resources
+obj\Release\Nightscape_Staff_Assistant.SetCmdLvlDialog.resources
+obj\Release\Nightscape_Staff_Assistant.SetSkillDialog.resources
+obj\Release\Nightscape_Staff_Assistant.SetStatDialog.resources
+obj\Release\Nightscape Staff Assistant.vbproj.GenerateResource.Cache
+bin\Release\Nightscape Staff Assistant.exe.config
+bin\Release\Nightscape Staff Assistant.exe
+bin\Release\Nightscape Staff Assistant.pdb
+bin\Release\Nightscape Staff Assistant.xml
+bin\Release\Ultima.dll
+obj\Release\Nightscape Staff Assistant.exe
+obj\Release\Nightscape Staff Assistant.xml
+obj\Release\Nightscape Staff Assistant.pdb
+bin\Debug\WizardFramework.dll
+bin\Debug\WizardFramework.xml
+bin\Debug\Resources\building_materials.lst
+bin\Debug\Resources\npc_list.lst
+bin\Debug\Resources\items_list.lst
+bin\Debug\Resources\locations_list.lst
+bin\Release\Resources\building_materials.lst
+bin\Release\Resources\items_list.lst
+bin\Release\Resources\locations_list.lst
+bin\Release\Resources\npc_list.lst
+bin\Release\INI Parser.dll
+bin\Release\INI Parser.pdb
+bin\Release\INI Parser.xml
+obj\Release\Nightscape_Staff_Assistant.SplashScreen2.resources
+obj\Release\Nightscape_Staff_Assistant.ItemViewer.resources
+obj\Release\Nightscape_Staff_Assistant.TextReaderDialog.resources
+obj\Release\Nightscape_Staff_Assistant.BuildingToolbar.resources
+obj\Release\Nightscape_Staff_Assistant.HueItemDialog.resources
+obj\Release\Nightscape_Staff_Assistant.ItemDetailsDialog.resources

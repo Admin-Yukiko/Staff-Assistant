@@ -1,0 +1,4 @@
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\bin\Release\Nightscape Staff Assistant.exe.config
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Release\Nightscape Staff Assistant.exe
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Release\Nightscape Staff Assistant.xml
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Release\Nightscape Staff Assistant.pdb

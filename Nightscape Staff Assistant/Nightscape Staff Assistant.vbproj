@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34241CC2-1B96-4DD1-A425-00CDEB9408DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Nightscape_Staff_Assistant.My.MyApplication</StartupObject>
+    <RootNamespace>Nightscape_Staff_Assistant</RootNamespace>
+    <AssemblyName>Nightscape Staff Assistant</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <ApplicationIcon>autorun.ico</ApplicationIcon>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>http://www.nightscapeonline.com</SupportUrl>
+    <ProductName>Nightscape Staff Assistant</ProductName>
+    <PublisherName>Nightscape Shard</PublisherName>
+    <ApplicationVersion>0.3.0.%2a</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Nightscape Staff Assistant.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Nightscape Staff Assistant.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="INI Parser, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\INI Parser\INI Parser\bin\Release\INI Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Ultima, Version=1.0.1502.21826, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Ultima.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="iniparser" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="Ultima" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.Designer.vb">
+      <DependentUpon>AboutBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAccountDialog.Designer.vb">
+      <DependentUpon>AddAccountDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddAccountDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvancedSettingsDialog.Designer.vb">
+      <DependentUpon>AdvancedSettingsDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdvancedSettingsDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BroadcastDialog.Designer.vb">
+      <DependentUpon>BroadcastDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BroadcastDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuildingToolbar.Designer.vb">
+      <DependentUpon>BuildingToolbar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuildingToolbar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HueItemDialog.Designer.vb">
+      <DependentUpon>HueItemDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HueItemDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemDetailsDialog.Designer.vb">
+      <DependentUpon>ItemDetailsDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ItemDetailsDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemViewer.Designer.vb">
+      <DependentUpon>ItemViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ItemViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramLauncherSetupDialog.Designer.vb">
+      <DependentUpon>ProgramLauncherSetupDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramLauncherSetupDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenericNumericDialog.Designer.vb">
+      <DependentUpon>GenericNumericDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenericNumericDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenericStringDialog.Designer.vb">
+      <DependentUpon>GenericStringDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenericStringDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoXYZDialog.Designer.vb">
+      <DependentUpon>GoXYZDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GoXYZDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PerformActionDialog.Designer.vb">
+      <DependentUpon>PerformActionDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PerformActionDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrivledgesDialog.Designer.vb">
+      <DependentUpon>PrivledgesDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PrivledgesDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PromptToUpdate.Designer.vb">
+      <DependentUpon>PromptToUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PromptToUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RandomTileDialog.Designer.vb">
+      <DependentUpon>RandomTileDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RandomTileDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetCmdLvlDialog.Designer.vb">
+      <DependentUpon>SetCmdLvlDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SetCmdLvlDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetSkillDialog.Designer.vb">
+      <DependentUpon>SetSkillDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SetSkillDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetStatDialog.Designer.vb">
+      <DependentUpon>SetStatDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SetStatDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="SplashScreen2.Designer.vb">
+      <DependentUpon>SplashScreen2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextReaderDialog.Designer.vb">
+      <DependentUpon>TextReaderDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TextReaderDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAccountDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddAccountDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdvancedSettingsDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AdvancedSettingsDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BroadcastDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BroadcastDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuildingToolbar.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BuildingToolbar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HueItemDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HueItemDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemDetailsDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ItemDetailsDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ItemViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramLauncherSetupDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ProgramLauncherSetupDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenericNumericDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GenericNumericDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenericStringDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GenericStringDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoXYZDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GoXYZDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformActionDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PerformActionDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrivledgesDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PrivledgesDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromptToUpdate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PromptToUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RandomTileDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RandomTileDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetCmdLvlDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SetCmdLvlDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetSkillDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SetSkillDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetStatDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SetStatDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SplashScreen2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextReaderDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TextReaderDialog.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package_application.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\building_materials.lst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\items_list.lst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\locations_list.lst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BaseApplicationManifest Include="My Project\app.manifest" />
+    <None Include="Resources\unused_tile.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="autorun.ico" />
+    <None Include="Resources\DISK.GIF" />
+    <None Include="Resources\arrow_up.png" />
+    <None Include="Resources\arrow_down.png" />
+    <None Include="Resources\50.ico" />
+    <None Include="Resources\MMArt.bmp" />
+    <None Include="Resources\downarrow.gif" />
+    <None Include="Resources\fast_forward.gif" />
+    <None Include="Resources\forward.gif" />
+    <None Include="Resources\stop.gif" />
+    <None Include="Resources\play.gif" />
+    <None Include="Resources\reverse.gif" />
+    <None Include="Resources\rewind.gif" />
+    <None Include="Resources\about_image.jpg" />
+    <None Include="Resources\splash_screen.jpg" />
+    <None Include="Resources\folder_man.png" />
+    <None Include="Resources\services.png" />
+    <None Include="Resources\npc_list.lst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

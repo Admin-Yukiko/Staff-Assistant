@@ -1,0 +1,39 @@
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\bin\Debug\Resources\building_materials.lst
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\bin\Debug\Resources\items_list.lst
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\bin\Debug\Resources\locations_list.lst
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\bin\Debug\Resources\npc_list.lst
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\bin\Debug\Nightscape Staff Assistant.exe.config
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\bin\Debug\Nightscape Staff Assistant.exe
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\bin\Debug\Nightscape Staff Assistant.pdb
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\bin\Debug\Nightscape Staff Assistant.xml
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\bin\Debug\INI Parser.dll
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\bin\Debug\INI Parser.pdb
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\bin\Debug\INI Parser.xml
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\ResolveAssemblyReference.cache
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.AboutBox.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.AddAccountDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.AdvancedSettingsDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.BroadcastDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.BuildingToolbar.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.HueItemDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.ItemDetailsDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.ItemViewer.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.ProgramLauncherSetupDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.Form1.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.GenericNumericDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.GenericStringDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.GoXYZDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.Resources.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.PerformActionDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.PrivledgesDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.PromptToUpdate.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.RandomTileDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.SetCmdLvlDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.SetSkillDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.SetStatDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.SplashScreen2.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape_Staff_Assistant.TextReaderDialog.resources
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape Staff Assistant.vbproj.GenerateResource.Cache
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape Staff Assistant.exe
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape Staff Assistant.xml
+E:\BACKUP\Visual Studio 2005\Projects\Nightscape Staff Assistant\Nightscape Staff Assistant\obj\Debug\Nightscape Staff Assistant.pdb
