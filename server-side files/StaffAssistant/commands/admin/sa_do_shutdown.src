@@ -1,0 +1,84 @@
+///////////////////
+//  This script is called from the POL www page to restart the server
+///////////////////
+
+
+use uo;
+use os;
+include "include/client";
+include ":StaffAssistant:sa_gumps";
+
+program do_shutdown (who, text)
+
+
+	If(!YesNo(who, prompt:="Shall I shutdown the server?"))
+		SendSysMessage(who, "Shutdown aborted!", color := 33);
+		return 0;
+	endif
+
+	if(text == "delayed")
+		if (GetGlobalProperty ("#delayserverrestart"))
+			EraseGlobalProperty ("#delayserverrestart");
+			return;
+		endif
+
+		SetGlobalProperty ("#restartingserver", 1);
+	
+		Broadcast ("Server shutdown in 15 minutes", FONT_NORMAL, 30);
+		sleep (300);
+
+		Broadcast ("Server shutdown in 10 minutes", FONT_NORMAL, 30);
+		Broadcast ("At the 5 minute mark you will be alerted every minute.", FONT_NORMAL, 30);
+		sleep (300);
+
+		Broadcast ("Server shutdown in 5 minutes", FONT_NORMAL, 30);
+		sleep (60);
+
+		Broadcast ("Server shutdown in 4 minutes", FONT_NORMAL, 30);
+		sleep (60);
+
+		Broadcast ("Server shutdown in 3 minutes", FONT_NORMAL, 30);
+		sleep (60);
+
+		Broadcast ("Server shutdown in 2 minutes", FONT_NORMAL, 30);
+		sleep (60);
+
+		Broadcast ("Server shutdown in 1 minute", FONT_NORMAL, 30);
+		sleep (50);
+
+		Broadcast ("Server shutdown is eminent:", FONT_NORMAL, 30);
+		for i := 1 to 10
+			Broadcast (i, FONT_NORMAL, 30);
+			sleep (1);
+		endfor
+	endif
+
+	syslog ("Saving World State");
+	Broadcast ("Saving World State.");
+	sleep (1);
+	var res := SaveWorldState ();
+
+	if (res)
+		SetGlobalProperty ("#:saver:lastsave", ReadGameClock());
+		sleep (1);
+		Shutdown ();
+	else
+		Broadcast ("Error saving world state!  Oh, the humanity!");
+		syslog ("Error saving world state: " + res);
+		Broadcast ("Shutdown aborted");
+		syslog ("Shutdown aborted");
+	endif
+
+endprogram
+
+
+
+
+
+
+
+
+
+
+
+

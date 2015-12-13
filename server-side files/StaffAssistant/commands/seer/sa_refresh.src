@@ -1,0 +1,16 @@
+/////////////////////////////////////////////////////////////////////////////
+//
+//  ".refresh" - Restore Hit Points, Mana, and Stamina
+//
+//  Staff Assistant script
+//
+/////////////////////////////////////////////////////////////////////////////
+
+include "include/attributes";
+program textcmd_refresh( who )
+	SendSysMessage(who, "Whom shall I refresh?", color := 66);
+	var victim := Target(who, TGTOPT_NOCHECK_LOS );
+    SetHp(victim, GetMaxHp(who));
+    SetMana(victim, GetMaxMana(who));
+    SetStamina(victim, GetMaxStamina(who));
+endprogram

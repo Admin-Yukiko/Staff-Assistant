@@ -1,0 +1,7 @@
+use uo;
+
+program hideme( gm )
+    gm.frozen := 0;
+	EraseObjProperty(gm,"frozen");
+    SendSysMessage(gm, "You have been thawed.", color := 66 );
+endprogram

@@ -1,0 +1,14 @@
+use os;
+use uo;
+
+program textcmd_unloadallscripts ( who, scr )
+
+    SendSysMessage(who, "Unloading " + scr + ".", color := 88);
+	if(Unload_Scripts(scriptname := scr))
+		SendSysMessage(who, "Unloaded " + scr + ".", color := 66);
+		return 1;
+	endif
+	SendSysMessage(who, scr + " wasn't loaded.", color := 33);
+	return 0;
+
+endprogram

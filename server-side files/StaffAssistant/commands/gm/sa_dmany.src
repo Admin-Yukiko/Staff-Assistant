@@ -1,0 +1,15 @@
+use uo;
+
+program textcmd_dmany(who, text)
+
+	var trg;
+	SendSysMessage(who, "Multiple target destroy. Press <ESC> to exit.", color := 88);
+    while(1)
+		trg := Target(who, 0);
+		if(!trg)
+			SendSysMessage(who, "Cancelled.", color := 33);
+			return 0;
+		endif
+		DestroyItem(trg);
+    endwhile
+endprogram

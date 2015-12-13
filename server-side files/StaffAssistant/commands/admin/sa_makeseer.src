@@ -1,0 +1,12 @@
+
+use uo;
+
+program change_cmdlevel( who )
+  SendSysMessage( who, "Whom shall I make a seer?", color := 66 );
+  var player := Target( who, TGTOPT_NOCHECK_LOS );
+  if(player.ip)
+        player.cmdlevel := 2;
+  else
+    SendSysMessage(who, "Cancelled.", color := 33);
+  endif
+endprogram

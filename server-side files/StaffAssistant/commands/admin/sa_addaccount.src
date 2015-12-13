@@ -1,0 +1,41 @@
+use uo;
+
+program textcmd_newaccount(who, info)
+  var split := SplitWords(info);
+  var uname := split[1];
+  var pword := split[2];
+  var symbols := "`~!@#$%^&*()-_=+[]{}\|;:',.<>/? "; // Have to kluge in double quotes somehow
+  var numbers := "0123456789";
+  var i := 0;
+  var j := 0;
+  var check := 0;
+  
+	// Check for non-alphanumeric characters.
+	// This check can be removed if you wish.
+	for (i := 1; i <= Len(uname); i := i + 1)
+		for (j := 1; j <= Len(symbols); j := j + 1)
+			// The second equality check is for double quotes
+			if(uname[i] == symbols[j] || uname[i] == CChr(0x22))
+				SendSysMessage(who, "There are illegal characters in the account name.", color := 33);
+				return 0;
+			endif
+		endfor
+	endfor
+  
+  foreach acctname in ListAccounts()
+    if(uname == acctname)
+      SendSysMessage(who, "That account name is already taken");
+      check := 1;
+      break;
+    endif
+  endforeach
+  if(!check)
+    var act := CreateAccount(uname, pword, 1);
+    if(act.errortext)
+      SendSysMessage(who, "" + act.errortext);
+      return;
+    endif
+    SendSysMessage(who, "Account created successfully.");
+    act.set_uo_expansion("ML");
+  endif
+endprogram

@@ -1,0 +1,13 @@
+use uo;
+
+program squelch( gm, duration )
+    duration := CInt( duration );
+    if (!duration)
+        duration := 30;
+    endif
+	SendSysMessage(gm, "Whom shall I squelch?", color := 66);
+    var who := Target( gm, TGTOPT_NOCHECK_LOS );
+    if (who)
+        who.squelch( duration );
+    endif
+endprogram

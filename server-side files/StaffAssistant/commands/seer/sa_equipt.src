@@ -1,0 +1,21 @@
+//
+// Equip yourself from a NPCs Equip emplate
+//
+
+use uo;
+
+include "include/vetement";
+
+
+program textcmd_equip_from_template( who, template )
+
+
+    SendSysMessage( who, "Select the NPC you want equipped with the " + template + " template:" );
+    var victim := Target( who );
+    if (!victim)
+        return;
+    endif
+    Habille (victim, template);
+
+
+endprogram

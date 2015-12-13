@@ -1,0 +1,27 @@
+////////////////////////////////////////////////////////////
+// sa_setcriminal                                         //
+//                                                        //
+//                                                        //
+//                                                        //
+//                                                        //
+// Description: Toggle the criminal flag on a mobile      //
+////////////////////////////////////////////////////////////
+
+use uo;
+
+program textcmd_criminal(me, val)
+  SendSysMessage(me, "Whom do you want to make a criminal?", color := 88);
+  SendSysMessage(me, "This will toggle their criminal flag.", color := 88);
+  var who :=  Target(me, TGTOPT_NOCHECK_LOS );
+  if((!who) || (!who.acctname))
+	SendSysMessage( me, "Error: " + who.errortext );
+    return;
+  endif
+  if(CInt(val) == 1)
+    who.setcriminal(1);
+    SendSysMessage(me, who.name + " is now grey.");
+  else
+    who.setcriminal(0);
+    SendSysMessage(me, who.name + " is now blue.");
+  endif
+endprogram

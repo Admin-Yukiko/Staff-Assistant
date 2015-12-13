@@ -1,0 +1,10 @@
+use uo;
+
+
+program textcmd_where( who )
+
+//    if( who.cmdlevel >= 1)
+       SendSysMessage( who, "X="+who.x+", Y="+who.y+", Z="+who.z + ", Realm= " +  who.realm, color := 88 );
+//    endif
+
+endprogram

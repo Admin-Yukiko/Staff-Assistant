@@ -1,0 +1,21 @@
+use uo;
+
+program invulme (me, text)
+	var targetted;
+	SendSysMessage(me, "Whom shall I make invulnerable?", color := 88);
+	SendSysMessage(me, "Note: Toggles invulnerable flag.", color := 88);
+	targetted := Target(me);
+	if (!targetted)
+		SendSysMessage(me, "Canceled.");
+		return;
+	endif
+
+	if (targetted.enable( "invul" ) )
+		RevokePrivilege(targetted, "invul" );
+		PrintTextAbovePrivate(targetted, "*Vulnerable*", me);
+	else
+		GrantPrivilege(targetted, "invul");
+		targetted.enable ("invul" );
+		PrintTextAbovePrivate(targetted, "*Invulnerable*", me);
+	endif
+endprogram

@@ -1,0 +1,22 @@
+use uo;
+
+include "include/client";
+
+program textcmd_bcast( who, text )
+
+  if((GetObjProperty(who, "IsCounselor")) || (who.cmdlevel > 1))
+    gmreport(who.name + ": " + text);
+  endif
+
+endprogram
+
+function gmreport(text)
+
+	var gms := EnumerateOnlineCharacters();
+	foreach guy in gms
+        	if(GetObjProperty(guy, "IsCounselor") || guy.cmdlevel > 1)
+       			SendSysMessage(guy, text, FONT_NORMAL, COLOR_YELLOW_LIGHT);
+		endif
+	endforeach
+
+endfunction

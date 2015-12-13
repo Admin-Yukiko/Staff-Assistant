@@ -1,0 +1,10 @@
+use os;
+use uo;
+
+program textcmd_unloadallscripts ( who )
+
+    SendSysMessage(who, "Unloading all scripts.", color := 66);
+    Unload_Scripts(scriptname := "");
+	SendSysMessage(who,"All scripts unloaded.", color := 88);
+
+endprogram

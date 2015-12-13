@@ -1,0 +1,18 @@
+
+
+use uo;
+
+include ":gumps:yesno";
+
+program disable_acct(who, acctnm)
+
+	var acctref := FindAccount(acctnm);
+	if(yesno(who, "Are you sure you want to enable account " + acctnm))
+		acctref.enable();
+		SendSysMessage(who, acctnm + " is enabled.", color := 66);
+		return 1;
+	endif
+
+	SendSysMessage(who, "Cancelled.", color := 33);
+
+endprogram
