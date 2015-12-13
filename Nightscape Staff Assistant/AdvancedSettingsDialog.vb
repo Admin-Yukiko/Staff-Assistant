@@ -133,13 +133,13 @@ Public Class AdvancedSettingsDialog
       AutoUpdateOnceWeek.Enabled = True
       FilesToUpdateGroup.Enabled = True
     Else
-			AutoUpdateEveryTime.Enabled = False
+            AutoUpdateEveryTime.Enabled = False
       AutoUpdateOnceDay.Enabled = False
       AutoUpdateOnceWeek.Enabled = False
       FilesToUpdateGroup.Enabled = False
     End If
 
-		Dim fontFamilies() As FontFamily
+        Dim fontFamilies() As FontFamily
     Dim installedFontCollection As New Drawing.Text.InstalledFontCollection()
 
     ' POPULATE THE FONT-FAMILY LISTBOX WITH INSTALLED FONTS
@@ -152,9 +152,9 @@ Public Class AdvancedSettingsDialog
     End While
 
     ' DISABLE THE INDEX-CHANGED EVENT FOR THE FONT CONTROLS
-    RemoveHandler FontList.SelectedIndexChanged, AddressOf FontList_SelectedIndexChanged
-    RemoveHandler FontStyleList.SelectedIndexChanged, AddressOf FontStyleList_SelectedIndexChanged
-    RemoveHandler FontSizeList.SelectedIndexChanged, AddressOf FontSizeList_SelectedIndexChanged
+        RemoveHandler FontList.SelectedIndexChanged, AddressOf FontList_SelectedIndexChanged
+        RemoveHandler FontStyleList.SelectedIndexChanged, AddressOf FontStyleList_SelectedIndexChanged
+        RemoveHandler FontSizeList.SelectedIndexChanged, AddressOf FontSizeList_SelectedIndexChanged
 
     ' SET THE FONT PREVIEW TO THE INITIAL SELECTIONS
     FontList.SelectedItem = "Microsoft Sans Serif"

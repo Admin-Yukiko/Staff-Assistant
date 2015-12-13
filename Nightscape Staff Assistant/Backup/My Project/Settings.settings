@@ -1,0 +1,267 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="NightscapeLocation" Description="Installed location of the Nightscape Client." Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="InsideUOLocation" Description="Installed location of InsideUO" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="TooltipStyle" Description="Tobbles tooltip style between standard and balloon." Type="System.String" Scope="User">
+      <Value Profile="(Default)">standard</Value>
+    </Setting>
+    <Setting Name="StartupTab" Description="Tab to show when the program first starts." Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AutoLaunchType" Description="Toggles between launch the patch client or the game client directly." Type="System.String" Scope="User">
+      <Value Profile="(Default)">patch</Value>
+    </Setting>
+    <Setting Name="SystrayIcon" Description="Specifies the icon to use in the system tray." Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="TaskbarType" Description="Toggles between always showing the program on the taskbar and only showingit when maximized." Type="System.String" Scope="User">
+      <Value Profile="(Default)">always</Value>
+    </Setting>
+    <Setting Name="Opacity" Description="Type of opacity feature to use." Type="System.String" Scope="User">
+      <Value Profile="(Default)">onfocus</Value>
+    </Setting>
+    <Setting Name="AlwaysOnTop" Description="Appear on top of other programs" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="EnableTooltips" Description="Enable or disable tooltips for the program." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ShowSplashScreen" Description="Enable or disable showing the splash screen when the program starts." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AutoLaunchClient" Description="Enable or disable auto-launching the Nightscape client when the program starts." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ShowInTray" Description="Enables or disables showing the program in the system tray." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ShowOnTaskbar" Description="Enables or disables showing the program on the taskbar." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="OpacityLevel" Description="The level of opacity for the program." Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="FadeInTime" Description="Time in millliseconds for the program to return to opaque after regaining focus." Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="FadeOutTime" Description="Time in milliseconds for the program to face out to the desired transparency level after losing focus." Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="QC_TeleTo" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_MTele" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_GetInfo" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_Kill" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_Ressurect" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_Jail" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_Kick" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_Hide" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_Destroy" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_MDestroy" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_RoofCreator" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_ItemInfo" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_LockItem" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_Lockdown5" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_Lockdown10" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_ConcealMe" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_RevealMe" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_GMForm" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_MyForm" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_SaveShard" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_Nightsight" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_HelpQueue" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_PropEdit" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_Mark" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_Recall" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_Where" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_Goto" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="QC_SummonPlayer" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QC_Tele" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CheckUpdates" Description="Enable or disable automatically checking for software updates at startup." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UpdateInterval" Description="How often to check for updates, can be &quot;always&quot;, &quot;daily&quot; or &quot;weekly&quot;." Type="System.String" Scope="User">
+      <Value Profile="(Default)">daily</Value>
+    </Setting>
+    <Setting Name="LastUpdateCheck" Description="Date and time the last update check was performed." Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UpdateCore" Description="Enable or disable automatically downloading and installing updates for the core executable." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UpdateBuildList" Description="Enable or disable automatically downloading and installing updates for the build list." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UpdateItemList" Description="Enable or disable automatically downloading and installing updates for the item list." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UpdateNPCList" Description="Enable or disable automatically downloading and installing updates for the NPC list." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UpdateLocationList" Description="Enable or disable automatically downloading and installing updates for the travel list." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Font" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CoreVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.0.0.0</Value>
+    </Setting>
+    <Setting Name="BuildListVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.0.0.0</Value>
+    </Setting>
+    <Setting Name="ItemListVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.0.0.0</Value>
+    </Setting>
+    <Setting Name="NPCListVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.0.0.0</Value>
+    </Setting>
+    <Setting Name="LocationListVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.0.0.0</Value>
+    </Setting>
+    <Setting Name="AutoComplete" Description="Enable or disable autocomplete for certain form elements." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AnimateNPCs" Description="Enable or disable showing NPCs animated in the preview window." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SearchByID1_AutoComplete" Type="System.Windows.Forms.AutoCompleteStringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SearchByName2_AutoComplete" Type="System.Windows.Forms.AutoCompleteStringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SearchByID2_AutoComplete" Type="System.Windows.Forms.AutoCompleteStringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BCastMessage_AutoComplete" Type="System.Windows.Forms.AutoCompleteStringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="TrackLocation" Description="Enable or disable the tracking of the in-game location." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UserLaunch1_Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserLaunch1_Program" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserLaunch1_Location" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="USerLaunch2_Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserLaunch2_Program" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserLaunch2_Location" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserLaunch3_Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserLaunch3_Program" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserLaunch3_Location" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserLaunch4_Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserLaunch4_Program" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserLaunch4_Location" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SearchByName3_AutoComplete" Type="System.Windows.Forms.AutoCompleteStringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SearchByName4_AutoComplete" Type="System.Windows.Forms.AutoCompleteStringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RetainInput" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SearchByName1_AutoComplete" Type="System.Windows.Forms.AutoCompleteStringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ShowBuildingToolbar" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BuildingToolbarLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="RenderingQuality" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

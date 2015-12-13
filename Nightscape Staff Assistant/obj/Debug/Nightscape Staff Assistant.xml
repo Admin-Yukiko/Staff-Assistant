@@ -127,6 +127,10 @@ Enable or disable the tracking of the in-game location.
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.about_image">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.building_materials">
 	<summary>
   Looks up a localized string similar to C=Doors
@@ -140,6 +144,30 @@ I=Tall Metal Door (N/SE R CCW)                      06C7
 I=Tall Metal Door (W/SE L CW)                       06CD
 I=Tall Metal Door (W/NE R CCW)                      06CF
 I=Barred Metal Door (N/S [rest of string was truncated]";.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.cancel">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.ControlPanel2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.downarrow">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.fast_forward">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.folder_man">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.forward">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.items_list">
 	<summary>
@@ -233,6 +261,42 @@ N=horse
 B=00cc
 C=0
 N [rest of string was truncated]";.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.package_application">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.play">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.reverse">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.rewind">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.services">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.splash_screen">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.stop_icon">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.unused_tile">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.window_new">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="T:Nightscape_Staff_Assistant.My.Resources.Resources">
 	<summary>

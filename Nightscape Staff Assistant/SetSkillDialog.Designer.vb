@@ -79,8 +79,8 @@ Partial Class SetSkillDialog
 		Me.GroupBox1.Text = "Select a skill to modify..."
 		'
 		'SkillList
-		'
-		Me.SkillList.FormattingEnabled = True
+        '
+        Me.SkillList.FormattingEnabled = True
 		Me.SkillList.Items.AddRange(New Object() {"Alchemy", "Anatomy", "AnimalLore", "ItemId", "ArmsLore", "Parry", "Begging", "Blacksmithy", "Bowcraft", "Peacemaking", "Camping", "Woodworking", "Cartography", "Cooking", "DetectingHidden", "Enticement", "EvaluatingIntelligence", "Healing", "Fishing", "ForensicEvaluation", "Herding", "Hiding", "Provocation", "Inscription", "Lockpicking", "Magery", "MagicResistance", "Tactics", "Snooping", "Musicianship", "Poisoning", "Archery", "SpiritSpeak", "Stealing", "Tailoring", "AnimalTaming", "TasteIdentification", "Tinkering", "Tracking", "Veterinary", "Swordsmanship", "Macefighting", "Fencing", "Wrestling", "Lumberjacking", "Mining", "Meditation", "Stealth", "RemoveTrap", "Necro", "Focus", "Chivalry", "Bushido", "Ninjitsu"})
 		Me.SkillList.Location = New System.Drawing.Point(15, 29)
 		Me.SkillList.Name = "SkillList"

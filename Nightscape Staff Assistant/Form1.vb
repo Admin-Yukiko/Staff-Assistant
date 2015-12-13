@@ -154,8 +154,9 @@ Public Class Form1
 			If ((My.Computer.FileSystem.FileExists(My.Settings.NightscapeLocation & "\nspatch.exe")) And (My.Settings.AutoLaunchType = "patch")) Then
 				Client.StartInfo.FileName = "nspatch.exe"
 			Else
-				Client.StartInfo.FileName = "nsclient.exe"
-			End If
+                'Client.StartInfo.FileName = "nsclient.exe"
+                Client.StartInfo.FileName = "Decrypted_client.exe"
+            End If
 			Client.StartInfo.UseShellExecute = True
 			Client.StartInfo.WorkingDirectory = My.Settings.NightscapeLocation
 			Client.EnableRaisingEvents = False
@@ -281,7 +282,7 @@ Public Class Form1
 	Private Sub SaveShardBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveShardBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".save")
+            Ultima.Client.SendText(".sa_savenow")
 		Else
 			ShowError("noclient")
 		End If
@@ -289,7 +290,7 @@ Public Class Form1
 	Private Sub ShutdownBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShutdownBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".shutdown")
+            Ultima.Client.SendText(".sa_do_shutdown")
 		Else
 			ShowError("noclient")
 		End If
@@ -297,7 +298,7 @@ Public Class Form1
 	Private Sub ShutdownNowBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShutdownNowBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".shutdown delayed")
+            Ultima.Client.SendText(".sa_do_shutdown delayed")
 		Else
 			ShowError("noclient")
 		End If
@@ -315,7 +316,7 @@ Public Class Form1
 				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("KillPID", GenericStringDialog.TextBox.Text)
 				INIHandler.WriteINIFile(My.Computer.FileSystem.CurrentDirectory + "/ns~settings.ini")
 				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".killpid " & GenericStringDialog.TextBox.Text)
+                Ultima.Client.SendText(".sa_killpid " & GenericStringDialog.TextBox.Text)
 			End If
 			GenericStringDialog.Dispose()
 		Else
@@ -334,7 +335,7 @@ Public Class Form1
 				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("UnloadScript", GenericStringDialog.TextBox.Text)
 				INIHandler.WriteINIFile(My.Computer.FileSystem.CurrentDirectory + "/ns~settings.ini")
 				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".unload " & GenericStringDialog.TextBox.Text)
+                Ultima.Client.SendText(".sa_unload " & GenericStringDialog.TextBox.Text)
 			End If
 			GenericStringDialog.Dispose()
 		Else
@@ -344,7 +345,7 @@ Public Class Form1
 	Private Sub UnloadAllBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnloadAllBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".unloadall")
+            Ultima.Client.SendText(".sa_unloadall")
 		Else
 			ShowError("noclient")
 		End If
@@ -361,7 +362,7 @@ Public Class Form1
 				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("UnloadCFG", GenericStringDialog.TextBox.Text)
 				INIHandler.WriteINIFile(My.Computer.FileSystem.CurrentDirectory + "/ns~settings.ini")
 				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".unloadcfg " & GenericStringDialog.TextBox.Text)
+                Ultima.Client.SendText(".sa_unloadcfg " & GenericStringDialog.TextBox.Text)
 			End If
 			GenericStringDialog.Dispose()
 		Else
@@ -388,7 +389,7 @@ Public Class Form1
 					Exit Sub
 				End If
 				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".addaccount " & AddAccountDialog.AccountName.Text & " " & AddAccountDialog.Password.Text)
+                Ultima.Client.SendText(".sa_addaccount " & AddAccountDialog.AccountName.Text & " " & AddAccountDialog.Password.Text)
 			End If
 			AddAccountDialog.Dispose()
 		Else
@@ -402,12 +403,13 @@ Public Class Form1
 			GenericStringDialog.TextBox.Text = INIHandler.Sections("ADMIN TAB").Settings("BanAccountName")
 			GenericStringDialog.TopMost = Me.TopMost
 			Dim Returned As DialogResult
-			Returned = GenericStringDialog.ShowDialog()
+            Returned = GenericStringDialog.ShowDialog()
 			If (Returned = Windows.Forms.DialogResult.OK) Then
 				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("BanAccountName", GenericStringDialog.TextBox.Text)
 				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".ban " & GenericStringDialog.TextBox.Text)
+                Ultima.Client.BringToTop()
+                'modified
+                Ultima.Client.SendText(".sa_disable_acct " & GenericStringDialog.TextBox.Text)
 			End If
 			GenericStringDialog.Dispose()
 		Else
@@ -425,8 +427,9 @@ Public Class Form1
 			If (Returned = Windows.Forms.DialogResult.OK) Then
 				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("UnBanAccountName", GenericStringDialog.TextBox.Text)
 				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".unban " & GenericStringDialog.TextBox.Text)
+                Ultima.Client.BringToTop()
+                'modified
+                Ultima.Client.SendText(".sa_enable_acct " & GenericStringDialog.TextBox.Text)
 			End If
 			GenericStringDialog.Dispose()
 		Else
@@ -452,7 +455,7 @@ Public Class Form1
 			ShowError("noclient")
 		End If
 	End Sub
-
+    'Modified
 	Private Sub SetCmdLvlBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetCmdLvlBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Dim SetCmdLvlDialog As New SetCmdLvlDialog
@@ -469,18 +472,18 @@ Public Class Form1
 				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
 				Ultima.Client.BringToTop()
 				Select Case (SetCmdLvlDialog.CommandLevel.SelectedItem)
-					Case "Super Administrator"
-						Ultima.Client.SendText(".setcmdlvl " & "5")
+                    Case "Developer"
+                        Ultima.Client.SendText(".sa_setcmdlvl " & "test")
 					Case "Administrator"
-						Ultima.Client.SendText(".setcmdlvl " & "4")
-					Case "Team Leader"
-						Ultima.Client.SendText(".setcmdlvl " & "3")
-					Case "General Staff (Gms & Seers)"
-						Ultima.Client.SendText(".setcmdlvl " & "2")
-					Case "Builder"
-						Ultima.Client.SendText(".setcmdlvl " & "1")
+                        Ultima.Client.SendText(".sa_setcmdlvl " & "admin")
+                    Case "GM"
+                        Ultima.Client.SendText(".sa_setcmdlvl " & "gm")
+                    Case "Seer"
+                        Ultima.Client.SendText(".sa_setcmdlvl " & "seer")
+                    Case "Counsellor"
+                        Ultima.Client.SendText(".sa_setcmdlvl " & "coun")
 					Case "Player"
-						Ultima.Client.SendText(".setcmdlvl " & "0")
+                        Ultima.Client.SendText(".sa_setcmdlvl " & "player")
 				End Select
 			End If
 			SetCmdLvlDialog.Dispose()
@@ -491,7 +494,7 @@ Public Class Form1
 	Private Sub MakeSeerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MakeSeerBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".makeseer")
+            Ultima.Client.SendText(".sa_makeseer")
 		Else
 			ShowError("noclient")
 		End If
@@ -511,7 +514,7 @@ Public Class Form1
 				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("GrantPrivledge", PrivledgesDialog.PrivledgeList.SelectedItem)
 				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
 				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".grantpriv " & PrivledgesDialog.PrivledgeList.SelectedItem.ToString)
+                Ultima.Client.SendText(".sa_grantpriv " & PrivledgesDialog.PrivledgeList.SelectedItem.ToString)
 			End If
 		Else
 			ShowError("noclient")
@@ -532,7 +535,7 @@ Public Class Form1
 				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("RevokePrivledge", PrivledgesDialog.PrivledgeList.SelectedItem)
 				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
 				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".revokepriv " & PrivledgesDialog.PrivledgeList.SelectedItem.ToString)
+                Ultima.Client.SendText(".sa_revokepriv " & PrivledgesDialog.PrivledgeList.SelectedItem.ToString)
 			End If
 		Else
 			ShowError("noclient")
@@ -550,7 +553,7 @@ Public Class Form1
 	Private Sub KillPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KillPlayerBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".kill")
+            Ultima.Client.SendText(".sa_kill")
 		Else
 			ShowError("noclient")
 		End If
@@ -558,7 +561,7 @@ Public Class Form1
 	Private Sub ResPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ResPlayerBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".res")
+            Ultima.Client.SendText(".sa_res")
 		Else
 			ShowError("noclient")
 		End If
@@ -566,7 +569,7 @@ Public Class Form1
 	Private Sub RefreshPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefreshPlayerBtn.Click, RefreshNPC.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".refresh")
+            Ultima.Client.SendText(".sa_refresh")
 		Else
 			ShowError("noclient")
 		End If
@@ -575,7 +578,7 @@ Public Class Form1
 	Private Sub JailPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles JailPlayerBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".jail")
+            Ultima.Client.SendText(".sa_jail")
 		Else
 			ShowError("noclient")
 		End If
@@ -583,7 +586,7 @@ Public Class Form1
 	Private Sub KickPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KickPlayerBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".kick")
+            Ultima.Client.SendText(".sa_kick")
 		Else
 			ShowError("noclient")
 		End If
@@ -591,7 +594,7 @@ Public Class Form1
 	Private Sub ThawPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ThawPlayerBtn.Click, ThawNPC.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".thaw")
+            Ultima.Client.SendText(".sa_thaw")
 		Else
 			ShowError("noclient")
 		End If
@@ -599,7 +602,7 @@ Public Class Form1
 	Private Sub FreezePlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FreezePlayerBtn.Click, FreezeNPC.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".freeze")
+            Ultima.Client.SendText(".sa_freeze")
 		Else
 			ShowError("noclient")
 		End If
@@ -608,7 +611,7 @@ Public Class Form1
 	Private Sub SquelchPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SquelchPlayerBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".squelch")
+            Ultima.Client.SendText(".sa_squelch")
 		Else
 			ShowError("noclient")
 		End If
@@ -616,7 +619,7 @@ Public Class Form1
 	Private Sub ForgivePlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ForgivePlayerBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".forgive")
+            Ultima.Client.SendText(".sa_forgive")
 		Else
 			ShowError("noclient")
 		End If
@@ -693,7 +696,7 @@ Public Class Form1
 	Private Sub InvulPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InvulPlayerBtn.Click, NPCSetInvul.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".invul")
+            Ultima.Client.SendText(".sa_invul")
 		Else
 			ShowError("noclient")
 		End If
@@ -701,7 +704,7 @@ Public Class Form1
 	Private Sub MessagePlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MessagePlayerBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".msg")
+            Ultima.Client.SendText(".sa_msg")
 		Else
 			ShowError("noclient")
 		End If
@@ -885,18 +888,19 @@ Public Class Form1
 		End If
 	End Sub
 
-	Private Sub BldngItemList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles BldngItemList.AfterSelect
-		BldngItemPreview.Image = Ultima.Art.GetStatic(Convert.ToInt32(BldngItemList.SelectedNode.Name, 16))
-		BldngItemID.Text = "ID: 0x" & BldngItemList.SelectedNode.Name.ToString
-		ToolTip.SetToolTip(BldngItemID, "Hex ID number of the currently selected item." + vbCrLf + vbCrLf + "Decimal Value: " + Convert.ToInt32(BldngItemList.SelectedNode.Name, 16).ToString)
-	End Sub
+    Private Sub BldngItemList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles BldngItemList.AfterSelect
+        'modified
+        BldngItemPreview.Image = Ultima.Art.GetStatic(Convert.ToInt32(BldngItemList.SelectedNode.Name, 16))
+        BldngItemID.Text = "ID: 0x" & BldngItemList.SelectedNode.Name.ToString
+        ToolTip.SetToolTip(BldngItemID, "Hex ID number of the currently selected item." + vbCrLf + vbCrLf + "Decimal Value: " + Convert.ToInt32(BldngItemList.SelectedNode.Name, 16).ToString)
+    End Sub
 
 	Private Sub CreateFeetBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateFeetBtn1.Click
 		If (Ultima.Client.Running = True) Then
 			Try
 				If (BldngItemList.SelectedNode.Name IsNot Nothing) Then
 					Ultima.Client.BringToTop()
-					Ultima.Client.SendText(".createf " & Convert.ToInt32(BldngItemList.SelectedNode.Name, 16).ToString)
+                    Ultima.Client.SendText(".sa_createhere " & Convert.ToInt32(BldngItemList.SelectedNode.Name, 16).ToString)
 				End If
 			Catch ex As Exception
 				Exit Sub
@@ -1214,11 +1218,12 @@ Public Class Form1
 		End If
 	End Sub
 
-	Private Sub ItemItemList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles ItemItemList.AfterSelect
-		ItemItemPreview.Image = Ultima.Art.GetStatic(Convert.ToInt32(ItemItemList.SelectedNode.Name, 16))
-		ItemItemID.Text = "ID: 0x" & ItemItemList.SelectedNode.Name.ToString
-		ToolTip.SetToolTip(ItemItemID, "Hex ID number of the currently selected item." + vbCrLf + vbCrLf + "Decimal Value: " + Convert.ToInt32(ItemItemList.SelectedNode.Name, 16).ToString)
-	End Sub
+    Private Sub ItemItemList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles ItemItemList.AfterSelect
+        'modified
+        ItemItemPreview.Image = Ultima.Art.GetStatic(Convert.ToInt32(ItemItemList.SelectedNode.Name, 16))
+        ItemItemID.Text = "ID: 0x" & ItemItemList.SelectedNode.Name.ToString
+        ToolTip.SetToolTip(ItemItemID, "Hex ID number of the currently selected item." + vbCrLf + vbCrLf + "Decimal Value: " + Convert.ToInt32(ItemItemList.SelectedNode.Name, 16).ToString)
+    End Sub
 
 	Private Sub CreateFeetBtn2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateFeetBtn2.Click
 		If (Ultima.Client.Running = True) Then
@@ -1512,7 +1517,7 @@ Public Class Form1
 				INIHandler.Sections.Sections("ITEM TWEAK TAB").Settings.Set("RenameItem", GenericStringDialog.TextBox.Text)
 				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
 				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".rename " & GenericStringDialog.TextBox.Text)
+                Ultima.Client.SendText(".sa_rename " & GenericStringDialog.TextBox.Text)
 			End If
 			GenericStringDialog.Dispose()
 		Else
@@ -1522,7 +1527,7 @@ Public Class Form1
 	Private Sub LockDownBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LockDownBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".lockdown")
+            Ultima.Client.SendText(".sa_lockdown")
 		Else
 			ShowError("noclient")
 		End If
@@ -1531,7 +1536,7 @@ Public Class Form1
 	Private Sub ReleaseItemBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReleaseItemBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".release")
+            Ultima.Client.SendText(".sa_release")
 		Else
 			ShowError("noclient")
 		End If
@@ -1541,7 +1546,7 @@ Public Class Form1
 		If (Ultima.Client.Running = True) Then
 			If (NumericUpDown3.Value > 0) Then
 				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".lockradius " & NumericUpDown3.Value.ToString)
+                Ultima.Client.SendText(".sa_lockradius " & NumericUpDown3.Value.ToString)
 			End If
 		Else
 			ShowError("noclient")
@@ -1583,7 +1588,7 @@ Public Class Form1
 	Private Sub MoveItemBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MoveItemBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".moveitem")
+            Ultima.Client.SendText(".sa_moveitem")
 		Else
 			ShowError("noclient")
 		End If
@@ -1592,7 +1597,7 @@ Public Class Form1
 	Private Sub LockBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LockBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".lock")
+            Ultima.Client.SendText(".sa_lock")
 		Else
 			ShowError("noclient")
 		End If
@@ -1600,7 +1605,7 @@ Public Class Form1
 	Private Sub UnlockBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnlockBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".unlock")
+            Ultima.Client.SendText(".sa_unlock")
 		Else
 			ShowError("noclient")
 		End If
@@ -1608,7 +1613,7 @@ Public Class Form1
 	Private Sub RelockBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RelockBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".relock")
+            Ultima.Client.SendText(".sa_relock")
 		Else
 			ShowError("noclient")
 		End If
@@ -1617,7 +1622,7 @@ Public Class Form1
 	Private Sub KeyBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KeyBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".makekey")
+            Ultima.Client.SendText(".sa_makekey")
 		Else
 			ShowError("noclient")
 		End If
@@ -1625,7 +1630,7 @@ Public Class Form1
 	Private Sub RekeyBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RekeyBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".rekey")
+            Ultima.Client.SendText(".sa_rekey")
 		Else
 			ShowError("noclient")
 		End If
@@ -1634,7 +1639,7 @@ Public Class Form1
 	Private Sub MoveContBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MoveContBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".movetocont")
+            Ultima.Client.SendText(".sa_movetocont")
 		Else
 			ShowError("noclient")
 		End If
@@ -1814,37 +1819,38 @@ Public Class Form1
 				Exit Sub
 			End If
 
-			If ((NPCAnimationID <> 0)) Then
-				NPCAnimation = Ultima.Animations.GetAnimation(NPCAnimationID, 0, 1, 0, False)
+            If ((NPCAnimationID <> 0)) Then
+                'modified
+                NPCAnimation = Ultima.Animations.GetAnimation(NPCAnimationID, 0, 1, 0, False)
 
-				If (NPCAnimation(0).Bitmap.Width > NPCPreviewImage.Width) Then
-					NPCPreviewImage.SizeMode = PictureBoxSizeMode.Zoom
-				Else
-					NPCPreviewImage.SizeMode = PictureBoxSizeMode.CenterImage
-				End If
+                If (NPCAnimation(0).Bitmap.Width > NPCPreviewImage.Width) Then
+                    NPCPreviewImage.SizeMode = PictureBoxSizeMode.Zoom
+                Else
+                    NPCPreviewImage.SizeMode = PictureBoxSizeMode.CenterImage
+                End If
 
-				NPCAnimationLength = NPCAnimation.Length() - 1
-				If (NPCAnimationHue > 0) Then
-					For counter As Integer = 0 To NPCAnimationLength Step +1
-						Dim Hue As Ultima.Hue = Ultima.Hues.GetHue(NPCAnimationHue)
-						Hue.ApplyTo(NPCAnimation(counter).Bitmap, False)
-					Next counter
-				End If
+                NPCAnimationLength = NPCAnimation.Length() - 1
+                If (NPCAnimationHue > 0) Then
+                    For counter As Integer = 0 To NPCAnimationLength Step +1
+                        Dim Hue As Ultima.Hue = Ultima.Hues.GetHue(NPCAnimationHue)
+                        Hue.ApplyTo(NPCAnimation(counter).Bitmap, False)
+                    Next counter
+                End If
 
-				If (My.Settings.AnimateNPCs = True) Then
-					NPCAnimationTimer.Start()
-				Else
-					NPCPreviewImage.Image = NPCAnimation(0).Bitmap
-				End If
-			End If
+                If (My.Settings.AnimateNPCs = True) Then
+                    NPCAnimationTimer.Start()
+                Else
+                    'NPCPreviewImage.Image = NPCAnimation(0).Bitmap
+                End If
+            End If
 
-		Else
-			NPCAnimationTimer.Stop()
-			NPCAnimationID = 0
-			NPCAnimationLength = 0
-			NPCAnimationHue = 0
-			NPCAnimationFrame = -1
-		End If
+        Else
+            NPCAnimationTimer.Stop()
+            NPCAnimationID = 0
+            NPCAnimationLength = 0
+            NPCAnimationHue = 0
+            NPCAnimationFrame = -1
+        End If
 	End Sub
 
 	Private Sub NPCAnimationTimer_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles NPCAnimationTimer.Tick
@@ -1853,12 +1859,12 @@ Public Class Form1
 			NPCAnimationFrame = 0
 		End If
 
-		'Dim ImageLocation As New Point(((GroupBox23.Size.Width / 2) - (NPCAnimation(NPCAnimationFrame).Bitmap.Width / 2)) - NPCAnimation(NPCAnimationFrame).Center.X, ((GroupBox23.Size.Height / 2) - (NPCAnimation(NPCAnimationFrame).Bitmap.Height / 2)) - (NPCAnimation(NPCAnimationFrame).Center.Y + NPCAnimation(NPCAnimationFrame).Bitmap.Height))
-		'NPCPreviewImage.Location.Offset(NPCAnimation(NPCAnimationFrame).Center.X, NPCAnimation(NPCAnimationFrame).Center.Y + NPCAnimation(NPCAnimationFrame).Bitmap.Height)
-		'NPCPreviewImage.Size = New Point(NPCAnimation(NPCAnimationFrame).Bitmap.Width, NPCAnimation(NPCAnimationFrame).Bitmap.Height)
-		'NPCPreviewImage.Location = ImageLocation
-
-		NPCPreviewImage.Image = NPCAnimation(NPCAnimationFrame).Bitmap
+        Dim ImageLocation As New Point(((GroupBox23.Size.Width / 2) - (NPCAnimation(NPCAnimationFrame).Bitmap.Width / 2)) - NPCAnimation(NPCAnimationFrame).Center.X, ((GroupBox23.Size.Height / 2) - (NPCAnimation(NPCAnimationFrame).Bitmap.Height / 2)) - (NPCAnimation(NPCAnimationFrame).Center.Y + NPCAnimation(NPCAnimationFrame).Bitmap.Height))
+        NPCPreviewImage.Location.Offset(NPCAnimation(NPCAnimationFrame).Center.X, NPCAnimation(NPCAnimationFrame).Center.Y + NPCAnimation(NPCAnimationFrame).Bitmap.Height)
+        NPCPreviewImage.Size = New Point(NPCAnimation(NPCAnimationFrame).Bitmap.Width, NPCAnimation(NPCAnimationFrame).Bitmap.Height)
+        NPCPreviewImage.Location = ImageLocation
+        'modified
+        NPCPreviewImage.Image = NPCAnimation(NPCAnimationFrame).Bitmap
 	End Sub
 
 	Private Sub DecreaseAnimationSpeed_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DecreaseAnimationSpeed.Click
@@ -1877,7 +1883,7 @@ Public Class Form1
 			Try
 				If (NPCList.SelectedNode.Name IsNot Nothing) Then
 					Ultima.Client.BringToTop()
-					Ultima.Client.SendText(".createnpc " & NPCList.SelectedNode.Text)
+                    Ultima.Client.SendText(".sa_createnpc " & NPCList.SelectedNode.Text)
 				End If
 			Catch ex As Exception
 				Exit Sub
@@ -1891,7 +1897,7 @@ Public Class Form1
 			Try
 				If (NPCList.SelectedNode.Name IsNot Nothing) Then
 					Ultima.Client.BringToTop()
-					Ultima.Client.SendText(".createhidden " & NPCList.SelectedNode.Text)
+                    Ultima.Client.SendText(".sa_createhidden " & NPCList.SelectedNode.Text)
 				End If
 			Catch ex As Exception
 				Exit Sub
@@ -1929,7 +1935,7 @@ Public Class Form1
 	Private Sub KillNPC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KillNPC.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".kill")
+            Ultima.Client.SendText(".sa_kill")
 		Else
 			ShowError("noclient")
 		End If
@@ -1953,7 +1959,7 @@ Public Class Form1
 	Private Sub CopyLook_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CopyLook.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".copylook")
+            Ultima.Client.SendText(".sa_copylook")
 		Else
 			ShowError("noclient")
 		End If
@@ -1961,7 +1967,7 @@ Public Class Form1
 	Private Sub NoTame_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NoTame.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".notame")
+            Ultima.Client.SendText(".sa_notame")
 		Else
 			ShowError("noclient")
 		End If
@@ -1969,7 +1975,7 @@ Public Class Form1
 	Private Sub NoProvoke_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NoProvoke.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".noprovoke")
+            Ultima.Client.SendText(".sa_noprovoke")
 		Else
 			ShowError("noclient")
 		End If
@@ -1987,7 +1993,7 @@ Public Class Form1
 				INIHandler.Sections.Sections("NPC TWEAK TAB").Settings.Set("SayAbove", GenericStringDialog.TextBox.Text)
 				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
 				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".sayabove " & GenericStringDialog.TextBox.Text)
+                Ultima.Client.SendText(".sa_sayabove " & GenericStringDialog.TextBox.Text)
 			End If
 			GenericStringDialog.Dispose()
 		Else
@@ -2009,7 +2015,7 @@ Public Class Form1
 				INIHandler.Sections.Sections("NPC TWEAK TAB").Settings.Set("PerformAction", SetCmdLvlDialog.CommandLevel.SelectedItem)
 				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
 				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".action " & PerformActionDialog.SelectedAction)
+                Ultima.Client.SendText(".sa_action " & PerformActionDialog.SelectedAction)
 			End If
 			PerformActionDialog.Dispose()
 		Else
@@ -2019,7 +2025,7 @@ Public Class Form1
 	Private Sub WalkTo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WalkTo.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".walkto")
+            Ultima.Client.SendText(".sa_walkto")
 		Else
 			ShowError("noclient")
 		End If
@@ -2027,7 +2033,7 @@ Public Class Form1
 	Private Sub RunTo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RunTo.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".runto")
+            Ultima.Client.SendText(".sa_runto")
 		Else
 			ShowError("noclient")
 		End If
@@ -2041,7 +2047,7 @@ Public Class Form1
 	Private Sub RestartAI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RestartAI.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".restartai")
+            Ultima.Client.SendText(".sa_restartai")
 		Else
 			ShowError("noclient")
 		End If
@@ -2049,7 +2055,7 @@ Public Class Form1
 	Private Sub Tame_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tame.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".tame")
+            Ultima.Client.SendText(".sa_tame")
 		Else
 			ShowError("noclient")
 		End If
@@ -2057,7 +2063,7 @@ Public Class Form1
 	Private Sub SetNPCCriminal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetNPCCriminal.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".setprop criminal 1")
+            Ultima.Client.SendText(".sa_setprop criminal 1")
 		Else
 			ShowError("noclient")
 		End If
@@ -2065,7 +2071,7 @@ Public Class Form1
 	Private Sub SetNPCMurderer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetNPCMurderer.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".setprop murderer 1")
+            Ultima.Client.SendText(".sa_setprop murderer 1")
 		Else
 			ShowError("noclient")
 		End If
@@ -2075,7 +2081,7 @@ Public Class Form1
 	Private Sub EquipItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EquipItem.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".equip")
+            Ultima.Client.SendText(".sa_equip")
 		Else
 			ShowError("noclient")
 		End If
@@ -2092,7 +2098,7 @@ Public Class Form1
 				INIHandler.Sections.Sections("NPC TWEAK TAB").Settings.Set("EquipFromTemplate", GenericStringDialog.TextBox.Text)
 				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
 				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".equipt " & GenericStringDialog.TextBox.Text)
+                Ultima.Client.SendText(".sa_equipt " & GenericStringDialog.TextBox.Text)
 			End If
 			GenericStringDialog.Dispose()
 		Else
@@ -2107,7 +2113,7 @@ Public Class Form1
 	Private Sub ConcealMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConcealMeBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".concealme")
+            Ultima.Client.SendText(".sa_concealme")
 		Else
 			ShowError("noclient")
 		End If
@@ -2115,7 +2121,7 @@ Public Class Form1
 	Private Sub RevealMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RevealMeBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".unconcealme")
+            Ultima.Client.SendText(".sa_unconcealme")
 		Else
 			ShowError("noclient")
 		End If
@@ -2123,7 +2129,7 @@ Public Class Form1
 	Private Sub ResMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ResMeBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".resme")
+            Ultima.Client.SendText(".sa_resme")
 		Else
 			ShowError("noclient")
 		End If
@@ -2131,7 +2137,7 @@ Public Class Form1
 	Private Sub RefreshMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefreshMeBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".refreshme")
+            Ultima.Client.SendText(".sa_refreshme")
 		Else
 			ShowError("noclient")
 		End If
@@ -2140,7 +2146,7 @@ Public Class Form1
 	Private Sub GmFormBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GmFormBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".gmform")
+            Ultima.Client.SendText(".sa_gmform")
 		Else
 			ShowError("noclient")
 		End If
@@ -2148,7 +2154,7 @@ Public Class Form1
 	Private Sub MyFormBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyFormBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".myform")
+            Ultima.Client.SendText(".sa_myform")
 		Else
 			ShowError("noclient")
 		End If
@@ -2156,7 +2162,7 @@ Public Class Form1
 	Private Sub ThawMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ThawMeBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".thawme")
+            Ultima.Client.SendText(".sa_thawme")
 		Else
 			ShowError("noclient")
 		End If
@@ -2164,7 +2170,7 @@ Public Class Form1
 	Private Sub PowerUpBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PowerUpBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".powerup")
+            Ultima.Client.SendText(".sa_powerup")
 		Else
 			ShowError("noclient")
 		End If
@@ -2173,7 +2179,7 @@ Public Class Form1
 	Private Sub PropEditBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PropEditBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".propedit")
+            Ultima.Client.SendText(".sa_propedit")
 		Else
 			ShowError("noclient")
 		End If
@@ -2232,7 +2238,7 @@ Public Class Form1
 	Private Sub MarkBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MarkBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".mark")
+            Ultima.Client.SendText(".sa_mark")
 		Else
 			ShowError("noclient")
 		End If
@@ -2240,7 +2246,7 @@ Public Class Form1
 	Private Sub RecallBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RecallBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".recall")
+            Ultima.Client.SendText(".sa_recall")
 		Else
 			ShowError("noclient")
 		End If
@@ -2248,7 +2254,7 @@ Public Class Form1
 	Private Sub MakeTeleBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MakeTeleBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".maketele")
+            Ultima.Client.SendText(".sa_maketele")
 		Else
 			ShowError("noclient")
 		End If
@@ -2265,7 +2271,7 @@ Public Class Form1
 	Private Sub LogNotifyBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogNotifyBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".lognotify")
+            Ultima.Client.SendText(".sa_lognotify")
 		Else
 			ShowError("noclient")
 		End If
@@ -2282,9 +2288,9 @@ Public Class Form1
 				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
 				Ultima.Client.BringToTop()
 				If (BroadcastDialog.EveryoneOnline.Checked = True) Then
-					Ultima.Client.SendText(".bcast " & BroadcastDialog.BCastMessage.Text)
+                    Ultima.Client.SendText(".sa_bcast " & BroadcastDialog.BCastMessage.Text)
 				Else
-					Ultima.Client.SendText(".gms " & BroadcastDialog.BCastMessage.Text)
+                    Ultima.Client.SendText(".sa_gms " & BroadcastDialog.BCastMessage.Text)
 				End If
 			End If
 			BroadcastDialog.Dispose()
@@ -2296,7 +2302,7 @@ Public Class Form1
 	Private Sub HelpQueueBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HelpQueueBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".q")
+            Ultima.Client.SendText(".sa_counpage")
 		Else
 			ShowError("noclient")
 		End If
@@ -2304,19 +2310,27 @@ Public Class Form1
 	Private Sub NightsightBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NightsightBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".light")
+            Ultima.Client.SendText(".sa_nsight")
 		Else
 			ShowError("noclient")
 		End If
 	End Sub
-	Private Sub BankBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BankBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".bank")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+    Private Sub BankBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BankBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".sa_openbank")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub PackBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PackBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".sa_openpack")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
 	'#################################################'
 	'################## TRAVEL TAB ###################'
@@ -2433,7 +2447,7 @@ Public Class Form1
 			Try
 				If (TravelLocationList.SelectedNode.Name IsNot Nothing) Then
 					Ultima.Client.BringToTop()
-					Ultima.Client.SendText(".goxyz " & TravelLocationList.SelectedNode.Name.Replace(",", " "))
+                    Ultima.Client.SendText(".sa_goxyz " & TravelLocationList.SelectedNode.Name.Replace(",", " "))
 				End If
 			Catch ex As Exception
 				Exit Sub
@@ -2445,7 +2459,7 @@ Public Class Form1
 	Private Sub GotoBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GotoBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".goto")
+            Ultima.Client.SendText(".sa_goto")
 		Else
 			ShowError("noclient")
 		End If
@@ -2465,7 +2479,7 @@ Public Class Form1
 				INIHandler.Sections.Sections("TRAVEL TAB").Settings.Set("GoXYZ_ZCoord", GoXYZDialog.ZCoord.Text)
 				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
 				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".goxyz " & GoXYZDialog.XCoord.Text & " " & GoXYZDialog.YCoord.Text & " " & GoXYZDialog.ZCoord.Text)
+                Ultima.Client.SendText(".sa_goxyz " & GoXYZDialog.XCoord.Text & " " & GoXYZDialog.YCoord.Text & " " & GoXYZDialog.ZCoord.Text)
 			End If
 			GoXYZDialog.Dispose()
 		Else
@@ -2484,7 +2498,7 @@ Public Class Form1
 	Private Sub TeleBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TeleBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".tele")
+            Ultima.Client.SendText(".sa_tele")
 		Else
 			ShowError("noclient")
 		End If
@@ -2492,7 +2506,7 @@ Public Class Form1
 	Private Sub MTeleBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MTeleBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".mtele")
+            Ultima.Client.SendText(".sa_mtele")
 		Else
 			ShowError("noclient")
 		End If
@@ -2765,8 +2779,9 @@ Public Class Form1
 	Private Sub LaunchNSClientBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LaunchNSClientBtn.Click
 		If ((My.Settings.NightscapeLocation <> "") And (Ultima.Client.Running = False)) Then
 			Dim NSClient As New Process
-			NSClient.StartInfo.FileName = "nsclient.exe"
-			NSClient.StartInfo.UseShellExecute = True
+            'NSClient.StartInfo.FileName = "nsclient.exe"
+            NSClient.StartInfo.FileName = "Decrypted_client.exe"
+            NSClient.StartInfo.UseShellExecute = True
 			NSClient.StartInfo.WorkingDirectory = My.Settings.NightscapeLocation
 			Try
 				NSClient.Start()
@@ -3404,7 +3419,7 @@ Public Class Form1
 	Private Sub QC_ConcealMeMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles QC_ConcealMeMenuItem.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".concealme")
+            Ultima.Client.SendText(".sa_concealme")
 		Else
 			ShowError("noclient")
 		End If
@@ -3412,7 +3427,7 @@ Public Class Form1
 	Private Sub QC_RevealMeMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles QC_RevealMeMenuItem.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".revealme")
+            Ultima.Client.SendText(".sa_unconcealme")
 		Else
 			ShowError("noclient")
 		End If
@@ -3420,7 +3435,7 @@ Public Class Form1
 	Private Sub QC_GMFormMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles QC_GMFormMenuItem.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".gmform")
+            Ultima.Client.SendText(".sa_gmform")
 		Else
 			ShowError("noclient")
 		End If
@@ -3428,7 +3443,7 @@ Public Class Form1
 	Private Sub QC_MyFormMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles QC_MyFormMenuItem.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".myform")
+            Ultima.Client.SendText(".sa_myform")
 		Else
 			ShowError("noclient")
 		End If
@@ -3436,7 +3451,7 @@ Public Class Form1
 	Private Sub QC_SaveShardMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles QC_SaveShardMenuItem.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".save")
+            Ultima.Client.SendText(".sa_savenow")
 		Else
 			ShowError("noclient")
 		End If
@@ -3548,8 +3563,9 @@ Public Class Form1
 				If (Result = Windows.Forms.DialogResult.Yes) Then
 					If (Ultima.Client.Running = False) Then
 						Dim Client As New Process
-						Client.StartInfo.FileName = "nsclient.exe"
-						Client.StartInfo.UseShellExecute = True
+                        'Client.StartInfo.FileName = "nsclient.exe"
+                        Client.StartInfo.FileName = "Decrypted_client.exe"
+                        Client.StartInfo.UseShellExecute = True
 						Client.StartInfo.WorkingDirectory = My.Settings.NightscapeLocation
 						Client.EnableRaisingEvents = False
 						Try

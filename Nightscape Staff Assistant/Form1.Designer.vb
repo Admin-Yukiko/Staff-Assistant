@@ -19,392 +19,392 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.TabControl1 = New System.Windows.Forms.TabControl
-        Me.AdminTab = New System.Windows.Forms.TabPage
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox
-        Me.MessagePlayerBtn = New System.Windows.Forms.Button
-        Me.InvulPlayerBtn = New System.Windows.Forms.Button
-        Me.HidePlayerBtn = New System.Windows.Forms.Button
-        Me.BarberPlayerBtn = New System.Windows.Forms.Button
-        Me.SetPlayerStatBtn = New System.Windows.Forms.Button
-        Me.SetPlayerSkillBtn = New System.Windows.Forms.Button
-        Me.ForgivePlayerBtn = New System.Windows.Forms.Button
-        Me.SquelchPlayerBtn = New System.Windows.Forms.Button
-        Me.ResPlayerBtn = New System.Windows.Forms.Button
-        Me.RefreshPlayerBtn = New System.Windows.Forms.Button
-        Me.ThawPlayerBtn = New System.Windows.Forms.Button
-        Me.JailPlayerBtn = New System.Windows.Forms.Button
-        Me.FreezePlayerBtn = New System.Windows.Forms.Button
-        Me.KickPlayerBtn = New System.Windows.Forms.Button
-        Me.KillPlayerBtn = New System.Windows.Forms.Button
-        Me.GetPlayerInfoBtn = New System.Windows.Forms.Button
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.RevokePrivBtn = New System.Windows.Forms.Button
-        Me.GrantPrivBtn = New System.Windows.Forms.Button
-        Me.MakeSeerBtn = New System.Windows.Forms.Button
-        Me.SetCmdLvlBtn = New System.Windows.Forms.Button
-        Me.WipeAccountBtn = New System.Windows.Forms.Button
-        Me.UnBanAccountBtn = New System.Windows.Forms.Button
-        Me.BanAccountBtn = New System.Windows.Forms.Button
-        Me.CreateAccountBtn = New System.Windows.Forms.Button
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.UnloadCFGBtn = New System.Windows.Forms.Button
-        Me.UnloadAllBtn = New System.Windows.Forms.Button
-        Me.UnloadScriptBtn = New System.Windows.Forms.Button
-        Me.KillScriptsBtn = New System.Windows.Forms.Button
-        Me.ShutdownNowBtn = New System.Windows.Forms.Button
-        Me.ShutdownBtn = New System.Windows.Forms.Button
-        Me.SaveShardBtn = New System.Windows.Forms.Button
-        Me.BuildTab = New System.Windows.Forms.TabPage
-        Me.DestroyRadiusBtn1 = New System.Windows.Forms.Button
-        Me.DestroyMultipleBtn1 = New System.Windows.Forms.Button
-        Me.DestroyBtn1 = New System.Windows.Forms.Button
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox
-        Me.FoundationCreatorbtn = New System.Windows.Forms.Button
-        Me.RandomTileBtn1 = New System.Windows.Forms.Button
-        Me.RoofCreatorBtn = New System.Windows.Forms.Button
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox
-        Me.CreateTiledBtn1 = New System.Windows.Forms.Button
-        Me.CreateTargetBtn1 = New System.Windows.Forms.Button
-        Me.CreatePackBtn1 = New System.Windows.Forms.Button
-        Me.CreateFeetBtn1 = New System.Windows.Forms.Button
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox
-        Me.BldngItemID = New System.Windows.Forms.Label
-        Me.BldngItemPreview = New System.Windows.Forms.PictureBox
-        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
-        Me.BldngCategoryTree = New System.Windows.Forms.TreeView
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.AdminTab = New System.Windows.Forms.TabPage()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.MessagePlayerBtn = New System.Windows.Forms.Button()
+        Me.InvulPlayerBtn = New System.Windows.Forms.Button()
+        Me.HidePlayerBtn = New System.Windows.Forms.Button()
+        Me.BarberPlayerBtn = New System.Windows.Forms.Button()
+        Me.SetPlayerStatBtn = New System.Windows.Forms.Button()
+        Me.SetPlayerSkillBtn = New System.Windows.Forms.Button()
+        Me.ForgivePlayerBtn = New System.Windows.Forms.Button()
+        Me.SquelchPlayerBtn = New System.Windows.Forms.Button()
+        Me.ResPlayerBtn = New System.Windows.Forms.Button()
+        Me.RefreshPlayerBtn = New System.Windows.Forms.Button()
+        Me.ThawPlayerBtn = New System.Windows.Forms.Button()
+        Me.JailPlayerBtn = New System.Windows.Forms.Button()
+        Me.FreezePlayerBtn = New System.Windows.Forms.Button()
+        Me.KickPlayerBtn = New System.Windows.Forms.Button()
+        Me.KillPlayerBtn = New System.Windows.Forms.Button()
+        Me.GetPlayerInfoBtn = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.RevokePrivBtn = New System.Windows.Forms.Button()
+        Me.GrantPrivBtn = New System.Windows.Forms.Button()
+        Me.MakeSeerBtn = New System.Windows.Forms.Button()
+        Me.SetCmdLvlBtn = New System.Windows.Forms.Button()
+        Me.WipeAccountBtn = New System.Windows.Forms.Button()
+        Me.UnBanAccountBtn = New System.Windows.Forms.Button()
+        Me.BanAccountBtn = New System.Windows.Forms.Button()
+        Me.CreateAccountBtn = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.UnloadCFGBtn = New System.Windows.Forms.Button()
+        Me.UnloadAllBtn = New System.Windows.Forms.Button()
+        Me.UnloadScriptBtn = New System.Windows.Forms.Button()
+        Me.KillScriptsBtn = New System.Windows.Forms.Button()
+        Me.ShutdownNowBtn = New System.Windows.Forms.Button()
+        Me.ShutdownBtn = New System.Windows.Forms.Button()
+        Me.SaveShardBtn = New System.Windows.Forms.Button()
+        Me.BuildTab = New System.Windows.Forms.TabPage()
+        Me.DestroyRadiusBtn1 = New System.Windows.Forms.Button()
+        Me.DestroyMultipleBtn1 = New System.Windows.Forms.Button()
+        Me.DestroyBtn1 = New System.Windows.Forms.Button()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.FoundationCreatorbtn = New System.Windows.Forms.Button()
+        Me.RandomTileBtn1 = New System.Windows.Forms.Button()
+        Me.RoofCreatorBtn = New System.Windows.Forms.Button()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.CreateTiledBtn1 = New System.Windows.Forms.Button()
+        Me.CreateTargetBtn1 = New System.Windows.Forms.Button()
+        Me.CreatePackBtn1 = New System.Windows.Forms.Button()
+        Me.CreateFeetBtn1 = New System.Windows.Forms.Button()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.BldngItemID = New System.Windows.Forms.Label()
+        Me.BldngItemPreview = New System.Windows.Forms.PictureBox()
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.BldngCategoryTree = New System.Windows.Forms.TreeView()
         Me.Collapse_ExpandMenu1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.CollapseMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ExpandMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator
-        Me.SearchNameMenuItem1 = New System.Windows.Forms.ToolStripTextBox
-        Me.SearchIDMenuItem1 = New System.Windows.Forms.ToolStripTextBox
-        Me.BldngItemList = New System.Windows.Forms.TreeView
-        Me.ItemsTab = New System.Windows.Forms.TabPage
-        Me.DestroyRadiusBtn2 = New System.Windows.Forms.Button
-        Me.DestroyMultipleBtn2 = New System.Windows.Forms.Button
-        Me.DestroyBtn2 = New System.Windows.Forms.Button
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox
-        Me.unusedBtn = New System.Windows.Forms.Button
-        Me.RandomTileBtn2 = New System.Windows.Forms.Button
-        Me.HueItemBtn = New System.Windows.Forms.Button
-        Me.GroupBox8 = New System.Windows.Forms.GroupBox
-        Me.CreateTiledBtn2 = New System.Windows.Forms.Button
-        Me.CreateTargetBtn2 = New System.Windows.Forms.Button
-        Me.CreatePackBtn2 = New System.Windows.Forms.Button
-        Me.CreateFeetBtn2 = New System.Windows.Forms.Button
-        Me.GroupBox9 = New System.Windows.Forms.GroupBox
-        Me.ItemItemID = New System.Windows.Forms.Label
-        Me.ItemItemPreview = New System.Windows.Forms.PictureBox
-        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer
-        Me.ItemCategoryTree = New System.Windows.Forms.TreeView
+        Me.CollapseMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExpandMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.SearchNameMenuItem1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.SearchIDMenuItem1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.BldngItemList = New System.Windows.Forms.TreeView()
+        Me.ItemsTab = New System.Windows.Forms.TabPage()
+        Me.DestroyRadiusBtn2 = New System.Windows.Forms.Button()
+        Me.DestroyMultipleBtn2 = New System.Windows.Forms.Button()
+        Me.DestroyBtn2 = New System.Windows.Forms.Button()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.unusedBtn = New System.Windows.Forms.Button()
+        Me.RandomTileBtn2 = New System.Windows.Forms.Button()
+        Me.HueItemBtn = New System.Windows.Forms.Button()
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.CreateTiledBtn2 = New System.Windows.Forms.Button()
+        Me.CreateTargetBtn2 = New System.Windows.Forms.Button()
+        Me.CreatePackBtn2 = New System.Windows.Forms.Button()
+        Me.CreateFeetBtn2 = New System.Windows.Forms.Button()
+        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.ItemItemID = New System.Windows.Forms.Label()
+        Me.ItemItemPreview = New System.Windows.Forms.PictureBox()
+        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
+        Me.ItemCategoryTree = New System.Windows.Forms.TreeView()
         Me.Collapse_ExpandMenu2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.CollapseMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ExpandMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator
-        Me.SearchNameMenuItem2 = New System.Windows.Forms.ToolStripTextBox
-        Me.SearchIDMenuItem2 = New System.Windows.Forms.ToolStripTextBox
-        Me.ItemItemList = New System.Windows.Forms.TreeView
-        Me.ItemTweakTab = New System.Windows.Forms.TabPage
-        Me.Button4 = New System.Windows.Forms.Button
-        Me.Button2 = New System.Windows.Forms.Button
-        Me.MassMoveBtn = New System.Windows.Forms.Button
-        Me.CopyItemsBtn = New System.Windows.Forms.Button
-        Me.PasteItemsBtn = New System.Windows.Forms.Button
-        Me.CopyPasteBtn = New System.Windows.Forms.Button
-        Me.GroupBox12 = New System.Windows.Forms.GroupBox
-        Me.Button3 = New System.Windows.Forms.Button
-        Me.MoveContBtn = New System.Windows.Forms.Button
-        Me.RelockBtn = New System.Windows.Forms.Button
-        Me.KeyBtn = New System.Windows.Forms.Button
-        Me.RekeyBtn = New System.Windows.Forms.Button
-        Me.UnlockBtn = New System.Windows.Forms.Button
-        Me.LockBtn = New System.Windows.Forms.Button
-        Me.GroupBox11 = New System.Windows.Forms.GroupBox
-        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown
-        Me.LockRadiusBtn = New System.Windows.Forms.Button
-        Me.RenameItemBtn = New System.Windows.Forms.Button
-        Me.LockDownBtn = New System.Windows.Forms.Button
-        Me.ReleaseItemBtn = New System.Windows.Forms.Button
-        Me.MoveItemBtn = New System.Windows.Forms.Button
-        Me.ItemInfoBtn = New System.Windows.Forms.Button
-        Me.GroupBox10 = New System.Windows.Forms.GroupBox
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
-        Me.NudgeWestBtn = New System.Windows.Forms.Button
-        Me.NudgeDownBtn = New System.Windows.Forms.Button
-        Me.HeightVal = New System.Windows.Forms.NumericUpDown
-        Me.NudgeEastBtn = New System.Windows.Forms.Button
-        Me.NudgeSouthBtn = New System.Windows.Forms.Button
-        Me.NudgeUpBtn = New System.Windows.Forms.Button
-        Me.CopyNudgeChk = New System.Windows.Forms.CheckBox
-        Me.NudgeNorthBtn = New System.Windows.Forms.Button
-        Me.MultipleNudgeChk = New System.Windows.Forms.CheckBox
-        Me.NudgeVal = New System.Windows.Forms.NumericUpDown
-        Me.NPCTab = New System.Windows.Forms.TabPage
-        Me.Button33 = New System.Windows.Forms.Button
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.Button30 = New System.Windows.Forms.Button
-        Me.Button31 = New System.Windows.Forms.Button
-        Me.KillNPC = New System.Windows.Forms.Button
-        Me.Button29 = New System.Windows.Forms.Button
-        Me.CreateGroup = New System.Windows.Forms.Button
-        Me.CreateNPCHidden = New System.Windows.Forms.Button
-        Me.CreateNPC = New System.Windows.Forms.Button
-        Me.GroupBox23 = New System.Windows.Forms.GroupBox
-        Me.NPCAnimationError = New System.Windows.Forms.Label
-        Me.DecreaseAnimationSpeed = New System.Windows.Forms.Button
-        Me.IncreaseAnimationSpeed = New System.Windows.Forms.Button
-        Me.NPCPreviewID = New System.Windows.Forms.Label
-        Me.NPCPreviewImage = New System.Windows.Forms.PictureBox
-        Me.SplitContainer4 = New System.Windows.Forms.SplitContainer
-        Me.NPCCategoryList = New System.Windows.Forms.TreeView
+        Me.CollapseMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExpandMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.SearchNameMenuItem2 = New System.Windows.Forms.ToolStripTextBox()
+        Me.SearchIDMenuItem2 = New System.Windows.Forms.ToolStripTextBox()
+        Me.ItemItemList = New System.Windows.Forms.TreeView()
+        Me.ItemTweakTab = New System.Windows.Forms.TabPage()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.MassMoveBtn = New System.Windows.Forms.Button()
+        Me.CopyItemsBtn = New System.Windows.Forms.Button()
+        Me.PasteItemsBtn = New System.Windows.Forms.Button()
+        Me.CopyPasteBtn = New System.Windows.Forms.Button()
+        Me.GroupBox12 = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.MoveContBtn = New System.Windows.Forms.Button()
+        Me.RelockBtn = New System.Windows.Forms.Button()
+        Me.KeyBtn = New System.Windows.Forms.Button()
+        Me.RekeyBtn = New System.Windows.Forms.Button()
+        Me.UnlockBtn = New System.Windows.Forms.Button()
+        Me.LockBtn = New System.Windows.Forms.Button()
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
+        Me.LockRadiusBtn = New System.Windows.Forms.Button()
+        Me.RenameItemBtn = New System.Windows.Forms.Button()
+        Me.LockDownBtn = New System.Windows.Forms.Button()
+        Me.ReleaseItemBtn = New System.Windows.Forms.Button()
+        Me.MoveItemBtn = New System.Windows.Forms.Button()
+        Me.ItemInfoBtn = New System.Windows.Forms.Button()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.NudgeWestBtn = New System.Windows.Forms.Button()
+        Me.NudgeDownBtn = New System.Windows.Forms.Button()
+        Me.HeightVal = New System.Windows.Forms.NumericUpDown()
+        Me.NudgeEastBtn = New System.Windows.Forms.Button()
+        Me.NudgeSouthBtn = New System.Windows.Forms.Button()
+        Me.NudgeUpBtn = New System.Windows.Forms.Button()
+        Me.CopyNudgeChk = New System.Windows.Forms.CheckBox()
+        Me.NudgeNorthBtn = New System.Windows.Forms.Button()
+        Me.MultipleNudgeChk = New System.Windows.Forms.CheckBox()
+        Me.NudgeVal = New System.Windows.Forms.NumericUpDown()
+        Me.NPCTab = New System.Windows.Forms.TabPage()
+        Me.Button33 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button30 = New System.Windows.Forms.Button()
+        Me.Button31 = New System.Windows.Forms.Button()
+        Me.KillNPC = New System.Windows.Forms.Button()
+        Me.Button29 = New System.Windows.Forms.Button()
+        Me.CreateGroup = New System.Windows.Forms.Button()
+        Me.CreateNPCHidden = New System.Windows.Forms.Button()
+        Me.CreateNPC = New System.Windows.Forms.Button()
+        Me.GroupBox23 = New System.Windows.Forms.GroupBox()
+        Me.NPCAnimationError = New System.Windows.Forms.Label()
+        Me.DecreaseAnimationSpeed = New System.Windows.Forms.Button()
+        Me.IncreaseAnimationSpeed = New System.Windows.Forms.Button()
+        Me.NPCPreviewID = New System.Windows.Forms.Label()
+        Me.NPCPreviewImage = New System.Windows.Forms.PictureBox()
+        Me.SplitContainer4 = New System.Windows.Forms.SplitContainer()
+        Me.NPCCategoryList = New System.Windows.Forms.TreeView()
         Me.Collapse_ExpandMenu3 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.CollapseMenuItem3 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ExpandMenuItem3 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator
-        Me.SearchByNameTextBox3 = New System.Windows.Forms.ToolStripTextBox
-        Me.NPCList = New System.Windows.Forms.TreeView
-        Me.NPCTweakTab = New System.Windows.Forms.TabPage
-        Me.GroupBox26 = New System.Windows.Forms.GroupBox
-        Me.Button28 = New System.Windows.Forms.Button
-        Me.FreezeNPC = New System.Windows.Forms.Button
-        Me.Tame = New System.Windows.Forms.Button
-        Me.Button25 = New System.Windows.Forms.Button
-        Me.RefreshNPC = New System.Windows.Forms.Button
-        Me.ThawNPC = New System.Windows.Forms.Button
-        Me.SetNPCMurderer = New System.Windows.Forms.Button
-        Me.Button21 = New System.Windows.Forms.Button
-        Me.SetNPCCriminal = New System.Windows.Forms.Button
-        Me.Button19 = New System.Windows.Forms.Button
-        Me.EquipFromTemplate = New System.Windows.Forms.Button
-        Me.HideNPC = New System.Windows.Forms.Button
-        Me.EquipItem = New System.Windows.Forms.Button
-        Me.RestartAI = New System.Windows.Forms.Button
-        Me.GetNPCInfo = New System.Windows.Forms.Button
-        Me.GroupBox25 = New System.Windows.Forms.GroupBox
-        Me.RunTo = New System.Windows.Forms.Button
-        Me.WalkTo = New System.Windows.Forms.Button
-        Me.Action = New System.Windows.Forms.Button
-        Me.SayAbove = New System.Windows.Forms.Button
-        Me.GroupBox24 = New System.Windows.Forms.GroupBox
-        Me.NoProvoke = New System.Windows.Forms.Button
-        Me.NoTame = New System.Windows.Forms.Button
-        Me.CopyLook = New System.Windows.Forms.Button
-        Me.NPCRename = New System.Windows.Forms.Button
-        Me.NPCSetInvul = New System.Windows.Forms.Button
-        Me.NPCBarber = New System.Windows.Forms.Button
-        Me.SetNPCStat = New System.Windows.Forms.Button
-        Me.SetNPCSkill = New System.Windows.Forms.Button
-        Me.GMTab = New System.Windows.Forms.TabPage
-        Me.GroupBox16 = New System.Windows.Forms.GroupBox
-        Me.BankBtn = New System.Windows.Forms.Button
-        Me.NightsightBtn = New System.Windows.Forms.Button
-        Me.HelpQueueBtn = New System.Windows.Forms.Button
-        Me.unusedBtn3 = New System.Windows.Forms.Button
-        Me.unusedBtn2 = New System.Windows.Forms.Button
-        Me.BroadcastBtn = New System.Windows.Forms.Button
-        Me.LogNotifyBtn = New System.Windows.Forms.Button
-        Me.GroupBox15 = New System.Windows.Forms.GroupBox
-        Me.AddGoBtn = New System.Windows.Forms.Button
-        Me.MakeTeleBtn = New System.Windows.Forms.Button
-        Me.RecallBtn = New System.Windows.Forms.Button
-        Me.MarkBtn = New System.Windows.Forms.Button
-        Me.GroupBox14 = New System.Windows.Forms.GroupBox
-        Me.PropEditBtn = New System.Windows.Forms.Button
-        Me.AddGlobalPropBtn = New System.Windows.Forms.Button
-        Me.SetGlobalPropBtn = New System.Windows.Forms.Button
-        Me.AddObjPropBtn = New System.Windows.Forms.Button
-        Me.SetObjPropBtn = New System.Windows.Forms.Button
-        Me.DelGlobalPropBtn = New System.Windows.Forms.Button
-        Me.DelObjPropBtn = New System.Windows.Forms.Button
-        Me.GroupBox13 = New System.Windows.Forms.GroupBox
-        Me.PowerUpBtn = New System.Windows.Forms.Button
-        Me.ThawMeBtn = New System.Windows.Forms.Button
-        Me.MyFormBtn = New System.Windows.Forms.Button
-        Me.GmFormBtn = New System.Windows.Forms.Button
-        Me.RefreshMeBtn = New System.Windows.Forms.Button
-        Me.ResMeBtn = New System.Windows.Forms.Button
-        Me.RevealMeBtn = New System.Windows.Forms.Button
-        Me.ConcealMeBtn = New System.Windows.Forms.Button
-        Me.TravelTab = New System.Windows.Forms.TabPage
-        Me.GoMenuBtn = New System.Windows.Forms.Button
-        Me.GoXYZBtn = New System.Windows.Forms.Button
-        Me.GotoBtn = New System.Windows.Forms.Button
-        Me.GoBtn = New System.Windows.Forms.Button
-        Me.WhereBtn = New System.Windows.Forms.Button
-        Me.TeleToBtn = New System.Windows.Forms.Button
-        Me.MTeleBtn = New System.Windows.Forms.Button
-        Me.TeleBtn = New System.Windows.Forms.Button
-        Me.GroupBox17 = New System.Windows.Forms.GroupBox
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox
-        Me.ExpandMapBtn = New System.Windows.Forms.Button
-        Me.ZoomOutMapBtn = New System.Windows.Forms.Button
-        Me.ZoomInMapBtn = New System.Windows.Forms.Button
-        Me.TravelCoordsText = New System.Windows.Forms.Label
-        Me.SplitContainer3 = New System.Windows.Forms.SplitContainer
-        Me.TravelCategoryList = New System.Windows.Forms.TreeView
+        Me.CollapseMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExpandMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.SearchByNameTextBox3 = New System.Windows.Forms.ToolStripTextBox()
+        Me.NPCList = New System.Windows.Forms.TreeView()
+        Me.NPCTweakTab = New System.Windows.Forms.TabPage()
+        Me.GroupBox26 = New System.Windows.Forms.GroupBox()
+        Me.Button28 = New System.Windows.Forms.Button()
+        Me.FreezeNPC = New System.Windows.Forms.Button()
+        Me.Tame = New System.Windows.Forms.Button()
+        Me.Button25 = New System.Windows.Forms.Button()
+        Me.RefreshNPC = New System.Windows.Forms.Button()
+        Me.ThawNPC = New System.Windows.Forms.Button()
+        Me.SetNPCMurderer = New System.Windows.Forms.Button()
+        Me.Button21 = New System.Windows.Forms.Button()
+        Me.SetNPCCriminal = New System.Windows.Forms.Button()
+        Me.Button19 = New System.Windows.Forms.Button()
+        Me.EquipFromTemplate = New System.Windows.Forms.Button()
+        Me.HideNPC = New System.Windows.Forms.Button()
+        Me.EquipItem = New System.Windows.Forms.Button()
+        Me.RestartAI = New System.Windows.Forms.Button()
+        Me.GetNPCInfo = New System.Windows.Forms.Button()
+        Me.GroupBox25 = New System.Windows.Forms.GroupBox()
+        Me.RunTo = New System.Windows.Forms.Button()
+        Me.WalkTo = New System.Windows.Forms.Button()
+        Me.Action = New System.Windows.Forms.Button()
+        Me.SayAbove = New System.Windows.Forms.Button()
+        Me.GroupBox24 = New System.Windows.Forms.GroupBox()
+        Me.NoProvoke = New System.Windows.Forms.Button()
+        Me.NoTame = New System.Windows.Forms.Button()
+        Me.CopyLook = New System.Windows.Forms.Button()
+        Me.NPCRename = New System.Windows.Forms.Button()
+        Me.NPCSetInvul = New System.Windows.Forms.Button()
+        Me.NPCBarber = New System.Windows.Forms.Button()
+        Me.SetNPCStat = New System.Windows.Forms.Button()
+        Me.SetNPCSkill = New System.Windows.Forms.Button()
+        Me.GMTab = New System.Windows.Forms.TabPage()
+        Me.GroupBox16 = New System.Windows.Forms.GroupBox()
+        Me.BankBtn = New System.Windows.Forms.Button()
+        Me.NightsightBtn = New System.Windows.Forms.Button()
+        Me.HelpQueueBtn = New System.Windows.Forms.Button()
+        Me.PackBtn = New System.Windows.Forms.Button()
+        Me.unusedBtn2 = New System.Windows.Forms.Button()
+        Me.BroadcastBtn = New System.Windows.Forms.Button()
+        Me.LogNotifyBtn = New System.Windows.Forms.Button()
+        Me.GroupBox15 = New System.Windows.Forms.GroupBox()
+        Me.AddGoBtn = New System.Windows.Forms.Button()
+        Me.MakeTeleBtn = New System.Windows.Forms.Button()
+        Me.RecallBtn = New System.Windows.Forms.Button()
+        Me.MarkBtn = New System.Windows.Forms.Button()
+        Me.GroupBox14 = New System.Windows.Forms.GroupBox()
+        Me.PropEditBtn = New System.Windows.Forms.Button()
+        Me.AddGlobalPropBtn = New System.Windows.Forms.Button()
+        Me.SetGlobalPropBtn = New System.Windows.Forms.Button()
+        Me.AddObjPropBtn = New System.Windows.Forms.Button()
+        Me.SetObjPropBtn = New System.Windows.Forms.Button()
+        Me.DelGlobalPropBtn = New System.Windows.Forms.Button()
+        Me.DelObjPropBtn = New System.Windows.Forms.Button()
+        Me.GroupBox13 = New System.Windows.Forms.GroupBox()
+        Me.PowerUpBtn = New System.Windows.Forms.Button()
+        Me.ThawMeBtn = New System.Windows.Forms.Button()
+        Me.MyFormBtn = New System.Windows.Forms.Button()
+        Me.GmFormBtn = New System.Windows.Forms.Button()
+        Me.RefreshMeBtn = New System.Windows.Forms.Button()
+        Me.ResMeBtn = New System.Windows.Forms.Button()
+        Me.RevealMeBtn = New System.Windows.Forms.Button()
+        Me.ConcealMeBtn = New System.Windows.Forms.Button()
+        Me.TravelTab = New System.Windows.Forms.TabPage()
+        Me.GoMenuBtn = New System.Windows.Forms.Button()
+        Me.GoXYZBtn = New System.Windows.Forms.Button()
+        Me.GotoBtn = New System.Windows.Forms.Button()
+        Me.GoBtn = New System.Windows.Forms.Button()
+        Me.WhereBtn = New System.Windows.Forms.Button()
+        Me.TeleToBtn = New System.Windows.Forms.Button()
+        Me.MTeleBtn = New System.Windows.Forms.Button()
+        Me.TeleBtn = New System.Windows.Forms.Button()
+        Me.GroupBox17 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.ExpandMapBtn = New System.Windows.Forms.Button()
+        Me.ZoomOutMapBtn = New System.Windows.Forms.Button()
+        Me.ZoomInMapBtn = New System.Windows.Forms.Button()
+        Me.TravelCoordsText = New System.Windows.Forms.Label()
+        Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
+        Me.TravelCategoryList = New System.Windows.Forms.TreeView()
         Me.Collapse_ExpandMenu4 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.CollapseMenuItem4 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ExpandMenuItem4 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator
-        Me.SearchByNameTextBox4 = New System.Windows.Forms.ToolStripTextBox
-        Me.TravelLocationList = New System.Windows.Forms.TreeView
-        Me.ToolsTab = New System.Windows.Forms.TabPage
-        Me.GroupBox27 = New System.Windows.Forms.GroupBox
-        Me.TextToSpeechBtn = New System.Windows.Forms.Button
-        Me.toolbtn1 = New System.Windows.Forms.Button
-        Me.toolBtn3 = New System.Windows.Forms.Button
-        Me.toolbtn2 = New System.Windows.Forms.Button
-        Me.GroupBox20 = New System.Windows.Forms.GroupBox
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel
-        Me.LaunchInsideUOBtn = New System.Windows.Forms.Button
-        Me.UserLaunch1Btn = New System.Windows.Forms.Button
+        Me.CollapseMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExpandMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
+        Me.SearchByNameTextBox4 = New System.Windows.Forms.ToolStripTextBox()
+        Me.TravelLocationList = New System.Windows.Forms.TreeView()
+        Me.ToolsTab = New System.Windows.Forms.TabPage()
+        Me.GroupBox27 = New System.Windows.Forms.GroupBox()
+        Me.TextToSpeechBtn = New System.Windows.Forms.Button()
+        Me.toolbtn1 = New System.Windows.Forms.Button()
+        Me.toolBtn3 = New System.Windows.Forms.Button()
+        Me.toolbtn2 = New System.Windows.Forms.Button()
+        Me.GroupBox20 = New System.Windows.Forms.GroupBox()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.LaunchInsideUOBtn = New System.Windows.Forms.Button()
+        Me.UserLaunch1Btn = New System.Windows.Forms.Button()
         Me.UserLaunchBtn1_ContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.AssignProgramMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ClearButtonMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.UserLaunch4Btn = New System.Windows.Forms.Button
+        Me.AssignProgramMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClearButtonMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UserLaunch4Btn = New System.Windows.Forms.Button()
         Me.UserLaunchBtn4_ContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.AssignProgramMenuItem4 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ClearButtonMenuItem4 = New System.Windows.Forms.ToolStripMenuItem
-        Me.UserLaunch3Btn = New System.Windows.Forms.Button
+        Me.AssignProgramMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClearButtonMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UserLaunch3Btn = New System.Windows.Forms.Button()
         Me.UserLaunchBtn3_ContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.AssignProgramMenuItem3 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ClearButtonMenuItem3 = New System.Windows.Forms.ToolStripMenuItem
-        Me.UserLaunch2Btn = New System.Windows.Forms.Button
+        Me.AssignProgramMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClearButtonMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UserLaunch2Btn = New System.Windows.Forms.Button()
         Me.UserLaunchBtn2_ContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.AssignProgramMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ClearButtonMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
-        Me.LaunchNSClientBtn = New System.Windows.Forms.Button
-        Me.LaunchPatchClientBtn = New System.Windows.Forms.Button
-        Me.GroupBox19 = New System.Windows.Forms.GroupBox
-        Me.CalcEqualBtn = New System.Windows.Forms.Button
-        Me.CalcClearBtn = New System.Windows.Forms.Button
-        Me.CalcAddBtn = New System.Windows.Forms.Button
-        Me.CalcSubtractBtn = New System.Windows.Forms.Button
-        Me.CalcMultiplyBtn = New System.Windows.Forms.Button
-        Me.CalcDivideBtn = New System.Windows.Forms.Button
-        Me.CalcDecimalBtn = New System.Windows.Forms.Button
-        Me.Calc3Btn = New System.Windows.Forms.Button
-        Me.Calc6Btn = New System.Windows.Forms.Button
-        Me.Calc9Btn = New System.Windows.Forms.Button
-        Me.Calc0Btn = New System.Windows.Forms.Button
-        Me.Calc2Btn = New System.Windows.Forms.Button
-        Me.Calc5Btn = New System.Windows.Forms.Button
-        Me.Calc8Btn = New System.Windows.Forms.Button
-        Me.CalcPositiveNegativeBtn = New System.Windows.Forms.Button
-        Me.Calc1Btn = New System.Windows.Forms.Button
-        Me.Calc4Btn = New System.Windows.Forms.Button
-        Me.Calc7Btn = New System.Windows.Forms.Button
-        Me.CalcValueTextBox = New System.Windows.Forms.TextBox
-        Me.GroupBox18 = New System.Windows.Forms.GroupBox
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel
-        Me.DecToHexBtn = New System.Windows.Forms.Button
-        Me.HexToDecBtn = New System.Windows.Forms.Button
-        Me.DecValueTextBox = New System.Windows.Forms.TextBox
-        Me.Label6 = New System.Windows.Forms.Label
-        Me.HexValueTextBox = New System.Windows.Forms.TextBox
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.SettingsTab = New System.Windows.Forms.TabPage
-        Me.GroupBox22 = New System.Windows.Forms.GroupBox
-        Me.AdvancedSettings = New System.Windows.Forms.Button
-        Me.ListEditorBtn = New System.Windows.Forms.Button
-        Me.AboutBtn = New System.Windows.Forms.Button
-        Me.GroupBox21 = New System.Windows.Forms.GroupBox
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel
-        Me.BrowseInsideUOLocationBtn = New System.Windows.Forms.Button
-        Me.BrowseNSLocationBtn = New System.Windows.Forms.Button
-        Me.InsideUOLocationTextBox = New System.Windows.Forms.TextBox
-        Me.Label8 = New System.Windows.Forms.Label
-        Me.NSLocationTextBox = New System.Windows.Forms.TextBox
-        Me.Label7 = New System.Windows.Forms.Label
+        Me.AssignProgramMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClearButtonMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaunchNSClientBtn = New System.Windows.Forms.Button()
+        Me.LaunchPatchClientBtn = New System.Windows.Forms.Button()
+        Me.GroupBox19 = New System.Windows.Forms.GroupBox()
+        Me.CalcEqualBtn = New System.Windows.Forms.Button()
+        Me.CalcClearBtn = New System.Windows.Forms.Button()
+        Me.CalcAddBtn = New System.Windows.Forms.Button()
+        Me.CalcSubtractBtn = New System.Windows.Forms.Button()
+        Me.CalcMultiplyBtn = New System.Windows.Forms.Button()
+        Me.CalcDivideBtn = New System.Windows.Forms.Button()
+        Me.CalcDecimalBtn = New System.Windows.Forms.Button()
+        Me.Calc3Btn = New System.Windows.Forms.Button()
+        Me.Calc6Btn = New System.Windows.Forms.Button()
+        Me.Calc9Btn = New System.Windows.Forms.Button()
+        Me.Calc0Btn = New System.Windows.Forms.Button()
+        Me.Calc2Btn = New System.Windows.Forms.Button()
+        Me.Calc5Btn = New System.Windows.Forms.Button()
+        Me.Calc8Btn = New System.Windows.Forms.Button()
+        Me.CalcPositiveNegativeBtn = New System.Windows.Forms.Button()
+        Me.Calc1Btn = New System.Windows.Forms.Button()
+        Me.Calc4Btn = New System.Windows.Forms.Button()
+        Me.Calc7Btn = New System.Windows.Forms.Button()
+        Me.CalcValueTextBox = New System.Windows.Forms.TextBox()
+        Me.GroupBox18 = New System.Windows.Forms.GroupBox()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.DecToHexBtn = New System.Windows.Forms.Button()
+        Me.HexToDecBtn = New System.Windows.Forms.Button()
+        Me.DecValueTextBox = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.HexValueTextBox = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.SettingsTab = New System.Windows.Forms.TabPage()
+        Me.GroupBox22 = New System.Windows.Forms.GroupBox()
+        Me.AdvancedSettings = New System.Windows.Forms.Button()
+        Me.ListEditorBtn = New System.Windows.Forms.Button()
+        Me.AboutBtn = New System.Windows.Forms.Button()
+        Me.GroupBox21 = New System.Windows.Forms.GroupBox()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.BrowseInsideUOLocationBtn = New System.Windows.Forms.Button()
+        Me.BrowseNSLocationBtn = New System.Windows.Forms.Button()
+        Me.InsideUOLocationTextBox = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.NSLocationTextBox = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.NotifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.NotifyIcon_ContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.RestoreMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator
-        Me.PreferencesMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.OptionsMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.OpacityMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.VisibleMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator
-        Me.Opacity90MenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.Opacity80MenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.Opacity70MenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.Opacity60MenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.Opacity50MenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.Opacity40MenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.Opacity30MenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.Opacity20MenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.Opacity10MenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.OpacityCustomMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.AlwaysOnTopMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
-        Me.CommandsMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_GetInfoMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_KillMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_RessurectMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_JailMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_HideMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_KickMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_MobileCmdsSeparator = New System.Windows.Forms.ToolStripSeparator
-        Me.QC_DestroySItemMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_DestroyMItemsMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_RoofCreatorMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_ItemInfoMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_LockItemMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_LockRadius5MenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_LockRadius10MenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_ItemsCmdsSeparator = New System.Windows.Forms.ToolStripSeparator
-        Me.QC_ConcealMeMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_RevealMeMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_GMFormMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_MyFormMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_SaveShardMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_NightsightMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_HelpQueueMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_PropEditMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_SeerCmdsSeparator = New System.Windows.Forms.ToolStripSeparator
-        Me.QC_MarkMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_RecallMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_WhereMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_GotoPlayerMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_SummonPlayerMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_TeleMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_MTeleMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QC_TeleToMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
-        Me.AboutMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ExitMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.RestoreMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.PreferencesMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OptionsMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpacityMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VisibleMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.Opacity90MenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Opacity80MenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Opacity70MenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Opacity60MenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Opacity50MenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Opacity40MenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Opacity30MenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Opacity20MenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Opacity10MenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpacityCustomMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AlwaysOnTopMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.CommandsMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_GetInfoMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_KillMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_RessurectMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_JailMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_HideMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_KickMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_MobileCmdsSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.QC_DestroySItemMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_DestroyMItemsMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_RoofCreatorMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_ItemInfoMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_LockItemMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_LockRadius5MenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_LockRadius10MenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_ItemsCmdsSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.QC_ConcealMeMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_RevealMeMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_GMFormMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_MyFormMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_SaveShardMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_NightsightMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_HelpQueueMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_PropEditMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_SeerCmdsSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.QC_MarkMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_RecallMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_WhereMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_GotoPlayerMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_SummonPlayerMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_TeleMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_MTeleMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QC_TeleToMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.AboutMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.OpacityTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.PatcherBackgroundWorker = New System.ComponentModel.BackgroundWorker
+        Me.PatcherBackgroundWorker = New System.ComponentModel.BackgroundWorker()
         Me.NPCAnimationTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.MainMenuBtn = New System.Windows.Forms.Button
+        Me.MainMenuBtn = New System.Windows.Forms.Button()
         Me.MainMenu_ContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ToolbarsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.BuildingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator12 = New System.Windows.Forms.ToolStripSeparator
-        Me.ViewersToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ItemViewerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator
-        Me.HelpToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ContentsToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolbarsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.BuildingToolbarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator
-        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.TextToSpeechReaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator
-        Me.ViewersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ArtViewerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ContentsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ContentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ArtViewerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ItemViewerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolbarsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuildingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator12 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ViewersToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ItemViewerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator()
+        Me.HelpToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContentsToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolbarsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuildingToolbarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TextToSpeechReaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ViewersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ArtViewerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContentsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ArtViewerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ItemViewerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.AdminTab.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -541,7 +541,7 @@ Partial Class Form1
         Me.MessagePlayerBtn.TabIndex = 15
         Me.MessagePlayerBtn.Text = "Message"
         Me.ToolTip.SetToolTip(Me.MessagePlayerBtn, "Displays an in-game gump with a list of online players you can send a message to." & _
-                "")
+        "")
         Me.MessagePlayerBtn.UseVisualStyleBackColor = True
         '
         'InvulPlayerBtn
@@ -566,17 +566,19 @@ Partial Class Form1
         '
         'BarberPlayerBtn
         '
+        Me.BarberPlayerBtn.Enabled = False
         Me.BarberPlayerBtn.Location = New System.Drawing.Point(171, 14)
         Me.BarberPlayerBtn.Name = "BarberPlayerBtn"
         Me.BarberPlayerBtn.Size = New System.Drawing.Size(58, 23)
         Me.BarberPlayerBtn.TabIndex = 12
         Me.BarberPlayerBtn.Text = "Barber"
         Me.ToolTip.SetToolTip(Me.BarberPlayerBtn, "Opens the in-game barber menu allowing you to change the hairstyle for the target" & _
-                "ed character.")
+        "ed character.")
         Me.BarberPlayerBtn.UseVisualStyleBackColor = True
         '
         'SetPlayerStatBtn
         '
+        Me.SetPlayerStatBtn.Enabled = False
         Me.SetPlayerStatBtn.Location = New System.Drawing.Point(116, 96)
         Me.SetPlayerStatBtn.Name = "SetPlayerStatBtn"
         Me.SetPlayerStatBtn.Size = New System.Drawing.Size(54, 23)
@@ -587,6 +589,7 @@ Partial Class Form1
         '
         'SetPlayerSkillBtn
         '
+        Me.SetPlayerSkillBtn.Enabled = False
         Me.SetPlayerSkillBtn.Location = New System.Drawing.Point(116, 69)
         Me.SetPlayerSkillBtn.Name = "SetPlayerSkillBtn"
         Me.SetPlayerSkillBtn.Size = New System.Drawing.Size(54, 23)
@@ -612,7 +615,7 @@ Partial Class Form1
         Me.SquelchPlayerBtn.Size = New System.Drawing.Size(54, 23)
         Me.SquelchPlayerBtn.TabIndex = 8
         Me.SquelchPlayerBtn.Text = "Squelch"
-        Me.ToolTip.SetToolTip(Me.SquelchPlayerBtn, "Squelch the targeted character.")
+        Me.ToolTip.SetToolTip(Me.SquelchPlayerBtn, "Squelch the targeted character for 30 seconds.")
         Me.SquelchPlayerBtn.UseVisualStyleBackColor = True
         '
         'ResPlayerBtn
@@ -688,14 +691,14 @@ Partial Class Form1
         '
         'GetPlayerInfoBtn
         '
-        Me.GetPlayerInfoBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GetPlayerInfoBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GetPlayerInfoBtn.Location = New System.Drawing.Point(4, 14)
         Me.GetPlayerInfoBtn.Name = "GetPlayerInfoBtn"
         Me.GetPlayerInfoBtn.Size = New System.Drawing.Size(63, 23)
         Me.GetPlayerInfoBtn.TabIndex = 0
         Me.GetPlayerInfoBtn.Text = "Get Info"
         Me.ToolTip.SetToolTip(Me.GetPlayerInfoBtn, "Display information about the targeted character." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Most information can be edit" & _
-                "ed.")
+        "ed.")
         Me.GetPlayerInfoBtn.UseVisualStyleBackColor = True
         '
         'GroupBox2
@@ -757,6 +760,7 @@ Partial Class Form1
         '
         'WipeAccountBtn
         '
+        Me.WipeAccountBtn.Enabled = False
         Me.WipeAccountBtn.Location = New System.Drawing.Point(4, 96)
         Me.WipeAccountBtn.Name = "WipeAccountBtn"
         Me.WipeAccountBtn.Size = New System.Drawing.Size(91, 23)
@@ -771,7 +775,7 @@ Partial Class Form1
         Me.UnBanAccountBtn.Name = "UnBanAccountBtn"
         Me.UnBanAccountBtn.Size = New System.Drawing.Size(91, 23)
         Me.UnBanAccountBtn.TabIndex = 2
-        Me.UnBanAccountBtn.Text = "UnBan Account"
+        Me.UnBanAccountBtn.Text = "Enable Acct"
         Me.ToolTip.SetToolTip(Me.UnBanAccountBtn, "Unban the specified account.")
         Me.UnBanAccountBtn.UseVisualStyleBackColor = True
         '
@@ -781,7 +785,7 @@ Partial Class Form1
         Me.BanAccountBtn.Name = "BanAccountBtn"
         Me.BanAccountBtn.Size = New System.Drawing.Size(91, 23)
         Me.BanAccountBtn.TabIndex = 1
-        Me.BanAccountBtn.Text = "Ban Account"
+        Me.BanAccountBtn.Text = "Disable Acct"
         Me.ToolTip.SetToolTip(Me.BanAccountBtn, "Ban the specified account.")
         Me.BanAccountBtn.UseVisualStyleBackColor = True
         '
@@ -873,7 +877,7 @@ Partial Class Form1
         '
         'SaveShardBtn
         '
-        Me.SaveShardBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SaveShardBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SaveShardBtn.Location = New System.Drawing.Point(3, 14)
         Me.SaveShardBtn.Name = "SaveShardBtn"
         Me.SaveShardBtn.Size = New System.Drawing.Size(81, 23)
@@ -894,7 +898,7 @@ Partial Class Form1
         Me.BuildTab.Location = New System.Drawing.Point(4, 22)
         Me.BuildTab.Name = "BuildTab"
         Me.BuildTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.BuildTab.Size = New System.Drawing.Size(586, 122)
+        Me.BuildTab.Size = New System.Drawing.Size(586, 128)
         Me.BuildTab.TabIndex = 1
         Me.BuildTab.Text = "Building Creator"
         Me.BuildTab.ToolTipText = "Building construction functions and commands."
@@ -908,7 +912,7 @@ Partial Class Form1
         Me.DestroyRadiusBtn1.TabIndex = 5
         Me.DestroyRadiusBtn1.Text = "Destroy" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Radius"
         Me.ToolTip.SetToolTip(Me.DestroyRadiusBtn1, "Destroys all items within the specified radius." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "This is a dangerous command. U" & _
-                "se with caution!")
+        "se with caution!")
         Me.DestroyRadiusBtn1.UseVisualStyleBackColor = True
         '
         'DestroyMultipleBtn1
@@ -923,7 +927,7 @@ Partial Class Form1
         '
         'DestroyBtn1
         '
-        Me.DestroyBtn1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DestroyBtn1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DestroyBtn1.Location = New System.Drawing.Point(448, 6)
         Me.DestroyBtn1.Name = "DestroyBtn1"
         Me.DestroyBtn1.Size = New System.Drawing.Size(58, 30)
@@ -963,11 +967,12 @@ Partial Class Form1
         Me.RandomTileBtn1.TabIndex = 2
         Me.RandomTileBtn1.Text = "Random" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tile"
         Me.ToolTip.SetToolTip(Me.RandomTileBtn1, "Randomly creates items from the specified range, within the targeted bounding box" & _
-                ".")
+        ".")
         Me.RandomTileBtn1.UseVisualStyleBackColor = True
         '
         'RoofCreatorBtn
         '
+        Me.RoofCreatorBtn.Enabled = False
         Me.RoofCreatorBtn.Location = New System.Drawing.Point(4, 18)
         Me.RoofCreatorBtn.Name = "RoofCreatorBtn"
         Me.RoofCreatorBtn.Size = New System.Drawing.Size(71, 38)
@@ -1021,7 +1026,7 @@ Partial Class Form1
         '
         'CreateFeetBtn1
         '
-        Me.CreateFeetBtn1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CreateFeetBtn1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CreateFeetBtn1.Location = New System.Drawing.Point(3, 18)
         Me.CreateFeetBtn1.Name = "CreateFeetBtn1"
         Me.CreateFeetBtn1.Size = New System.Drawing.Size(64, 23)
@@ -1180,7 +1185,7 @@ Partial Class Form1
         Me.ItemsTab.Location = New System.Drawing.Point(4, 22)
         Me.ItemsTab.Name = "ItemsTab"
         Me.ItemsTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.ItemsTab.Size = New System.Drawing.Size(586, 122)
+        Me.ItemsTab.Size = New System.Drawing.Size(586, 128)
         Me.ItemsTab.TabIndex = 2
         Me.ItemsTab.Text = "Items"
         Me.ItemsTab.ToolTipText = "Item creation functions and commands."
@@ -1194,7 +1199,7 @@ Partial Class Form1
         Me.DestroyRadiusBtn2.TabIndex = 5
         Me.DestroyRadiusBtn2.Text = "Destroy" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Radius"
         Me.ToolTip.SetToolTip(Me.DestroyRadiusBtn2, "Destroys all items within the specified radius." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "This is a dangerous command. U" & _
-                "se with caution!")
+        "se with caution!")
         Me.DestroyRadiusBtn2.UseVisualStyleBackColor = True
         '
         'DestroyMultipleBtn2
@@ -1209,7 +1214,7 @@ Partial Class Form1
         '
         'DestroyBtn2
         '
-        Me.DestroyBtn2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DestroyBtn2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DestroyBtn2.Location = New System.Drawing.Point(448, 6)
         Me.DestroyBtn2.Name = "DestroyBtn2"
         Me.DestroyBtn2.Size = New System.Drawing.Size(58, 30)
@@ -1247,7 +1252,7 @@ Partial Class Form1
         Me.RandomTileBtn2.TabIndex = 2
         Me.RandomTileBtn2.Text = "Random" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tile"
         Me.ToolTip.SetToolTip(Me.RandomTileBtn2, "Randomly creates items from the specified range, within the targeted bounding box" & _
-                ".")
+        ".")
         Me.RandomTileBtn2.UseVisualStyleBackColor = True
         '
         'HueItemBtn
@@ -1305,12 +1310,12 @@ Partial Class Form1
         '
         'CreateFeetBtn2
         '
-        Me.CreateFeetBtn2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CreateFeetBtn2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CreateFeetBtn2.Location = New System.Drawing.Point(3, 18)
         Me.CreateFeetBtn2.Name = "CreateFeetBtn2"
         Me.CreateFeetBtn2.Size = New System.Drawing.Size(64, 23)
         Me.CreateFeetBtn2.TabIndex = 0
-        Me.CreateFeetBtn2.Text = "..at Feet"
+        Me.CreateFeetBtn2.Text = "...at feet"
         Me.ToolTip.SetToolTip(Me.CreateFeetBtn2, "Creates the selected item at your feet.")
         Me.CreateFeetBtn2.UseVisualStyleBackColor = True
         '
@@ -1464,7 +1469,7 @@ Partial Class Form1
         Me.ItemTweakTab.Location = New System.Drawing.Point(4, 22)
         Me.ItemTweakTab.Name = "ItemTweakTab"
         Me.ItemTweakTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.ItemTweakTab.Size = New System.Drawing.Size(586, 122)
+        Me.ItemTweakTab.Size = New System.Drawing.Size(586, 128)
         Me.ItemTweakTab.TabIndex = 3
         Me.ItemTweakTab.Text = "Items Tweak"
         Me.ItemTweakTab.ToolTipText = "Item tweaking functions and commands."
@@ -1472,6 +1477,7 @@ Partial Class Form1
         '
         'Button4
         '
+        Me.Button4.Enabled = False
         Me.Button4.Location = New System.Drawing.Point(288, 5)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(79, 23)
@@ -1481,6 +1487,7 @@ Partial Class Form1
         '
         'Button2
         '
+        Me.Button2.Enabled = False
         Me.Button2.Location = New System.Drawing.Point(288, 28)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(79, 23)
@@ -1490,6 +1497,7 @@ Partial Class Form1
         '
         'MassMoveBtn
         '
+        Me.MassMoveBtn.Enabled = False
         Me.MassMoveBtn.Location = New System.Drawing.Point(373, 5)
         Me.MassMoveBtn.Name = "MassMoveBtn"
         Me.MassMoveBtn.Size = New System.Drawing.Size(82, 23)
@@ -1499,6 +1507,7 @@ Partial Class Form1
         '
         'CopyItemsBtn
         '
+        Me.CopyItemsBtn.Enabled = False
         Me.CopyItemsBtn.Location = New System.Drawing.Point(373, 51)
         Me.CopyItemsBtn.Name = "CopyItemsBtn"
         Me.CopyItemsBtn.Size = New System.Drawing.Size(82, 23)
@@ -1508,6 +1517,7 @@ Partial Class Form1
         '
         'PasteItemsBtn
         '
+        Me.PasteItemsBtn.Enabled = False
         Me.PasteItemsBtn.Location = New System.Drawing.Point(373, 74)
         Me.PasteItemsBtn.Name = "PasteItemsBtn"
         Me.PasteItemsBtn.Size = New System.Drawing.Size(82, 23)
@@ -1517,6 +1527,7 @@ Partial Class Form1
         '
         'CopyPasteBtn
         '
+        Me.CopyPasteBtn.Enabled = False
         Me.CopyPasteBtn.Location = New System.Drawing.Point(373, 28)
         Me.CopyPasteBtn.Name = "CopyPasteBtn"
         Me.CopyPasteBtn.Size = New System.Drawing.Size(82, 23)
@@ -1680,15 +1691,16 @@ Partial Class Form1
         '
         'ItemInfoBtn
         '
-        Me.ItemInfoBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ItemInfoBtn.BackColor = System.Drawing.Color.Transparent
+        Me.ItemInfoBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ItemInfoBtn.Location = New System.Drawing.Point(208, 5)
         Me.ItemInfoBtn.Name = "ItemInfoBtn"
         Me.ItemInfoBtn.Size = New System.Drawing.Size(78, 23)
         Me.ItemInfoBtn.TabIndex = 1
         Me.ItemInfoBtn.Text = "Item Info"
         Me.ToolTip.SetToolTip(Me.ItemInfoBtn, "Displays an in-game interface for viewing and modifing information about the targ" & _
-                "eted item.")
-        Me.ItemInfoBtn.UseVisualStyleBackColor = True
+        "eted item.")
+        Me.ItemInfoBtn.UseVisualStyleBackColor = False
         '
         'GroupBox10
         '
@@ -1839,7 +1851,7 @@ Partial Class Form1
         Me.NPCTab.Location = New System.Drawing.Point(4, 22)
         Me.NPCTab.Name = "NPCTab"
         Me.NPCTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.NPCTab.Size = New System.Drawing.Size(586, 122)
+        Me.NPCTab.Size = New System.Drawing.Size(586, 128)
         Me.NPCTab.TabIndex = 4
         Me.NPCTab.Text = "NPCs"
         Me.NPCTab.ToolTipText = "NPC creation functions and commands."
@@ -2097,7 +2109,7 @@ Partial Class Form1
         Me.NPCTweakTab.Location = New System.Drawing.Point(4, 22)
         Me.NPCTweakTab.Name = "NPCTweakTab"
         Me.NPCTweakTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.NPCTweakTab.Size = New System.Drawing.Size(586, 122)
+        Me.NPCTweakTab.Size = New System.Drawing.Size(586, 128)
         Me.NPCTweakTab.TabIndex = 5
         Me.NPCTweakTab.Text = "NPC Tweak"
         Me.NPCTweakTab.ToolTipText = "NPC tweaking functions and commands."
@@ -2288,7 +2300,6 @@ Partial Class Form1
         '
         'WalkTo
         '
-        Me.WalkTo.Enabled = False
         Me.WalkTo.Location = New System.Drawing.Point(6, 69)
         Me.WalkTo.Name = "WalkTo"
         Me.WalkTo.Size = New System.Drawing.Size(80, 23)
@@ -2352,7 +2363,6 @@ Partial Class Form1
         '
         'CopyLook
         '
-        Me.CopyLook.Enabled = False
         Me.CopyLook.Location = New System.Drawing.Point(77, 44)
         Me.CopyLook.Name = "CopyLook"
         Me.CopyLook.Size = New System.Drawing.Size(75, 23)
@@ -2380,6 +2390,7 @@ Partial Class Form1
         '
         'NPCBarber
         '
+        Me.NPCBarber.Enabled = False
         Me.NPCBarber.Location = New System.Drawing.Point(6, 69)
         Me.NPCBarber.Name = "NPCBarber"
         Me.NPCBarber.Size = New System.Drawing.Size(65, 23)
@@ -2389,6 +2400,7 @@ Partial Class Form1
         '
         'SetNPCStat
         '
+        Me.SetNPCStat.Enabled = False
         Me.SetNPCStat.Location = New System.Drawing.Point(6, 44)
         Me.SetNPCStat.Name = "SetNPCStat"
         Me.SetNPCStat.Size = New System.Drawing.Size(65, 23)
@@ -2398,6 +2410,7 @@ Partial Class Form1
         '
         'SetNPCSkill
         '
+        Me.SetNPCSkill.Enabled = False
         Me.SetNPCSkill.Location = New System.Drawing.Point(6, 19)
         Me.SetNPCSkill.Name = "SetNPCSkill"
         Me.SetNPCSkill.Size = New System.Drawing.Size(65, 23)
@@ -2414,7 +2427,7 @@ Partial Class Form1
         Me.GMTab.Location = New System.Drawing.Point(4, 22)
         Me.GMTab.Name = "GMTab"
         Me.GMTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.GMTab.Size = New System.Drawing.Size(586, 122)
+        Me.GMTab.Size = New System.Drawing.Size(586, 128)
         Me.GMTab.TabIndex = 6
         Me.GMTab.Text = "GM"
         Me.GMTab.ToolTipText = "GMing and Seering related functions and commands."
@@ -2425,7 +2438,7 @@ Partial Class Form1
         Me.GroupBox16.Controls.Add(Me.BankBtn)
         Me.GroupBox16.Controls.Add(Me.NightsightBtn)
         Me.GroupBox16.Controls.Add(Me.HelpQueueBtn)
-        Me.GroupBox16.Controls.Add(Me.unusedBtn3)
+        Me.GroupBox16.Controls.Add(Me.PackBtn)
         Me.GroupBox16.Controls.Add(Me.unusedBtn2)
         Me.GroupBox16.Controls.Add(Me.BroadcastBtn)
         Me.GroupBox16.Controls.Add(Me.LogNotifyBtn)
@@ -2442,7 +2455,7 @@ Partial Class Form1
         Me.BankBtn.Name = "BankBtn"
         Me.BankBtn.Size = New System.Drawing.Size(80, 23)
         Me.BankBtn.TabIndex = 6
-        Me.BankBtn.Text = "Bank"
+        Me.BankBtn.Text = "Open Bank"
         Me.ToolTip.SetToolTip(Me.BankBtn, "Opens your bank box.")
         Me.BankBtn.UseVisualStyleBackColor = True
         '
@@ -2458,6 +2471,7 @@ Partial Class Form1
         '
         'HelpQueueBtn
         '
+        Me.HelpQueueBtn.Enabled = False
         Me.HelpQueueBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.HelpQueueBtn.Location = New System.Drawing.Point(81, 15)
         Me.HelpQueueBtn.Name = "HelpQueueBtn"
@@ -2467,14 +2481,14 @@ Partial Class Form1
         Me.ToolTip.SetToolTip(Me.HelpQueueBtn, "Displays an in-game interface for the Help paging system.")
         Me.HelpQueueBtn.UseVisualStyleBackColor = True
         '
-        'unusedBtn3
+        'PackBtn
         '
-        Me.unusedBtn3.Enabled = False
-        Me.unusedBtn3.Location = New System.Drawing.Point(4, 96)
-        Me.unusedBtn3.Name = "unusedBtn3"
-        Me.unusedBtn3.Size = New System.Drawing.Size(75, 23)
-        Me.unusedBtn3.TabIndex = 3
-        Me.unusedBtn3.UseVisualStyleBackColor = True
+        Me.PackBtn.Location = New System.Drawing.Point(4, 96)
+        Me.PackBtn.Name = "PackBtn"
+        Me.PackBtn.Size = New System.Drawing.Size(75, 23)
+        Me.PackBtn.TabIndex = 3
+        Me.PackBtn.Text = "Open Pack"
+        Me.PackBtn.UseVisualStyleBackColor = True
         '
         'unusedBtn2
         '
@@ -2503,7 +2517,7 @@ Partial Class Form1
         Me.LogNotifyBtn.TabIndex = 0
         Me.LogNotifyBtn.Text = "Log Notify"
         Me.ToolTip.SetToolTip(Me.LogNotifyBtn, "Toggles the Log Notify feature on/off." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Log Notify informs you when a person of" & _
-                " your command level or lower logs off or on.")
+        " your command level or lower logs off or on.")
         Me.LogNotifyBtn.UseVisualStyleBackColor = True
         '
         'GroupBox15
@@ -2521,6 +2535,7 @@ Partial Class Form1
         '
         'AddGoBtn
         '
+        Me.AddGoBtn.Enabled = False
         Me.AddGoBtn.Location = New System.Drawing.Point(3, 96)
         Me.AddGoBtn.Name = "AddGoBtn"
         Me.AddGoBtn.Size = New System.Drawing.Size(70, 23)
@@ -2537,7 +2552,7 @@ Partial Class Form1
         Me.MakeTeleBtn.TabIndex = 2
         Me.MakeTeleBtn.Text = "Make Tele"
         Me.ToolTip.SetToolTip(Me.MakeTeleBtn, "Makes a teleporter based on your current location and that of the targeted recall" & _
-                "-rune.")
+        "-rune.")
         Me.MakeTeleBtn.UseVisualStyleBackColor = True
         '
         'RecallBtn
@@ -2629,7 +2644,7 @@ Partial Class Form1
         Me.SetObjPropBtn.TabIndex = 2
         Me.SetObjPropBtn.Text = "Set Obj Prop"
         Me.ToolTip.SetToolTip(Me.SetObjPropBtn, "Sets the specified prop/value on the targeted object." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "If the prop doesn't alre" & _
-                "ady exist you'll get an error.")
+        "ady exist you'll get an error.")
         Me.SetObjPropBtn.UseVisualStyleBackColor = True
         '
         'DelGlobalPropBtn
@@ -2770,7 +2785,7 @@ Partial Class Form1
         Me.TravelTab.Location = New System.Drawing.Point(4, 22)
         Me.TravelTab.Name = "TravelTab"
         Me.TravelTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.TravelTab.Size = New System.Drawing.Size(586, 122)
+        Me.TravelTab.Size = New System.Drawing.Size(586, 128)
         Me.TravelTab.TabIndex = 7
         Me.TravelTab.Text = "Travel"
         Me.TravelTab.ToolTipText = "Travel functions and commands."
@@ -2882,6 +2897,7 @@ Partial Class Form1
         '
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox3.Enabled = False
         Me.PictureBox3.Location = New System.Drawing.Point(3, 16)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(144, 103)
@@ -3026,7 +3042,7 @@ Partial Class Form1
         Me.ToolsTab.Location = New System.Drawing.Point(4, 22)
         Me.ToolsTab.Name = "ToolsTab"
         Me.ToolsTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.ToolsTab.Size = New System.Drawing.Size(586, 122)
+        Me.ToolsTab.Size = New System.Drawing.Size(586, 128)
         Me.ToolsTab.TabIndex = 8
         Me.ToolsTab.Text = "Tools"
         Me.ToolsTab.ToolTipText = "Useful tools and program launcher"
@@ -3053,7 +3069,7 @@ Partial Class Form1
         Me.TextToSpeechBtn.TabIndex = 7
         Me.TextToSpeechBtn.Text = "Text to Speech"
         Me.ToolTip.SetToolTip(Me.TextToSpeechBtn, "Click to assign a program to this button." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Or, right-click to view the context " & _
-                "menu.")
+        "menu.")
         Me.TextToSpeechBtn.UseVisualStyleBackColor = True
         '
         'toolbtn1
@@ -3063,7 +3079,7 @@ Partial Class Form1
         Me.toolbtn1.Size = New System.Drawing.Size(94, 23)
         Me.toolbtn1.TabIndex = 8
         Me.ToolTip.SetToolTip(Me.toolbtn1, "Click to assign a program to this button." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Or, right-click to view the context " & _
-                "menu.")
+        "menu.")
         Me.toolbtn1.UseVisualStyleBackColor = True
         '
         'toolBtn3
@@ -3073,7 +3089,7 @@ Partial Class Form1
         Me.toolBtn3.Size = New System.Drawing.Size(94, 23)
         Me.toolBtn3.TabIndex = 10
         Me.ToolTip.SetToolTip(Me.toolBtn3, "Click to assign a program to this button." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Or, right-click to view the context " & _
-                "menu.")
+        "menu.")
         Me.toolBtn3.UseVisualStyleBackColor = True
         '
         'toolbtn2
@@ -3083,7 +3099,7 @@ Partial Class Form1
         Me.toolbtn2.Size = New System.Drawing.Size(94, 23)
         Me.toolbtn2.TabIndex = 9
         Me.ToolTip.SetToolTip(Me.toolbtn2, "Click to assign a program to this button." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Or, right-click to view the context " & _
-                "menu.")
+        "menu.")
         Me.toolbtn2.UseVisualStyleBackColor = True
         '
         'GroupBox20
@@ -3135,7 +3151,7 @@ Partial Class Form1
         Me.UserLaunch1Btn.TabIndex = 3
         Me.UserLaunch1Btn.Text = Global.Nightscape_Staff_Assistant.My.MySettings.Default.UserLaunch1_Name
         Me.ToolTip.SetToolTip(Me.UserLaunch1Btn, "Click to assign a program to this button." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Or, right-click to view the context " & _
-                "menu.")
+        "menu.")
         Me.UserLaunch1Btn.UseVisualStyleBackColor = True
         '
         'UserLaunchBtn1_ContextMenu
@@ -3172,7 +3188,7 @@ Partial Class Form1
         Me.UserLaunch4Btn.TabIndex = 6
         Me.UserLaunch4Btn.Text = Global.Nightscape_Staff_Assistant.My.MySettings.Default.UserLaunch4_Name
         Me.ToolTip.SetToolTip(Me.UserLaunch4Btn, "Click to assign a program to this button." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Or, right-click to view the context " & _
-                "menu.")
+        "menu.")
         Me.UserLaunch4Btn.UseVisualStyleBackColor = True
         '
         'UserLaunchBtn4_ContextMenu
@@ -3209,7 +3225,7 @@ Partial Class Form1
         Me.UserLaunch3Btn.TabIndex = 5
         Me.UserLaunch3Btn.Text = Global.Nightscape_Staff_Assistant.My.MySettings.Default.UserLaunch3_Name
         Me.ToolTip.SetToolTip(Me.UserLaunch3Btn, "Click to assign a program to this button." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Or, right-click to view the context " & _
-                "menu.")
+        "menu.")
         Me.UserLaunch3Btn.UseVisualStyleBackColor = True
         '
         'UserLaunchBtn3_ContextMenu
@@ -3246,7 +3262,7 @@ Partial Class Form1
         Me.UserLaunch2Btn.TabIndex = 4
         Me.UserLaunch2Btn.Text = Global.Nightscape_Staff_Assistant.My.MySettings.Default.USerLaunch2_Name
         Me.ToolTip.SetToolTip(Me.UserLaunch2Btn, "Click to assign a program to this button." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Or, right-click to view the context " & _
-                "menu.")
+        "menu.")
         Me.UserLaunch2Btn.UseVisualStyleBackColor = True
         '
         'UserLaunchBtn2_ContextMenu
@@ -3292,7 +3308,7 @@ Partial Class Form1
         Me.LaunchPatchClientBtn.TabIndex = 0
         Me.LaunchPatchClientBtn.Text = "Nightscape" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Patch Client"
         Me.ToolTip.SetToolTip(Me.LaunchPatchClientBtn, "Launch the Nightscape Patch Client." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "This is the preferred method for starting " & _
-                "Nightscape.")
+        "Nightscape.")
         Me.LaunchPatchClientBtn.UseVisualStyleBackColor = True
         '
         'GroupBox19
@@ -3604,7 +3620,7 @@ Partial Class Form1
         Me.SettingsTab.Controls.Add(Me.GroupBox21)
         Me.SettingsTab.Location = New System.Drawing.Point(4, 22)
         Me.SettingsTab.Name = "SettingsTab"
-        Me.SettingsTab.Size = New System.Drawing.Size(586, 122)
+        Me.SettingsTab.Size = New System.Drawing.Size(586, 128)
         Me.SettingsTab.TabIndex = 9
         Me.SettingsTab.Text = "Settings"
         Me.SettingsTab.ToolTipText = "Settings and customization features."
@@ -3686,7 +3702,7 @@ Partial Class Form1
         Me.BrowseInsideUOLocationBtn.TabIndex = 5
         Me.BrowseInsideUOLocationBtn.Text = "Browse..."
         Me.ToolTip.SetToolTip(Me.BrowseInsideUOLocationBtn, "Opens a dialog allowing you to select the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "location where InsideUO has been insta" & _
-                "lled.")
+        "lled.")
         Me.BrowseInsideUOLocationBtn.UseVisualStyleBackColor = True
         '
         'BrowseNSLocationBtn
@@ -3697,7 +3713,7 @@ Partial Class Form1
         Me.BrowseNSLocationBtn.TabIndex = 2
         Me.BrowseNSLocationBtn.Text = "Browse..."
         Me.ToolTip.SetToolTip(Me.BrowseNSLocationBtn, "Opens a dialog allowing you to select the location" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "where the Nightscape files ha" & _
-                "ve been installed.")
+        "ve been installed.")
         Me.BrowseNSLocationBtn.UseVisualStyleBackColor = True
         '
         'InsideUOLocationTextBox
@@ -4322,7 +4338,7 @@ Partial Class Form1
         Me.MaximumSize = New System.Drawing.Size(600, 180)
         Me.MinimumSize = New System.Drawing.Size(600, 180)
         Me.Name = "Form1"
-        Me.Opacity = 0.99
+        Me.Opacity = 0.99R
         Me.ShowInTaskbar = Global.Nightscape_Staff_Assistant.My.MySettings.Default.ShowOnTaskbar
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "Nightscape Staff Assistant -- Beta 3.0"
@@ -4407,365 +4423,365 @@ Partial Class Form1
         Me.ResumeLayout(False)
 
     End Sub
-	Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-	Friend WithEvents AdminTab As System.Windows.Forms.TabPage
-	Friend WithEvents BuildTab As System.Windows.Forms.TabPage
-	Friend WithEvents ItemsTab As System.Windows.Forms.TabPage
-	Friend WithEvents ItemTweakTab As System.Windows.Forms.TabPage
-	Friend WithEvents NPCTab As System.Windows.Forms.TabPage
-	Friend WithEvents NPCTweakTab As System.Windows.Forms.TabPage
-	Friend WithEvents GMTab As System.Windows.Forms.TabPage
-	Friend WithEvents TravelTab As System.Windows.Forms.TabPage
-	Friend WithEvents ToolsTab As System.Windows.Forms.TabPage
-	Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-	Friend WithEvents SettingsTab As System.Windows.Forms.TabPage
-	Friend WithEvents UnloadCFGBtn As System.Windows.Forms.Button
-	Friend WithEvents UnloadAllBtn As System.Windows.Forms.Button
-	Friend WithEvents UnloadScriptBtn As System.Windows.Forms.Button
-	Friend WithEvents KillScriptsBtn As System.Windows.Forms.Button
-	Friend WithEvents ShutdownNowBtn As System.Windows.Forms.Button
-	Friend WithEvents ShutdownBtn As System.Windows.Forms.Button
-	Friend WithEvents SaveShardBtn As System.Windows.Forms.Button
-	Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-	Friend WithEvents SetCmdLvlBtn As System.Windows.Forms.Button
-	Friend WithEvents WipeAccountBtn As System.Windows.Forms.Button
-	Friend WithEvents UnBanAccountBtn As System.Windows.Forms.Button
-	Friend WithEvents BanAccountBtn As System.Windows.Forms.Button
-	Friend WithEvents CreateAccountBtn As System.Windows.Forms.Button
-	Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-	Friend WithEvents SquelchPlayerBtn As System.Windows.Forms.Button
-	Friend WithEvents ResPlayerBtn As System.Windows.Forms.Button
-	Friend WithEvents RefreshPlayerBtn As System.Windows.Forms.Button
-	Friend WithEvents ThawPlayerBtn As System.Windows.Forms.Button
-	Friend WithEvents JailPlayerBtn As System.Windows.Forms.Button
-	Friend WithEvents FreezePlayerBtn As System.Windows.Forms.Button
-	Friend WithEvents KickPlayerBtn As System.Windows.Forms.Button
-	Friend WithEvents KillPlayerBtn As System.Windows.Forms.Button
-	Friend WithEvents GetPlayerInfoBtn As System.Windows.Forms.Button
-	Friend WithEvents RevokePrivBtn As System.Windows.Forms.Button
-	Friend WithEvents GrantPrivBtn As System.Windows.Forms.Button
-	Friend WithEvents MakeSeerBtn As System.Windows.Forms.Button
-	Friend WithEvents SetPlayerStatBtn As System.Windows.Forms.Button
-	Friend WithEvents SetPlayerSkillBtn As System.Windows.Forms.Button
-	Friend WithEvents ForgivePlayerBtn As System.Windows.Forms.Button
-	Friend WithEvents NotifyIcon As System.Windows.Forms.NotifyIcon
-	Friend WithEvents NotifyIcon_ContextMenu As System.Windows.Forms.ContextMenuStrip
-	Friend WithEvents RestoreMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-	Friend WithEvents ExitMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
-	Friend WithEvents CommandsMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_GotoPlayerMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_TeleMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_MobileCmdsSeparator As System.Windows.Forms.ToolStripSeparator
-	Friend WithEvents QC_DestroySItemMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_DestroyMItemsMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_LockRadius5MenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_LockRadius10MenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_ItemInfoMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_ItemsCmdsSeparator As System.Windows.Forms.ToolStripSeparator
-	Friend WithEvents QC_NightsightMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_SummonPlayerMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-	Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
-	Friend WithEvents Collapse_ExpandMenu1 As System.Windows.Forms.ContextMenuStrip
-	Friend WithEvents CollapseMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ExpandMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents BldngCategoryTree As System.Windows.Forms.TreeView
-	Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
-	Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
-	Friend WithEvents CreateFeetBtn1 As System.Windows.Forms.Button
-	Friend WithEvents BldngItemList As System.Windows.Forms.TreeView
-	Friend WithEvents DestroyRadiusBtn1 As System.Windows.Forms.Button
-	Friend WithEvents DestroyMultipleBtn1 As System.Windows.Forms.Button
-	Friend WithEvents DestroyBtn1 As System.Windows.Forms.Button
-	Friend WithEvents CreateTiledBtn1 As System.Windows.Forms.Button
-	Friend WithEvents CreateTargetBtn1 As System.Windows.Forms.Button
-	Friend WithEvents CreatePackBtn1 As System.Windows.Forms.Button
-	Friend WithEvents FoundationCreatorbtn As System.Windows.Forms.Button
-	Friend WithEvents RandomTileBtn1 As System.Windows.Forms.Button
-	Friend WithEvents RoofCreatorBtn As System.Windows.Forms.Button
-	Friend WithEvents BldngItemPreview As System.Windows.Forms.PictureBox
-	Friend WithEvents BldngItemID As System.Windows.Forms.Label
-	Friend WithEvents DestroyRadiusBtn2 As System.Windows.Forms.Button
-	Friend WithEvents DestroyMultipleBtn2 As System.Windows.Forms.Button
-	Friend WithEvents DestroyBtn2 As System.Windows.Forms.Button
-	Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
-	Friend WithEvents unusedBtn As System.Windows.Forms.Button
-	Friend WithEvents RandomTileBtn2 As System.Windows.Forms.Button
-	Friend WithEvents HueItemBtn As System.Windows.Forms.Button
-	Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
-	Friend WithEvents CreateTiledBtn2 As System.Windows.Forms.Button
-	Friend WithEvents CreateTargetBtn2 As System.Windows.Forms.Button
-	Friend WithEvents CreatePackBtn2 As System.Windows.Forms.Button
-	Friend WithEvents CreateFeetBtn2 As System.Windows.Forms.Button
-	Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
-	Friend WithEvents ItemItemID As System.Windows.Forms.Label
-	Friend WithEvents ItemItemPreview As System.Windows.Forms.PictureBox
-	Friend WithEvents SplitContainer2 As System.Windows.Forms.SplitContainer
-	Friend WithEvents ItemCategoryTree As System.Windows.Forms.TreeView
-	Friend WithEvents ItemItemList As System.Windows.Forms.TreeView
-	Friend WithEvents NudgeDownBtn As System.Windows.Forms.Button
-	Friend WithEvents NudgeUpBtn As System.Windows.Forms.Button
-	Friend WithEvents NudgeWestBtn As System.Windows.Forms.Button
-	Friend WithEvents NudgeSouthBtn As System.Windows.Forms.Button
-	Friend WithEvents NudgeEastBtn As System.Windows.Forms.Button
-	Friend WithEvents NudgeNorthBtn As System.Windows.Forms.Button
-	Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
-	Friend WithEvents HeightVal As System.Windows.Forms.NumericUpDown
-	Friend WithEvents CopyNudgeChk As System.Windows.Forms.CheckBox
-	Friend WithEvents MultipleNudgeChk As System.Windows.Forms.CheckBox
-	Friend WithEvents NudgeVal As System.Windows.Forms.NumericUpDown
-	Friend WithEvents MoveItemBtn As System.Windows.Forms.Button
-	Friend WithEvents ItemInfoBtn As System.Windows.Forms.Button
-	Friend WithEvents GroupBox12 As System.Windows.Forms.GroupBox
-	Friend WithEvents GroupBox11 As System.Windows.Forms.GroupBox
-	Friend WithEvents NumericUpDown3 As System.Windows.Forms.NumericUpDown
-	Friend WithEvents LockRadiusBtn As System.Windows.Forms.Button
-	Friend WithEvents RenameItemBtn As System.Windows.Forms.Button
-	Friend WithEvents LockDownBtn As System.Windows.Forms.Button
-	Friend WithEvents ReleaseItemBtn As System.Windows.Forms.Button
-	Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
-	Friend WithEvents KeyBtn As System.Windows.Forms.Button
-	Friend WithEvents RekeyBtn As System.Windows.Forms.Button
-	Friend WithEvents UnlockBtn As System.Windows.Forms.Button
-	Friend WithEvents LockBtn As System.Windows.Forms.Button
-	Friend WithEvents GroupBox13 As System.Windows.Forms.GroupBox
-	Friend WithEvents GroupBox14 As System.Windows.Forms.GroupBox
-	Friend WithEvents PropEditBtn As System.Windows.Forms.Button
-	Friend WithEvents AddGlobalPropBtn As System.Windows.Forms.Button
-	Friend WithEvents SetGlobalPropBtn As System.Windows.Forms.Button
-	Friend WithEvents AddObjPropBtn As System.Windows.Forms.Button
-	Friend WithEvents SetObjPropBtn As System.Windows.Forms.Button
-	Friend WithEvents DelGlobalPropBtn As System.Windows.Forms.Button
-	Friend WithEvents DelObjPropBtn As System.Windows.Forms.Button
-	Friend WithEvents PowerUpBtn As System.Windows.Forms.Button
-	Friend WithEvents ThawMeBtn As System.Windows.Forms.Button
-	Friend WithEvents MyFormBtn As System.Windows.Forms.Button
-	Friend WithEvents GmFormBtn As System.Windows.Forms.Button
-	Friend WithEvents RefreshMeBtn As System.Windows.Forms.Button
-	Friend WithEvents ResMeBtn As System.Windows.Forms.Button
-	Friend WithEvents RevealMeBtn As System.Windows.Forms.Button
-	Friend WithEvents ConcealMeBtn As System.Windows.Forms.Button
-	Friend WithEvents GroupBox16 As System.Windows.Forms.GroupBox
-	Friend WithEvents BankBtn As System.Windows.Forms.Button
-	Friend WithEvents NightsightBtn As System.Windows.Forms.Button
-	Friend WithEvents HelpQueueBtn As System.Windows.Forms.Button
-	Friend WithEvents unusedBtn2 As System.Windows.Forms.Button
-	Friend WithEvents BroadcastBtn As System.Windows.Forms.Button
-	Friend WithEvents LogNotifyBtn As System.Windows.Forms.Button
-	Friend WithEvents GroupBox15 As System.Windows.Forms.GroupBox
-	Friend WithEvents AddGoBtn As System.Windows.Forms.Button
-	Friend WithEvents MakeTeleBtn As System.Windows.Forms.Button
-	Friend WithEvents RecallBtn As System.Windows.Forms.Button
-	Friend WithEvents MarkBtn As System.Windows.Forms.Button
-	Friend WithEvents GroupBox17 As System.Windows.Forms.GroupBox
-	Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-	Friend WithEvents ExpandMapBtn As System.Windows.Forms.Button
-	Friend WithEvents ZoomOutMapBtn As System.Windows.Forms.Button
-	Friend WithEvents ZoomInMapBtn As System.Windows.Forms.Button
-	Friend WithEvents TravelCoordsText As System.Windows.Forms.Label
-	Friend WithEvents SplitContainer3 As System.Windows.Forms.SplitContainer
-	Friend WithEvents TravelCategoryList As System.Windows.Forms.TreeView
-	Friend WithEvents TravelLocationList As System.Windows.Forms.TreeView
-	Friend WithEvents WhereBtn As System.Windows.Forms.Button
-	Friend WithEvents TeleToBtn As System.Windows.Forms.Button
-	Friend WithEvents MTeleBtn As System.Windows.Forms.Button
-	Friend WithEvents TeleBtn As System.Windows.Forms.Button
-	Friend WithEvents GoXYZBtn As System.Windows.Forms.Button
-	Friend WithEvents GotoBtn As System.Windows.Forms.Button
-	Friend WithEvents GoBtn As System.Windows.Forms.Button
-	Friend WithEvents GroupBox19 As System.Windows.Forms.GroupBox
-	Friend WithEvents GroupBox18 As System.Windows.Forms.GroupBox
-	Friend WithEvents HexToDecBtn As System.Windows.Forms.Button
-	Friend WithEvents DecValueTextBox As System.Windows.Forms.TextBox
-	Friend WithEvents Label6 As System.Windows.Forms.Label
-	Friend WithEvents HexValueTextBox As System.Windows.Forms.TextBox
-	Friend WithEvents Label5 As System.Windows.Forms.Label
-	Friend WithEvents CalcEqualBtn As System.Windows.Forms.Button
-	Friend WithEvents CalcClearBtn As System.Windows.Forms.Button
-	Friend WithEvents CalcAddBtn As System.Windows.Forms.Button
-	Friend WithEvents CalcSubtractBtn As System.Windows.Forms.Button
-	Friend WithEvents CalcMultiplyBtn As System.Windows.Forms.Button
-	Friend WithEvents CalcDivideBtn As System.Windows.Forms.Button
-	Friend WithEvents CalcDecimalBtn As System.Windows.Forms.Button
-	Friend WithEvents Calc3Btn As System.Windows.Forms.Button
-	Friend WithEvents Calc6Btn As System.Windows.Forms.Button
-	Friend WithEvents Calc9Btn As System.Windows.Forms.Button
-	Friend WithEvents Calc0Btn As System.Windows.Forms.Button
-	Friend WithEvents Calc2Btn As System.Windows.Forms.Button
-	Friend WithEvents Calc5Btn As System.Windows.Forms.Button
-	Friend WithEvents Calc8Btn As System.Windows.Forms.Button
-	Friend WithEvents CalcPositiveNegativeBtn As System.Windows.Forms.Button
-	Friend WithEvents Calc1Btn As System.Windows.Forms.Button
-	Friend WithEvents Calc4Btn As System.Windows.Forms.Button
-	Friend WithEvents Calc7Btn As System.Windows.Forms.Button
-	Friend WithEvents CalcValueTextBox As System.Windows.Forms.TextBox
-	Friend WithEvents GroupBox20 As System.Windows.Forms.GroupBox
-	Friend WithEvents UserLaunch4Btn As System.Windows.Forms.Button
-	Friend WithEvents UserLaunch3Btn As System.Windows.Forms.Button
-	Friend WithEvents UserLaunch2Btn As System.Windows.Forms.Button
-	Friend WithEvents LaunchNSClientBtn As System.Windows.Forms.Button
-	Friend WithEvents LaunchPatchClientBtn As System.Windows.Forms.Button
-	Friend WithEvents LaunchInsideUOBtn As System.Windows.Forms.Button
-	Friend WithEvents UserLaunch1Btn As System.Windows.Forms.Button
-	Friend WithEvents TextToSpeechBtn As System.Windows.Forms.Button
-	Friend WithEvents toolBtn3 As System.Windows.Forms.Button
-	Friend WithEvents toolbtn2 As System.Windows.Forms.Button
-	Friend WithEvents toolbtn1 As System.Windows.Forms.Button
-	Friend WithEvents ToolTip As System.Windows.Forms.ToolTip
-	Friend WithEvents TableLayoutPanel2 As System.Windows.Forms.TableLayoutPanel
-	Friend WithEvents GroupBox21 As System.Windows.Forms.GroupBox
-	Friend WithEvents BrowseInsideUOLocationBtn As System.Windows.Forms.Button
-	Friend WithEvents BrowseNSLocationBtn As System.Windows.Forms.Button
-	Friend WithEvents InsideUOLocationTextBox As System.Windows.Forms.TextBox
-	Friend WithEvents Label8 As System.Windows.Forms.Label
-	Friend WithEvents NSLocationTextBox As System.Windows.Forms.TextBox
-	Friend WithEvents Label7 As System.Windows.Forms.Label
-	Friend WithEvents ListEditorBtn As System.Windows.Forms.Button
-	Friend WithEvents AboutBtn As System.Windows.Forms.Button
-	Friend WithEvents TableLayoutPanel3 As System.Windows.Forms.TableLayoutPanel
-	Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
-	Friend WithEvents OptionsMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents OpacityMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents VisibleMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ToolStripSeparator7 As System.Windows.Forms.ToolStripSeparator
-	Friend WithEvents Opacity90MenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents Opacity80MenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents Opacity70MenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents Opacity60MenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents Opacity50MenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents Opacity40MenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents Opacity30MenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents Opacity20MenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents Opacity10MenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents AlwaysOnTopMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents AboutMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents GoMenuBtn As System.Windows.Forms.Button
-	Friend WithEvents MessagePlayerBtn As System.Windows.Forms.Button
-	Friend WithEvents InvulPlayerBtn As System.Windows.Forms.Button
-	Friend WithEvents HidePlayerBtn As System.Windows.Forms.Button
-	Friend WithEvents BarberPlayerBtn As System.Windows.Forms.Button
-	Friend WithEvents GroupBox22 As System.Windows.Forms.GroupBox
-	Friend WithEvents AdvancedSettings As System.Windows.Forms.Button
-	Friend WithEvents GroupBox23 As System.Windows.Forms.GroupBox
-	Friend WithEvents NPCPreviewID As System.Windows.Forms.Label
-	Friend WithEvents NPCPreviewImage As System.Windows.Forms.PictureBox
-	Friend WithEvents SplitContainer4 As System.Windows.Forms.SplitContainer
-	Friend WithEvents NPCCategoryList As System.Windows.Forms.TreeView
-	Friend WithEvents NPCList As System.Windows.Forms.TreeView
-	Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
-	Friend WithEvents SearchNameMenuItem1 As System.Windows.Forms.ToolStripTextBox
-	Friend WithEvents SearchIDMenuItem1 As System.Windows.Forms.ToolStripTextBox
-	Friend WithEvents GroupBox26 As System.Windows.Forms.GroupBox
-	Friend WithEvents GroupBox25 As System.Windows.Forms.GroupBox
-	Friend WithEvents GroupBox24 As System.Windows.Forms.GroupBox
-	Friend WithEvents NPCSetInvul As System.Windows.Forms.Button
-	Friend WithEvents NPCBarber As System.Windows.Forms.Button
-	Friend WithEvents SetNPCStat As System.Windows.Forms.Button
-	Friend WithEvents SetNPCSkill As System.Windows.Forms.Button
-	Friend WithEvents RunTo As System.Windows.Forms.Button
-	Friend WithEvents WalkTo As System.Windows.Forms.Button
-	Friend WithEvents Action As System.Windows.Forms.Button
-	Friend WithEvents SayAbove As System.Windows.Forms.Button
-	Friend WithEvents NoProvoke As System.Windows.Forms.Button
-	Friend WithEvents NoTame As System.Windows.Forms.Button
-	Friend WithEvents CopyLook As System.Windows.Forms.Button
-	Friend WithEvents NPCRename As System.Windows.Forms.Button
-	Friend WithEvents Button28 As System.Windows.Forms.Button
-	Friend WithEvents FreezeNPC As System.Windows.Forms.Button
-	Friend WithEvents Tame As System.Windows.Forms.Button
-	Friend WithEvents Button25 As System.Windows.Forms.Button
-	Friend WithEvents RefreshNPC As System.Windows.Forms.Button
-	Friend WithEvents ThawNPC As System.Windows.Forms.Button
-	Friend WithEvents SetNPCMurderer As System.Windows.Forms.Button
-	Friend WithEvents Button21 As System.Windows.Forms.Button
-	Friend WithEvents SetNPCCriminal As System.Windows.Forms.Button
-	Friend WithEvents Button19 As System.Windows.Forms.Button
-	Friend WithEvents EquipFromTemplate As System.Windows.Forms.Button
-	Friend WithEvents HideNPC As System.Windows.Forms.Button
-	Friend WithEvents EquipItem As System.Windows.Forms.Button
-	Friend WithEvents RestartAI As System.Windows.Forms.Button
-	Friend WithEvents GetNPCInfo As System.Windows.Forms.Button
-	Friend WithEvents QC_RoofCreatorMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_LockItemMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_SeerCmdsSeparator As System.Windows.Forms.ToolStripSeparator
-	Friend WithEvents QC_GetInfoMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_KillMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_RessurectMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_JailMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_PropEditMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_HideMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_KickMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_ConcealMeMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_RevealMeMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_GMFormMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_MyFormMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_SaveShardMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_HelpQueueMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_MarkMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_RecallMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_WhereMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_MTeleMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents QC_TeleToMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents OpacityTimer As System.Windows.Forms.Timer
-	Friend WithEvents PatcherBackgroundWorker As System.ComponentModel.BackgroundWorker
-	Friend WithEvents Collapse_ExpandMenu2 As System.Windows.Forms.ContextMenuStrip
-	Friend WithEvents CollapseMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ExpandMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
-	Friend WithEvents SearchNameMenuItem2 As System.Windows.Forms.ToolStripTextBox
-	Friend WithEvents SearchIDMenuItem2 As System.Windows.Forms.ToolStripTextBox
-	Friend WithEvents CreateGroup As System.Windows.Forms.Button
-	Friend WithEvents CreateNPCHidden As System.Windows.Forms.Button
-	Friend WithEvents CreateNPC As System.Windows.Forms.Button
-	Friend WithEvents Button29 As System.Windows.Forms.Button
-	Friend WithEvents NPCAnimationTimer As System.Windows.Forms.Timer
-	Friend WithEvents DecreaseAnimationSpeed As System.Windows.Forms.Button
-	Friend WithEvents IncreaseAnimationSpeed As System.Windows.Forms.Button
-	Friend WithEvents NPCAnimationError As System.Windows.Forms.Label
-	Friend WithEvents Button1 As System.Windows.Forms.Button
-	Friend WithEvents Button30 As System.Windows.Forms.Button
-	Friend WithEvents Button31 As System.Windows.Forms.Button
-	Friend WithEvents KillNPC As System.Windows.Forms.Button
-	Friend WithEvents Button33 As System.Windows.Forms.Button
-	Friend WithEvents DecToHexBtn As System.Windows.Forms.Button
-	Friend WithEvents TableLayoutPanel4 As System.Windows.Forms.TableLayoutPanel
-	Friend WithEvents OpacityCustomMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents PreferencesMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents UserLaunchBtn1_ContextMenu As System.Windows.Forms.ContextMenuStrip
-	Friend WithEvents AssignProgramMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ClearButtonMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents UserLaunchBtn2_ContextMenu As System.Windows.Forms.ContextMenuStrip
-	Friend WithEvents AssignProgramMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ClearButtonMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents UserLaunchBtn3_ContextMenu As System.Windows.Forms.ContextMenuStrip
-	Friend WithEvents AssignProgramMenuItem3 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ClearButtonMenuItem3 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents UserLaunchBtn4_ContextMenu As System.Windows.Forms.ContextMenuStrip
-	Friend WithEvents AssignProgramMenuItem4 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ClearButtonMenuItem4 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents Collapse_ExpandMenu3 As System.Windows.Forms.ContextMenuStrip
-	Friend WithEvents CollapseMenuItem3 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ExpandMenuItem3 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
-	Friend WithEvents SearchByNameTextBox3 As System.Windows.Forms.ToolStripTextBox
-	Friend WithEvents Collapse_ExpandMenu4 As System.Windows.Forms.ContextMenuStrip
-	Friend WithEvents CollapseMenuItem4 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ExpandMenuItem4 As System.Windows.Forms.ToolStripMenuItem
-	Friend WithEvents ToolStripSeparator8 As System.Windows.Forms.ToolStripSeparator
-	Friend WithEvents SearchByNameTextBox4 As System.Windows.Forms.ToolStripTextBox
-	Friend WithEvents PasteItemsBtn As System.Windows.Forms.Button
-	Friend WithEvents CopyPasteBtn As System.Windows.Forms.Button
-	Friend WithEvents CopyItemsBtn As System.Windows.Forms.Button
-	Friend WithEvents MassMoveBtn As System.Windows.Forms.Button
-	Friend WithEvents RelockBtn As System.Windows.Forms.Button
-	Friend WithEvents Button3 As System.Windows.Forms.Button
-	Friend WithEvents MoveContBtn As System.Windows.Forms.Button
-	Friend WithEvents Button4 As System.Windows.Forms.Button
-	Friend WithEvents Button2 As System.Windows.Forms.Button
-	Friend WithEvents Label1 As System.Windows.Forms.Label
-	Friend WithEvents unusedBtn3 As System.Windows.Forms.Button
+    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents AdminTab As System.Windows.Forms.TabPage
+    Friend WithEvents BuildTab As System.Windows.Forms.TabPage
+    Friend WithEvents ItemsTab As System.Windows.Forms.TabPage
+    Friend WithEvents ItemTweakTab As System.Windows.Forms.TabPage
+    Friend WithEvents NPCTab As System.Windows.Forms.TabPage
+    Friend WithEvents NPCTweakTab As System.Windows.Forms.TabPage
+    Friend WithEvents GMTab As System.Windows.Forms.TabPage
+    Friend WithEvents TravelTab As System.Windows.Forms.TabPage
+    Friend WithEvents ToolsTab As System.Windows.Forms.TabPage
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents SettingsTab As System.Windows.Forms.TabPage
+    Friend WithEvents UnloadCFGBtn As System.Windows.Forms.Button
+    Friend WithEvents UnloadAllBtn As System.Windows.Forms.Button
+    Friend WithEvents UnloadScriptBtn As System.Windows.Forms.Button
+    Friend WithEvents KillScriptsBtn As System.Windows.Forms.Button
+    Friend WithEvents ShutdownNowBtn As System.Windows.Forms.Button
+    Friend WithEvents ShutdownBtn As System.Windows.Forms.Button
+    Friend WithEvents SaveShardBtn As System.Windows.Forms.Button
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents SetCmdLvlBtn As System.Windows.Forms.Button
+    Friend WithEvents WipeAccountBtn As System.Windows.Forms.Button
+    Friend WithEvents UnBanAccountBtn As System.Windows.Forms.Button
+    Friend WithEvents BanAccountBtn As System.Windows.Forms.Button
+    Friend WithEvents CreateAccountBtn As System.Windows.Forms.Button
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents SquelchPlayerBtn As System.Windows.Forms.Button
+    Friend WithEvents ResPlayerBtn As System.Windows.Forms.Button
+    Friend WithEvents RefreshPlayerBtn As System.Windows.Forms.Button
+    Friend WithEvents ThawPlayerBtn As System.Windows.Forms.Button
+    Friend WithEvents JailPlayerBtn As System.Windows.Forms.Button
+    Friend WithEvents FreezePlayerBtn As System.Windows.Forms.Button
+    Friend WithEvents KickPlayerBtn As System.Windows.Forms.Button
+    Friend WithEvents KillPlayerBtn As System.Windows.Forms.Button
+    Friend WithEvents GetPlayerInfoBtn As System.Windows.Forms.Button
+    Friend WithEvents RevokePrivBtn As System.Windows.Forms.Button
+    Friend WithEvents GrantPrivBtn As System.Windows.Forms.Button
+    Friend WithEvents MakeSeerBtn As System.Windows.Forms.Button
+    Friend WithEvents SetPlayerStatBtn As System.Windows.Forms.Button
+    Friend WithEvents SetPlayerSkillBtn As System.Windows.Forms.Button
+    Friend WithEvents ForgivePlayerBtn As System.Windows.Forms.Button
+    Friend WithEvents NotifyIcon As System.Windows.Forms.NotifyIcon
+    Friend WithEvents NotifyIcon_ContextMenu As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents RestoreMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ExitMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents CommandsMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_GotoPlayerMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_TeleMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_MobileCmdsSeparator As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents QC_DestroySItemMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_DestroyMItemsMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_LockRadius5MenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_LockRadius10MenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_ItemInfoMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_ItemsCmdsSeparator As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents QC_NightsightMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_SummonPlayerMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
+    Friend WithEvents Collapse_ExpandMenu1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents CollapseMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ExpandMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BldngCategoryTree As System.Windows.Forms.TreeView
+    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+    Friend WithEvents CreateFeetBtn1 As System.Windows.Forms.Button
+    Friend WithEvents BldngItemList As System.Windows.Forms.TreeView
+    Friend WithEvents DestroyRadiusBtn1 As System.Windows.Forms.Button
+    Friend WithEvents DestroyMultipleBtn1 As System.Windows.Forms.Button
+    Friend WithEvents DestroyBtn1 As System.Windows.Forms.Button
+    Friend WithEvents CreateTiledBtn1 As System.Windows.Forms.Button
+    Friend WithEvents CreateTargetBtn1 As System.Windows.Forms.Button
+    Friend WithEvents CreatePackBtn1 As System.Windows.Forms.Button
+    Friend WithEvents FoundationCreatorbtn As System.Windows.Forms.Button
+    Friend WithEvents RandomTileBtn1 As System.Windows.Forms.Button
+    Friend WithEvents RoofCreatorBtn As System.Windows.Forms.Button
+    Friend WithEvents BldngItemPreview As System.Windows.Forms.PictureBox
+    Friend WithEvents BldngItemID As System.Windows.Forms.Label
+    Friend WithEvents DestroyRadiusBtn2 As System.Windows.Forms.Button
+    Friend WithEvents DestroyMultipleBtn2 As System.Windows.Forms.Button
+    Friend WithEvents DestroyBtn2 As System.Windows.Forms.Button
+    Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
+    Friend WithEvents unusedBtn As System.Windows.Forms.Button
+    Friend WithEvents RandomTileBtn2 As System.Windows.Forms.Button
+    Friend WithEvents HueItemBtn As System.Windows.Forms.Button
+    Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
+    Friend WithEvents CreateTiledBtn2 As System.Windows.Forms.Button
+    Friend WithEvents CreateTargetBtn2 As System.Windows.Forms.Button
+    Friend WithEvents CreatePackBtn2 As System.Windows.Forms.Button
+    Friend WithEvents CreateFeetBtn2 As System.Windows.Forms.Button
+    Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
+    Friend WithEvents ItemItemID As System.Windows.Forms.Label
+    Friend WithEvents ItemItemPreview As System.Windows.Forms.PictureBox
+    Friend WithEvents SplitContainer2 As System.Windows.Forms.SplitContainer
+    Friend WithEvents ItemCategoryTree As System.Windows.Forms.TreeView
+    Friend WithEvents ItemItemList As System.Windows.Forms.TreeView
+    Friend WithEvents NudgeDownBtn As System.Windows.Forms.Button
+    Friend WithEvents NudgeUpBtn As System.Windows.Forms.Button
+    Friend WithEvents NudgeWestBtn As System.Windows.Forms.Button
+    Friend WithEvents NudgeSouthBtn As System.Windows.Forms.Button
+    Friend WithEvents NudgeEastBtn As System.Windows.Forms.Button
+    Friend WithEvents NudgeNorthBtn As System.Windows.Forms.Button
+    Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
+    Friend WithEvents HeightVal As System.Windows.Forms.NumericUpDown
+    Friend WithEvents CopyNudgeChk As System.Windows.Forms.CheckBox
+    Friend WithEvents MultipleNudgeChk As System.Windows.Forms.CheckBox
+    Friend WithEvents NudgeVal As System.Windows.Forms.NumericUpDown
+    Friend WithEvents MoveItemBtn As System.Windows.Forms.Button
+    Friend WithEvents ItemInfoBtn As System.Windows.Forms.Button
+    Friend WithEvents GroupBox12 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox11 As System.Windows.Forms.GroupBox
+    Friend WithEvents NumericUpDown3 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents LockRadiusBtn As System.Windows.Forms.Button
+    Friend WithEvents RenameItemBtn As System.Windows.Forms.Button
+    Friend WithEvents LockDownBtn As System.Windows.Forms.Button
+    Friend WithEvents ReleaseItemBtn As System.Windows.Forms.Button
+    Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents KeyBtn As System.Windows.Forms.Button
+    Friend WithEvents RekeyBtn As System.Windows.Forms.Button
+    Friend WithEvents UnlockBtn As System.Windows.Forms.Button
+    Friend WithEvents LockBtn As System.Windows.Forms.Button
+    Friend WithEvents GroupBox13 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox14 As System.Windows.Forms.GroupBox
+    Friend WithEvents PropEditBtn As System.Windows.Forms.Button
+    Friend WithEvents AddGlobalPropBtn As System.Windows.Forms.Button
+    Friend WithEvents SetGlobalPropBtn As System.Windows.Forms.Button
+    Friend WithEvents AddObjPropBtn As System.Windows.Forms.Button
+    Friend WithEvents SetObjPropBtn As System.Windows.Forms.Button
+    Friend WithEvents DelGlobalPropBtn As System.Windows.Forms.Button
+    Friend WithEvents DelObjPropBtn As System.Windows.Forms.Button
+    Friend WithEvents PowerUpBtn As System.Windows.Forms.Button
+    Friend WithEvents ThawMeBtn As System.Windows.Forms.Button
+    Friend WithEvents MyFormBtn As System.Windows.Forms.Button
+    Friend WithEvents GmFormBtn As System.Windows.Forms.Button
+    Friend WithEvents RefreshMeBtn As System.Windows.Forms.Button
+    Friend WithEvents ResMeBtn As System.Windows.Forms.Button
+    Friend WithEvents RevealMeBtn As System.Windows.Forms.Button
+    Friend WithEvents ConcealMeBtn As System.Windows.Forms.Button
+    Friend WithEvents GroupBox16 As System.Windows.Forms.GroupBox
+    Friend WithEvents BankBtn As System.Windows.Forms.Button
+    Friend WithEvents NightsightBtn As System.Windows.Forms.Button
+    Friend WithEvents HelpQueueBtn As System.Windows.Forms.Button
+    Friend WithEvents unusedBtn2 As System.Windows.Forms.Button
+    Friend WithEvents BroadcastBtn As System.Windows.Forms.Button
+    Friend WithEvents LogNotifyBtn As System.Windows.Forms.Button
+    Friend WithEvents GroupBox15 As System.Windows.Forms.GroupBox
+    Friend WithEvents AddGoBtn As System.Windows.Forms.Button
+    Friend WithEvents MakeTeleBtn As System.Windows.Forms.Button
+    Friend WithEvents RecallBtn As System.Windows.Forms.Button
+    Friend WithEvents MarkBtn As System.Windows.Forms.Button
+    Friend WithEvents GroupBox17 As System.Windows.Forms.GroupBox
+    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
+    Friend WithEvents ExpandMapBtn As System.Windows.Forms.Button
+    Friend WithEvents ZoomOutMapBtn As System.Windows.Forms.Button
+    Friend WithEvents ZoomInMapBtn As System.Windows.Forms.Button
+    Friend WithEvents TravelCoordsText As System.Windows.Forms.Label
+    Friend WithEvents SplitContainer3 As System.Windows.Forms.SplitContainer
+    Friend WithEvents TravelCategoryList As System.Windows.Forms.TreeView
+    Friend WithEvents TravelLocationList As System.Windows.Forms.TreeView
+    Friend WithEvents WhereBtn As System.Windows.Forms.Button
+    Friend WithEvents TeleToBtn As System.Windows.Forms.Button
+    Friend WithEvents MTeleBtn As System.Windows.Forms.Button
+    Friend WithEvents TeleBtn As System.Windows.Forms.Button
+    Friend WithEvents GoXYZBtn As System.Windows.Forms.Button
+    Friend WithEvents GotoBtn As System.Windows.Forms.Button
+    Friend WithEvents GoBtn As System.Windows.Forms.Button
+    Friend WithEvents GroupBox19 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox18 As System.Windows.Forms.GroupBox
+    Friend WithEvents HexToDecBtn As System.Windows.Forms.Button
+    Friend WithEvents DecValueTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents HexValueTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents CalcEqualBtn As System.Windows.Forms.Button
+    Friend WithEvents CalcClearBtn As System.Windows.Forms.Button
+    Friend WithEvents CalcAddBtn As System.Windows.Forms.Button
+    Friend WithEvents CalcSubtractBtn As System.Windows.Forms.Button
+    Friend WithEvents CalcMultiplyBtn As System.Windows.Forms.Button
+    Friend WithEvents CalcDivideBtn As System.Windows.Forms.Button
+    Friend WithEvents CalcDecimalBtn As System.Windows.Forms.Button
+    Friend WithEvents Calc3Btn As System.Windows.Forms.Button
+    Friend WithEvents Calc6Btn As System.Windows.Forms.Button
+    Friend WithEvents Calc9Btn As System.Windows.Forms.Button
+    Friend WithEvents Calc0Btn As System.Windows.Forms.Button
+    Friend WithEvents Calc2Btn As System.Windows.Forms.Button
+    Friend WithEvents Calc5Btn As System.Windows.Forms.Button
+    Friend WithEvents Calc8Btn As System.Windows.Forms.Button
+    Friend WithEvents CalcPositiveNegativeBtn As System.Windows.Forms.Button
+    Friend WithEvents Calc1Btn As System.Windows.Forms.Button
+    Friend WithEvents Calc4Btn As System.Windows.Forms.Button
+    Friend WithEvents Calc7Btn As System.Windows.Forms.Button
+    Friend WithEvents CalcValueTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents GroupBox20 As System.Windows.Forms.GroupBox
+    Friend WithEvents UserLaunch4Btn As System.Windows.Forms.Button
+    Friend WithEvents UserLaunch3Btn As System.Windows.Forms.Button
+    Friend WithEvents UserLaunch2Btn As System.Windows.Forms.Button
+    Friend WithEvents LaunchNSClientBtn As System.Windows.Forms.Button
+    Friend WithEvents LaunchPatchClientBtn As System.Windows.Forms.Button
+    Friend WithEvents LaunchInsideUOBtn As System.Windows.Forms.Button
+    Friend WithEvents UserLaunch1Btn As System.Windows.Forms.Button
+    Friend WithEvents TextToSpeechBtn As System.Windows.Forms.Button
+    Friend WithEvents toolBtn3 As System.Windows.Forms.Button
+    Friend WithEvents toolbtn2 As System.Windows.Forms.Button
+    Friend WithEvents toolbtn1 As System.Windows.Forms.Button
+    Friend WithEvents ToolTip As System.Windows.Forms.ToolTip
+    Friend WithEvents TableLayoutPanel2 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents GroupBox21 As System.Windows.Forms.GroupBox
+    Friend WithEvents BrowseInsideUOLocationBtn As System.Windows.Forms.Button
+    Friend WithEvents BrowseNSLocationBtn As System.Windows.Forms.Button
+    Friend WithEvents InsideUOLocationTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents NSLocationTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents ListEditorBtn As System.Windows.Forms.Button
+    Friend WithEvents AboutBtn As System.Windows.Forms.Button
+    Friend WithEvents TableLayoutPanel3 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents OptionsMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents OpacityMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents VisibleMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator7 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents Opacity90MenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Opacity80MenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Opacity70MenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Opacity60MenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Opacity50MenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Opacity40MenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Opacity30MenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Opacity20MenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Opacity10MenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AlwaysOnTopMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AboutMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GoMenuBtn As System.Windows.Forms.Button
+    Friend WithEvents MessagePlayerBtn As System.Windows.Forms.Button
+    Friend WithEvents InvulPlayerBtn As System.Windows.Forms.Button
+    Friend WithEvents HidePlayerBtn As System.Windows.Forms.Button
+    Friend WithEvents BarberPlayerBtn As System.Windows.Forms.Button
+    Friend WithEvents GroupBox22 As System.Windows.Forms.GroupBox
+    Friend WithEvents AdvancedSettings As System.Windows.Forms.Button
+    Friend WithEvents GroupBox23 As System.Windows.Forms.GroupBox
+    Friend WithEvents NPCPreviewID As System.Windows.Forms.Label
+    Friend WithEvents NPCPreviewImage As System.Windows.Forms.PictureBox
+    Friend WithEvents SplitContainer4 As System.Windows.Forms.SplitContainer
+    Friend WithEvents NPCCategoryList As System.Windows.Forms.TreeView
+    Friend WithEvents NPCList As System.Windows.Forms.TreeView
+    Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents SearchNameMenuItem1 As System.Windows.Forms.ToolStripTextBox
+    Friend WithEvents SearchIDMenuItem1 As System.Windows.Forms.ToolStripTextBox
+    Friend WithEvents GroupBox26 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox25 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox24 As System.Windows.Forms.GroupBox
+    Friend WithEvents NPCSetInvul As System.Windows.Forms.Button
+    Friend WithEvents NPCBarber As System.Windows.Forms.Button
+    Friend WithEvents SetNPCStat As System.Windows.Forms.Button
+    Friend WithEvents SetNPCSkill As System.Windows.Forms.Button
+    Friend WithEvents RunTo As System.Windows.Forms.Button
+    Friend WithEvents WalkTo As System.Windows.Forms.Button
+    Friend WithEvents Action As System.Windows.Forms.Button
+    Friend WithEvents SayAbove As System.Windows.Forms.Button
+    Friend WithEvents NoProvoke As System.Windows.Forms.Button
+    Friend WithEvents NoTame As System.Windows.Forms.Button
+    Friend WithEvents CopyLook As System.Windows.Forms.Button
+    Friend WithEvents NPCRename As System.Windows.Forms.Button
+    Friend WithEvents Button28 As System.Windows.Forms.Button
+    Friend WithEvents FreezeNPC As System.Windows.Forms.Button
+    Friend WithEvents Tame As System.Windows.Forms.Button
+    Friend WithEvents Button25 As System.Windows.Forms.Button
+    Friend WithEvents RefreshNPC As System.Windows.Forms.Button
+    Friend WithEvents ThawNPC As System.Windows.Forms.Button
+    Friend WithEvents SetNPCMurderer As System.Windows.Forms.Button
+    Friend WithEvents Button21 As System.Windows.Forms.Button
+    Friend WithEvents SetNPCCriminal As System.Windows.Forms.Button
+    Friend WithEvents Button19 As System.Windows.Forms.Button
+    Friend WithEvents EquipFromTemplate As System.Windows.Forms.Button
+    Friend WithEvents HideNPC As System.Windows.Forms.Button
+    Friend WithEvents EquipItem As System.Windows.Forms.Button
+    Friend WithEvents RestartAI As System.Windows.Forms.Button
+    Friend WithEvents GetNPCInfo As System.Windows.Forms.Button
+    Friend WithEvents QC_RoofCreatorMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_LockItemMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_SeerCmdsSeparator As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents QC_GetInfoMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_KillMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_RessurectMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_JailMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_PropEditMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_HideMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_KickMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_ConcealMeMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_RevealMeMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_GMFormMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_MyFormMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_SaveShardMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_HelpQueueMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_MarkMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_RecallMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_WhereMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_MTeleMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents QC_TeleToMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents OpacityTimer As System.Windows.Forms.Timer
+    Friend WithEvents PatcherBackgroundWorker As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Collapse_ExpandMenu2 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents CollapseMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ExpandMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents SearchNameMenuItem2 As System.Windows.Forms.ToolStripTextBox
+    Friend WithEvents SearchIDMenuItem2 As System.Windows.Forms.ToolStripTextBox
+    Friend WithEvents CreateGroup As System.Windows.Forms.Button
+    Friend WithEvents CreateNPCHidden As System.Windows.Forms.Button
+    Friend WithEvents CreateNPC As System.Windows.Forms.Button
+    Friend WithEvents Button29 As System.Windows.Forms.Button
+    Friend WithEvents NPCAnimationTimer As System.Windows.Forms.Timer
+    Friend WithEvents DecreaseAnimationSpeed As System.Windows.Forms.Button
+    Friend WithEvents IncreaseAnimationSpeed As System.Windows.Forms.Button
+    Friend WithEvents NPCAnimationError As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button30 As System.Windows.Forms.Button
+    Friend WithEvents Button31 As System.Windows.Forms.Button
+    Friend WithEvents KillNPC As System.Windows.Forms.Button
+    Friend WithEvents Button33 As System.Windows.Forms.Button
+    Friend WithEvents DecToHexBtn As System.Windows.Forms.Button
+    Friend WithEvents TableLayoutPanel4 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents OpacityCustomMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PreferencesMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents UserLaunchBtn1_ContextMenu As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents AssignProgramMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ClearButtonMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents UserLaunchBtn2_ContextMenu As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents AssignProgramMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ClearButtonMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents UserLaunchBtn3_ContextMenu As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents AssignProgramMenuItem3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ClearButtonMenuItem3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents UserLaunchBtn4_ContextMenu As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents AssignProgramMenuItem4 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ClearButtonMenuItem4 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Collapse_ExpandMenu3 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents CollapseMenuItem3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ExpandMenuItem3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents SearchByNameTextBox3 As System.Windows.Forms.ToolStripTextBox
+    Friend WithEvents Collapse_ExpandMenu4 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents CollapseMenuItem4 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ExpandMenuItem4 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator8 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents SearchByNameTextBox4 As System.Windows.Forms.ToolStripTextBox
+    Friend WithEvents PasteItemsBtn As System.Windows.Forms.Button
+    Friend WithEvents CopyPasteBtn As System.Windows.Forms.Button
+    Friend WithEvents CopyItemsBtn As System.Windows.Forms.Button
+    Friend WithEvents MassMoveBtn As System.Windows.Forms.Button
+    Friend WithEvents RelockBtn As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents MoveContBtn As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents PackBtn As System.Windows.Forms.Button
 	Friend WithEvents GroupBox27 As System.Windows.Forms.GroupBox
 	Friend WithEvents MainMenuBtn As System.Windows.Forms.Button
 	Friend WithEvents MainMenu_ContextMenu As System.Windows.Forms.ContextMenuStrip

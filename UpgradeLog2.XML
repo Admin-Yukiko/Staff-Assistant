@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Nightscape Staff Assistant">
+</Property><Property Name="Solution File" Value="T:\GitHub\Staff-Assistant\Nightscape Staff Assistant.sln">
+</Property><Property Name="User Options File" Value="T:\GitHub\Staff-Assistant\Nightscape Staff Assistant.suo">
+</Property><Property Name="Date" Value="Tuesday, November 17, 2015">
+</Property><Property Name="Time" Value="0:35 AM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Nightscape Staff Assistant.sln" Description="File successfully backed up as T:\GitHub\Staff-Assistant\Backup\Nightscape Staff Assistant.sln">
+</Event><Event ErrorLevel="0" Project="" Source="Nightscape Staff Assistant.suo" Description="File successfully backed up as T:\GitHub\Staff-Assistant\Backup\Nightscape Staff Assistant.suo">
+</Event><Event ErrorLevel="2" Project="Nightscape Staff Tool" Source="Nightscape GM Tool\Nightscape Staff Tool.vbproj" Description="Unable to open project file to perform upgrade.  ">
+</Event><Event ErrorLevel="0" Project="" Source="Nightscape Staff Assistant.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Nightscape Staff Assistant.sln" Description="Converted">
+</Event></UpgradeLog>
