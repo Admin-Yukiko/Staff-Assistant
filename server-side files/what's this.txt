@@ -1,1 +1,0 @@
-Copy the StaffAssistant directory under your \pol\pkg directory. Be sure to compile the scripts.
