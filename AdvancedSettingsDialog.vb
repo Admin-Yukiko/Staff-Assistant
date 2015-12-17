@@ -26,7 +26,7 @@ Public Class AdvancedSettingsDialog
 			My.Application.SplashScreen = Nothing
     End If
 
-    'Auto Launch Nightscape Client
+        'Auto Launch the Ultima Client
     If (My.Settings.AutoLaunchClient = True) Then
 			If (My.Settings.AutoLaunchType = "patch") Then
 				AutoLaunchPatchClient.Checked = True
@@ -249,7 +249,7 @@ Public Class AdvancedSettingsDialog
 		My.Application.SplashScreen = Nothing
 	End Sub
 
-  'Auto Launch Nightscape Client
+    'Auto Launch the Ultima Client
 	Private Sub AutoLaunchNSChk_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 		If (AutoLaunchNSChk.Checked = False) Then
 			AutoLaunchPatchClient.Enabled = False
@@ -271,7 +271,7 @@ Public Class AdvancedSettingsDialog
   'Show In System Tray
   Private Sub ShowInSystray_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShowInSystray.CheckedChanged
     If ((ShowInSystray.Checked = False) And ((ShowOnTaskbar.Checked = False) Or ((ShowOnTaskbar.Checked = True) And (ShowOnTaskbarMaximized.Checked = True)))) Then
-      Dim ReturnedValue As DialogResult = MessageBox.Show("The combination of settings you have chosen would mean that when minimized the Nightscape Staff Assistant could not be restored." & vbCrLf & vbCrLf & "Are you sure you want to disable ""Show in System Tray""?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2)
+            Dim ReturnedValue As DialogResult = MessageBox.Show("The combination of settings you have chosen would mean that when minimized the Staff Assistant could not be restored." & vbCrLf & vbCrLf & "Are you sure you want to disable ""Show in System Tray""?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2)
       If (ReturnedValue = Windows.Forms.DialogResult.No) Then
         ShowInSystray.Checked = True
         Exit Sub

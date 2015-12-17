@@ -3301,14 +3301,15 @@ Partial Class Form1
         '
         'LaunchPatchClientBtn
         '
+        Me.LaunchPatchClientBtn.Enabled = False
         Me.LaunchPatchClientBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LaunchPatchClientBtn.Location = New System.Drawing.Point(4, 16)
         Me.LaunchPatchClientBtn.Name = "LaunchPatchClientBtn"
         Me.LaunchPatchClientBtn.Size = New System.Drawing.Size(84, 49)
         Me.LaunchPatchClientBtn.TabIndex = 0
-        Me.LaunchPatchClientBtn.Text = "Nightscape" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Patch Client"
-        Me.ToolTip.SetToolTip(Me.LaunchPatchClientBtn, "Launch the Nightscape Patch Client." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "This is the preferred method for starting " & _
-        "Nightscape.")
+        Me.LaunchPatchClientBtn.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Patch Client"
+        Me.ToolTip.SetToolTip(Me.LaunchPatchClientBtn, "Launch the Patch Client." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "This is the preferred method for starting Nightscape." & _
+        "")
         Me.LaunchPatchClientBtn.UseVisualStyleBackColor = True
         '
         'GroupBox19
@@ -3663,7 +3664,7 @@ Partial Class Form1
         Me.AboutBtn.Size = New System.Drawing.Size(75, 23)
         Me.AboutBtn.TabIndex = 5
         Me.AboutBtn.Text = "About"
-        Me.ToolTip.SetToolTip(Me.AboutBtn, "Displays the About Box with details about the Nightscape Staff Assistant.")
+        Me.ToolTip.SetToolTip(Me.AboutBtn, "Displays the About Box with details about the Staff Assistant.")
         Me.AboutBtn.UseVisualStyleBackColor = True
         '
         'GroupBox21
@@ -3754,16 +3755,16 @@ Partial Class Form1
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(8, 16)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(108, 13)
+        Me.Label7.Size = New System.Drawing.Size(99, 13)
         Me.Label7.TabIndex = 0
-        Me.Label7.Text = "Nightscape Location:"
+        Me.Label7.Text = "UO Client Location:"
         '
         'NotifyIcon
         '
         Me.NotifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.NotifyIcon.ContextMenuStrip = Me.NotifyIcon_ContextMenu
         Me.NotifyIcon.Icon = CType(resources.GetObject("NotifyIcon.Icon"), System.Drawing.Icon)
-        Me.NotifyIcon.Text = "Nightscape Staff Assistant -- Beta 2"
+        Me.NotifyIcon.Text = "Staff Assistant -- Beta 4"
         Me.NotifyIcon.Visible = Global.Nightscape_Staff_Assistant.My.MySettings.Default.ShowInTray
         '
         'NotifyIcon_ContextMenu
@@ -4341,7 +4342,7 @@ Partial Class Form1
         Me.Opacity = 0.99R
         Me.ShowInTaskbar = Global.Nightscape_Staff_Assistant.My.MySettings.Default.ShowOnTaskbar
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-        Me.Text = "Nightscape Staff Assistant -- Beta 3.0"
+        Me.Text = "Staff Assistant -- Beta 4.0"
         Me.TopMost = Global.Nightscape_Staff_Assistant.My.MySettings.Default.AlwaysOnTop
         Me.TabControl1.ResumeLayout(False)
         Me.AdminTab.ResumeLayout(False)

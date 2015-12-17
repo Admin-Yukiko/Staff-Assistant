@@ -150,7 +150,7 @@ Public Class BuildingToolbar
 				Form1.INIHandler.Sections.Sections("BUILD TAB").Settings.Set("RandomTileItem", RandomTileDialog.ItemList.SelectedNode.Name)
 				Form1.INIHandler.Sections.Sections("BUILD TAB").Settings.Set("RandomTileRange", RandomTileDialog.RangeSize.Value)
 				Form1.INIHandler.Sections.Sections("BUILD TAB").Settings.Set("RandomTileHeight", RandomTileDialog.HeightToCreateAt.Value)
-				Form1.INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
+                Form1.INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
 				Ultima.Client.BringToTop()
 				Dim modifier As Integer = 1
 				While (RandomTileDialog.ItemRangePreview.Items.Item(RandomTileDialog.ItemRangePreview.Items.Count - modifier).Text = "N/A")
@@ -214,7 +214,7 @@ Public Class BuildingToolbar
 			Returned = GenericStringDialog.ShowDialog()
 			If (Returned = Windows.Forms.DialogResult.OK) Then
 				Form1.INIHandler.Sections.Sections("ITEM TWEAK TAB").Settings.Set("RenameItem", GenericStringDialog.TextBox.Text)
-				Form1.INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
+                Form1.INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
 				Ultima.Client.BringToTop()
 				Ultima.Client.SendText(".rename " & GenericStringDialog.TextBox.Text)
 			End If

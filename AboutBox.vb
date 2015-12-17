@@ -16,7 +16,7 @@ Public NotInheritable Class AboutBox
     Me.LabelVersion.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
     Me.LabelCopyright.Text = My.Application.Info.Copyright
     Me.LabelCompanyName.Text = My.Application.Info.CompanyName
-		Me.TextBoxDescription.Text = My.Application.Info.Description & vbCrLf & vbCrLf & "This version has been branded, and designed exclusivly for the Nightscape Shard."
+        Me.TextBoxDescription.Text = My.Application.Info.Description & vbCrLf & vbCrLf & "This version can be used on any POL based freeshard."
   End Sub
 
   Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKButton.Click

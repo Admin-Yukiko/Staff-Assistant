@@ -17,464 +17,464 @@ Public Class Form1
 			My.Settings.FormLocation = Me.Location
 		End If
 
-		If ((My.Settings.RetainInput = False) And (My.Computer.FileSystem.FileExists(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini") = True)) Then
-			My.Computer.FileSystem.DeleteFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-		End If
-		INIHandler.Dispose()
-	End Sub
+        If ((My.Settings.RetainInput = False) And (My.Computer.FileSystem.FileExists(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini") = True)) Then
+            My.Computer.FileSystem.DeleteFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+        End If
+        INIHandler.Dispose()
+    End Sub
 
-	Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-		Control.CheckForIllegalCrossThreadCalls = False
+    Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Control.CheckForIllegalCrossThreadCalls = False
 
-		SplashScreen2.StatusMsg.Text = "Initializing Session"
-		If ((My.Computer.FileSystem.FileExists(My.Computer.FileSystem.SpecialDirectories.CurrentUserApplicationData + "/ns~settings.ini") = False)) Then
-			'INI file does not exist, need to set it up and create it...
-			INIHandler.Sections.AddSection("MAIN")
-			INIHandler.Sections.AddSection("ADMIN TAB")
-			INIHandler.Sections.AddSection("BUILD TAB")
-			INIHandler.Sections.AddSection("ITEM TAB")
-			INIHandler.Sections.AddSection("ITEM TWEAK TAB")
-			INIHandler.Sections.AddSection("NPC TAB")
-			INIHandler.Sections.AddSection("NPC TWEAK TAB")
-			INIHandler.Sections.AddSection("GM TAB")
-			INIHandler.Sections.AddSection("TRAVEL TAB")
-			INIHandler.Sections.AddSection("TOOLS TAB")
-			INIHandler.Sections.AddSection("SETTINGS TAB")
-			INIHandler.Sections.Sections("MAIN").Settings.Add("FilePurpose", "This file is used to keep a cache of input. If input retention is disabled it will be deleted when the Staff Assistant exists, otherwise this file is persistent. Delete the file to clear the input cache.")
-			INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-		Else
-			INIHandler.ReadFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-		End If
+        SplashScreen2.StatusMsg.Text = "Initializing Session"
+        If ((My.Computer.FileSystem.FileExists(My.Computer.FileSystem.SpecialDirectories.CurrentUserApplicationData + "/sa~settings.ini") = False)) Then
+            'INI file does not exist, need to set it up and create it...
+            INIHandler.Sections.AddSection("MAIN")
+            INIHandler.Sections.AddSection("ADMIN TAB")
+            INIHandler.Sections.AddSection("BUILD TAB")
+            INIHandler.Sections.AddSection("ITEM TAB")
+            INIHandler.Sections.AddSection("ITEM TWEAK TAB")
+            INIHandler.Sections.AddSection("NPC TAB")
+            INIHandler.Sections.AddSection("NPC TWEAK TAB")
+            INIHandler.Sections.AddSection("GM TAB")
+            INIHandler.Sections.AddSection("TRAVEL TAB")
+            INIHandler.Sections.AddSection("TOOLS TAB")
+            INIHandler.Sections.AddSection("SETTINGS TAB")
+            INIHandler.Sections.Sections("MAIN").Settings.Add("FilePurpose", "This file is used to keep a cache of input. If input retention is disabled it will be deleted when the Staff Assistant exists, otherwise this file is persistent. Delete the file to clear the input cache.")
+            INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+        Else
+            INIHandler.ReadFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+        End If
 
-		If (My.Settings.FormLocation.IsEmpty = False) Then
-			If (((My.Settings.FormLocation.X > 0) And (My.Settings.FormLocation.X < My.Computer.Screen.WorkingArea.Width)) And ((My.Settings.FormLocation.Y > 0) And (My.Settings.FormLocation.Y < My.Computer.Screen.WorkingArea.Height))) Then
-				Me.Location = My.Settings.FormLocation
-			Else
-				Me.Location = New Point(0, 0)
-				My.Settings.FormLocation = New Point(0, 0)
-				My.Settings.Save()
-			End If
-		End If
+        If (My.Settings.FormLocation.IsEmpty = False) Then
+            If (((My.Settings.FormLocation.X > 0) And (My.Settings.FormLocation.X < My.Computer.Screen.WorkingArea.Width)) And ((My.Settings.FormLocation.Y > 0) And (My.Settings.FormLocation.Y < My.Computer.Screen.WorkingArea.Height))) Then
+                Me.Location = My.Settings.FormLocation
+            Else
+                Me.Location = New Point(0, 0)
+                My.Settings.FormLocation = New Point(0, 0)
+                My.Settings.Save()
+            End If
+        End If
 
-		SplashScreen2.StatusMsg.Text = "Caching Items List"
-		If (My.Computer.FileSystem.FileExists(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\building_materials.lst")) Then
-			BuildItemsList = My.Computer.FileSystem.ReadAllText(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\building_materials.lst").Replace(vbCrLf, "|").Split("|")
-		Else
-			MessageBox.Show(Application.OpenForms(0), "There was a fatal error loading the Building Creator list." & vbCrLf & vbCrLf & "The program will terminate." & vbCrLf & vbCrLf & "Please reinstall the Nightscape Staff Assistant to correct the error.", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-			Me.Close()
-			Exit Sub
-		End If
-		If (My.Computer.FileSystem.FileExists(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\items_list.lst")) Then
-			MainItemsList = My.Computer.FileSystem.ReadAllText(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\items_list.lst").Replace(vbCrLf, "|").Split("|")
-		Else
-			MessageBox.Show(Application.OpenForms(0), "There was a fatal error loading the Items list." & vbCrLf & vbCrLf & "The program will terminate." & vbCrLf & vbCrLf & "Please reinstall the Nightscape Staff Assistant to correct the error.", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-			Me.Close()
-			Exit Sub
-		End If
-		SplashScreen2.StatusMsg.Text = "Caching NPCs List"
-		If (My.Computer.FileSystem.FileExists(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\npc_list.lst")) Then
-			NPCsList = My.Computer.FileSystem.ReadAllText(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\npc_list.lst").Replace(vbCrLf, "|").Split("|")
-		Else
-			MessageBox.Show(Application.OpenForms(0), "There was a fatal error loading the NPCs list." & vbCrLf & vbCrLf & "The program will terminate." & vbCrLf & vbCrLf & "Please reinstall the Nightscape Staff Assistant to correct the error.", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-			Me.Close()
-			Exit Sub
-		End If
-		SplashScreen2.StatusMsg.Text = "Caching Locations List"
-		If (My.Computer.FileSystem.FileExists(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\locations_list.lst")) Then
-			LocationsList = My.Computer.FileSystem.ReadAllText(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\locations_list.lst").Replace(vbCrLf, "|").Split("|")
-		Else
-			MessageBox.Show(Application.OpenForms(0), "There was a fatal error loading the Travel Locations list." & vbCrLf & vbCrLf & "The program will terminate." & vbCrLf & vbCrLf & "Please reinstall the Nightscape Staff Assistant to correct the error.", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-			Me.Close()
-			Exit Sub
-		End If
+        SplashScreen2.StatusMsg.Text = "Caching Items List"
+        If (My.Computer.FileSystem.FileExists(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\building_materials.lst")) Then
+            BuildItemsList = My.Computer.FileSystem.ReadAllText(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\building_materials.lst").Replace(vbCrLf, "|").Split("|")
+        Else
+            MessageBox.Show(Application.OpenForms(0), "There was a fatal error loading the Building Creator list." & vbCrLf & vbCrLf & "The program will terminate." & vbCrLf & vbCrLf & "Please reinstall the Staff Assistant to correct the error.", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            Me.Close()
+            Exit Sub
+        End If
+        If (My.Computer.FileSystem.FileExists(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\items_list.lst")) Then
+            MainItemsList = My.Computer.FileSystem.ReadAllText(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\items_list.lst").Replace(vbCrLf, "|").Split("|")
+        Else
+            MessageBox.Show(Application.OpenForms(0), "There was a fatal error loading the Items list." & vbCrLf & vbCrLf & "The program will terminate." & vbCrLf & vbCrLf & "Please reinstall the Staff Assistant to correct the error.", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            Me.Close()
+            Exit Sub
+        End If
+        SplashScreen2.StatusMsg.Text = "Caching NPCs List"
+        If (My.Computer.FileSystem.FileExists(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\npc_list.lst")) Then
+            NPCsList = My.Computer.FileSystem.ReadAllText(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\npc_list.lst").Replace(vbCrLf, "|").Split("|")
+        Else
+            MessageBox.Show(Application.OpenForms(0), "There was a fatal error loading the NPCs list." & vbCrLf & vbCrLf & "The program will terminate." & vbCrLf & vbCrLf & "Please reinstall the Staff Assistant to correct the error.", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            Me.Close()
+            Exit Sub
+        End If
+        SplashScreen2.StatusMsg.Text = "Caching Locations List"
+        If (My.Computer.FileSystem.FileExists(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\locations_list.lst")) Then
+            LocationsList = My.Computer.FileSystem.ReadAllText(My.Computer.FileSystem.CurrentDirectory & "\resources\lists\locations_list.lst").Replace(vbCrLf, "|").Split("|")
+        Else
+            MessageBox.Show(Application.OpenForms(0), "There was a fatal error loading the Travel Locations list." & vbCrLf & vbCrLf & "The program will terminate." & vbCrLf & vbCrLf & "Please reinstall the Staff Assistant to correct the error.", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            Me.Close()
+            Exit Sub
+        End If
 
-		SplashScreen2.StatusMsg.Text = "Initializing AutoComplete"
-		SearchNameMenuItem1.AutoCompleteCustomSource = My.Settings.SearchByName1_AutoComplete
-		SearchIDMenuItem1.AutoCompleteCustomSource = My.Settings.SearchByID1_AutoComplete
-		SearchNameMenuItem2.AutoCompleteCustomSource = My.Settings.SearchByName2_AutoComplete
-		SearchIDMenuItem2.AutoCompleteCustomSource = My.Settings.SearchByID2_AutoComplete
-		SearchByNameTextBox3.AutoCompleteCustomSource = My.Settings.SearchByName3_AutoComplete
-		SearchByNameTextBox4.AutoCompleteCustomSource = My.Settings.SearchByName4_AutoComplete
+        SplashScreen2.StatusMsg.Text = "Initializing AutoComplete"
+        SearchNameMenuItem1.AutoCompleteCustomSource = My.Settings.SearchByName1_AutoComplete
+        SearchIDMenuItem1.AutoCompleteCustomSource = My.Settings.SearchByID1_AutoComplete
+        SearchNameMenuItem2.AutoCompleteCustomSource = My.Settings.SearchByName2_AutoComplete
+        SearchIDMenuItem2.AutoCompleteCustomSource = My.Settings.SearchByID2_AutoComplete
+        SearchByNameTextBox3.AutoCompleteCustomSource = My.Settings.SearchByName3_AutoComplete
+        SearchByNameTextBox4.AutoCompleteCustomSource = My.Settings.SearchByName4_AutoComplete
 
-		'AutoComplete
-		If (My.Settings.AutoComplete = False) Then
-			SearchNameMenuItem1.AutoCompleteMode = AutoCompleteMode.None
-			SearchIDMenuItem1.AutoCompleteMode = AutoCompleteMode.None
-		Else
-			SearchNameMenuItem1.AutoCompleteMode = AutoCompleteMode.Suggest
-			SearchIDMenuItem1.AutoCompleteMode = AutoCompleteMode.Suggest
-		End If
+        'AutoComplete
+        If (My.Settings.AutoComplete = False) Then
+            SearchNameMenuItem1.AutoCompleteMode = AutoCompleteMode.None
+            SearchIDMenuItem1.AutoCompleteMode = AutoCompleteMode.None
+        Else
+            SearchNameMenuItem1.AutoCompleteMode = AutoCompleteMode.Suggest
+            SearchIDMenuItem1.AutoCompleteMode = AutoCompleteMode.Suggest
+        End If
 
-		SplashScreen2.StatusMsg.Text = "Starting Location Tracking"
-		'Track my Location
-		If (My.Settings.TrackLocation = True) Then
-			Dim TrackLocationThread As New System.Threading.Thread(AddressOf TrackLocation)
-			TrackLocationThread.IsBackground = True
-			TrackLocationThread.Priority = Threading.ThreadPriority.Lowest
-			TrackLocationThread.Start()
-		End If
+        SplashScreen2.StatusMsg.Text = "Starting Location Tracking"
+        'Track my Location
+        If (My.Settings.TrackLocation = True) Then
+            Dim TrackLocationThread As New System.Threading.Thread(AddressOf TrackLocation)
+            TrackLocationThread.IsBackground = True
+            TrackLocationThread.Priority = Threading.ThreadPriority.Lowest
+            TrackLocationThread.Start()
+        End If
 
-		SplashScreen2.StatusMsg.Text = "Customizing application"
-		'TOOLTIP STYLE
-		If (My.Settings.TooltipStyle = "standard") Then
-			ToolTip.IsBalloon = False
-		Else
-			ToolTip.IsBalloon = True
-		End If
+        SplashScreen2.StatusMsg.Text = "Customizing application"
+        'TOOLTIP STYLE
+        If (My.Settings.TooltipStyle = "standard") Then
+            ToolTip.IsBalloon = False
+        Else
+            ToolTip.IsBalloon = True
+        End If
 
-		'Select the specified tab to show at startup
-		Select Case (My.Settings.StartupTab)
-			Case "administration"
-				TabControl1.SelectTab(0)
-			Case "building_creator"
-				TabControl1.SelectTab(1)
-			Case "items"
-				TabControl1.SelectTab(2)
-			Case "items_tweak"
-				TabControl1.SelectTab(3)
-			Case "npcs"
-				TabControl1.SelectTab(4)
-			Case "npc_tweak"
-				TabControl1.SelectTab(5)
-			Case "gm"
-				TabControl1.SelectTab(6)
-			Case "travel"
-				TabControl1.SelectTab(7)
-			Case "tools"
-				TabControl1.SelectTab(8)
-			Case "settings"
-				TabControl1.SelectTab(9)
-			Case Else
-				TabControl1.SelectTab(0)
-		End Select
+        'Select the specified tab to show at startup
+        Select Case (My.Settings.StartupTab)
+            Case "administration"
+                TabControl1.SelectTab(0)
+            Case "building_creator"
+                TabControl1.SelectTab(1)
+            Case "items"
+                TabControl1.SelectTab(2)
+            Case "items_tweak"
+                TabControl1.SelectTab(3)
+            Case "npcs"
+                TabControl1.SelectTab(4)
+            Case "npc_tweak"
+                TabControl1.SelectTab(5)
+            Case "gm"
+                TabControl1.SelectTab(6)
+            Case "travel"
+                TabControl1.SelectTab(7)
+            Case "tools"
+                TabControl1.SelectTab(8)
+            Case "settings"
+                TabControl1.SelectTab(9)
+            Case Else
+                TabControl1.SelectTab(0)
+        End Select
 
-		If ((My.Settings.AutoLaunchClient = True) And (My.Settings.NightscapeLocation <> "") And (Ultima.Client.Running = False)) Then
-			SplashScreen2.StatusMsg.Text = "Autolaunching Nightscape"
-			Dim Client As New Process
-			If ((My.Computer.FileSystem.FileExists(My.Settings.NightscapeLocation & "\nspatch.exe")) And (My.Settings.AutoLaunchType = "patch")) Then
-				Client.StartInfo.FileName = "nspatch.exe"
-			Else
+        If ((My.Settings.AutoLaunchClient = True) And (My.Settings.NightscapeLocation <> "") And (Ultima.Client.Running = False)) Then
+            SplashScreen2.StatusMsg.Text = "Autolaunching the Ultima Client"
+            Dim Client As New Process
+            If ((My.Computer.FileSystem.FileExists(My.Settings.NightscapeLocation & "\nspatch.exe")) And (My.Settings.AutoLaunchType = "patch")) Then
+                Client.StartInfo.FileName = "nspatch.exe"
+            Else
                 'Client.StartInfo.FileName = "nsclient.exe"
                 Client.StartInfo.FileName = "Decrypted_client.exe"
             End If
-			Client.StartInfo.UseShellExecute = True
-			Client.StartInfo.WorkingDirectory = My.Settings.NightscapeLocation
-			Client.EnableRaisingEvents = False
-			Try
-				Client.Start()
-				Client.WaitForInputIdle()
-			Catch ex As Exception
-				MessageBox.Show("Failed to load the Nightscape Client: " & vbCrLf & vbCrLf & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-			End Try
-		End If
+            Client.StartInfo.UseShellExecute = True
+            Client.StartInfo.WorkingDirectory = My.Settings.NightscapeLocation
+            Client.EnableRaisingEvents = False
+            Try
+                Client.Start()
+                Client.WaitForInputIdle()
+            Catch ex As Exception
+                MessageBox.Show("Failed to load the Ultima Online Client: " & vbCrLf & vbCrLf & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
 
-		SplashScreen2.StatusMsg.Text = "Finalizing startup"
-		If (My.Settings.Opacity = "enabled") Then
-			Select Case (My.Settings.OpacityLevel)
-				Case 100, 99
-					VisibleMenuItem_Click(sender, e)
-				Case 90
-					Opacity90MenuItem_Click(sender, e)
-				Case 80
-					Opacity80MenuItem_Click(sender, e)
-				Case 70
-					Opacity70MenuItem_Click(sender, e)
-				Case 60
-					Opacity60MenuItem_Click(sender, e)
-				Case 50
-					Opacity50MenuItem_Click(sender, e)
-				Case 40
-					Opacity40MenuItem_Click(sender, e)
-				Case 30
-					Opacity30MenuItem_Click(sender, e)
-				Case 20
-					Opacity20MenuItem_Click(sender, e)
-				Case 10
-					Opacity10MenuItem_Click(sender, e)
-				Case Else
-					OpacityCustomMenuItem_Click(sender, e)
-			End Select
-			Me.Opacity = ("0." & My.Settings.OpacityLevel.ToString)
-		Else
-			Me.Opacity = 0.99
-			VisibleMenuItem_Click(sender, e)
-		End If
+        SplashScreen2.StatusMsg.Text = "Finalizing startup"
+        If (My.Settings.Opacity = "enabled") Then
+            Select Case (My.Settings.OpacityLevel)
+                Case 100, 99
+                    VisibleMenuItem_Click(sender, e)
+                Case 90
+                    Opacity90MenuItem_Click(sender, e)
+                Case 80
+                    Opacity80MenuItem_Click(sender, e)
+                Case 70
+                    Opacity70MenuItem_Click(sender, e)
+                Case 60
+                    Opacity60MenuItem_Click(sender, e)
+                Case 50
+                    Opacity50MenuItem_Click(sender, e)
+                Case 40
+                    Opacity40MenuItem_Click(sender, e)
+                Case 30
+                    Opacity30MenuItem_Click(sender, e)
+                Case 20
+                    Opacity20MenuItem_Click(sender, e)
+                Case 10
+                    Opacity10MenuItem_Click(sender, e)
+                Case Else
+                    OpacityCustomMenuItem_Click(sender, e)
+            End Select
+            Me.Opacity = ("0." & My.Settings.OpacityLevel.ToString)
+        Else
+            Me.Opacity = 0.99
+            VisibleMenuItem_Click(sender, e)
+        End If
 
-		'Show the Quick Commands dividers based on whats enabled...
-		If ((My.Settings.QC_GetInfo = False) And (My.Settings.QC_Kill = False) And (My.Settings.QC_Ressurect = False) And (My.Settings.QC_Jail = False) And (My.Settings.QC_Kick = False) And (My.Settings.QC_Hide = False)) Then
-			QC_MobileCmdsSeparator.Visible = False
-		End If
-		If ((My.Settings.QC_Destroy = False) And (My.Settings.QC_MDestroy = False) And (My.Settings.QC_RoofCreator = False) And (My.Settings.QC_ItemInfo = False) And (My.Settings.QC_LockItem = False) And (My.Settings.QC_Lockdown5 = False) And (My.Settings.QC_Lockdown10 = False)) Then
-			QC_ItemsCmdsSeparator.Visible = False
-		End If
-		If ((My.Settings.QC_ConcealMe = False) And (My.Settings.QC_RevealMe = False) And (My.Settings.QC_GMForm = False) And (My.Settings.QC_MyForm = False) And (My.Settings.QC_SaveShard = False) And (My.Settings.QC_Nightsight = False) And (My.Settings.QC_HelpQueue = False) And (My.Settings.QC_PropEdit = False)) Then
-			QC_SeerCmdsSeparator.Visible = False
-		End If
+        'Show the Quick Commands dividers based on whats enabled...
+        If ((My.Settings.QC_GetInfo = False) And (My.Settings.QC_Kill = False) And (My.Settings.QC_Ressurect = False) And (My.Settings.QC_Jail = False) And (My.Settings.QC_Kick = False) And (My.Settings.QC_Hide = False)) Then
+            QC_MobileCmdsSeparator.Visible = False
+        End If
+        If ((My.Settings.QC_Destroy = False) And (My.Settings.QC_MDestroy = False) And (My.Settings.QC_RoofCreator = False) And (My.Settings.QC_ItemInfo = False) And (My.Settings.QC_LockItem = False) And (My.Settings.QC_Lockdown5 = False) And (My.Settings.QC_Lockdown10 = False)) Then
+            QC_ItemsCmdsSeparator.Visible = False
+        End If
+        If ((My.Settings.QC_ConcealMe = False) And (My.Settings.QC_RevealMe = False) And (My.Settings.QC_GMForm = False) And (My.Settings.QC_MyForm = False) And (My.Settings.QC_SaveShard = False) And (My.Settings.QC_Nightsight = False) And (My.Settings.QC_HelpQueue = False) And (My.Settings.QC_PropEdit = False)) Then
+            QC_SeerCmdsSeparator.Visible = False
+        End If
 
-		'If (My.Settings.CheckUpdates = True) Then
-		'  NotifyIcon.BalloonTipIcon = ToolTipIcon.Info
-		'  NotifyIcon.BalloonTipText = "Checking for newer versions..."
-		'  NotifyIcon.BalloonTipTitle = "AutoPatch"
-		'  NotifyIcon.ShowBalloonTip(2000)
-		'  Me.PatcherBackgroundWorker.RunWorkerAsync()
-		'End If
+        'If (My.Settings.CheckUpdates = True) Then
+        '  NotifyIcon.BalloonTipIcon = ToolTipIcon.Info
+        '  NotifyIcon.BalloonTipText = "Checking for newer versions..."
+        '  NotifyIcon.BalloonTipTitle = "AutoPatch"
+        '  NotifyIcon.ShowBalloonTip(2000)
+        '  Me.PatcherBackgroundWorker.RunWorkerAsync()
+        'End If
 
-	End Sub
+    End Sub
 
-	Private Sub Form1_Resize(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Resize
-		If (FormWindowState.Minimized) And (My.Settings.ShowOnTaskbar = False) Then
-			Me.Hide()
-		End If
-	End Sub
+    Private Sub Form1_Resize(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Resize
+        If (FormWindowState.Minimized) And (My.Settings.ShowOnTaskbar = False) Then
+            Me.Hide()
+        End If
+    End Sub
 
-	Private Sub NotifyIcon_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles NotifyIcon.DoubleClick
-		If (Me.WindowState = FormWindowState.Minimized) Then
-			Me.Show()
-			Me.WindowState = FormWindowState.Normal
-			Me.Show()
-			If ((Me.Location.X = -32000) Or (Me.Location.Y = -32000)) Then
-				Me.Location = New Point(0, 0)
-			End If
-		Else
-			Me.Show()
-			Me.Activate()
-			Me.BringToFront()
-		End If
-	End Sub
+    Private Sub NotifyIcon_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles NotifyIcon.DoubleClick
+        If (Me.WindowState = FormWindowState.Minimized) Then
+            Me.Show()
+            Me.WindowState = FormWindowState.Normal
+            Me.Show()
+            If ((Me.Location.X = -32000) Or (Me.Location.Y = -32000)) Then
+                Me.Location = New Point(0, 0)
+            End If
+        Else
+            Me.Show()
+            Me.Activate()
+            Me.BringToFront()
+        End If
+    End Sub
 
-	'#################################################'
-	'################### MAIN MENU ###################'
-	'#################################################'
+    '#################################################'
+    '################### MAIN MENU ###################'
+    '#################################################'
 
-	Private Sub MainMenuBtn_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MainMenuBtn.MouseDown
-		MainMenuBtn.FlatAppearance.BorderSize = 1
-	End Sub
-	Private Sub MainMenuBtn_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles MainMenuBtn.MouseHover
-		MainMenuBtn.FlatAppearance.BorderSize = 1
-	End Sub
-	Private Sub MainMenuBtn_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles MainMenuBtn.MouseLeave
-		MainMenuBtn.FlatAppearance.BorderSize = 0
-	End Sub
-	Private Sub MainMenuBtn_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MainMenuBtn.MouseUp
-		MainMenuBtn.FlatAppearance.BorderSize = 0
-	End Sub
+    Private Sub MainMenuBtn_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MainMenuBtn.MouseDown
+        MainMenuBtn.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub MainMenuBtn_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles MainMenuBtn.MouseHover
+        MainMenuBtn.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub MainMenuBtn_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles MainMenuBtn.MouseLeave
+        MainMenuBtn.FlatAppearance.BorderSize = 0
+    End Sub
+    Private Sub MainMenuBtn_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MainMenuBtn.MouseUp
+        MainMenuBtn.FlatAppearance.BorderSize = 0
+    End Sub
 
-	Private Sub MainMenuBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MainMenuBtn.Click
-		MainMenu_ContextMenu.Show(Control.MousePosition, ToolStripDropDownDirection.BelowRight)
-	End Sub
+    Private Sub MainMenuBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MainMenuBtn.Click
+        MainMenu_ContextMenu.Show(Control.MousePosition, ToolStripDropDownDirection.BelowRight)
+    End Sub
 
-	Private Sub BuildingToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuildingToolStripMenuItem.Click
-		Dim BuildingToolbar As Form = Application.OpenForms("BuildingToolbar")
-		Try
-			BuildingToolbar.Close()
-			BuildingToolbar.Dispose()
-		Catch ex As Exception
-			Dim BuildingToolbar2 As New BuildingToolbar
-			BuildingToolbar2.TopMost = Me.TopMost
-			BuildingToolbar2.Show()
-		End Try
-	End Sub
+    Private Sub BuildingToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuildingToolStripMenuItem.Click
+        Dim BuildingToolbar As Form = Application.OpenForms("BuildingToolbar")
+        Try
+            BuildingToolbar.Close()
+            BuildingToolbar.Dispose()
+        Catch ex As Exception
+            Dim BuildingToolbar2 As New BuildingToolbar
+            BuildingToolbar2.TopMost = Me.TopMost
+            BuildingToolbar2.Show()
+        End Try
+    End Sub
 
 
-	'#################################################'
-	'############## ADMINISTRATION TAB ###############'
-	'#################################################'
-	Private Sub SaveShardBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveShardBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    '#################################################'
+    '############## ADMINISTRATION TAB ###############'
+    '#################################################'
+    Private Sub SaveShardBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveShardBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_savenow")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub ShutdownBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShutdownBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub ShutdownBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShutdownBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_do_shutdown")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub ShutdownNowBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShutdownNowBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub ShutdownNowBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShutdownNowBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_do_shutdown delayed")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub KillScriptsBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KillScriptsBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Dim GenericStringDialog As New GenericStringDialog
-			GenericStringDialog.Description.Text = "Enter the scripts process ID number..."
-			GenericStringDialog.TextBox.Text = INIHandler.Sections("ADMIN TAB").Settings("KillPID")
-			GenericStringDialog.TopMost = Me.TopMost
-			Dim Returned As DialogResult
-			Returned = GenericStringDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("KillPID", GenericStringDialog.TextBox.Text)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.CurrentDirectory + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
-                Ultima.Client.SendText(".sa_killpid " & GenericStringDialog.TextBox.Text)
-			End If
-			GenericStringDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub UnloadScriptBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnloadScriptBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Dim GenericStringDialog As New GenericStringDialog
-			GenericStringDialog.Description.Text = "Enter the name of the script to unload..."
-			GenericStringDialog.TextBox.Text = INIHandler.Sections("ADMIN TAB").Settings("UnloadScript")
-			GenericStringDialog.TopMost = Me.TopMost
-			Dim Returned As DialogResult
-			Returned = GenericStringDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("UnloadScript", GenericStringDialog.TextBox.Text)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.CurrentDirectory + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
-                Ultima.Client.SendText(".sa_unload " & GenericStringDialog.TextBox.Text)
-			End If
-			GenericStringDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub UnloadAllBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnloadAllBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-            Ultima.Client.SendText(".sa_unloadall")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub UnloadCFGBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnloadCFGBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Dim GenericStringDialog As New GenericStringDialog
-			GenericStringDialog.Description.Text = "Enter the name of the cfg file to unload..."
-			GenericStringDialog.TextBox.Text = INIHandler.Sections("ADMIN TAB").Settings("UnloadCFG")
-			GenericStringDialog.TopMost = Me.TopMost
-			Dim Returned As DialogResult
-			Returned = GenericStringDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("UnloadCFG", GenericStringDialog.TextBox.Text)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.CurrentDirectory + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
-                Ultima.Client.SendText(".sa_unloadcfg " & GenericStringDialog.TextBox.Text)
-			End If
-			GenericStringDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-
-	Private Sub CreateAccountBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateAccountBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Dim AddAccountDialog As New AddAccountDialog
-			AddAccountDialog.TopMost = Me.TopMost
-			AddAccountDialog.AccountName.Text = INIHandler.Sections("ADMIN TAB").Settings("AddAccountName")
-			AddAccountDialog.Password.Text = INIHandler.Sections("ADMIN TAB").Settings("AddAccountPassword")
-			AddAccountDialog.ConfirmPassword.Text = INIHandler.Sections("ADMIN TAB").Settings("AddAccountConfirmPassword")
-			Dim Returned As DialogResult
-			Returned = AddAccountDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("AddAccountName", AddAccountDialog.AccountName.Text)
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("AddAccountPassword", AddAccountDialog.Password.Text)
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("AddAccountConfirmPassword", AddAccountDialog.ConfirmPassword.Text)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				If (AddAccountDialog.Password.Text <> AddAccountDialog.ConfirmPassword.Text) Then
-					MessageBox.Show("Passwords did not match!", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error)
-					Exit Sub
-				End If
-				Ultima.Client.BringToTop()
-                Ultima.Client.SendText(".sa_addaccount " & AddAccountDialog.AccountName.Text & " " & AddAccountDialog.Password.Text)
-			End If
-			AddAccountDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub BanAccountBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BanAccountBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Dim GenericStringDialog As New GenericStringDialog
-			GenericStringDialog.Description.Text = "Enter the name of the account to ban..."
-			GenericStringDialog.TextBox.Text = INIHandler.Sections("ADMIN TAB").Settings("BanAccountName")
-			GenericStringDialog.TopMost = Me.TopMost
-			Dim Returned As DialogResult
+    Private Sub KillScriptsBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KillScriptsBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Dim GenericStringDialog As New GenericStringDialog
+            GenericStringDialog.Description.Text = "Enter the scripts process ID number..."
+            GenericStringDialog.TextBox.Text = INIHandler.Sections("ADMIN TAB").Settings("KillPID")
+            GenericStringDialog.TopMost = Me.TopMost
+            Dim Returned As DialogResult
             Returned = GenericStringDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("BanAccountName", GenericStringDialog.TextBox.Text)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("KillPID", GenericStringDialog.TextBox.Text)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.CurrentDirectory + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
+                Ultima.Client.SendText(".sa_killpid " & GenericStringDialog.TextBox.Text)
+            End If
+            GenericStringDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub UnloadScriptBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnloadScriptBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Dim GenericStringDialog As New GenericStringDialog
+            GenericStringDialog.Description.Text = "Enter the name of the script to unload..."
+            GenericStringDialog.TextBox.Text = INIHandler.Sections("ADMIN TAB").Settings("UnloadScript")
+            GenericStringDialog.TopMost = Me.TopMost
+            Dim Returned As DialogResult
+            Returned = GenericStringDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("UnloadScript", GenericStringDialog.TextBox.Text)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.CurrentDirectory + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
+                Ultima.Client.SendText(".sa_unload " & GenericStringDialog.TextBox.Text)
+            End If
+            GenericStringDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub UnloadAllBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnloadAllBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".sa_unloadall")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub UnloadCFGBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnloadCFGBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Dim GenericStringDialog As New GenericStringDialog
+            GenericStringDialog.Description.Text = "Enter the name of the cfg file to unload..."
+            GenericStringDialog.TextBox.Text = INIHandler.Sections("ADMIN TAB").Settings("UnloadCFG")
+            GenericStringDialog.TopMost = Me.TopMost
+            Dim Returned As DialogResult
+            Returned = GenericStringDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("UnloadCFG", GenericStringDialog.TextBox.Text)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.CurrentDirectory + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
+                Ultima.Client.SendText(".sa_unloadcfg " & GenericStringDialog.TextBox.Text)
+            End If
+            GenericStringDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+
+    Private Sub CreateAccountBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateAccountBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Dim AddAccountDialog As New AddAccountDialog
+            AddAccountDialog.TopMost = Me.TopMost
+            AddAccountDialog.AccountName.Text = INIHandler.Sections("ADMIN TAB").Settings("AddAccountName")
+            AddAccountDialog.Password.Text = INIHandler.Sections("ADMIN TAB").Settings("AddAccountPassword")
+            AddAccountDialog.ConfirmPassword.Text = INIHandler.Sections("ADMIN TAB").Settings("AddAccountConfirmPassword")
+            Dim Returned As DialogResult
+            Returned = AddAccountDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("AddAccountName", AddAccountDialog.AccountName.Text)
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("AddAccountPassword", AddAccountDialog.Password.Text)
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("AddAccountConfirmPassword", AddAccountDialog.ConfirmPassword.Text)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                If (AddAccountDialog.Password.Text <> AddAccountDialog.ConfirmPassword.Text) Then
+                    MessageBox.Show("Passwords did not match!", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Exit Sub
+                End If
+                Ultima.Client.BringToTop()
+                Ultima.Client.SendText(".sa_addaccount " & AddAccountDialog.AccountName.Text & " " & AddAccountDialog.Password.Text)
+            End If
+            AddAccountDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub BanAccountBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BanAccountBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Dim GenericStringDialog As New GenericStringDialog
+            GenericStringDialog.Description.Text = "Enter the name of the account to ban..."
+            GenericStringDialog.TextBox.Text = INIHandler.Sections("ADMIN TAB").Settings("BanAccountName")
+            GenericStringDialog.TopMost = Me.TopMost
+            Dim Returned As DialogResult
+            Returned = GenericStringDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("BanAccountName", GenericStringDialog.TextBox.Text)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
                 Ultima.Client.BringToTop()
                 'modified
                 Ultima.Client.SendText(".sa_disable_acct " & GenericStringDialog.TextBox.Text)
-			End If
-			GenericStringDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub UnBanAccountBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnBanAccountBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Dim GenericStringDialog As New GenericStringDialog
-			GenericStringDialog.Description.Text = "Enter the name of the account to unban..."
-			GenericStringDialog.TextBox.Text = INIHandler.Sections("ADMIN TAB").Settings("UnBanAccountName")
-			GenericStringDialog.TopMost = Me.TopMost
-			Dim Returned As DialogResult
-			Returned = GenericStringDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("UnBanAccountName", GenericStringDialog.TextBox.Text)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
+            End If
+            GenericStringDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub UnBanAccountBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnBanAccountBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Dim GenericStringDialog As New GenericStringDialog
+            GenericStringDialog.Description.Text = "Enter the name of the account to unban..."
+            GenericStringDialog.TextBox.Text = INIHandler.Sections("ADMIN TAB").Settings("UnBanAccountName")
+            GenericStringDialog.TopMost = Me.TopMost
+            Dim Returned As DialogResult
+            Returned = GenericStringDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("UnBanAccountName", GenericStringDialog.TextBox.Text)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
                 Ultima.Client.BringToTop()
                 'modified
                 Ultima.Client.SendText(".sa_enable_acct " & GenericStringDialog.TextBox.Text)
-			End If
-			GenericStringDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub WipeAccountBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WipeAccountBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Dim GenericStringDialog As New GenericStringDialog
-			GenericStringDialog.Description.Text = "Enter the name of the account to wipe..."
-			GenericStringDialog.TextBox.Text = INIHandler.Sections("ADMIN TAB").Settings("WipeAccountName")
-			GenericStringDialog.TopMost = Me.TopMost
-			Dim Returned As DialogResult
-			Returned = GenericStringDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("WipeAccountName", GenericStringDialog.TextBox.Text)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".nukeaccount " & GenericStringDialog.TextBox.Text)
-			End If
-			GenericStringDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+            End If
+            GenericStringDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub WipeAccountBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WipeAccountBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Dim GenericStringDialog As New GenericStringDialog
+            GenericStringDialog.Description.Text = "Enter the name of the account to wipe..."
+            GenericStringDialog.TextBox.Text = INIHandler.Sections("ADMIN TAB").Settings("WipeAccountName")
+            GenericStringDialog.TopMost = Me.TopMost
+            Dim Returned As DialogResult
+            Returned = GenericStringDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("WipeAccountName", GenericStringDialog.TextBox.Text)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
+                Ultima.Client.SendText(".nukeaccount " & GenericStringDialog.TextBox.Text)
+            End If
+            GenericStringDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
     'Modified
-	Private Sub SetCmdLvlBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetCmdLvlBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Dim SetCmdLvlDialog As New SetCmdLvlDialog
-			SetCmdLvlDialog.TopMost = Me.TopMost
-			If (INIHandler.Sections("ADMIN TAB").Settings("SetCMDLevel") = Nothing) Then
-				SetCmdLvlDialog.CommandLevel.SelectedItem = "Player"
-			Else
-				SetCmdLvlDialog.CommandLevel.SelectedItem = INIHandler.Sections("ADMIN TAB").Settings("SetCMDLevel")
-			End If
-			Dim Returned As DialogResult
-			Returned = SetCmdLvlDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("SetCMDLevel", SetCmdLvlDialog.CommandLevel.SelectedItem)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
-				Select Case (SetCmdLvlDialog.CommandLevel.SelectedItem)
+    Private Sub SetCmdLvlBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetCmdLvlBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Dim SetCmdLvlDialog As New SetCmdLvlDialog
+            SetCmdLvlDialog.TopMost = Me.TopMost
+            If (INIHandler.Sections("ADMIN TAB").Settings("SetCMDLevel") = Nothing) Then
+                SetCmdLvlDialog.CommandLevel.SelectedItem = "Player"
+            Else
+                SetCmdLvlDialog.CommandLevel.SelectedItem = INIHandler.Sections("ADMIN TAB").Settings("SetCMDLevel")
+            End If
+            Dim Returned As DialogResult
+            Returned = SetCmdLvlDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("SetCMDLevel", SetCmdLvlDialog.CommandLevel.SelectedItem)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
+                Select Case (SetCmdLvlDialog.CommandLevel.SelectedItem)
                     Case "Developer"
                         Ultima.Client.SendText(".sa_setcmdlvl " & "test")
-					Case "Administrator"
+                    Case "Administrator"
                         Ultima.Client.SendText(".sa_setcmdlvl " & "admin")
                     Case "GM"
                         Ultima.Client.SendText(".sa_setcmdlvl " & "gm")
@@ -482,411 +482,411 @@ Public Class Form1
                         Ultima.Client.SendText(".sa_setcmdlvl " & "seer")
                     Case "Counsellor"
                         Ultima.Client.SendText(".sa_setcmdlvl " & "coun")
-					Case "Player"
+                    Case "Player"
                         Ultima.Client.SendText(".sa_setcmdlvl " & "player")
-				End Select
-			End If
-			SetCmdLvlDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub MakeSeerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MakeSeerBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+                End Select
+            End If
+            SetCmdLvlDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub MakeSeerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MakeSeerBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_makeseer")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub GrantPrivBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GrantPrivBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Dim PrivledgesDialog As New PrivledgesDialog
-			PrivledgesDialog.TopMost = Me.TopMost
-			If (INIHandler.Sections("ADMIN TAB").Settings("GrantPrivledge") = Nothing) Then
-				PrivledgesDialog.PrivledgeList.SelectedItem = "moveany"
-			Else
-				PrivledgesDialog.PrivledgeList.SelectedItem = INIHandler.Sections("ADMIN TAB").Settings("GrantPrivledge")
-			End If
-			PrivledgesDialog.Text = "Grant Privledge"
-			Dim Returned As DialogResult = PrivledgesDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("GrantPrivledge", PrivledgesDialog.PrivledgeList.SelectedItem)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub GrantPrivBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GrantPrivBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Dim PrivledgesDialog As New PrivledgesDialog
+            PrivledgesDialog.TopMost = Me.TopMost
+            If (INIHandler.Sections("ADMIN TAB").Settings("GrantPrivledge") = Nothing) Then
+                PrivledgesDialog.PrivledgeList.SelectedItem = "moveany"
+            Else
+                PrivledgesDialog.PrivledgeList.SelectedItem = INIHandler.Sections("ADMIN TAB").Settings("GrantPrivledge")
+            End If
+            PrivledgesDialog.Text = "Grant Privledge"
+            Dim Returned As DialogResult = PrivledgesDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("GrantPrivledge", PrivledgesDialog.PrivledgeList.SelectedItem)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
                 Ultima.Client.SendText(".sa_grantpriv " & PrivledgesDialog.PrivledgeList.SelectedItem.ToString)
-			End If
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub RevokePrivBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RevokePrivBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Dim PrivledgesDialog As New PrivledgesDialog
-			PrivledgesDialog.TopMost = Me.TopMost
-			If (INIHandler.Sections("ADMIN TAB").Settings("RevokePrivledge") = Nothing) Then
-				PrivledgesDialog.PrivledgeList.SelectedItem = "moveany"
-			Else
-				PrivledgesDialog.PrivledgeList.SelectedItem = INIHandler.Sections("ADMIN TAB").Settings("RevokePrivledge")
-			End If
-			PrivledgesDialog.Text = "Revoke Privledge"
-			Dim Returned As DialogResult = PrivledgesDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("RevokePrivledge", PrivledgesDialog.PrivledgeList.SelectedItem)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
+            End If
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub RevokePrivBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RevokePrivBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Dim PrivledgesDialog As New PrivledgesDialog
+            PrivledgesDialog.TopMost = Me.TopMost
+            If (INIHandler.Sections("ADMIN TAB").Settings("RevokePrivledge") = Nothing) Then
+                PrivledgesDialog.PrivledgeList.SelectedItem = "moveany"
+            Else
+                PrivledgesDialog.PrivledgeList.SelectedItem = INIHandler.Sections("ADMIN TAB").Settings("RevokePrivledge")
+            End If
+            PrivledgesDialog.Text = "Revoke Privledge"
+            Dim Returned As DialogResult = PrivledgesDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("RevokePrivledge", PrivledgesDialog.PrivledgeList.SelectedItem)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
                 Ultima.Client.SendText(".sa_revokepriv " & PrivledgesDialog.PrivledgeList.SelectedItem.ToString)
-			End If
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+            End If
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub GetPlayerInfoBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GetPlayerInfoBtn.Click, GetNPCInfo.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".info")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub KillPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KillPlayerBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub GetPlayerInfoBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GetPlayerInfoBtn.Click, GetNPCInfo.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".info")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub KillPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KillPlayerBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_kill")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub ResPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ResPlayerBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub ResPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ResPlayerBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_res")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub RefreshPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefreshPlayerBtn.Click, RefreshNPC.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub RefreshPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefreshPlayerBtn.Click, RefreshNPC.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_refresh")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub JailPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles JailPlayerBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub JailPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles JailPlayerBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_jail")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub KickPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KickPlayerBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub KickPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KickPlayerBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_kick")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub ThawPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ThawPlayerBtn.Click, ThawNPC.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub ThawPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ThawPlayerBtn.Click, ThawNPC.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_thaw")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub FreezePlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FreezePlayerBtn.Click, FreezeNPC.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub FreezePlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FreezePlayerBtn.Click, FreezeNPC.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_freeze")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub SquelchPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SquelchPlayerBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub SquelchPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SquelchPlayerBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_squelch")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub ForgivePlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ForgivePlayerBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub ForgivePlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ForgivePlayerBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_forgive")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub SetPlayerSkillBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetPlayerSkillBtn.Click, SetNPCSkill.Click
-		If (Ultima.Client.Running = True) Then
-			Dim SetSkillDialog As New SetSkillDialog
-			SetSkillDialog.TopMost = Me.TopMost
-			If (INIHandler.Sections("ADMIN TAB").Settings("SetSkill") = Nothing) Then
-				SetSkillDialog.SkillList.SelectedItem = "Alchemy"
-			Else
-				SetSkillDialog.SkillList.SelectedItem = INIHandler.Sections("ADMIN TAB").Settings("SetSkill")
-			End If
-			SetSkillDialog.SkillValue.Value = INIHandler.Sections("ADMIN TAB").Settings("SetSkillValue")
-			Dim Returned As DialogResult = SetSkillDialog.ShowDialog
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("SetSkill", SetSkillDialog.SkillList.SelectedItem)
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("SetSkillValue", SetSkillDialog.SkillValue.Value.ToString)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".setskill " & SetSkillDialog.SkillList.SelectedItem & " " & SetSkillDialog.SkillValue.Value.ToString)
-			End If
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub SetPlayerStatBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetPlayerStatBtn.Click, SetNPCStat.Click
-		If (Ultima.Client.Running = True) Then
-			Dim SetStatDialog As New SetStatDialog
-			SetStatDialog.TopMost = Me.TopMost
-			If ((INIHandler.Sections("ADMIN TAB").Settings("SetStat") = "str") Or (INIHandler.Sections("ADMIN TAB").Settings("SetStat") = Nothing)) Then
-				SetStatDialog.Strength.Checked = True
-			ElseIf (INIHandler.Sections("ADMIN TAB").Settings("SetStat") = "dex") Then
-				SetStatDialog.Stamina.Checked = True
-			ElseIf (INIHandler.Sections("ADMIN TAB").Settings("SetStat") = "int") Then
-				SetStatDialog.Intelligence.Checked = True
-			End If
-			SetStatDialog.StatValue.Value = INIHandler.Sections("ADMIN TAB").Settings("SetStatValue")
-			Dim Returned As DialogResult = SetStatDialog.ShowDialog
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("SetStat", SetSkillDialog.SkillList.SelectedItem)
-				INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("SetStatValue", SetSkillDialog.SkillValue.Value.ToString)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
-				If (SetStatDialog.Strength.Checked = True) Then
-					Ultima.Client.SendText(".setstat strength " & SetStatDialog.StatValue.Value.ToString)
-				ElseIf (SetStatDialog.Stamina.Checked = True) Then
-					Ultima.Client.SendText(".setstat stamina " & SetStatDialog.StatValue.Value.ToString)
-				ElseIf (SetStatDialog.Intelligence.Checked = True) Then
-					Ultima.Client.SendText(".setstat intelligence " & SetStatDialog.StatValue.Value.ToString)
-				End If
-			End If
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub SetPlayerSkillBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetPlayerSkillBtn.Click, SetNPCSkill.Click
+        If (Ultima.Client.Running = True) Then
+            Dim SetSkillDialog As New SetSkillDialog
+            SetSkillDialog.TopMost = Me.TopMost
+            If (INIHandler.Sections("ADMIN TAB").Settings("SetSkill") = Nothing) Then
+                SetSkillDialog.SkillList.SelectedItem = "Alchemy"
+            Else
+                SetSkillDialog.SkillList.SelectedItem = INIHandler.Sections("ADMIN TAB").Settings("SetSkill")
+            End If
+            SetSkillDialog.SkillValue.Value = INIHandler.Sections("ADMIN TAB").Settings("SetSkillValue")
+            Dim Returned As DialogResult = SetSkillDialog.ShowDialog
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("SetSkill", SetSkillDialog.SkillList.SelectedItem)
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("SetSkillValue", SetSkillDialog.SkillValue.Value.ToString)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
+                Ultima.Client.SendText(".setskill " & SetSkillDialog.SkillList.SelectedItem & " " & SetSkillDialog.SkillValue.Value.ToString)
+            End If
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub SetPlayerStatBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetPlayerStatBtn.Click, SetNPCStat.Click
+        If (Ultima.Client.Running = True) Then
+            Dim SetStatDialog As New SetStatDialog
+            SetStatDialog.TopMost = Me.TopMost
+            If ((INIHandler.Sections("ADMIN TAB").Settings("SetStat") = "str") Or (INIHandler.Sections("ADMIN TAB").Settings("SetStat") = Nothing)) Then
+                SetStatDialog.Strength.Checked = True
+            ElseIf (INIHandler.Sections("ADMIN TAB").Settings("SetStat") = "dex") Then
+                SetStatDialog.Stamina.Checked = True
+            ElseIf (INIHandler.Sections("ADMIN TAB").Settings("SetStat") = "int") Then
+                SetStatDialog.Intelligence.Checked = True
+            End If
+            SetStatDialog.StatValue.Value = INIHandler.Sections("ADMIN TAB").Settings("SetStatValue")
+            Dim Returned As DialogResult = SetStatDialog.ShowDialog
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("SetStat", SetSkillDialog.SkillList.SelectedItem)
+                INIHandler.Sections.Sections("ADMIN TAB").Settings.Set("SetStatValue", SetSkillDialog.SkillValue.Value.ToString)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
+                If (SetStatDialog.Strength.Checked = True) Then
+                    Ultima.Client.SendText(".setstat strength " & SetStatDialog.StatValue.Value.ToString)
+                ElseIf (SetStatDialog.Stamina.Checked = True) Then
+                    Ultima.Client.SendText(".setstat stamina " & SetStatDialog.StatValue.Value.ToString)
+                ElseIf (SetStatDialog.Intelligence.Checked = True) Then
+                    Ultima.Client.SendText(".setstat intelligence " & SetStatDialog.StatValue.Value.ToString)
+                End If
+            End If
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub BarberPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BarberPlayerBtn.Click, NPCBarber.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".barber")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub HidePlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HidePlayerBtn.Click, HideNPC.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".hide")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub InvulPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InvulPlayerBtn.Click, NPCSetInvul.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub BarberPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BarberPlayerBtn.Click, NPCBarber.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".barber")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub HidePlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HidePlayerBtn.Click, HideNPC.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".hide")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub InvulPlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InvulPlayerBtn.Click, NPCSetInvul.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_invul")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub MessagePlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MessagePlayerBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub MessagePlayerBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MessagePlayerBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_msg")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	'#################################################'
-	'############# BUILDING CREATOR TAB ##############'
-	'#################################################'
-	' ALSO HANDLES SOME ELEMENTS FROM ITEMS TAB
+    '#################################################'
+    '############# BUILDING CREATOR TAB ##############'
+    '#################################################'
+    ' ALSO HANDLES SOME ELEMENTS FROM ITEMS TAB
 
-	Private Sub BuildTab_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles BuildTab.Enter
-		If (BldngCategoryTree.Nodes.Count = 0) Then
+    Private Sub BuildTab_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles BuildTab.Enter
+        If (BldngCategoryTree.Nodes.Count = 0) Then
 
-			' Suppress repainting the TreeView until all the objects have been created.
-			BldngCategoryTree.BeginUpdate()
+            ' Suppress repainting the TreeView until all the objects have been created.
+            BldngCategoryTree.BeginUpdate()
 
-			' Clear the TreeView each time the method is called.
-			BldngCategoryTree.Nodes.Clear()
+            ' Clear the TreeView each time the method is called.
+            BldngCategoryTree.Nodes.Clear()
 
-			Dim lastCKey As Integer = -1
+            Dim lastCKey As Integer = -1
 
-			For Each line As String In BuildItemsList
+            For Each line As String In BuildItemsList
 
-				If (line.StartsWith("C")) Then
-					lastCKey += 1
-					BldngCategoryTree.Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
-					Continue For
-				End If
+                If (line.StartsWith("C")) Then
+                    lastCKey += 1
+                    BldngCategoryTree.Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
+                    Continue For
+                End If
 
-				If ((line.StartsWith("S")) And (lastCKey >= 0)) Then
-					BldngCategoryTree.Nodes(lastCKey).Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
-				End If
+                If ((line.StartsWith("S")) And (lastCKey >= 0)) Then
+                    BldngCategoryTree.Nodes(lastCKey).Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
+                End If
 
-			Next line
+            Next line
 
-			' Begin repainting the TreeView.
-			BldngCategoryTree.EndUpdate()
-		End If
-	End Sub
+            ' Begin repainting the TreeView.
+            BldngCategoryTree.EndUpdate()
+        End If
+    End Sub
 
-	Private Sub BldngCategoryTree_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles BldngCategoryTree.AfterSelect
-		Dim FoundParent As Boolean = False
-		Dim FoundCat As Boolean = False
-		Dim ParentNode As String = Nothing
+    Private Sub BldngCategoryTree_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles BldngCategoryTree.AfterSelect
+        Dim FoundParent As Boolean = False
+        Dim FoundCat As Boolean = False
+        Dim ParentNode As String = Nothing
 
-		BldngItemList.BeginUpdate()
-		BldngItemList.Nodes.Clear()
+        BldngItemList.BeginUpdate()
+        BldngItemList.Nodes.Clear()
 
-		Try
-			ParentNode = BldngCategoryTree.SelectedNode.Parent.Text
-		Catch ex As Exception
-			FoundParent = True
-		End Try
+        Try
+            ParentNode = BldngCategoryTree.SelectedNode.Parent.Text
+        Catch ex As Exception
+            FoundParent = True
+        End Try
 
-		For Each line As String In BuildItemsList
-			If (FoundParent = False) Then
-				If (BldngCategoryTree.SelectedNode.Parent.Text = line.Substring(2, line.Length - 2)) Then
-					FoundParent = True
-					Continue For
-				End If
-			End If
-			If (FoundParent = True) Then
-				If (BldngCategoryTree.SelectedNode.Text = line.Substring(2, line.Length - 2)) Then
-					FoundCat = True
-					Continue For
-				End If
-				If (FoundCat = True) Then
-					If ((line.StartsWith("G")) Or (line.StartsWith("C")) Or (line.StartsWith("S"))) Then
-						FoundCat = False
-						Exit For
-					End If
-					If (line.StartsWith("I")) Then
-						BldngItemList.Nodes.Add(line.Substring(52, line.Length - 52), line.Substring(2, 50).TrimEnd(" "))
-					End If
-				End If
-			End If
-		Next line
+        For Each line As String In BuildItemsList
+            If (FoundParent = False) Then
+                If (BldngCategoryTree.SelectedNode.Parent.Text = line.Substring(2, line.Length - 2)) Then
+                    FoundParent = True
+                    Continue For
+                End If
+            End If
+            If (FoundParent = True) Then
+                If (BldngCategoryTree.SelectedNode.Text = line.Substring(2, line.Length - 2)) Then
+                    FoundCat = True
+                    Continue For
+                End If
+                If (FoundCat = True) Then
+                    If ((line.StartsWith("G")) Or (line.StartsWith("C")) Or (line.StartsWith("S"))) Then
+                        FoundCat = False
+                        Exit For
+                    End If
+                    If (line.StartsWith("I")) Then
+                        BldngItemList.Nodes.Add(line.Substring(52, line.Length - 52), line.Substring(2, 50).TrimEnd(" "))
+                    End If
+                End If
+            End If
+        Next line
 
-		BldngItemList.EndUpdate()
-	End Sub
+        BldngItemList.EndUpdate()
+    End Sub
 
-	'Collapse / Expand
-	Private Sub CollapseMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CollapseMenuItem1.Click
-		BldngCategoryTree.CollapseAll()
-	End Sub
-	Private Sub ExpandMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExpandMenuItem1.Click
-		BldngCategoryTree.ExpandAll()
-	End Sub
+    'Collapse / Expand
+    Private Sub CollapseMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CollapseMenuItem1.Click
+        BldngCategoryTree.CollapseAll()
+    End Sub
+    Private Sub ExpandMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExpandMenuItem1.Click
+        BldngCategoryTree.ExpandAll()
+    End Sub
 
-	'Search by Name
-	Private Sub SearchNameMenuItem1_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchNameMenuItem1.GotFocus
-		If (SearchNameMenuItem1.Text = "Search by Name") Then
-			SearchNameMenuItem1.Text = ""
-			SearchNameMenuItem1.ForeColor = Color.Black
-		End If
-	End Sub
-	Private Sub SearchNameMenuItem1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SearchNameMenuItem1.KeyDown
-		If (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return) Then
-			SearchNameMenuItem1.AutoCompleteCustomSource.Add(SearchNameMenuItem1.Text)
-			My.Settings.SearchByName1_AutoComplete = SearchNameMenuItem1.AutoCompleteCustomSource
+    'Search by Name
+    Private Sub SearchNameMenuItem1_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchNameMenuItem1.GotFocus
+        If (SearchNameMenuItem1.Text = "Search by Name") Then
+            SearchNameMenuItem1.Text = ""
+            SearchNameMenuItem1.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub SearchNameMenuItem1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SearchNameMenuItem1.KeyDown
+        If (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return) Then
+            SearchNameMenuItem1.AutoCompleteCustomSource.Add(SearchNameMenuItem1.Text)
+            My.Settings.SearchByName1_AutoComplete = SearchNameMenuItem1.AutoCompleteCustomSource
 
-			Collapse_ExpandMenu1.Hide()
-			Dim LastCategory As String = Nothing
-			Dim FoundItem As String = Nothing
-			For Each line As String In BuildItemsList
-				If (line.StartsWith("C") Or line.StartsWith("S")) Then
-					LastCategory = line.Substring(2, line.Length - 2).TrimEnd(" ")
-				End If
-				If (line.StartsWith("I")) Then
-					If (line.Substring(2, 50).TrimEnd(" ").ToLower.Contains(SearchNameMenuItem1.Text.ToLower)) Then
-						FoundItem = line.Substring(52, line.Length - 52).Trim(" ")
-						Exit For
-					End If
-				Else
-					If (line.Substring(2, line.Length - 2).TrimEnd(" ").ToLower.Contains(SearchNameMenuItem1.Text.ToLower)) Then
-						FoundItem = Nothing
-						Exit For
-					End If
-				End If
-			Next
-			BldngCategoryTree.SelectedNode = BldngCategoryTree.Nodes.Find(LastCategory, True)(0)
-			If (FoundItem IsNot Nothing) Then
-				Dim FoundNode() As TreeNode = BldngItemList.Nodes.Find(FoundItem, True)
-				If (FoundNode.Length > 0) Then
-					BldngItemList.SelectedNode = FoundNode(0)
-				End If
-			End If
-			e.Handled = True
-			SearchNameMenuItem1.Text = "Search by Name"
-			SearchNameMenuItem1.ForeColor = Color.Gray
-		End If
-	End Sub
-	Private Sub SearchNameMenuItem1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SearchNameMenuItem1.LostFocus
-		If (SearchNameMenuItem1.Text = "") Then
-			SearchNameMenuItem1.Text = "Search by Name"
-			SearchNameMenuItem1.ForeColor = Color.Gray
-		End If
-	End Sub
+            Collapse_ExpandMenu1.Hide()
+            Dim LastCategory As String = Nothing
+            Dim FoundItem As String = Nothing
+            For Each line As String In BuildItemsList
+                If (line.StartsWith("C") Or line.StartsWith("S")) Then
+                    LastCategory = line.Substring(2, line.Length - 2).TrimEnd(" ")
+                End If
+                If (line.StartsWith("I")) Then
+                    If (line.Substring(2, 50).TrimEnd(" ").ToLower.Contains(SearchNameMenuItem1.Text.ToLower)) Then
+                        FoundItem = line.Substring(52, line.Length - 52).Trim(" ")
+                        Exit For
+                    End If
+                Else
+                    If (line.Substring(2, line.Length - 2).TrimEnd(" ").ToLower.Contains(SearchNameMenuItem1.Text.ToLower)) Then
+                        FoundItem = Nothing
+                        Exit For
+                    End If
+                End If
+            Next
+            BldngCategoryTree.SelectedNode = BldngCategoryTree.Nodes.Find(LastCategory, True)(0)
+            If (FoundItem IsNot Nothing) Then
+                Dim FoundNode() As TreeNode = BldngItemList.Nodes.Find(FoundItem, True)
+                If (FoundNode.Length > 0) Then
+                    BldngItemList.SelectedNode = FoundNode(0)
+                End If
+            End If
+            e.Handled = True
+            SearchNameMenuItem1.Text = "Search by Name"
+            SearchNameMenuItem1.ForeColor = Color.Gray
+        End If
+    End Sub
+    Private Sub SearchNameMenuItem1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SearchNameMenuItem1.LostFocus
+        If (SearchNameMenuItem1.Text = "") Then
+            SearchNameMenuItem1.Text = "Search by Name"
+            SearchNameMenuItem1.ForeColor = Color.Gray
+        End If
+    End Sub
 
-	'Seatch by ID
-	Private Sub SearchIDMenuItem1_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchIDMenuItem1.GotFocus
-		If (SearchIDMenuItem1.Text = "Search by ID") Then
-			SearchIDMenuItem1.Text = ""
-			SearchIDMenuItem1.ForeColor = Color.Black
-		End If
-	End Sub
-	Private Sub SearchIDMenuItem1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SearchIDMenuItem1.KeyDown
-		If (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return) Then
-			SearchIDMenuItem1.AutoCompleteCustomSource.Add(SearchIDMenuItem1.Text.ToString)
-			My.Settings.SearchByID1_AutoComplete = SearchIDMenuItem1.AutoCompleteCustomSource
-			Collapse_ExpandMenu1.Hide()
-			Dim LastCategory As String = Nothing
-			Dim FoundItem As String = Nothing
-			For Each line As String In BuildItemsList
-				If (line.StartsWith("C") Or line.StartsWith("S")) Then
-					LastCategory = line.Substring(2, line.Length - 2).TrimEnd(" ")
-				End If
-				If (line.StartsWith("I")) Then
-					If (line.Substring(52, line.Length - 52).Trim(" ").ToLower.Contains(SearchIDMenuItem1.Text.ToLower)) Then
-						FoundItem = line.Substring(52, line.Length - 52).Trim(" ")
-						Exit For
-					End If
-				End If
-			Next
-			BldngCategoryTree.SelectedNode = BldngCategoryTree.Nodes.Find(LastCategory, True)(0)
-			If (FoundItem IsNot Nothing) Then
-				Dim FoundNode() As TreeNode = BldngItemList.Nodes.Find(FoundItem, True)
-				If (FoundNode.Length > 0) Then
-					BldngItemList.SelectedNode = FoundNode(0)
-				End If
-			End If
-			e.Handled = True
-			SearchIDMenuItem1.Text = "Search by ID"
-			SearchIDMenuItem1.ForeColor = Color.Gray
-		End If
-	End Sub
-	Private Sub SearchIDMenuItem1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SearchIDMenuItem1.LostFocus
-		If (SearchIDMenuItem1.Text = "") Then
-			SearchIDMenuItem1.Text = "Search by ID"
-			SearchIDMenuItem1.ForeColor = Color.Gray
-		End If
-	End Sub
+    'Seatch by ID
+    Private Sub SearchIDMenuItem1_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchIDMenuItem1.GotFocus
+        If (SearchIDMenuItem1.Text = "Search by ID") Then
+            SearchIDMenuItem1.Text = ""
+            SearchIDMenuItem1.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub SearchIDMenuItem1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SearchIDMenuItem1.KeyDown
+        If (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return) Then
+            SearchIDMenuItem1.AutoCompleteCustomSource.Add(SearchIDMenuItem1.Text.ToString)
+            My.Settings.SearchByID1_AutoComplete = SearchIDMenuItem1.AutoCompleteCustomSource
+            Collapse_ExpandMenu1.Hide()
+            Dim LastCategory As String = Nothing
+            Dim FoundItem As String = Nothing
+            For Each line As String In BuildItemsList
+                If (line.StartsWith("C") Or line.StartsWith("S")) Then
+                    LastCategory = line.Substring(2, line.Length - 2).TrimEnd(" ")
+                End If
+                If (line.StartsWith("I")) Then
+                    If (line.Substring(52, line.Length - 52).Trim(" ").ToLower.Contains(SearchIDMenuItem1.Text.ToLower)) Then
+                        FoundItem = line.Substring(52, line.Length - 52).Trim(" ")
+                        Exit For
+                    End If
+                End If
+            Next
+            BldngCategoryTree.SelectedNode = BldngCategoryTree.Nodes.Find(LastCategory, True)(0)
+            If (FoundItem IsNot Nothing) Then
+                Dim FoundNode() As TreeNode = BldngItemList.Nodes.Find(FoundItem, True)
+                If (FoundNode.Length > 0) Then
+                    BldngItemList.SelectedNode = FoundNode(0)
+                End If
+            End If
+            e.Handled = True
+            SearchIDMenuItem1.Text = "Search by ID"
+            SearchIDMenuItem1.ForeColor = Color.Gray
+        End If
+    End Sub
+    Private Sub SearchIDMenuItem1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SearchIDMenuItem1.LostFocus
+        If (SearchIDMenuItem1.Text = "") Then
+            SearchIDMenuItem1.Text = "Search by ID"
+            SearchIDMenuItem1.ForeColor = Color.Gray
+        End If
+    End Sub
 
     Private Sub BldngItemList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles BldngItemList.AfterSelect
         'modified
@@ -895,328 +895,328 @@ Public Class Form1
         ToolTip.SetToolTip(BldngItemID, "Hex ID number of the currently selected item." + vbCrLf + vbCrLf + "Decimal Value: " + Convert.ToInt32(BldngItemList.SelectedNode.Name, 16).ToString)
     End Sub
 
-	Private Sub CreateFeetBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateFeetBtn1.Click
-		If (Ultima.Client.Running = True) Then
-			Try
-				If (BldngItemList.SelectedNode.Name IsNot Nothing) Then
-					Ultima.Client.BringToTop()
+    Private Sub CreateFeetBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateFeetBtn1.Click
+        If (Ultima.Client.Running = True) Then
+            Try
+                If (BldngItemList.SelectedNode.Name IsNot Nothing) Then
+                    Ultima.Client.BringToTop()
                     Ultima.Client.SendText(".sa_createhere " & Convert.ToInt32(BldngItemList.SelectedNode.Name, 16).ToString)
-				End If
-			Catch ex As Exception
-				Exit Sub
-			End Try
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub CreatePackBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreatePackBtn1.Click
-		If (Ultima.Client.Running = True) Then
-			Try
-				If (BldngItemList.SelectedNode.Name IsNot Nothing) Then
-					Ultima.Client.BringToTop()
-					Ultima.Client.SendText(".create " & Convert.ToInt32(BldngItemList.SelectedNode.Name, 16).ToString)
-				End If
-			Catch ex As Exception
-				Exit Sub
-			End Try
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub CreateTargetBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateTargetBtn1.Click
-		If (Ultima.Client.Running = True) Then
-			Try
-				If (BldngItemList.SelectedNode.Name IsNot Nothing) Then
-					Ultima.Client.BringToTop()
-					Ultima.Client.SendText(".createat " & Convert.ToInt32(BldngItemList.SelectedNode.Name, 16).ToString)
-				End If
-			Catch ex As Exception
-				Exit Sub
-			End Try
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub CreateTiledBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateTiledBtn1.Click
-		If (Ultima.Client.Running = True) Then
-			Try
-				If (BldngItemList.SelectedNode.Name IsNot Nothing) Then
-					Dim GenericNumericDialog As New GenericNumericDialog
-					GenericNumericDialog.TopMost = Me.TopMost
-					Int32.TryParse(INIHandler.Sections("BUILD TAB").Settings("TileHieght"), GenericNumericDialog.NumericUpDown.Value)
-					GenericNumericDialog.Description.Text = "Enter the height at which to create the item(s)..."
-					Dim Returned As DialogResult = GenericNumericDialog.ShowDialog()
-					If (Returned = Windows.Forms.DialogResult.OK) Then
-						INIHandler.Sections.Sections("BUILD TAB").Settings.Set("TileHieght", GenericNumericDialog.NumericUpDown.Value.ToString)
-						INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-						Ultima.Client.BringToTop()
-						Ultima.Client.SendText(".tile " & Convert.ToInt32(BldngItemList.SelectedNode.Name, 16).ToString & " " & GenericNumericDialog.NumericUpDown.Value.ToString)
-					End If
-					GenericNumericDialog.Dispose()
-				End If
-			Catch ex As Exception
-				Exit Sub
-			End Try
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+                End If
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub CreatePackBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreatePackBtn1.Click
+        If (Ultima.Client.Running = True) Then
+            Try
+                If (BldngItemList.SelectedNode.Name IsNot Nothing) Then
+                    Ultima.Client.BringToTop()
+                    Ultima.Client.SendText(".create " & Convert.ToInt32(BldngItemList.SelectedNode.Name, 16).ToString)
+                End If
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub CreateTargetBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateTargetBtn1.Click
+        If (Ultima.Client.Running = True) Then
+            Try
+                If (BldngItemList.SelectedNode.Name IsNot Nothing) Then
+                    Ultima.Client.BringToTop()
+                    Ultima.Client.SendText(".createat " & Convert.ToInt32(BldngItemList.SelectedNode.Name, 16).ToString)
+                End If
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub CreateTiledBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateTiledBtn1.Click
+        If (Ultima.Client.Running = True) Then
+            Try
+                If (BldngItemList.SelectedNode.Name IsNot Nothing) Then
+                    Dim GenericNumericDialog As New GenericNumericDialog
+                    GenericNumericDialog.TopMost = Me.TopMost
+                    Int32.TryParse(INIHandler.Sections("BUILD TAB").Settings("TileHieght"), GenericNumericDialog.NumericUpDown.Value)
+                    GenericNumericDialog.Description.Text = "Enter the height at which to create the item(s)..."
+                    Dim Returned As DialogResult = GenericNumericDialog.ShowDialog()
+                    If (Returned = Windows.Forms.DialogResult.OK) Then
+                        INIHandler.Sections.Sections("BUILD TAB").Settings.Set("TileHieght", GenericNumericDialog.NumericUpDown.Value.ToString)
+                        INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                        Ultima.Client.BringToTop()
+                        Ultima.Client.SendText(".tile " & Convert.ToInt32(BldngItemList.SelectedNode.Name, 16).ToString & " " & GenericNumericDialog.NumericUpDown.Value.ToString)
+                    End If
+                    GenericNumericDialog.Dispose()
+                End If
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	'Destroy functions also cover buttons on the Items Tab
-	Private Sub DestroyBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DestroyBtn1.Click, DestroyBtn2.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".destroy")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub DestroyMultipleBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DestroyMultipleBtn1.Click, DestroyMultipleBtn2.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".mdestroy")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub DestroyRadiusBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DestroyRadiusBtn1.Click, DestroyRadiusBtn2.Click
-		If (Ultima.Client.Running = True) Then
-			Dim GenericNumericDialog As New GenericNumericDialog
-			GenericNumericDialog.TopMost = Me.TopMost
-			Int32.TryParse(INIHandler.Sections("BUILD TAB").Settings("DestroyRadius"), GenericNumericDialog.NumericUpDown.Value)
-			GenericNumericDialog.Description.Text = "Enter the tile radius to destroy..."
-			Dim Returned As DialogResult = GenericNumericDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("BUILD TAB").Settings.Set("DestroyRadius", GenericNumericDialog.NumericUpDown.Value.ToString)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
-				Ultima.Client.SendText(".destroyradius " & GenericNumericDialog.NumericUpDown.Value.ToString)
-			End If
-			GenericNumericDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+    'Destroy functions also cover buttons on the Items Tab
+    Private Sub DestroyBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DestroyBtn1.Click, DestroyBtn2.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".destroy")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub DestroyMultipleBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DestroyMultipleBtn1.Click, DestroyMultipleBtn2.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".mdestroy")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub DestroyRadiusBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DestroyRadiusBtn1.Click, DestroyRadiusBtn2.Click
+        If (Ultima.Client.Running = True) Then
+            Dim GenericNumericDialog As New GenericNumericDialog
+            GenericNumericDialog.TopMost = Me.TopMost
+            Int32.TryParse(INIHandler.Sections("BUILD TAB").Settings("DestroyRadius"), GenericNumericDialog.NumericUpDown.Value)
+            GenericNumericDialog.Description.Text = "Enter the tile radius to destroy..."
+            Dim Returned As DialogResult = GenericNumericDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("BUILD TAB").Settings.Set("DestroyRadius", GenericNumericDialog.NumericUpDown.Value.ToString)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
+                Ultima.Client.SendText(".destroyradius " & GenericNumericDialog.NumericUpDown.Value.ToString)
+            End If
+            GenericNumericDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub RoofCreatorBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RoofCreatorBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".createroof")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub FoundationCreatorbtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FoundationCreatorbtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".createfoundation")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub RandomTileBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RandomTileBtn1.Click, RandomTileBtn2.Click
-		'Randtile button also covers button on the Items Tab
-		If (Ultima.Client.Running = True) Then
-			Dim RandomTileDialog As New RandomTileDialog
-			RandomTileDialog.TopMost = Me.TopMost
-			Dim ReturnedValue As DialogResult = RandomTileDialog.ShowDialog()
-			If (ReturnedValue = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("BUILD TAB").Settings.Set("RandomTileCategory", RandomTileDialog.ItemCategories.SelectedNode.Text)
-				INIHandler.Sections.Sections("BUILD TAB").Settings.Set("RandomTileItem", RandomTileDialog.ItemList.SelectedNode.Name)
-				INIHandler.Sections.Sections("BUILD TAB").Settings.Set("RandomTileRange", RandomTileDialog.RangeSize.Value)
-				INIHandler.Sections.Sections("BUILD TAB").Settings.Set("RandomTileHeight", RandomTileDialog.HeightToCreateAt.Value)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
-				Dim modifier As Integer = 1
-				While (RandomTileDialog.ItemRangePreview.Items.Item(RandomTileDialog.ItemRangePreview.Items.Count - modifier).Text = "N/A")
-					modifier += 1
-					If (RandomTileDialog.ItemRangePreview.Items.Count - modifier < 0) Then
-						MessageBox.Show("There was an error formating the command.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-						Exit Sub
-					End If
-				End While
-				Ultima.Client.SendText(".randtile " & RandomTileDialog.ItemRangePreview.Items.Item(0).Text & " " & RandomTileDialog.ItemRangePreview.Items.Item(RandomTileDialog.ItemRangePreview.Items.Count - 1).Text & " " & RandomTileDialog.HeightToCreateAt.Value)
-			End If
-			RandomTileDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+    Private Sub RoofCreatorBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RoofCreatorBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".createroof")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub FoundationCreatorbtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FoundationCreatorbtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".createfoundation")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub RandomTileBtn1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RandomTileBtn1.Click, RandomTileBtn2.Click
+        'Randtile button also covers button on the Items Tab
+        If (Ultima.Client.Running = True) Then
+            Dim RandomTileDialog As New RandomTileDialog
+            RandomTileDialog.TopMost = Me.TopMost
+            Dim ReturnedValue As DialogResult = RandomTileDialog.ShowDialog()
+            If (ReturnedValue = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("BUILD TAB").Settings.Set("RandomTileCategory", RandomTileDialog.ItemCategories.SelectedNode.Text)
+                INIHandler.Sections.Sections("BUILD TAB").Settings.Set("RandomTileItem", RandomTileDialog.ItemList.SelectedNode.Name)
+                INIHandler.Sections.Sections("BUILD TAB").Settings.Set("RandomTileRange", RandomTileDialog.RangeSize.Value)
+                INIHandler.Sections.Sections("BUILD TAB").Settings.Set("RandomTileHeight", RandomTileDialog.HeightToCreateAt.Value)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
+                Dim modifier As Integer = 1
+                While (RandomTileDialog.ItemRangePreview.Items.Item(RandomTileDialog.ItemRangePreview.Items.Count - modifier).Text = "N/A")
+                    modifier += 1
+                    If (RandomTileDialog.ItemRangePreview.Items.Count - modifier < 0) Then
+                        MessageBox.Show("There was an error formating the command.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Exit Sub
+                    End If
+                End While
+                Ultima.Client.SendText(".randtile " & RandomTileDialog.ItemRangePreview.Items.Item(0).Text & " " & RandomTileDialog.ItemRangePreview.Items.Item(RandomTileDialog.ItemRangePreview.Items.Count - 1).Text & " " & RandomTileDialog.HeightToCreateAt.Value)
+            End If
+            RandomTileDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	'#################################################'
-	'################## ITEMS TAB ####################'
-	'#################################################'
-	'Destroy buttons and randtile buttons are handled by functions for Building Tab
+    '#################################################'
+    '################## ITEMS TAB ####################'
+    '#################################################'
+    'Destroy buttons and randtile buttons are handled by functions for Building Tab
 
-	Private Sub ItemsTab_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles ItemsTab.Enter
-		If (ItemCategoryTree.Nodes.Count = 0) Then
-			' Suppress repainting the TreeView until all the objects have been created.
-			ItemCategoryTree.BeginUpdate()
-			' Clear the TreeView each time the method is called.
-			ItemCategoryTree.Nodes.Clear()
-			Dim lastGKey As Integer = -1
-			Dim lastCKey As Integer = -1
-			For Each line As String In MainItemsList
-				If (line.StartsWith("G")) Then
-					lastGKey += 1
-					lastCKey = -1
-					ItemCategoryTree.Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
-					Continue For
-				End If
-				If (line.StartsWith("C") And (lastGKey >= 0)) Then
-					lastCKey += 1
-					ItemCategoryTree.Nodes(lastGKey).Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
-					Continue For
-				End If
-				If ((line.StartsWith("S")) And (lastGKey >= 0) And (lastCKey >= 0)) Then
-					ItemCategoryTree.Nodes(lastGKey).Nodes(lastCKey).Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
-				End If
-			Next line
-			' Begin repainting the TreeView.
-			ItemCategoryTree.EndUpdate()
-		End If
-	End Sub
-	Private Sub ItemCategoryTree_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles ItemCategoryTree.AfterSelect
-		Dim FoundParent As Boolean = False
-		Dim FoundCat As Boolean = False
-		Dim ParentNode As String = Nothing
+    Private Sub ItemsTab_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles ItemsTab.Enter
+        If (ItemCategoryTree.Nodes.Count = 0) Then
+            ' Suppress repainting the TreeView until all the objects have been created.
+            ItemCategoryTree.BeginUpdate()
+            ' Clear the TreeView each time the method is called.
+            ItemCategoryTree.Nodes.Clear()
+            Dim lastGKey As Integer = -1
+            Dim lastCKey As Integer = -1
+            For Each line As String In MainItemsList
+                If (line.StartsWith("G")) Then
+                    lastGKey += 1
+                    lastCKey = -1
+                    ItemCategoryTree.Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
+                    Continue For
+                End If
+                If (line.StartsWith("C") And (lastGKey >= 0)) Then
+                    lastCKey += 1
+                    ItemCategoryTree.Nodes(lastGKey).Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
+                    Continue For
+                End If
+                If ((line.StartsWith("S")) And (lastGKey >= 0) And (lastCKey >= 0)) Then
+                    ItemCategoryTree.Nodes(lastGKey).Nodes(lastCKey).Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
+                End If
+            Next line
+            ' Begin repainting the TreeView.
+            ItemCategoryTree.EndUpdate()
+        End If
+    End Sub
+    Private Sub ItemCategoryTree_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles ItemCategoryTree.AfterSelect
+        Dim FoundParent As Boolean = False
+        Dim FoundCat As Boolean = False
+        Dim ParentNode As String = Nothing
 
-		ItemItemList.BeginUpdate()
-		ItemItemList.Nodes.Clear()
+        ItemItemList.BeginUpdate()
+        ItemItemList.Nodes.Clear()
 
-		Try
-			ParentNode = ItemCategoryTree.SelectedNode.Parent.Text
-		Catch ex As Exception
-			FoundParent = True
-		End Try
+        Try
+            ParentNode = ItemCategoryTree.SelectedNode.Parent.Text
+        Catch ex As Exception
+            FoundParent = True
+        End Try
 
-		For Each line As String In MainItemsList
-			If (FoundParent = False) Then
-				If (ItemCategoryTree.SelectedNode.Parent.Text = line.Substring(2, line.Length - 2)) Then
-					FoundParent = True
-					Continue For
-				End If
-			End If
-			If (FoundParent = True) Then
-				If (ItemCategoryTree.SelectedNode.Text = line.Substring(2, line.Length - 2)) Then
-					FoundCat = True
-					Continue For
-				End If
-				If (FoundCat = True) Then
-					If ((line.StartsWith("G")) Or (line.StartsWith("C")) Or (line.StartsWith("S"))) Then
-						FoundCat = False
-						Exit For
-					End If
-					If (line.StartsWith("I")) Then
-						ItemItemList.Nodes.Add(line.Substring(52, line.Length - 52), line.Substring(2, 50).TrimEnd(" "))
-					End If
-				End If
-			End If
-		Next line
+        For Each line As String In MainItemsList
+            If (FoundParent = False) Then
+                If (ItemCategoryTree.SelectedNode.Parent.Text = line.Substring(2, line.Length - 2)) Then
+                    FoundParent = True
+                    Continue For
+                End If
+            End If
+            If (FoundParent = True) Then
+                If (ItemCategoryTree.SelectedNode.Text = line.Substring(2, line.Length - 2)) Then
+                    FoundCat = True
+                    Continue For
+                End If
+                If (FoundCat = True) Then
+                    If ((line.StartsWith("G")) Or (line.StartsWith("C")) Or (line.StartsWith("S"))) Then
+                        FoundCat = False
+                        Exit For
+                    End If
+                    If (line.StartsWith("I")) Then
+                        ItemItemList.Nodes.Add(line.Substring(52, line.Length - 52), line.Substring(2, 50).TrimEnd(" "))
+                    End If
+                End If
+            End If
+        Next line
 
-		ItemItemList.EndUpdate()
-	End Sub
+        ItemItemList.EndUpdate()
+    End Sub
 
-	'Collapse / Expand
-	Private Sub CollapseMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CollapseMenuItem2.Click
-		ItemCategoryTree.CollapseAll()
-	End Sub
-	Private Sub ExpandMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExpandMenuItem2.Click
-		ItemCategoryTree.ExpandAll()
-	End Sub
+    'Collapse / Expand
+    Private Sub CollapseMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CollapseMenuItem2.Click
+        ItemCategoryTree.CollapseAll()
+    End Sub
+    Private Sub ExpandMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExpandMenuItem2.Click
+        ItemCategoryTree.ExpandAll()
+    End Sub
 
-	'Search by Name
-	Private Sub SearchNameMenuItem2_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchNameMenuItem2.GotFocus
-		If (SearchNameMenuItem2.Text = "Search by Name") Then
-			SearchNameMenuItem2.Text = ""
-			SearchNameMenuItem2.ForeColor = Color.Black
-		End If
-	End Sub
-	Private Sub SearchNameMenuItem2_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SearchNameMenuItem2.KeyDown
-		If (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return) Then
-			SearchNameMenuItem2.AutoCompleteCustomSource.Add(SearchNameMenuItem2.Text)
-			My.Settings.SearchByName2_AutoComplete = SearchNameMenuItem2.AutoCompleteCustomSource
-			Collapse_ExpandMenu2.Hide()
-			Dim LastCategory As String = Nothing
-			Dim FoundItem As String = Nothing
-			For Each line As String In MainItemsList
-				If (line.StartsWith("C") Or line.StartsWith("S")) Then
-					LastCategory = line.Substring(2, line.Length - 2).TrimEnd(" ")
-				End If
-				If (line.StartsWith("I")) Then
-					If (line.Substring(2, 50).TrimEnd(" ").ToLower.Contains(SearchNameMenuItem2.Text.ToLower)) Then
-						FoundItem = line.Substring(52, line.Length - 52).Trim(" ")
-						Exit For
-					End If
-				Else
-					If (line.Substring(2, line.Length - 2).TrimEnd(" ").ToLower.Contains(SearchNameMenuItem2.Text.ToLower)) Then
-						FoundItem = Nothing
-						Exit For
-					End If
-				End If
-			Next
-			ItemCategoryTree.SelectedNode = ItemCategoryTree.Nodes.Find(LastCategory, True)(0)
-			If (FoundItem IsNot Nothing) Then
-				Dim FoundNode() As TreeNode = ItemItemList.Nodes.Find(FoundItem, True)
-				If (FoundNode.Length > 0) Then
-					ItemItemList.SelectedNode = FoundNode(0)
-				End If
-			End If
-			e.Handled = True
-			SearchNameMenuItem2.Text = "Search by Name"
-			SearchNameMenuItem2.ForeColor = Color.Gray
-		End If
-	End Sub
-	Private Sub SearchNameMenuItem2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SearchNameMenuItem2.LostFocus
-		If (SearchNameMenuItem2.Text = "") Then
-			SearchNameMenuItem2.Text = "Search by Name"
-			SearchNameMenuItem2.ForeColor = Color.Gray
-		End If
-	End Sub
+    'Search by Name
+    Private Sub SearchNameMenuItem2_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchNameMenuItem2.GotFocus
+        If (SearchNameMenuItem2.Text = "Search by Name") Then
+            SearchNameMenuItem2.Text = ""
+            SearchNameMenuItem2.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub SearchNameMenuItem2_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SearchNameMenuItem2.KeyDown
+        If (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return) Then
+            SearchNameMenuItem2.AutoCompleteCustomSource.Add(SearchNameMenuItem2.Text)
+            My.Settings.SearchByName2_AutoComplete = SearchNameMenuItem2.AutoCompleteCustomSource
+            Collapse_ExpandMenu2.Hide()
+            Dim LastCategory As String = Nothing
+            Dim FoundItem As String = Nothing
+            For Each line As String In MainItemsList
+                If (line.StartsWith("C") Or line.StartsWith("S")) Then
+                    LastCategory = line.Substring(2, line.Length - 2).TrimEnd(" ")
+                End If
+                If (line.StartsWith("I")) Then
+                    If (line.Substring(2, 50).TrimEnd(" ").ToLower.Contains(SearchNameMenuItem2.Text.ToLower)) Then
+                        FoundItem = line.Substring(52, line.Length - 52).Trim(" ")
+                        Exit For
+                    End If
+                Else
+                    If (line.Substring(2, line.Length - 2).TrimEnd(" ").ToLower.Contains(SearchNameMenuItem2.Text.ToLower)) Then
+                        FoundItem = Nothing
+                        Exit For
+                    End If
+                End If
+            Next
+            ItemCategoryTree.SelectedNode = ItemCategoryTree.Nodes.Find(LastCategory, True)(0)
+            If (FoundItem IsNot Nothing) Then
+                Dim FoundNode() As TreeNode = ItemItemList.Nodes.Find(FoundItem, True)
+                If (FoundNode.Length > 0) Then
+                    ItemItemList.SelectedNode = FoundNode(0)
+                End If
+            End If
+            e.Handled = True
+            SearchNameMenuItem2.Text = "Search by Name"
+            SearchNameMenuItem2.ForeColor = Color.Gray
+        End If
+    End Sub
+    Private Sub SearchNameMenuItem2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SearchNameMenuItem2.LostFocus
+        If (SearchNameMenuItem2.Text = "") Then
+            SearchNameMenuItem2.Text = "Search by Name"
+            SearchNameMenuItem2.ForeColor = Color.Gray
+        End If
+    End Sub
 
-	'Seatch by ID
-	Private Sub SearchIDMenuItem2_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchIDMenuItem2.GotFocus
-		If (SearchIDMenuItem2.Text = "Search by ID") Then
-			SearchIDMenuItem2.Text = ""
-			SearchIDMenuItem2.ForeColor = Color.Black
-		End If
-	End Sub
-	Private Sub SearchIDMenuItem2_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SearchIDMenuItem2.KeyDown
-		If (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return) Then
-			SearchIDMenuItem2.AutoCompleteCustomSource.Add(SearchIDMenuItem2.Text)
-			My.Settings.SearchByID2_AutoComplete = SearchIDMenuItem2.AutoCompleteCustomSource
-			Collapse_ExpandMenu1.Hide()
-			Dim LastCategory As String = Nothing
-			Dim FoundItem As String = Nothing
-			For Each line As String In MainItemsList
-				If (line.StartsWith("C") Or line.StartsWith("S")) Then
-					LastCategory = line.Substring(2, line.Length - 2).TrimEnd(" ")
-				End If
-				If (line.StartsWith("I")) Then
-					If (line.Substring(52, line.Length - 52).Trim(" ").ToLower.Contains(SearchIDMenuItem2.Text.ToLower)) Then
-						FoundItem = line.Substring(52, line.Length - 52).Trim(" ")
-						Exit For
-					End If
-				End If
-			Next
-			ItemCategoryTree.SelectedNode = ItemCategoryTree.Nodes.Find(LastCategory, True)(0)
-			If (FoundItem IsNot Nothing) Then
-				Dim FoundNode() As TreeNode = ItemItemList.Nodes.Find(FoundItem, True)
-				If (FoundNode.Length > 0) Then
-					ItemItemList.SelectedNode = FoundNode(0)
-				End If
-			End If
-			e.Handled = True
-			SearchIDMenuItem2.Text = "Search by ID"
-			SearchIDMenuItem2.ForeColor = Color.Gray
-		End If
-	End Sub
-	Private Sub SearchIDMenuItem2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SearchIDMenuItem2.LostFocus
-		If (SearchIDMenuItem2.Text = "") Then
-			SearchIDMenuItem2.Text = "Search by ID"
-			SearchIDMenuItem2.ForeColor = Color.Gray
-		End If
-	End Sub
+    'Seatch by ID
+    Private Sub SearchIDMenuItem2_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchIDMenuItem2.GotFocus
+        If (SearchIDMenuItem2.Text = "Search by ID") Then
+            SearchIDMenuItem2.Text = ""
+            SearchIDMenuItem2.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub SearchIDMenuItem2_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SearchIDMenuItem2.KeyDown
+        If (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return) Then
+            SearchIDMenuItem2.AutoCompleteCustomSource.Add(SearchIDMenuItem2.Text)
+            My.Settings.SearchByID2_AutoComplete = SearchIDMenuItem2.AutoCompleteCustomSource
+            Collapse_ExpandMenu1.Hide()
+            Dim LastCategory As String = Nothing
+            Dim FoundItem As String = Nothing
+            For Each line As String In MainItemsList
+                If (line.StartsWith("C") Or line.StartsWith("S")) Then
+                    LastCategory = line.Substring(2, line.Length - 2).TrimEnd(" ")
+                End If
+                If (line.StartsWith("I")) Then
+                    If (line.Substring(52, line.Length - 52).Trim(" ").ToLower.Contains(SearchIDMenuItem2.Text.ToLower)) Then
+                        FoundItem = line.Substring(52, line.Length - 52).Trim(" ")
+                        Exit For
+                    End If
+                End If
+            Next
+            ItemCategoryTree.SelectedNode = ItemCategoryTree.Nodes.Find(LastCategory, True)(0)
+            If (FoundItem IsNot Nothing) Then
+                Dim FoundNode() As TreeNode = ItemItemList.Nodes.Find(FoundItem, True)
+                If (FoundNode.Length > 0) Then
+                    ItemItemList.SelectedNode = FoundNode(0)
+                End If
+            End If
+            e.Handled = True
+            SearchIDMenuItem2.Text = "Search by ID"
+            SearchIDMenuItem2.ForeColor = Color.Gray
+        End If
+    End Sub
+    Private Sub SearchIDMenuItem2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SearchIDMenuItem2.LostFocus
+        If (SearchIDMenuItem2.Text = "") Then
+            SearchIDMenuItem2.Text = "Search by ID"
+            SearchIDMenuItem2.ForeColor = Color.Gray
+        End If
+    End Sub
 
     Private Sub ItemItemList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles ItemItemList.AfterSelect
         'modified
@@ -1225,599 +1225,599 @@ Public Class Form1
         ToolTip.SetToolTip(ItemItemID, "Hex ID number of the currently selected item." + vbCrLf + vbCrLf + "Decimal Value: " + Convert.ToInt32(ItemItemList.SelectedNode.Name, 16).ToString)
     End Sub
 
-	Private Sub CreateFeetBtn2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateFeetBtn2.Click
-		If (Ultima.Client.Running = True) Then
-			Try
-				If (ItemItemList.SelectedNode.Name IsNot Nothing) Then
-					Ultima.Client.BringToTop()
-					Ultima.Client.SendText(".createf " & Convert.ToInt32(ItemItemList.SelectedNode.Name, 16).ToString)
-				End If
-			Catch ex As Exception
-				Exit Sub
-			End Try
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub CreatePackBtn2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreatePackBtn2.Click
-		If (Ultima.Client.Running = True) Then
-			Try
-				If (ItemItemList.SelectedNode.Name IsNot Nothing) Then
-					Ultima.Client.BringToTop()
-					Ultima.Client.SendText(".create " & Convert.ToInt32(ItemItemList.SelectedNode.Name, 16).ToString)
-				End If
-			Catch ex As Exception
-				Exit Sub
-			End Try
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub CreateTargetBtn2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateTargetBtn2.Click
-		If (Ultima.Client.Running = True) Then
-			Try
-				If (ItemItemList.SelectedNode.Name IsNot Nothing) Then
-					Ultima.Client.BringToTop()
-					Ultima.Client.SendText(".createat " & Convert.ToInt32(ItemItemList.SelectedNode.Name, 16).ToString)
-				End If
-			Catch ex As Exception
-				Exit Sub
-			End Try
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub CreateTiledBtn2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateTiledBtn2.Click
-		If (Ultima.Client.Running = True) Then
-			Try
-				If (ItemItemList.SelectedNode.Name IsNot Nothing) Then
-					Dim GenericNumericDialog As New GenericNumericDialog
-					GenericNumericDialog.TopMost = Me.TopMost
-					GenericNumericDialog.NumericUpDown.Value = INIHandler.Sections("ITEM TAB").Settings("TileHieght")
-					GenericNumericDialog.Description.Text = "Enter the height at which to create the item(s)..."
-					Dim Returned As DialogResult = GenericNumericDialog.ShowDialog()
-					If (Returned = Windows.Forms.DialogResult.OK) Then
-						INIHandler.Sections.Sections("ITEM TAB").Settings.Set("TileHieght", GenericNumericDialog.NumericUpDown.Value.ToString)
-						INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-						Ultima.Client.BringToTop()
-						Ultima.Client.SendText(".tile " & Convert.ToInt32(ItemItemList.SelectedNode.Name, 16).ToString & " " & GenericNumericDialog.NumericUpDown.Value)
-					End If
-					GenericNumericDialog.Dispose()
-				End If
-			Catch ex As Exception
-				Exit Sub
-			End Try
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+    Private Sub CreateFeetBtn2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateFeetBtn2.Click
+        If (Ultima.Client.Running = True) Then
+            Try
+                If (ItemItemList.SelectedNode.Name IsNot Nothing) Then
+                    Ultima.Client.BringToTop()
+                    Ultima.Client.SendText(".createf " & Convert.ToInt32(ItemItemList.SelectedNode.Name, 16).ToString)
+                End If
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub CreatePackBtn2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreatePackBtn2.Click
+        If (Ultima.Client.Running = True) Then
+            Try
+                If (ItemItemList.SelectedNode.Name IsNot Nothing) Then
+                    Ultima.Client.BringToTop()
+                    Ultima.Client.SendText(".create " & Convert.ToInt32(ItemItemList.SelectedNode.Name, 16).ToString)
+                End If
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub CreateTargetBtn2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateTargetBtn2.Click
+        If (Ultima.Client.Running = True) Then
+            Try
+                If (ItemItemList.SelectedNode.Name IsNot Nothing) Then
+                    Ultima.Client.BringToTop()
+                    Ultima.Client.SendText(".createat " & Convert.ToInt32(ItemItemList.SelectedNode.Name, 16).ToString)
+                End If
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub CreateTiledBtn2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateTiledBtn2.Click
+        If (Ultima.Client.Running = True) Then
+            Try
+                If (ItemItemList.SelectedNode.Name IsNot Nothing) Then
+                    Dim GenericNumericDialog As New GenericNumericDialog
+                    GenericNumericDialog.TopMost = Me.TopMost
+                    GenericNumericDialog.NumericUpDown.Value = INIHandler.Sections("ITEM TAB").Settings("TileHieght")
+                    GenericNumericDialog.Description.Text = "Enter the height at which to create the item(s)..."
+                    Dim Returned As DialogResult = GenericNumericDialog.ShowDialog()
+                    If (Returned = Windows.Forms.DialogResult.OK) Then
+                        INIHandler.Sections.Sections("ITEM TAB").Settings.Set("TileHieght", GenericNumericDialog.NumericUpDown.Value.ToString)
+                        INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                        Ultima.Client.BringToTop()
+                        Ultima.Client.SendText(".tile " & Convert.ToInt32(ItemItemList.SelectedNode.Name, 16).ToString & " " & GenericNumericDialog.NumericUpDown.Value)
+                    End If
+                    GenericNumericDialog.Dispose()
+                End If
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub HueItemBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HueItemBtn.Click
-		Dim HueItemDialog As New HueItemDialog
-		HueItemDialog.TopMost = Me.TopMost
-		HueItemDialog.ShowDialog()
-		HueItemDialog.Dispose()
-	End Sub
+    Private Sub HueItemBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HueItemBtn.Click
+        Dim HueItemDialog As New HueItemDialog
+        HueItemDialog.TopMost = Me.TopMost
+        HueItemDialog.ShowDialog()
+        HueItemDialog.Dispose()
+    End Sub
 
-	'#################################################'
-	'############### ITEM TWEAK TAB ##################'
-	'#################################################'
+    '#################################################'
+    '############### ITEM TWEAK TAB ##################'
+    '#################################################'
 
-	Private Sub NudgeNorthBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NudgeNorthBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			If (CopyNudgeChk.Checked = True) Then
-				If (MultipleNudgeChk.Checked = True) Then
-					Ultima.Client.SendText(".mcy -" & NudgeVal.Value.ToString)
-				Else
-					Ultima.Client.SendText(".cy -" & NudgeVal.Value.ToString)
-				End If
-			Else
-				If (MultipleNudgeChk.Checked = True) Then
-					Ultima.Client.SendText(".mpy -" & NudgeVal.Value.ToString)
-				Else
-					Ultima.Client.SendText(".py -" & NudgeVal.Value.ToString)
-				End If
-			End If
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub NudgeSouthBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NudgeSouthBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			If (CopyNudgeChk.Checked = True) Then
-				If (MultipleNudgeChk.Checked = True) Then
-					Ultima.Client.SendText(".mcy " & NudgeVal.Value.ToString)
-				Else
-					Ultima.Client.SendText(".cy " & NudgeVal.Value.ToString)
-				End If
-			Else
-				If (MultipleNudgeChk.Checked = True) Then
-					Ultima.Client.SendText(".mpy " & NudgeVal.Value.ToString)
-				Else
-					Ultima.Client.SendText(".py " & NudgeVal.Value.ToString)
-				End If
-			End If
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+    Private Sub NudgeNorthBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NudgeNorthBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            If (CopyNudgeChk.Checked = True) Then
+                If (MultipleNudgeChk.Checked = True) Then
+                    Ultima.Client.SendText(".mcy -" & NudgeVal.Value.ToString)
+                Else
+                    Ultima.Client.SendText(".cy -" & NudgeVal.Value.ToString)
+                End If
+            Else
+                If (MultipleNudgeChk.Checked = True) Then
+                    Ultima.Client.SendText(".mpy -" & NudgeVal.Value.ToString)
+                Else
+                    Ultima.Client.SendText(".py -" & NudgeVal.Value.ToString)
+                End If
+            End If
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub NudgeSouthBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NudgeSouthBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            If (CopyNudgeChk.Checked = True) Then
+                If (MultipleNudgeChk.Checked = True) Then
+                    Ultima.Client.SendText(".mcy " & NudgeVal.Value.ToString)
+                Else
+                    Ultima.Client.SendText(".cy " & NudgeVal.Value.ToString)
+                End If
+            Else
+                If (MultipleNudgeChk.Checked = True) Then
+                    Ultima.Client.SendText(".mpy " & NudgeVal.Value.ToString)
+                Else
+                    Ultima.Client.SendText(".py " & NudgeVal.Value.ToString)
+                End If
+            End If
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub NudgeEastBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NudgeEastBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			If (CopyNudgeChk.Checked = True) Then
-				If (MultipleNudgeChk.Checked = True) Then
-					Ultima.Client.SendText(".mcx " & NudgeVal.Value.ToString)
-				Else
-					Ultima.Client.SendText(".cx " & NudgeVal.Value.ToString)
-				End If
-			Else
-				If (MultipleNudgeChk.Checked = True) Then
-					Ultima.Client.SendText(".mpx " & NudgeVal.Value.ToString)
-				Else
-					Ultima.Client.SendText(".px " & NudgeVal.Value.ToString)
-				End If
-			End If
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub NudgeWestBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NudgeWestBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			If (CopyNudgeChk.Checked = True) Then
-				If (MultipleNudgeChk.Checked = True) Then
-					Ultima.Client.SendText(".mcx -" & NudgeVal.Value.ToString)
-				Else
-					Ultima.Client.SendText(".cx -" & NudgeVal.Value.ToString)
-				End If
-			Else
-				If (MultipleNudgeChk.Checked = True) Then
-					Ultima.Client.SendText(".mpx -" & NudgeVal.Value.ToString)
-				Else
-					Ultima.Client.SendText(".px -" & NudgeVal.Value.ToString)
-				End If
-			End If
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+    Private Sub NudgeEastBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NudgeEastBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            If (CopyNudgeChk.Checked = True) Then
+                If (MultipleNudgeChk.Checked = True) Then
+                    Ultima.Client.SendText(".mcx " & NudgeVal.Value.ToString)
+                Else
+                    Ultima.Client.SendText(".cx " & NudgeVal.Value.ToString)
+                End If
+            Else
+                If (MultipleNudgeChk.Checked = True) Then
+                    Ultima.Client.SendText(".mpx " & NudgeVal.Value.ToString)
+                Else
+                    Ultima.Client.SendText(".px " & NudgeVal.Value.ToString)
+                End If
+            End If
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub NudgeWestBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NudgeWestBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            If (CopyNudgeChk.Checked = True) Then
+                If (MultipleNudgeChk.Checked = True) Then
+                    Ultima.Client.SendText(".mcx -" & NudgeVal.Value.ToString)
+                Else
+                    Ultima.Client.SendText(".cx -" & NudgeVal.Value.ToString)
+                End If
+            Else
+                If (MultipleNudgeChk.Checked = True) Then
+                    Ultima.Client.SendText(".mpx -" & NudgeVal.Value.ToString)
+                Else
+                    Ultima.Client.SendText(".px -" & NudgeVal.Value.ToString)
+                End If
+            End If
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub NudgeUpBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NudgeUpBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			If (CopyNudgeChk.Checked = True) Then
-				If (MultipleNudgeChk.Checked = True) Then
-					Ultima.Client.SendText(".mcz " & HeightVal.Value.ToString)
-				Else
-					Ultima.Client.SendText(".cz " & HeightVal.Value.ToString)
-				End If
-			Else
-				If (MultipleNudgeChk.Checked = True) Then
-					Ultima.Client.SendText(".mpz " & HeightVal.Value.ToString)
-				Else
-					Ultima.Client.SendText(".pz " & HeightVal.Value.ToString)
-				End If
-			End If
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub NudgeDownBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NudgeDownBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			If (CopyNudgeChk.Checked = True) Then
-				If (MultipleNudgeChk.Checked = True) Then
-					Ultima.Client.SendText(".mcz -" & HeightVal.Value.ToString)
-				Else
-					Ultima.Client.SendText(".cz -" & HeightVal.Value.ToString)
-				End If
-			Else
-				If (MultipleNudgeChk.Checked = True) Then
-					Ultima.Client.SendText(".mpz -" & HeightVal.Value.ToString)
-				Else
-					Ultima.Client.SendText(".pz -" & HeightVal.Value.ToString)
-				End If
-			End If
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+    Private Sub NudgeUpBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NudgeUpBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            If (CopyNudgeChk.Checked = True) Then
+                If (MultipleNudgeChk.Checked = True) Then
+                    Ultima.Client.SendText(".mcz " & HeightVal.Value.ToString)
+                Else
+                    Ultima.Client.SendText(".cz " & HeightVal.Value.ToString)
+                End If
+            Else
+                If (MultipleNudgeChk.Checked = True) Then
+                    Ultima.Client.SendText(".mpz " & HeightVal.Value.ToString)
+                Else
+                    Ultima.Client.SendText(".pz " & HeightVal.Value.ToString)
+                End If
+            End If
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub NudgeDownBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NudgeDownBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            If (CopyNudgeChk.Checked = True) Then
+                If (MultipleNudgeChk.Checked = True) Then
+                    Ultima.Client.SendText(".mcz -" & HeightVal.Value.ToString)
+                Else
+                    Ultima.Client.SendText(".cz -" & HeightVal.Value.ToString)
+                End If
+            Else
+                If (MultipleNudgeChk.Checked = True) Then
+                    Ultima.Client.SendText(".mpz -" & HeightVal.Value.ToString)
+                Else
+                    Ultima.Client.SendText(".pz -" & HeightVal.Value.ToString)
+                End If
+            End If
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub CopyNudgeChk_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles CopyNudgeChk.CheckedChanged
-		If (CopyNudgeChk.Checked = True) Then
-			If (MultipleNudgeChk.Checked = True) Then
-				ToolTip.SetToolTip(NudgeNorthBtn, "Copies the targeted item North multiple times.")
-				ToolTip.SetToolTip(NudgeWestBtn, "Copies the targeted item West multiple times.")
-				ToolTip.SetToolTip(NudgeSouthBtn, "Copies the targeted item South multiple times.")
-				ToolTip.SetToolTip(NudgeEastBtn, "Copies the targeted item East multiple times.")
-				ToolTip.SetToolTip(NudgeUpBtn, "Copies the targeted item Up multiple times.")
-				ToolTip.SetToolTip(NudgeDownBtn, "Copies the targeted item Down multiple times.")
-			Else
-				ToolTip.SetToolTip(NudgeNorthBtn, "Copies the targeted item North.")
-				ToolTip.SetToolTip(NudgeWestBtn, "Copies the targeted item West.")
-				ToolTip.SetToolTip(NudgeSouthBtn, "Copies the targeted item South.")
-				ToolTip.SetToolTip(NudgeEastBtn, "Copies the targeted item East.")
-				ToolTip.SetToolTip(NudgeUpBtn, "Copies the targeted item Up.")
-				ToolTip.SetToolTip(NudgeDownBtn, "Copies the targeted item Down.")
-			End If
-		Else
-			If (MultipleNudgeChk.Checked = True) Then
-				ToolTip.SetToolTip(NudgeNorthBtn, "Moves the targeted item North multiple times.")
-				ToolTip.SetToolTip(NudgeWestBtn, "Moves the targeted item West multiple times.")
-				ToolTip.SetToolTip(NudgeSouthBtn, "Moves the targeted item South multiple times.")
-				ToolTip.SetToolTip(NudgeEastBtn, "Moves the targeted item East multiple times.")
-				ToolTip.SetToolTip(NudgeUpBtn, "Moves the targeted item Up multiple times.")
-				ToolTip.SetToolTip(NudgeDownBtn, "Moves the targeted item Down multiple times.")
-			Else
-				ToolTip.SetToolTip(NudgeNorthBtn, "Moves the targeted item North.")
-				ToolTip.SetToolTip(NudgeWestBtn, "Moves the targeted item West.")
-				ToolTip.SetToolTip(NudgeSouthBtn, "Moves the targeted item South.")
-				ToolTip.SetToolTip(NudgeEastBtn, "Moves the targeted item East.")
-				ToolTip.SetToolTip(NudgeUpBtn, "Moves the targeted item Up.")
-				ToolTip.SetToolTip(NudgeDownBtn, "Moves the targeted item Down.")
-			End If
-		End If
-	End Sub
-	Private Sub MultipleNudgeChk_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles MultipleNudgeChk.CheckedChanged
-		If (MultipleNudgeChk.Checked = True) Then
-			If (CopyNudgeChk.Checked = True) Then
-				ToolTip.SetToolTip(NudgeNorthBtn, "Copies the targeted item North multiple times.")
-				ToolTip.SetToolTip(NudgeWestBtn, "Copies the targeted item West multiple times.")
-				ToolTip.SetToolTip(NudgeSouthBtn, "Copies the targeted item South multiple times.")
-				ToolTip.SetToolTip(NudgeEastBtn, "Copies the targeted item East multiple times.")
-				ToolTip.SetToolTip(NudgeUpBtn, "Copies the targeted item Up multiple times.")
-				ToolTip.SetToolTip(NudgeDownBtn, "Copies the targeted item Down multiple times.")
-			Else
-				ToolTip.SetToolTip(NudgeNorthBtn, "Moves the targeted item North multiple times.")
-				ToolTip.SetToolTip(NudgeWestBtn, "Moves the targeted item West multiple times.")
-				ToolTip.SetToolTip(NudgeSouthBtn, "Moves the targeted item South multiple times.")
-				ToolTip.SetToolTip(NudgeEastBtn, "Moves the targeted item East multiple times.")
-				ToolTip.SetToolTip(NudgeUpBtn, "Moves the targeted item Up multiple times.")
-				ToolTip.SetToolTip(NudgeDownBtn, "Moves the targeted item Down multiple times.")
-			End If
-		Else
-			If (CopyNudgeChk.Checked = True) Then
-				ToolTip.SetToolTip(NudgeNorthBtn, "Copies the targeted item North.")
-				ToolTip.SetToolTip(NudgeWestBtn, "Copies the targeted item West.")
-				ToolTip.SetToolTip(NudgeSouthBtn, "Copies the targeted item South.")
-				ToolTip.SetToolTip(NudgeEastBtn, "Copies the targeted item East.")
-				ToolTip.SetToolTip(NudgeUpBtn, "Copies the targeted item Up.")
-				ToolTip.SetToolTip(NudgeDownBtn, "Copies the targeted item Down.")
-			Else
-				ToolTip.SetToolTip(NudgeNorthBtn, "Moves the targeted item North.")
-				ToolTip.SetToolTip(NudgeWestBtn, "Moves the targeted item West.")
-				ToolTip.SetToolTip(NudgeSouthBtn, "Moves the targeted item South.")
-				ToolTip.SetToolTip(NudgeEastBtn, "Moves the targeted item East.")
-				ToolTip.SetToolTip(NudgeUpBtn, "Moves the targeted item Up.")
-				ToolTip.SetToolTip(NudgeDownBtn, "Moves the targeted item Down.")
-			End If
-		End If
-	End Sub
+    Private Sub CopyNudgeChk_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles CopyNudgeChk.CheckedChanged
+        If (CopyNudgeChk.Checked = True) Then
+            If (MultipleNudgeChk.Checked = True) Then
+                ToolTip.SetToolTip(NudgeNorthBtn, "Copies the targeted item North multiple times.")
+                ToolTip.SetToolTip(NudgeWestBtn, "Copies the targeted item West multiple times.")
+                ToolTip.SetToolTip(NudgeSouthBtn, "Copies the targeted item South multiple times.")
+                ToolTip.SetToolTip(NudgeEastBtn, "Copies the targeted item East multiple times.")
+                ToolTip.SetToolTip(NudgeUpBtn, "Copies the targeted item Up multiple times.")
+                ToolTip.SetToolTip(NudgeDownBtn, "Copies the targeted item Down multiple times.")
+            Else
+                ToolTip.SetToolTip(NudgeNorthBtn, "Copies the targeted item North.")
+                ToolTip.SetToolTip(NudgeWestBtn, "Copies the targeted item West.")
+                ToolTip.SetToolTip(NudgeSouthBtn, "Copies the targeted item South.")
+                ToolTip.SetToolTip(NudgeEastBtn, "Copies the targeted item East.")
+                ToolTip.SetToolTip(NudgeUpBtn, "Copies the targeted item Up.")
+                ToolTip.SetToolTip(NudgeDownBtn, "Copies the targeted item Down.")
+            End If
+        Else
+            If (MultipleNudgeChk.Checked = True) Then
+                ToolTip.SetToolTip(NudgeNorthBtn, "Moves the targeted item North multiple times.")
+                ToolTip.SetToolTip(NudgeWestBtn, "Moves the targeted item West multiple times.")
+                ToolTip.SetToolTip(NudgeSouthBtn, "Moves the targeted item South multiple times.")
+                ToolTip.SetToolTip(NudgeEastBtn, "Moves the targeted item East multiple times.")
+                ToolTip.SetToolTip(NudgeUpBtn, "Moves the targeted item Up multiple times.")
+                ToolTip.SetToolTip(NudgeDownBtn, "Moves the targeted item Down multiple times.")
+            Else
+                ToolTip.SetToolTip(NudgeNorthBtn, "Moves the targeted item North.")
+                ToolTip.SetToolTip(NudgeWestBtn, "Moves the targeted item West.")
+                ToolTip.SetToolTip(NudgeSouthBtn, "Moves the targeted item South.")
+                ToolTip.SetToolTip(NudgeEastBtn, "Moves the targeted item East.")
+                ToolTip.SetToolTip(NudgeUpBtn, "Moves the targeted item Up.")
+                ToolTip.SetToolTip(NudgeDownBtn, "Moves the targeted item Down.")
+            End If
+        End If
+    End Sub
+    Private Sub MultipleNudgeChk_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles MultipleNudgeChk.CheckedChanged
+        If (MultipleNudgeChk.Checked = True) Then
+            If (CopyNudgeChk.Checked = True) Then
+                ToolTip.SetToolTip(NudgeNorthBtn, "Copies the targeted item North multiple times.")
+                ToolTip.SetToolTip(NudgeWestBtn, "Copies the targeted item West multiple times.")
+                ToolTip.SetToolTip(NudgeSouthBtn, "Copies the targeted item South multiple times.")
+                ToolTip.SetToolTip(NudgeEastBtn, "Copies the targeted item East multiple times.")
+                ToolTip.SetToolTip(NudgeUpBtn, "Copies the targeted item Up multiple times.")
+                ToolTip.SetToolTip(NudgeDownBtn, "Copies the targeted item Down multiple times.")
+            Else
+                ToolTip.SetToolTip(NudgeNorthBtn, "Moves the targeted item North multiple times.")
+                ToolTip.SetToolTip(NudgeWestBtn, "Moves the targeted item West multiple times.")
+                ToolTip.SetToolTip(NudgeSouthBtn, "Moves the targeted item South multiple times.")
+                ToolTip.SetToolTip(NudgeEastBtn, "Moves the targeted item East multiple times.")
+                ToolTip.SetToolTip(NudgeUpBtn, "Moves the targeted item Up multiple times.")
+                ToolTip.SetToolTip(NudgeDownBtn, "Moves the targeted item Down multiple times.")
+            End If
+        Else
+            If (CopyNudgeChk.Checked = True) Then
+                ToolTip.SetToolTip(NudgeNorthBtn, "Copies the targeted item North.")
+                ToolTip.SetToolTip(NudgeWestBtn, "Copies the targeted item West.")
+                ToolTip.SetToolTip(NudgeSouthBtn, "Copies the targeted item South.")
+                ToolTip.SetToolTip(NudgeEastBtn, "Copies the targeted item East.")
+                ToolTip.SetToolTip(NudgeUpBtn, "Copies the targeted item Up.")
+                ToolTip.SetToolTip(NudgeDownBtn, "Copies the targeted item Down.")
+            Else
+                ToolTip.SetToolTip(NudgeNorthBtn, "Moves the targeted item North.")
+                ToolTip.SetToolTip(NudgeWestBtn, "Moves the targeted item West.")
+                ToolTip.SetToolTip(NudgeSouthBtn, "Moves the targeted item South.")
+                ToolTip.SetToolTip(NudgeEastBtn, "Moves the targeted item East.")
+                ToolTip.SetToolTip(NudgeUpBtn, "Moves the targeted item Up.")
+                ToolTip.SetToolTip(NudgeDownBtn, "Moves the targeted item Down.")
+            End If
+        End If
+    End Sub
 
-	Private Sub ItemInfoBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ItemInfoBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".iteminfo")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub RenameItemBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RenameItemBtn.Click, NPCRename.Click
-		If (Ultima.Client.Running = True) Then
-			Dim GenericStringDialog As New GenericStringDialog
-			GenericStringDialog.TopMost = Me.TopMost
-			GenericStringDialog.TextBox.Text = INIHandler.Sections("ITEM TWEAK TAB").Settings("RenameItem")
-			GenericStringDialog.Description.Text = "Please specify the new name..."
-			Dim Returned As DialogResult
-			Returned = GenericStringDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("ITEM TWEAK TAB").Settings.Set("RenameItem", GenericStringDialog.TextBox.Text)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
+    Private Sub ItemInfoBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ItemInfoBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".iteminfo")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub RenameItemBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RenameItemBtn.Click, NPCRename.Click
+        If (Ultima.Client.Running = True) Then
+            Dim GenericStringDialog As New GenericStringDialog
+            GenericStringDialog.TopMost = Me.TopMost
+            GenericStringDialog.TextBox.Text = INIHandler.Sections("ITEM TWEAK TAB").Settings("RenameItem")
+            GenericStringDialog.Description.Text = "Please specify the new name..."
+            Dim Returned As DialogResult
+            Returned = GenericStringDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("ITEM TWEAK TAB").Settings.Set("RenameItem", GenericStringDialog.TextBox.Text)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
                 Ultima.Client.SendText(".sa_rename " & GenericStringDialog.TextBox.Text)
-			End If
-			GenericStringDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub LockDownBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LockDownBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+            End If
+            GenericStringDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub LockDownBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LockDownBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_lockdown")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub ReleaseItemBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReleaseItemBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub ReleaseItemBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReleaseItemBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_release")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub LockRadiusBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LockRadiusBtn.Click
-		If (Ultima.Client.Running = True) Then
-			If (NumericUpDown3.Value > 0) Then
-				Ultima.Client.BringToTop()
+    Private Sub LockRadiusBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LockRadiusBtn.Click
+        If (Ultima.Client.Running = True) Then
+            If (NumericUpDown3.Value > 0) Then
+                Ultima.Client.BringToTop()
                 Ultima.Client.SendText(".sa_lockradius " & NumericUpDown3.Value.ToString)
-			End If
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+            End If
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub MassMoveBtn_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles MassMoveBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".massmove")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub CopyPasteBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CopyPasteBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".copypaste")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub CopyItemsBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CopyItemsBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".copy")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub PasteItemsBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PasteItemsBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".paste")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub MoveItemBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MoveItemBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub MassMoveBtn_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles MassMoveBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".massmove")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub CopyPasteBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CopyPasteBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".copypaste")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub CopyItemsBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CopyItemsBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".copy")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub PasteItemsBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PasteItemsBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".paste")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub MoveItemBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MoveItemBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_moveitem")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub LockBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LockBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub LockBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LockBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_lock")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub UnlockBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnlockBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub UnlockBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UnlockBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_unlock")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub RelockBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RelockBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub RelockBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RelockBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_relock")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub KeyBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KeyBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub KeyBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KeyBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_makekey")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub RekeyBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RekeyBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub RekeyBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RekeyBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_rekey")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub MoveContBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MoveContBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub MoveContBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MoveContBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_movetocont")
-		Else
-			ShowError("noclient")
-		End If
+        Else
+            ShowError("noclient")
+        End If
 
-	End Sub
+    End Sub
 
-	'#################################################'
-	'#################### NPC TAB ####################'
-	'#################################################'
+    '#################################################'
+    '#################### NPC TAB ####################'
+    '#################################################'
 
-	Public NPCAnimation() As Ultima.Frame
-	Public NPCAnimationID As Integer = 0
-	Public NPCAnimationLength As Integer = 0
-	Public NPCAnimationHue As Integer = 0
-	Public NPCAnimationFrame As Integer = -1
+    Public NPCAnimation() As Ultima.Frame
+    Public NPCAnimationID As Integer = 0
+    Public NPCAnimationLength As Integer = 0
+    Public NPCAnimationHue As Integer = 0
+    Public NPCAnimationFrame As Integer = -1
 
-	Private Sub NPCTab_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles NPCTab.Enter
-		If (NPCCategoryList.Nodes.Count = 0) Then
-			' Suppress repainting the TreeView until all the objects have been created.
-			NPCCategoryList.BeginUpdate()
-			' Clear the TreeView each time the method is called.
-			NPCCategoryList.Nodes.Clear()
-			Dim lastGKey As Integer = -1
-			For Each line As String In NPCsList
-				If (line.StartsWith("G")) Then
-					lastGKey += 1
-					NPCCategoryList.Nodes.Add(line.Substring(2, line.Length - 2))
-					Continue For
-				End If
-				If ((line.StartsWith("S")) And (lastGKey >= 0)) Then
-					NPCCategoryList.Nodes(lastGKey).Nodes.Add(line.Substring(2, line.Length - 2))
-				End If
-			Next line
-			' Begin repainting the TreeView.
-			NPCCategoryList.EndUpdate()
-		End If
+    Private Sub NPCTab_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles NPCTab.Enter
+        If (NPCCategoryList.Nodes.Count = 0) Then
+            ' Suppress repainting the TreeView until all the objects have been created.
+            NPCCategoryList.BeginUpdate()
+            ' Clear the TreeView each time the method is called.
+            NPCCategoryList.Nodes.Clear()
+            Dim lastGKey As Integer = -1
+            For Each line As String In NPCsList
+                If (line.StartsWith("G")) Then
+                    lastGKey += 1
+                    NPCCategoryList.Nodes.Add(line.Substring(2, line.Length - 2))
+                    Continue For
+                End If
+                If ((line.StartsWith("S")) And (lastGKey >= 0)) Then
+                    NPCCategoryList.Nodes(lastGKey).Nodes.Add(line.Substring(2, line.Length - 2))
+                End If
+            Next line
+            ' Begin repainting the TreeView.
+            NPCCategoryList.EndUpdate()
+        End If
 
-		If ((NPCAnimationID <> 0) And (NPCAnimationLength <> 0) And (NPCAnimationFrame <> -1)) Then
-			NPCAnimationTimer.Start()
-		End If
+        If ((NPCAnimationID <> 0) And (NPCAnimationLength <> 0) And (NPCAnimationFrame <> -1)) Then
+            NPCAnimationTimer.Start()
+        End If
 
-	End Sub
+    End Sub
 
-	Private Sub NPCCategoryList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles NPCCategoryList.AfterSelect
-		Dim OK As Boolean = False
+    Private Sub NPCCategoryList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles NPCCategoryList.AfterSelect
+        Dim OK As Boolean = False
 
-		' Suppress repainting the TreeView until all the objects have been created.
-		NPCList.BeginUpdate()
+        ' Suppress repainting the TreeView until all the objects have been created.
+        NPCList.BeginUpdate()
 
-		' Clear the TreeView each time the method is called.
-		NPCList.Nodes.Clear()
+        ' Clear the TreeView each time the method is called.
+        NPCList.Nodes.Clear()
 
-		For Each line As String In NPCsList
-			If (NPCCategoryList.SelectedNode.Text = line.Substring(2, line.Length - 2)) Then
-				OK = True
-				Continue For
-			End If
-			If (((line.StartsWith("G")) Or (line.StartsWith("S"))) And (OK = True)) Then
-				OK = False
-				Exit For
-			End If
-			If ((OK = True) And (line.StartsWith("N"))) Then
-				NPCList.Nodes.Add(line.Substring(2, line.Length - 2))
-			End If
+        For Each line As String In NPCsList
+            If (NPCCategoryList.SelectedNode.Text = line.Substring(2, line.Length - 2)) Then
+                OK = True
+                Continue For
+            End If
+            If (((line.StartsWith("G")) Or (line.StartsWith("S"))) And (OK = True)) Then
+                OK = False
+                Exit For
+            End If
+            If ((OK = True) And (line.StartsWith("N"))) Then
+                NPCList.Nodes.Add(line.Substring(2, line.Length - 2))
+            End If
 
-		Next line
+        Next line
 
-		' Begin repainting the TreeView.
-		NPCList.EndUpdate()
+        ' Begin repainting the TreeView.
+        NPCList.EndUpdate()
 
-	End Sub
+    End Sub
 
-	Private Sub CollapseMenuItem3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CollapseMenuItem3.Click
-		NPCCategoryList.CollapseAll()
-	End Sub
-	Private Sub ExpandMenuItem3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExpandMenuItem3.Click
-		NPCCategoryList.ExpandAll()
-	End Sub
+    Private Sub CollapseMenuItem3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CollapseMenuItem3.Click
+        NPCCategoryList.CollapseAll()
+    End Sub
+    Private Sub ExpandMenuItem3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExpandMenuItem3.Click
+        NPCCategoryList.ExpandAll()
+    End Sub
 
-	'Search by Name
-	Private Sub SearchByNameTextBox3_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchByNameTextBox3.GotFocus
-		If (SearchByNameTextBox3.Text = "Search by Name") Then
-			SearchByNameTextBox3.Text = ""
-			SearchByNameTextBox3.ForeColor = Color.Black
-		End If
-	End Sub
-	Private Sub SearchByNameTextBox3_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SearchByNameTextBox3.KeyDown
-		If (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return) Then
-			SearchByNameTextBox3.AutoCompleteCustomSource.Add(SearchByNameTextBox3.Text)
-			My.Settings.SearchByName3_AutoComplete = SearchByNameTextBox3.AutoCompleteCustomSource
+    'Search by Name
+    Private Sub SearchByNameTextBox3_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchByNameTextBox3.GotFocus
+        If (SearchByNameTextBox3.Text = "Search by Name") Then
+            SearchByNameTextBox3.Text = ""
+            SearchByNameTextBox3.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub SearchByNameTextBox3_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SearchByNameTextBox3.KeyDown
+        If (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return) Then
+            SearchByNameTextBox3.AutoCompleteCustomSource.Add(SearchByNameTextBox3.Text)
+            My.Settings.SearchByName3_AutoComplete = SearchByNameTextBox3.AutoCompleteCustomSource
 
-			Collapse_ExpandMenu3.Hide()
-			Dim LastCategory As String = Nothing
-			Dim FoundItem As String = Nothing
-			For Each line As String In NPCsList
-				If (line.StartsWith("C") Or line.StartsWith("S")) Then
-					LastCategory = line.Substring(2, line.Length - 2).TrimEnd(" ")
-				End If
-				If (line.StartsWith("I")) Then
-					If (line.Substring(2, 50).TrimEnd(" ").ToLower.Contains(SearchByNameTextBox3.Text.ToLower)) Then
-						FoundItem = line.Substring(52, line.Length - 52).Trim(" ")
-						Exit For
-					End If
-				Else
-					If (line.Substring(2, line.Length - 2).TrimEnd(" ").ToLower.Contains(SearchByNameTextBox3.Text.ToLower)) Then
-						FoundItem = Nothing
-						Exit For
-					End If
-				End If
-			Next
-			NPCCategoryList.SelectedNode = NPCCategoryList.Nodes.Find(LastCategory, True)(0)
-			If (FoundItem IsNot Nothing) Then
-				Dim FoundNode() As TreeNode = NPCList.Nodes.Find(FoundItem, True)
-				If (FoundNode.Length > 0) Then
-					NPCList.SelectedNode = FoundNode(0)
-				End If
-			End If
-			e.Handled = True
-			SearchByNameTextBox3.Text = "Search by Name"
-			SearchByNameTextBox3.ForeColor = Color.Gray
-		End If
-	End Sub
-	Private Sub SearchByNameTextBox3_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SearchByNameTextBox3.LostFocus
-		If (SearchByNameTextBox3.Text = "") Then
-			SearchByNameTextBox3.Text = "Search by Name"
-			SearchByNameTextBox3.ForeColor = Color.Gray
-		End If
-	End Sub
+            Collapse_ExpandMenu3.Hide()
+            Dim LastCategory As String = Nothing
+            Dim FoundItem As String = Nothing
+            For Each line As String In NPCsList
+                If (line.StartsWith("C") Or line.StartsWith("S")) Then
+                    LastCategory = line.Substring(2, line.Length - 2).TrimEnd(" ")
+                End If
+                If (line.StartsWith("I")) Then
+                    If (line.Substring(2, 50).TrimEnd(" ").ToLower.Contains(SearchByNameTextBox3.Text.ToLower)) Then
+                        FoundItem = line.Substring(52, line.Length - 52).Trim(" ")
+                        Exit For
+                    End If
+                Else
+                    If (line.Substring(2, line.Length - 2).TrimEnd(" ").ToLower.Contains(SearchByNameTextBox3.Text.ToLower)) Then
+                        FoundItem = Nothing
+                        Exit For
+                    End If
+                End If
+            Next
+            NPCCategoryList.SelectedNode = NPCCategoryList.Nodes.Find(LastCategory, True)(0)
+            If (FoundItem IsNot Nothing) Then
+                Dim FoundNode() As TreeNode = NPCList.Nodes.Find(FoundItem, True)
+                If (FoundNode.Length > 0) Then
+                    NPCList.SelectedNode = FoundNode(0)
+                End If
+            End If
+            e.Handled = True
+            SearchByNameTextBox3.Text = "Search by Name"
+            SearchByNameTextBox3.ForeColor = Color.Gray
+        End If
+    End Sub
+    Private Sub SearchByNameTextBox3_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SearchByNameTextBox3.LostFocus
+        If (SearchByNameTextBox3.Text = "") Then
+            SearchByNameTextBox3.Text = "Search by Name"
+            SearchByNameTextBox3.ForeColor = Color.Gray
+        End If
+    End Sub
 
-	Private Sub NPCList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles NPCList.AfterSelect
-		NPCPreviewImage.Image = Nothing
-		If (NPCList.SelectedNode.Text IsNot Nothing) Then
-			NPCAnimationError.Visible = False
+    Private Sub NPCList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles NPCList.AfterSelect
+        NPCPreviewImage.Image = Nothing
+        If (NPCList.SelectedNode.Text IsNot Nothing) Then
+            NPCAnimationError.Visible = False
 
-			Dim FoundNPC As Boolean = False
-			For Each line As String In NPCsList
-				If (line.Substring(2, line.Length - 2) = NPCList.SelectedNode.Text) Then
-					FoundNPC = True
-					Continue For
-				End If
-				If ((FoundNPC = True) And (line.StartsWith("B"))) Then
-					Try
-						NPCAnimationID = Convert.ToInt32(line.Substring(2, line.Length - 2), 16)
-					Catch ex As Exception
-						NPCAnimationTimer.Stop()
-						NPCAnimationError.Visible = True
-						Exit Sub
-					End Try
-					Try
-						NPCPreviewID.Text = "ID: 0x" & line.Substring(2, line.Length - 2)
-						ToolTip.SetToolTip(NPCPreviewID, "Hex ID number of the currently selected item." + vbCrLf + vbCrLf + "Decimal Value: " + Convert.ToInt32(line.Substring(2, line.Length - 2), 16).ToString)
-					Catch ex As Exception
-						NPCAnimationTimer.Stop()
-						NPCAnimationError.Visible = True
-						Exit Sub
-					End Try
-					Continue For
-				End If
-				If ((FoundNPC = True) And (line.StartsWith("C"))) Then
-					Try
-						NPCAnimationHue = line.Substring(2, line.Length - 2)
-					Catch ex As Exception
-						NPCAnimationTimer.Stop()
-						NPCAnimationError.Visible = True
-						Exit Sub
-					End Try
-					Continue For
-				End If
-				If ((FoundNPC = True) And (line.StartsWith("N") Or line.StartsWith("S") Or line.StartsWith("G"))) Then
-					Exit For
-				End If
-			Next line
+            Dim FoundNPC As Boolean = False
+            For Each line As String In NPCsList
+                If (line.Substring(2, line.Length - 2) = NPCList.SelectedNode.Text) Then
+                    FoundNPC = True
+                    Continue For
+                End If
+                If ((FoundNPC = True) And (line.StartsWith("B"))) Then
+                    Try
+                        NPCAnimationID = Convert.ToInt32(line.Substring(2, line.Length - 2), 16)
+                    Catch ex As Exception
+                        NPCAnimationTimer.Stop()
+                        NPCAnimationError.Visible = True
+                        Exit Sub
+                    End Try
+                    Try
+                        NPCPreviewID.Text = "ID: 0x" & line.Substring(2, line.Length - 2)
+                        ToolTip.SetToolTip(NPCPreviewID, "Hex ID number of the currently selected item." + vbCrLf + vbCrLf + "Decimal Value: " + Convert.ToInt32(line.Substring(2, line.Length - 2), 16).ToString)
+                    Catch ex As Exception
+                        NPCAnimationTimer.Stop()
+                        NPCAnimationError.Visible = True
+                        Exit Sub
+                    End Try
+                    Continue For
+                End If
+                If ((FoundNPC = True) And (line.StartsWith("C"))) Then
+                    Try
+                        NPCAnimationHue = line.Substring(2, line.Length - 2)
+                    Catch ex As Exception
+                        NPCAnimationTimer.Stop()
+                        NPCAnimationError.Visible = True
+                        Exit Sub
+                    End Try
+                    Continue For
+                End If
+                If ((FoundNPC = True) And (line.StartsWith("N") Or line.StartsWith("S") Or line.StartsWith("G"))) Then
+                    Exit For
+                End If
+            Next line
 
-			If ((FoundNPC = False)) Then
-				NPCAnimationTimer.Stop()
-				NPCAnimationError.Visible = True
-				Exit Sub
-			End If
+            If ((FoundNPC = False)) Then
+                NPCAnimationTimer.Stop()
+                NPCAnimationError.Visible = True
+                Exit Sub
+            End If
 
             If ((NPCAnimationID <> 0)) Then
                 'modified
@@ -1851,13 +1851,13 @@ Public Class Form1
             NPCAnimationHue = 0
             NPCAnimationFrame = -1
         End If
-	End Sub
+    End Sub
 
-	Private Sub NPCAnimationTimer_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles NPCAnimationTimer.Tick
-		NPCAnimationFrame += 1
-		If (NPCAnimationFrame > NPCAnimationLength) Then
-			NPCAnimationFrame = 0
-		End If
+    Private Sub NPCAnimationTimer_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles NPCAnimationTimer.Tick
+        NPCAnimationFrame += 1
+        If (NPCAnimationFrame > NPCAnimationLength) Then
+            NPCAnimationFrame = 0
+        End If
 
         Dim ImageLocation As New Point(((GroupBox23.Size.Width / 2) - (NPCAnimation(NPCAnimationFrame).Bitmap.Width / 2)) - NPCAnimation(NPCAnimationFrame).Center.X, ((GroupBox23.Size.Height / 2) - (NPCAnimation(NPCAnimationFrame).Bitmap.Height / 2)) - (NPCAnimation(NPCAnimationFrame).Center.Y + NPCAnimation(NPCAnimationFrame).Bitmap.Height))
         NPCPreviewImage.Location.Offset(NPCAnimation(NPCAnimationFrame).Center.X, NPCAnimation(NPCAnimationFrame).Center.Y + NPCAnimation(NPCAnimationFrame).Bitmap.Height)
@@ -1865,456 +1865,456 @@ Public Class Form1
         NPCPreviewImage.Location = ImageLocation
         'modified
         NPCPreviewImage.Image = NPCAnimation(NPCAnimationFrame).Bitmap
-	End Sub
+    End Sub
 
-	Private Sub DecreaseAnimationSpeed_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DecreaseAnimationSpeed.Click
-		NPCAnimationTimer.Interval = NPCAnimationTimer.Interval + 10
-	End Sub
-	Private Sub IncreaseAnimationSpeed_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles IncreaseAnimationSpeed.Click
-		If ((NPCAnimationTimer.Interval - 10) <= 0) Then
-			NPCAnimationTimer.Interval = 1
-		Else
-			NPCAnimationTimer.Interval = NPCAnimationTimer.Interval - 10
-		End If
-	End Sub
+    Private Sub DecreaseAnimationSpeed_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DecreaseAnimationSpeed.Click
+        NPCAnimationTimer.Interval = NPCAnimationTimer.Interval + 10
+    End Sub
+    Private Sub IncreaseAnimationSpeed_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles IncreaseAnimationSpeed.Click
+        If ((NPCAnimationTimer.Interval - 10) <= 0) Then
+            NPCAnimationTimer.Interval = 1
+        Else
+            NPCAnimationTimer.Interval = NPCAnimationTimer.Interval - 10
+        End If
+    End Sub
 
-	Private Sub CreateNPC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateNPC.Click
-		If (Ultima.Client.Running = True) Then
-			Try
-				If (NPCList.SelectedNode.Name IsNot Nothing) Then
-					Ultima.Client.BringToTop()
+    Private Sub CreateNPC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateNPC.Click
+        If (Ultima.Client.Running = True) Then
+            Try
+                If (NPCList.SelectedNode.Name IsNot Nothing) Then
+                    Ultima.Client.BringToTop()
                     Ultima.Client.SendText(".sa_createnpc " & NPCList.SelectedNode.Text)
-				End If
-			Catch ex As Exception
-				Exit Sub
-			End Try
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub CreateNPCHidden_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateNPCHidden.Click
-		If (Ultima.Client.Running = True) Then
-			Try
-				If (NPCList.SelectedNode.Name IsNot Nothing) Then
-					Ultima.Client.BringToTop()
+                End If
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub CreateNPCHidden_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateNPCHidden.Click
+        If (Ultima.Client.Running = True) Then
+            Try
+                If (NPCList.SelectedNode.Name IsNot Nothing) Then
+                    Ultima.Client.BringToTop()
                     Ultima.Client.SendText(".sa_createhidden " & NPCList.SelectedNode.Text)
-				End If
-			Catch ex As Exception
-				Exit Sub
-			End Try
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub CreateGroup_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateGroup.Click
-		If (Ultima.Client.Running = True) Then
-			Try
-				If (NPCList.SelectedNode.Name IsNot Nothing) Then
-					Dim GenericNumericDialog As New GenericNumericDialog
-					GenericNumericDialog.TopMost = Me.TopMost
-					Int32.TryParse(INIHandler.Sections("NPC TAB").Settings("CreateGroup"), GenericNumericDialog.NumericUpDown.Value)
-					GenericNumericDialog.NumericUpDown.Maximum = 10
-					GenericNumericDialog.Description.Text = "Enter the number of NPCs to create..."
-					Dim Returned As DialogResult = GenericNumericDialog.ShowDialog()
-					If (Returned = Windows.Forms.DialogResult.OK) Then
-						INIHandler.Sections.Sections("NPC TAB").Settings.Set("CreateGroup", GenericNumericDialog.NumericUpDown.Value.ToString)
-						INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-						Ultima.Client.BringToTop()
-						Ultima.Client.SendText(".creategroupnpc " & NPCList.SelectedNode.Text & " " & GenericNumericDialog.NumericUpDown.Value.ToString)
-					End If
-					GenericNumericDialog.Dispose()
-				End If
-			Catch ex As Exception
-				Exit Sub
-			End Try
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+                End If
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub CreateGroup_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateGroup.Click
+        If (Ultima.Client.Running = True) Then
+            Try
+                If (NPCList.SelectedNode.Name IsNot Nothing) Then
+                    Dim GenericNumericDialog As New GenericNumericDialog
+                    GenericNumericDialog.TopMost = Me.TopMost
+                    Int32.TryParse(INIHandler.Sections("NPC TAB").Settings("CreateGroup"), GenericNumericDialog.NumericUpDown.Value)
+                    GenericNumericDialog.NumericUpDown.Maximum = 10
+                    GenericNumericDialog.Description.Text = "Enter the number of NPCs to create..."
+                    Dim Returned As DialogResult = GenericNumericDialog.ShowDialog()
+                    If (Returned = Windows.Forms.DialogResult.OK) Then
+                        INIHandler.Sections.Sections("NPC TAB").Settings.Set("CreateGroup", GenericNumericDialog.NumericUpDown.Value.ToString)
+                        INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                        Ultima.Client.BringToTop()
+                        Ultima.Client.SendText(".creategroupnpc " & NPCList.SelectedNode.Text & " " & GenericNumericDialog.NumericUpDown.Value.ToString)
+                    End If
+                    GenericNumericDialog.Dispose()
+                End If
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub KillNPC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KillNPC.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub KillNPC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KillNPC.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_kill")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub NPCTab_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles NPCTab.Leave
-		NPCAnimationTimer.Stop()
-	End Sub
+    Private Sub NPCTab_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles NPCTab.Leave
+        NPCAnimationTimer.Stop()
+    End Sub
 
-	'#################################################'
-	'################# NPC TWEAK TAB #################'
-	'#################################################'
-	'Some buttons handled by buttons of the same function under the Admin Tab
+    '#################################################'
+    '################# NPC TWEAK TAB #################'
+    '#################################################'
+    'Some buttons handled by buttons of the same function under the Admin Tab
 
-	'SetNPCSkill handled by SetPlayerSkill
-	'SetNPCStat handled by SetPlayerStat
-	'NPCBarber handled by BarberPlayerBtn
-	'SetNPCInvul handled by InvulPlayerBtn
+    'SetNPCSkill handled by SetPlayerSkill
+    'SetNPCStat handled by SetPlayerStat
+    'NPCBarber handled by BarberPlayerBtn
+    'SetNPCInvul handled by InvulPlayerBtn
 
-	'NPCRename handled by RenameItemBtn (under Item Tweak Tab)
-	Private Sub CopyLook_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CopyLook.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    'NPCRename handled by RenameItemBtn (under Item Tweak Tab)
+    Private Sub CopyLook_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CopyLook.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_copylook")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub NoTame_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NoTame.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub NoTame_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NoTame.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_notame")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub NoProvoke_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NoProvoke.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub NoProvoke_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NoProvoke.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_noprovoke")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub SayAbove_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SayAbove.Click
-		If (Ultima.Client.Running = True) Then
-			Dim GenericStringDialog As New GenericStringDialog
-			GenericStringDialog.Description.Text = "Enter the text to say above the mobile..."
-			GenericStringDialog.TopMost = Me.TopMost
-			GenericStringDialog.TextBox.Text = INIHandler.Sections("NPC TWEAK TAB").Settings("SayAbove")
-			Dim Returned As DialogResult
-			Returned = GenericStringDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("NPC TWEAK TAB").Settings.Set("SayAbove", GenericStringDialog.TextBox.Text)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
+    Private Sub SayAbove_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SayAbove.Click
+        If (Ultima.Client.Running = True) Then
+            Dim GenericStringDialog As New GenericStringDialog
+            GenericStringDialog.Description.Text = "Enter the text to say above the mobile..."
+            GenericStringDialog.TopMost = Me.TopMost
+            GenericStringDialog.TextBox.Text = INIHandler.Sections("NPC TWEAK TAB").Settings("SayAbove")
+            Dim Returned As DialogResult
+            Returned = GenericStringDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("NPC TWEAK TAB").Settings.Set("SayAbove", GenericStringDialog.TextBox.Text)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
                 Ultima.Client.SendText(".sa_sayabove " & GenericStringDialog.TextBox.Text)
-			End If
-			GenericStringDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub Action_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Action.Click
-		If (Ultima.Client.Running = True) Then
-			Dim PerformActionDialog As New PerformActionDialog
-			PerformActionDialog.TopMost = Me.TopMost
-			If (INIHandler.Sections("NPC TWEAK TAB").Settings("PerformAction") = Nothing) Then
-				PerformActionDialog.ActionList.SelectedItem = "Walk unarmed"
-			Else
-				PerformActionDialog.ActionList.SelectedItem = INIHandler.Sections("NPC TWEAK TAB").Settings("PerformAction")
-			End If
-			Dim Returned As DialogResult
-			Returned = PerformActionDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("NPC TWEAK TAB").Settings.Set("PerformAction", SetCmdLvlDialog.CommandLevel.SelectedItem)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
+            End If
+            GenericStringDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub Action_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Action.Click
+        If (Ultima.Client.Running = True) Then
+            Dim PerformActionDialog As New PerformActionDialog
+            PerformActionDialog.TopMost = Me.TopMost
+            If (INIHandler.Sections("NPC TWEAK TAB").Settings("PerformAction") = Nothing) Then
+                PerformActionDialog.ActionList.SelectedItem = "Walk unarmed"
+            Else
+                PerformActionDialog.ActionList.SelectedItem = INIHandler.Sections("NPC TWEAK TAB").Settings("PerformAction")
+            End If
+            Dim Returned As DialogResult
+            Returned = PerformActionDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("NPC TWEAK TAB").Settings.Set("PerformAction", SetCmdLvlDialog.CommandLevel.SelectedItem)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
                 Ultima.Client.SendText(".sa_action " & PerformActionDialog.SelectedAction)
-			End If
-			PerformActionDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub WalkTo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WalkTo.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+            End If
+            PerformActionDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub WalkTo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WalkTo.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_walkto")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub RunTo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RunTo.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub RunTo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RunTo.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_runto")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	'GetNPCInfo handled by GetPlayerInfoBtn
-	'ThawNPC handled by ThawPlayerBtn
-	'FreezeNPC handled by FreezePlayerBtn
-	'RefreshNPC handled by RefreshPlayerBtn
+    'GetNPCInfo handled by GetPlayerInfoBtn
+    'ThawNPC handled by ThawPlayerBtn
+    'FreezeNPC handled by FreezePlayerBtn
+    'RefreshNPC handled by RefreshPlayerBtn
 
-	Private Sub RestartAI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RestartAI.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub RestartAI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RestartAI.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_restartai")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub Tame_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tame.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub Tame_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tame.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_tame")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub SetNPCCriminal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetNPCCriminal.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub SetNPCCriminal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetNPCCriminal.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_setprop criminal 1")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub SetNPCMurderer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetNPCMurderer.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub SetNPCMurderer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetNPCMurderer.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_setprop murderer 1")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	'HideNPC handled by HidePlayerBtn
-	Private Sub EquipItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EquipItem.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    'HideNPC handled by HidePlayerBtn
+    Private Sub EquipItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EquipItem.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_equip")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub EquipFromTemplate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EquipFromTemplate.Click
-		If (Ultima.Client.Running = True) Then
-			Dim GenericStringDialog As New GenericStringDialog
-			GenericStringDialog.Description.Text = "Enter the name of the template to use..."
-			GenericStringDialog.TopMost = Me.TopMost
-			GenericStringDialog.TextBox.Text = INIHandler.Sections("NPC TWEAK TAB").Settings("EquipFromTemplate")
-			Dim Returned As DialogResult
-			Returned = GenericStringDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("NPC TWEAK TAB").Settings.Set("EquipFromTemplate", GenericStringDialog.TextBox.Text)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub EquipFromTemplate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EquipFromTemplate.Click
+        If (Ultima.Client.Running = True) Then
+            Dim GenericStringDialog As New GenericStringDialog
+            GenericStringDialog.Description.Text = "Enter the name of the template to use..."
+            GenericStringDialog.TopMost = Me.TopMost
+            GenericStringDialog.TextBox.Text = INIHandler.Sections("NPC TWEAK TAB").Settings("EquipFromTemplate")
+            Dim Returned As DialogResult
+            Returned = GenericStringDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("NPC TWEAK TAB").Settings.Set("EquipFromTemplate", GenericStringDialog.TextBox.Text)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
                 Ultima.Client.SendText(".sa_equipt " & GenericStringDialog.TextBox.Text)
-			End If
-			GenericStringDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+            End If
+            GenericStringDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	'#################################################'
-	'#################### GM TAB #####################'
-	'#################################################'
+    '#################################################'
+    '#################### GM TAB #####################'
+    '#################################################'
 
-	Private Sub ConcealMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConcealMeBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub ConcealMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConcealMeBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_concealme")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub RevealMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RevealMeBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub RevealMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RevealMeBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_unconcealme")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub ResMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ResMeBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub ResMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ResMeBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_resme")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub RefreshMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefreshMeBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub RefreshMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefreshMeBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_refreshme")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub GmFormBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GmFormBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub GmFormBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GmFormBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_gmform")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub MyFormBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyFormBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub MyFormBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyFormBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_myform")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub ThawMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ThawMeBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub ThawMeBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ThawMeBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_thawme")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub PowerUpBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PowerUpBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub PowerUpBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PowerUpBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_powerup")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub PropEditBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PropEditBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub PropEditBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PropEditBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_propedit")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub AddObjPropBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddObjPropBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".addprop")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub SetObjPropBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetObjPropBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".setprop")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub DelObjPropBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DelObjPropBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".delprop")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+    Private Sub AddObjPropBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddObjPropBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".addprop")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub SetObjPropBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetObjPropBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".setprop")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub DelObjPropBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DelObjPropBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".delprop")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub AddGlobalPropBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddGlobalPropBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".addgprop")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub SetGlobalPropBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetGlobalPropBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".setgprop")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub DelGlobalPropBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DelGlobalPropBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".delgprop")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+    Private Sub AddGlobalPropBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddGlobalPropBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".addgprop")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub SetGlobalPropBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SetGlobalPropBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".setgprop")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub DelGlobalPropBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DelGlobalPropBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".delgprop")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub MarkBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MarkBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub MarkBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MarkBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_mark")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub RecallBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RecallBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub RecallBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RecallBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_recall")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub MakeTeleBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MakeTeleBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub MakeTeleBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MakeTeleBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_maketele")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub AddGoBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddGoBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
-			Ultima.Client.SendText(".addgoloc")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub AddGoBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddGoBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
+            Ultima.Client.SendText(".addgoloc")
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub LogNotifyBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogNotifyBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub LogNotifyBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogNotifyBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_lognotify")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub BroadcastBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BroadcastBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Dim BroadcastDialog As New BroadcastDialog
-			BroadcastDialog.TopMost = Me.TopMost
-			GenericStringDialog.TextBox.Text = INIHandler.Sections("GM TAB").Settings("BroadcastMessage")
-			Dim Returned As DialogResult
-			Returned = BroadcastDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("GM TAB").Settings.Set("BroadcastMessage", GenericStringDialog.TextBox.Text)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
-				If (BroadcastDialog.EveryoneOnline.Checked = True) Then
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub BroadcastBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BroadcastBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Dim BroadcastDialog As New BroadcastDialog
+            BroadcastDialog.TopMost = Me.TopMost
+            GenericStringDialog.TextBox.Text = INIHandler.Sections("GM TAB").Settings("BroadcastMessage")
+            Dim Returned As DialogResult
+            Returned = BroadcastDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("GM TAB").Settings.Set("BroadcastMessage", GenericStringDialog.TextBox.Text)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
+                If (BroadcastDialog.EveryoneOnline.Checked = True) Then
                     Ultima.Client.SendText(".sa_bcast " & BroadcastDialog.BCastMessage.Text)
-				Else
+                Else
                     Ultima.Client.SendText(".sa_gms " & BroadcastDialog.BCastMessage.Text)
-				End If
-			End If
-			BroadcastDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+                End If
+            End If
+            BroadcastDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 
-	Private Sub HelpQueueBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HelpQueueBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+    Private Sub HelpQueueBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HelpQueueBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_counpage")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub NightsightBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NightsightBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub NightsightBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NightsightBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_nsight")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
     Private Sub BankBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BankBtn.Click
         If (Ultima.Client.Running = True) Then
             Ultima.Client.BringToTop()
@@ -2332,160 +2332,160 @@ Public Class Form1
         End If
     End Sub
 
-	'#################################################'
-	'################## TRAVEL TAB ###################'
-	'#################################################'
+    '#################################################'
+    '################## TRAVEL TAB ###################'
+    '#################################################'
 
-	Private Sub TravelTab_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TravelTab.Enter
-		If (TravelCategoryList.Nodes.Count = 0) Then
-			' Suppress repainting the TreeView until all the objects have been created.
-			TravelCategoryList.BeginUpdate()
-			' Clear the TreeView each time the method is called.
-			TravelCategoryList.Nodes.Clear()
-			Dim lastCKey As Integer = -1
-			For Each line As String In LocationsList
-				If (line.StartsWith("C")) Then
-					lastCKey += 1
-					TravelCategoryList.Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
-					Continue For
-				End If
-				If ((line.StartsWith("S")) And (lastCKey >= 0)) Then
-					TravelCategoryList.Nodes(lastCKey).Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
-				End If
-			Next line
-			' Begin repainting the TreeView.
-			TravelCategoryList.EndUpdate()
-		End If
-	End Sub
+    Private Sub TravelTab_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TravelTab.Enter
+        If (TravelCategoryList.Nodes.Count = 0) Then
+            ' Suppress repainting the TreeView until all the objects have been created.
+            TravelCategoryList.BeginUpdate()
+            ' Clear the TreeView each time the method is called.
+            TravelCategoryList.Nodes.Clear()
+            Dim lastCKey As Integer = -1
+            For Each line As String In LocationsList
+                If (line.StartsWith("C")) Then
+                    lastCKey += 1
+                    TravelCategoryList.Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
+                    Continue For
+                End If
+                If ((line.StartsWith("S")) And (lastCKey >= 0)) Then
+                    TravelCategoryList.Nodes(lastCKey).Nodes.Add(line.Substring(2, line.Length - 2), line.Substring(2, line.Length - 2))
+                End If
+            Next line
+            ' Begin repainting the TreeView.
+            TravelCategoryList.EndUpdate()
+        End If
+    End Sub
 
-	Private Sub TravelCategoryList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles TravelCategoryList.AfterSelect
-		Dim OK As Boolean = False
-		' Suppress repainting the TreeView until all the objects have been created.
-		TravelLocationList.BeginUpdate()
-		' Clear the TreeView each time the method is called.
-		TravelLocationList.Nodes.Clear()
-		For Each line As String In LocationsList
-			If (TravelCategoryList.SelectedNode.Text = line.Substring(2, line.Length - 2)) Then
-				OK = True
-				Continue For
-			End If
-			If (((line.StartsWith("S")) Or (line.StartsWith("C"))) And (OK = True)) Then
-				OK = False
-				Exit For
-			End If
-			If ((OK = True) And (line.StartsWith("I"))) Then
-				TravelLocationList.Nodes.Add(line.Substring(52, line.Length - 52), line.Substring(2, 50).TrimEnd(" "))
-			End If
-		Next line
-		' Begin repainting the TreeView.
-		TravelLocationList.EndUpdate()
-	End Sub
+    Private Sub TravelCategoryList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles TravelCategoryList.AfterSelect
+        Dim OK As Boolean = False
+        ' Suppress repainting the TreeView until all the objects have been created.
+        TravelLocationList.BeginUpdate()
+        ' Clear the TreeView each time the method is called.
+        TravelLocationList.Nodes.Clear()
+        For Each line As String In LocationsList
+            If (TravelCategoryList.SelectedNode.Text = line.Substring(2, line.Length - 2)) Then
+                OK = True
+                Continue For
+            End If
+            If (((line.StartsWith("S")) Or (line.StartsWith("C"))) And (OK = True)) Then
+                OK = False
+                Exit For
+            End If
+            If ((OK = True) And (line.StartsWith("I"))) Then
+                TravelLocationList.Nodes.Add(line.Substring(52, line.Length - 52), line.Substring(2, 50).TrimEnd(" "))
+            End If
+        Next line
+        ' Begin repainting the TreeView.
+        TravelLocationList.EndUpdate()
+    End Sub
 
-	Private Sub CollapseMenuItem4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CollapseMenuItem4.Click
-		TravelCategoryList.CollapseAll()
-	End Sub
-	Private Sub ExpandMenuItem4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExpandMenuItem4.Click
-		TravelCategoryList.ExpandAll()
-	End Sub
+    Private Sub CollapseMenuItem4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CollapseMenuItem4.Click
+        TravelCategoryList.CollapseAll()
+    End Sub
+    Private Sub ExpandMenuItem4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExpandMenuItem4.Click
+        TravelCategoryList.ExpandAll()
+    End Sub
 
-	'Search by Name
-	Private Sub SearchByNameTextBox4_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchByNameTextBox4.GotFocus
-		If (SearchByNameTextBox4.Text = "Search by Name") Then
-			SearchByNameTextBox4.Text = ""
-			SearchByNameTextBox4.ForeColor = Color.Black
-		End If
-	End Sub
-	Private Sub SearchByNameTextBox4_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SearchByNameTextBox4.KeyDown
-		If (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return) Then
-			SearchByNameTextBox4.AutoCompleteCustomSource.Add(SearchByNameTextBox4.Text)
-			My.Settings.SearchByName4_AutoComplete = SearchByNameTextBox4.AutoCompleteCustomSource
+    'Search by Name
+    Private Sub SearchByNameTextBox4_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SearchByNameTextBox4.GotFocus
+        If (SearchByNameTextBox4.Text = "Search by Name") Then
+            SearchByNameTextBox4.Text = ""
+            SearchByNameTextBox4.ForeColor = Color.Black
+        End If
+    End Sub
+    Private Sub SearchByNameTextBox4_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SearchByNameTextBox4.KeyDown
+        If (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Return) Then
+            SearchByNameTextBox4.AutoCompleteCustomSource.Add(SearchByNameTextBox4.Text)
+            My.Settings.SearchByName4_AutoComplete = SearchByNameTextBox4.AutoCompleteCustomSource
 
-			Collapse_ExpandMenu4.Hide()
-			Dim LastCategory As String = Nothing
-			Dim FoundItem As String = Nothing
-			For Each line As String In LocationsList
-				If (line.StartsWith("C") Or line.StartsWith("S")) Then
-					LastCategory = line.Substring(2, line.Length - 2).TrimEnd(" ")
-				End If
-				If (line.StartsWith("I")) Then
-					If (line.Substring(2, 50).TrimEnd(" ").ToLower.Contains(SearchByNameTextBox4.Text.ToLower)) Then
-						FoundItem = line.Substring(52, line.Length - 52).Trim(" ")
-						Exit For
-					End If
-				Else
-					If (line.Substring(2, line.Length - 2).TrimEnd(" ").ToLower.Contains(SearchByNameTextBox4.Text.ToLower)) Then
-						FoundItem = Nothing
-						Exit For
-					End If
-				End If
-			Next
-			TravelCategoryList.SelectedNode = TravelCategoryList.Nodes.Find(LastCategory, True)(0)
-			If (FoundItem IsNot Nothing) Then
-				Dim FoundNode() As TreeNode = TravelLocationList.Nodes.Find(FoundItem, True)
-				If (FoundNode.Length > 0) Then
-					TravelLocationList.SelectedNode = FoundNode(0)
-				End If
-			End If
-			e.Handled = True
-			SearchByNameTextBox4.Text = "Search by Name"
-			SearchByNameTextBox4.ForeColor = Color.Gray
-		End If
-	End Sub
-	Private Sub SearchByNameTextBox4_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SearchByNameTextBox4.LostFocus
-		If (SearchByNameTextBox4.Text = "") Then
-			SearchByNameTextBox4.Text = "Search by Name"
-			SearchByNameTextBox4.ForeColor = Color.Gray
-		End If
-	End Sub
+            Collapse_ExpandMenu4.Hide()
+            Dim LastCategory As String = Nothing
+            Dim FoundItem As String = Nothing
+            For Each line As String In LocationsList
+                If (line.StartsWith("C") Or line.StartsWith("S")) Then
+                    LastCategory = line.Substring(2, line.Length - 2).TrimEnd(" ")
+                End If
+                If (line.StartsWith("I")) Then
+                    If (line.Substring(2, 50).TrimEnd(" ").ToLower.Contains(SearchByNameTextBox4.Text.ToLower)) Then
+                        FoundItem = line.Substring(52, line.Length - 52).Trim(" ")
+                        Exit For
+                    End If
+                Else
+                    If (line.Substring(2, line.Length - 2).TrimEnd(" ").ToLower.Contains(SearchByNameTextBox4.Text.ToLower)) Then
+                        FoundItem = Nothing
+                        Exit For
+                    End If
+                End If
+            Next
+            TravelCategoryList.SelectedNode = TravelCategoryList.Nodes.Find(LastCategory, True)(0)
+            If (FoundItem IsNot Nothing) Then
+                Dim FoundNode() As TreeNode = TravelLocationList.Nodes.Find(FoundItem, True)
+                If (FoundNode.Length > 0) Then
+                    TravelLocationList.SelectedNode = FoundNode(0)
+                End If
+            End If
+            e.Handled = True
+            SearchByNameTextBox4.Text = "Search by Name"
+            SearchByNameTextBox4.ForeColor = Color.Gray
+        End If
+    End Sub
+    Private Sub SearchByNameTextBox4_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles SearchByNameTextBox4.LostFocus
+        If (SearchByNameTextBox4.Text = "") Then
+            SearchByNameTextBox4.Text = "Search by Name"
+            SearchByNameTextBox4.ForeColor = Color.Gray
+        End If
+    End Sub
 
-	Private Sub TravelLocationList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles TravelLocationList.AfterSelect
-		TravelCoordsText.Text = "Selected Location Coordinates: " & TravelLocationList.SelectedNode.Name.Replace(",", ", ")
-	End Sub
+    Private Sub TravelLocationList_AfterSelect(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles TravelLocationList.AfterSelect
+        TravelCoordsText.Text = "Selected Location Coordinates: " & TravelLocationList.SelectedNode.Name.Replace(",", ", ")
+    End Sub
 
-	Private Sub GoBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GoBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Try
-				If (TravelLocationList.SelectedNode.Name IsNot Nothing) Then
-					Ultima.Client.BringToTop()
+    Private Sub GoBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GoBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Try
+                If (TravelLocationList.SelectedNode.Name IsNot Nothing) Then
+                    Ultima.Client.BringToTop()
                     Ultima.Client.SendText(".sa_goxyz " & TravelLocationList.SelectedNode.Name.Replace(",", " "))
-				End If
-			Catch ex As Exception
-				Exit Sub
-			End Try
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub GotoBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GotoBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Ultima.Client.BringToTop()
+                End If
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub GotoBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GotoBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Ultima.Client.BringToTop()
             Ultima.Client.SendText(".sa_goto")
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
-	Private Sub GoXYZBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GoXYZBtn.Click
-		If (Ultima.Client.Running = True) Then
-			Dim GoXYZDialog As New GoXYZDialog
-			GoXYZDialog.TopMost = Me.TopMost
-			GoXYZDialog.XCoord.Text = INIHandler.Sections("TRAVEL TAB").Settings("GoXYZ_XCoord")
-			GoXYZDialog.YCoord.Text = INIHandler.Sections("TRAVEL TAB").Settings("GoXYZ_YCoord")
-			GoXYZDialog.ZCoord.Text = INIHandler.Sections("TRAVEL TAB").Settings("GoXYZ_ZCoord")
-			Dim Returned As DialogResult
-			Returned = GoXYZDialog.ShowDialog()
-			If (Returned = Windows.Forms.DialogResult.OK) Then
-				INIHandler.Sections.Sections("TRAVEL TAB").Settings.Set("GoXYZ_XCoord", GoXYZDialog.XCoord.Text)
-				INIHandler.Sections.Sections("TRAVEL TAB").Settings.Set("GoXYZ_YCoord", GoXYZDialog.YCoord.Text)
-				INIHandler.Sections.Sections("TRAVEL TAB").Settings.Set("GoXYZ_ZCoord", GoXYZDialog.ZCoord.Text)
-				INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
-				Ultima.Client.BringToTop()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
+    Private Sub GoXYZBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GoXYZBtn.Click
+        If (Ultima.Client.Running = True) Then
+            Dim GoXYZDialog As New GoXYZDialog
+            GoXYZDialog.TopMost = Me.TopMost
+            GoXYZDialog.XCoord.Text = INIHandler.Sections("TRAVEL TAB").Settings("GoXYZ_XCoord")
+            GoXYZDialog.YCoord.Text = INIHandler.Sections("TRAVEL TAB").Settings("GoXYZ_YCoord")
+            GoXYZDialog.ZCoord.Text = INIHandler.Sections("TRAVEL TAB").Settings("GoXYZ_ZCoord")
+            Dim Returned As DialogResult
+            Returned = GoXYZDialog.ShowDialog()
+            If (Returned = Windows.Forms.DialogResult.OK) Then
+                INIHandler.Sections.Sections("TRAVEL TAB").Settings.Set("GoXYZ_XCoord", GoXYZDialog.XCoord.Text)
+                INIHandler.Sections.Sections("TRAVEL TAB").Settings.Set("GoXYZ_YCoord", GoXYZDialog.YCoord.Text)
+                INIHandler.Sections.Sections("TRAVEL TAB").Settings.Set("GoXYZ_ZCoord", GoXYZDialog.ZCoord.Text)
+                INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
+                Ultima.Client.BringToTop()
                 Ultima.Client.SendText(".sa_goxyz " & GoXYZDialog.XCoord.Text & " " & GoXYZDialog.YCoord.Text & " " & GoXYZDialog.ZCoord.Text)
-			End If
-			GoXYZDialog.Dispose()
-		Else
-			ShowError("noclient")
-		End If
-	End Sub
+            End If
+            GoXYZDialog.Dispose()
+        Else
+            ShowError("noclient")
+        End If
+    End Sub
 	Private Sub GoMenuBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GoMenuBtn.Click
 		If (Ultima.Client.Running = True) Then
 			Ultima.Client.BringToTop()
@@ -2770,10 +2770,10 @@ Public Class Form1
 				PatchClient.Start()
 				PatchClient.WaitForInputIdle()
 			Catch ex As Exception
-				MessageBox.Show("Failed to load the Nightscape Patch Client: " & vbCrLf & vbCrLf & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Failed to load the Patch Client: " & vbCrLf & vbCrLf & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 			End Try
 		Else
-			MessageBox.Show("Unable to launch Nightscape Patch Client." & vbCrLf & vbCrLf & "The location of the Nightscape installation has not been specified.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Unable to launch Patch Client." & vbCrLf & vbCrLf & "The location of the Ultima installation has not been specified.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 		End If
 	End Sub
 	Private Sub LaunchNSClientBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LaunchNSClientBtn.Click
@@ -2793,10 +2793,10 @@ Public Class Form1
 					TrackLocationThread.Start()
 				End If
 			Catch ex As Exception
-				MessageBox.Show("Failed to load the Nightscape Client: " & vbCrLf & vbCrLf & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Failed to load the Ultima Client: " & vbCrLf & vbCrLf & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 			End Try
 		Else
-			MessageBox.Show("Unable to launch Nightscape Game Client." & vbCrLf & vbCrLf & "The location of the Nightscape installation has not been specified.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Unable to launch Ultima Game Client." & vbCrLf & vbCrLf & "The location of the Ultima Online installation has not been specified.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 		End If
 	End Sub
 	Private Sub LaunchInsideUOBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LaunchInsideUOBtn.Click
@@ -3028,7 +3028,7 @@ Public Class Form1
 
 	Private Sub BrowseNSLocationBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BrowseNSLocationBtn.Click
 		Dim BrowseNSLocation As New FolderBrowserDialog
-		BrowseNSLocation.Description = "Select the folder where Nightscape is installed."
+        BrowseNSLocation.Description = "Select the folder where Ultima is installed."
 		BrowseNSLocation.RootFolder = Environment.SpecialFolder.MyComputer
 		BrowseNSLocation.ShowNewFolderButton = False
 		BrowseNSLocation.ShowDialog()
@@ -3071,7 +3071,7 @@ Public Class Form1
 			ListEditor.Start()
 			ListEditor.WaitForInputIdle()
 		Catch ex As Exception
-			MessageBox.Show("Failed to load the Nightscape Staff Assistant List Editor: " & vbCrLf & vbCrLf & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Failed to load the Staff Assistant List Editor: " & vbCrLf & vbCrLf & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 		End Try
 	End Sub
 
@@ -3559,7 +3559,7 @@ Public Class Form1
 		Select Case (type)
 			Case "noclient"
 				Dim Result As DialogResult
-				Result = MessageBox.Show("The Nightscape Client is not running!" & vbCrLf & vbCrLf & "Would you like to start it now?", "Client Not Found...", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+                Result = MessageBox.Show("The Ultima Client is not running!" & vbCrLf & vbCrLf & "Would you like to start it now?", "Client Not Found...", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
 				If (Result = Windows.Forms.DialogResult.Yes) Then
 					If (Ultima.Client.Running = False) Then
 						Dim Client As New Process
@@ -3572,7 +3572,7 @@ Public Class Form1
 							Client.Start()
 							Client.WaitForInputIdle()
 						Catch ex As Exception
-							MessageBox.Show("Failed to load the Nightscape Client: " & vbCrLf & vbCrLf & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBox.Show("Failed to load the Ultima Client: " & vbCrLf & vbCrLf & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 						End Try
 					Else
 						MessageBox.Show("Failed to load the client!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -3619,7 +3619,7 @@ Public Class Form1
 	Private Sub TrackLocation(ByVal sender As System.Object)
 		While (Thread.CurrentThread.IsAlive = True)
 			While (My.Settings.TrackLocation = False)
-				Me.Text = "Nightscape Staff Assistant -- Beta 3.0"
+                Me.Text = "Staff Assistant -- Beta 4.0"
 				Thread.Sleep(5000)
 			End While
 			If (Ultima.Client.Running = False) Then
@@ -3640,7 +3640,7 @@ Public Class Form1
 				'ATTEMPTED TO CHANGE THE TITLEBAR TEXT ON THE UO CLIENT; DELEGATED TO LATER VERSION.
 				'SetWindowText(Ultima.Client.Handle, GetText(Ultima.Client.Handle) & " [" & x.ToString & ", " & y.ToString & ", " & z.ToString & "]")
 				Try
-					Me.Text = "Nightscape Staff Assistant -- Beta 3.0 -- [" & x.ToString & ", " & y.ToString & ", " & z.ToString & "]"
+                    Me.Text = "Staff Assistant -- Beta 4.0 -- [" & x.ToString & ", " & y.ToString & ", " & z.ToString & "]"
 				Catch
 				End Try
 				Thread.Sleep(500)

@@ -78,7 +78,7 @@ Public Class ItemViewer
 				Dim Returned As DialogResult = GenericNumericDialog.ShowDialog()
 				If (Returned = Windows.Forms.DialogResult.OK) Then
 					Form1.INIHandler.Sections.Sections("BUILD TAB").Settings.Set("ViewerTileHieght", GenericNumericDialog.NumericUpDown.Value.ToString)
-					Form1.INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/ns~settings.ini")
+                    Form1.INIHandler.WriteINIFile(My.Computer.FileSystem.SpecialDirectories.Temp + "/sa~settings.ini")
 					Ultima.Client.BringToTop()
 					Ultima.Client.SendText(".tile " & Convert.ToInt32(LastActiveControl.Tag.ToString.Split("|")(0)).ToString & " " & GenericNumericDialog.NumericUpDown.Value.ToString)
 				End If

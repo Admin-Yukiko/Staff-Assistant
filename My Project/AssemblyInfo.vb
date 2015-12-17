@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Nightscape Staff Assistant")> 
-<Assembly: AssemblyDescription("The Nightscape Staff Assistant is a 32-bit Windows application designed to make administering, building and working with a private shard easier.")> 
+<Assembly: AssemblyTitle("Staff Assistant")> 
+<Assembly: AssemblyDescription("The Staff Assistant is a 32-bit Windows application designed to make administering, building and working with a private shard easier.")> 
 <Assembly: AssemblyCompany("Barkus, Inc.")> 
-<Assembly: AssemblyProduct("Nightscape Staff Assistant")> 
+<Assembly: AssemblyProduct("Staff Assistant")> 
 <Assembly: AssemblyCopyright("Copyright © Barkus, Inc. 2005")> 
 <Assembly: AssemblyTrademark("")> 
 

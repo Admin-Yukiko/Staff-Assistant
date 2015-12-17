@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>Nightscape_Staff_Assistant.My.MyApplication</StartupObject>
     <RootNamespace>Nightscape_Staff_Assistant</RootNamespace>
-    <AssemblyName>Nightscape Staff Assistant</AssemblyName>
+    <AssemblyName>Staff Assistant</AssemblyName>
     <MyType>WindowsForms</MyType>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetZone>LocalIntranet</TargetZone>
@@ -27,7 +27,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <SupportUrl>http://www.nightscapeonline.com</SupportUrl>
-    <ProductName>Nightscape Staff Assistant</ProductName>
+    <ProductName>Staff Assistant</ProductName>
     <PublisherName>Nightscape Shard</PublisherName>
     <ApplicationVersion>0.3.0.%2a</ApplicationVersion>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -45,7 +45,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Nightscape Staff Assistant.xml</DocumentationFile>
+    <DocumentationFile>Staff Assistant.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
@@ -55,7 +55,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Nightscape Staff Assistant.xml</DocumentationFile>
+    <DocumentationFile>Staff Assistant.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>

@@ -2322,7 +2322,7 @@ Partial Class AdvancedSettingsDialog
 		Me.GroupBox13.Size = New System.Drawing.Size(474, 102)
 		Me.GroupBox13.TabIndex = 6
 		Me.GroupBox13.TabStop = False
-		Me.GroupBox13.Text = "Nightscape Launcher"
+        Me.GroupBox13.Text = "UO Client Launcher"
 		'
 		'AutoLaunchNSClient
 		'
@@ -2332,8 +2332,8 @@ Partial Class AdvancedSettingsDialog
 		Me.AutoLaunchNSClient.Name = "AutoLaunchNSClient"
 		Me.AutoLaunchNSClient.Size = New System.Drawing.Size(168, 17)
 		Me.AutoLaunchNSClient.TabIndex = 7
-		Me.AutoLaunchNSClient.Text = "Launch the Nightscape Client."
-		Me.ToolTip.SetToolTip(Me.AutoLaunchNSClient, "Launches the Nightscape Client directly, bypassing the patch process.")
+        Me.AutoLaunchNSClient.Text = "Launch the UO Client."
+        Me.ToolTip.SetToolTip(Me.AutoLaunchNSClient, "Launches the UO Client directly, bypassing the patch process.")
 		Me.AutoLaunchNSClient.UseVisualStyleBackColor = True
 		'
 		'AutoLaunchPatchClient
@@ -2346,8 +2346,8 @@ Partial Class AdvancedSettingsDialog
 		Me.AutoLaunchPatchClient.Size = New System.Drawing.Size(275, 17)
 		Me.AutoLaunchPatchClient.TabIndex = 6
 		Me.AutoLaunchPatchClient.TabStop = True
-		Me.AutoLaunchPatchClient.Text = "Launch the Nightscape Patch Client (recommended)."
-		Me.ToolTip.SetToolTip(Me.AutoLaunchPatchClient, "Launches the Nightscape Patch Client. (recommended)")
+        Me.AutoLaunchPatchClient.Text = "Launch the Patch Client (recommended)."
+        Me.ToolTip.SetToolTip(Me.AutoLaunchPatchClient, "Launches the Patch Client. (recommended)")
 		Me.AutoLaunchPatchClient.UseVisualStyleBackColor = True
 		'
 		'Label3
@@ -2449,7 +2449,7 @@ Partial Class AdvancedSettingsDialog
 		Me.AlwaysOnTopChk.Size = New System.Drawing.Size(92, 17)
 		Me.AlwaysOnTopChk.TabIndex = 17
 		Me.AlwaysOnTopChk.Text = "Always on top"
-		Me.ToolTip.SetToolTip(Me.AlwaysOnTopChk, "If enables this program will always remain on top of all other programs.")
+        Me.ToolTip.SetToolTip(Me.AlwaysOnTopChk, "If enabled this program will always remain on top of all other programs.")
 		Me.AlwaysOnTopChk.UseVisualStyleBackColor = True
 		'
 		'EnableTooltips
@@ -2533,9 +2533,9 @@ Partial Class AdvancedSettingsDialog
 		Me.AutoLaunchNSChk.Name = "AutoLaunchNSChk"
 		Me.AutoLaunchNSChk.Size = New System.Drawing.Size(349, 17)
 		Me.AutoLaunchNSChk.TabIndex = 4
-		Me.AutoLaunchNSChk.Text = "Automatically launch Nightscape when launching the Staff Assistant."
-		Me.ToolTip.SetToolTip(Me.AutoLaunchNSChk, "Automatically launches the Nightscape client when the Staff Assistant is started." & _
-						"")
+        Me.AutoLaunchNSChk.Text = "Automatically launch the UO Client when launching the Staff Assistant."
+        Me.ToolTip.SetToolTip(Me.AutoLaunchNSChk, "Automatically launches the UO client when the Staff Assistant is started." & _
+      "")
 		Me.AutoLaunchNSChk.UseVisualStyleBackColor = True
 		'
 		'QC_ConcealMe
