@@ -2,123 +2,11 @@
 <doc>
 <assembly>
 <name>
-NightscapeStaffAssistant
+StaffAssistant
 </name>
 </assembly>
 <members>
-<member name="P:Nightscape_Staff_Assistant.My.MySettings.NightscapeLocation">
-	<summary>
-Installed location of the Nightscape Client.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.InsideUOLocation">
-	<summary>
-Installed location of InsideUO
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.TooltipStyle">
-	<summary>
-Tobbles tooltip style between standard and balloon.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.StartupTab">
-	<summary>
-Tab to show when the program first starts.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.AutoLaunchType">
-	<summary>
-Toggles between launch the patch client or the game client directly.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.SystrayIcon">
-	<summary>
-Specifies the icon to use in the system tray.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.TaskbarType">
-	<summary>
-Toggles between always showing the program on the taskbar and only showingit when maximized.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.Opacity">
-	<summary>
-Type of opacity feature to use.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.AlwaysOnTop">
-	<summary>
-Appear on top of other programs
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.EnableTooltips">
-	<summary>
-Enable or disable tooltips for the program.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.ShowSplashScreen">
-	<summary>
-Enable or disable showing the splash screen when the program starts.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.AutoLaunchClient">
-	<summary>
-Enable or disable auto-launching the Nightscape client when the program starts.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.ShowInTray">
-	<summary>
-Enables or disables showing the program in the system tray.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.ShowOnTaskbar">
-	<summary>
-Enables or disables showing the program on the taskbar.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.OpacityLevel">
-	<summary>
-The level of opacity for the program.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.FadeInTime">
-	<summary>
-Time in millliseconds for the program to return to opaque after regaining focus.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.FadeOutTime">
-	<summary>
-Time in milliseconds for the program to face out to the desired transparency level after losing focus.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.CheckUpdates">
-	<summary>
-Enable or disable automatically checking for software updates at startup.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.UpdateInterval">
-	<summary>
-How often to check for updates, can be "always", "daily" or "weekly".
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.LastUpdateCheck">
-	<summary>
-Date and time the last update check was performed.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.UpdateCore">
-	<summary>
-Enable or disable automatically downloading and installing updates for the core executable.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.UpdateBuildList">
-	<summary>
-Enable or disable automatically downloading and installing updates for the build list.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.UpdateItemList">
-	<summary>
-Enable or disable automatically downloading and installing updates for the item list.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.UpdateNPCList">
-	<summary>
-Enable or disable automatically downloading and installing updates for the NPC list.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.UpdateLocationList">
-	<summary>
-Enable or disable automatically downloading and installing updates for the travel list.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.AutoComplete">
-	<summary>
-Enable or disable autocomplete for certain form elements.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.AnimateNPCs">
-	<summary>
-Enable or disable showing NPCs animated in the preview window.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.TrackLocation">
-	<summary>
-Enable or disable the tracking of the in-game location.
-</summary>
-</member><member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.ResourceManager">
+<member name="P:Nightscape_Staff_Assistant.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
@@ -301,6 +189,118 @@ N [rest of string was truncated]";.
 </member><member name="T:Nightscape_Staff_Assistant.My.Resources.Resources">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.NightscapeLocation">
+	<summary>
+Installed location of the Nightscape Client.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.InsideUOLocation">
+	<summary>
+Installed location of InsideUO
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.TooltipStyle">
+	<summary>
+Tobbles tooltip style between standard and balloon.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.StartupTab">
+	<summary>
+Tab to show when the program first starts.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.AutoLaunchType">
+	<summary>
+Toggles between launch the patch client or the game client directly.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.SystrayIcon">
+	<summary>
+Specifies the icon to use in the system tray.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.TaskbarType">
+	<summary>
+Toggles between always showing the program on the taskbar and only showingit when maximized.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.Opacity">
+	<summary>
+Type of opacity feature to use.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.AlwaysOnTop">
+	<summary>
+Appear on top of other programs
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.EnableTooltips">
+	<summary>
+Enable or disable tooltips for the program.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.ShowSplashScreen">
+	<summary>
+Enable or disable showing the splash screen when the program starts.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.AutoLaunchClient">
+	<summary>
+Enable or disable auto-launching the Nightscape client when the program starts.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.ShowInTray">
+	<summary>
+Enables or disables showing the program in the system tray.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.ShowOnTaskbar">
+	<summary>
+Enables or disables showing the program on the taskbar.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.OpacityLevel">
+	<summary>
+The level of opacity for the program.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.FadeInTime">
+	<summary>
+Time in millliseconds for the program to return to opaque after regaining focus.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.FadeOutTime">
+	<summary>
+Time in milliseconds for the program to face out to the desired transparency level after losing focus.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.CheckUpdates">
+	<summary>
+Enable or disable automatically checking for software updates at startup.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.UpdateInterval">
+	<summary>
+How often to check for updates, can be "always", "daily" or "weekly".
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.LastUpdateCheck">
+	<summary>
+Date and time the last update check was performed.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.UpdateCore">
+	<summary>
+Enable or disable automatically downloading and installing updates for the core executable.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.UpdateBuildList">
+	<summary>
+Enable or disable automatically downloading and installing updates for the build list.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.UpdateItemList">
+	<summary>
+Enable or disable automatically downloading and installing updates for the item list.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.UpdateNPCList">
+	<summary>
+Enable or disable automatically downloading and installing updates for the NPC list.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.UpdateLocationList">
+	<summary>
+Enable or disable automatically downloading and installing updates for the travel list.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.AutoComplete">
+	<summary>
+Enable or disable autocomplete for certain form elements.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.AnimateNPCs">
+	<summary>
+Enable or disable showing NPCs animated in the preview window.
+</summary>
+</member><member name="P:Nightscape_Staff_Assistant.My.MySettings.TrackLocation">
+	<summary>
+Enable or disable the tracking of the in-game location.
 </summary>
 </member>
 </members>

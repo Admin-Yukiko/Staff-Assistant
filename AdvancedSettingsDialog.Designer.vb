@@ -2361,622 +2361,622 @@ Partial Class AdvancedSettingsDialog
 		'
 		'ComboBox1
 		'
-		Me.ComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "RenderingQuality", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.ComboBox1.FormattingEnabled = True
-		Me.ComboBox1.Items.AddRange(New Object() {"Highest", "High", "Medium (default)", "Low"})
-		Me.ComboBox1.Location = New System.Drawing.Point(6, 36)
-		Me.ComboBox1.Name = "ComboBox1"
-		Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-		Me.ComboBox1.TabIndex = 23
-		Me.ComboBox1.Text = Global.Nightscape_Staff_Assistant.My.MySettings.Default.RenderingQuality
-		'
-		'GroupBox2
-		'
-		Me.GroupBox2.Controls.Add(Me.ComboBox1)
-		Me.GroupBox2.Controls.Add(Me.Label3)
-		Me.GroupBox2.Location = New System.Drawing.Point(324, 119)
-		Me.GroupBox2.Name = "GroupBox2"
-		Me.GroupBox2.Size = New System.Drawing.Size(161, 84)
-		Me.GroupBox2.TabIndex = 18
-		Me.GroupBox2.TabStop = False
-		Me.GroupBox2.Text = "Display"
-		'
-		'RetainInputChk
-		'
-		Me.RetainInputChk.AutoSize = True
-		Me.RetainInputChk.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.RetainInput
-		Me.RetainInputChk.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "RetainInput", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.RetainInputChk.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.RetainInputChk.Location = New System.Drawing.Point(180, 12)
-		Me.RetainInputChk.Name = "RetainInputChk"
-		Me.RetainInputChk.Size = New System.Drawing.Size(117, 30)
-		Me.RetainInputChk.TabIndex = 21
-		Me.RetainInputChk.Text = "Retain input across" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "sessions."
-		Me.ToolTip.SetToolTip(Me.RetainInputChk, "When you enter text in a dialog box it is cached for the current session only." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Checking this box will cause the information to be retained across sessions.")
-		Me.RetainInputChk.UseVisualStyleBackColor = True
-		'
-		'TrackLocation
-		'
-		Me.TrackLocation.AutoSize = True
-		Me.TrackLocation.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.TrackLocation
-		Me.TrackLocation.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.TrackLocation.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "TrackLocation", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.TrackLocation.Location = New System.Drawing.Point(6, 88)
-		Me.TrackLocation.Name = "TrackLocation"
-		Me.TrackLocation.Size = New System.Drawing.Size(153, 17)
-		Me.TrackLocation.TabIndex = 20
-		Me.TrackLocation.Text = "Track my in-game location."
-		Me.ToolTip.SetToolTip(Me.TrackLocation, "Tracks your in-game location by polling the client every second for your current " & _
-						"location." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Disabling this may reduce CPU usage.")
-		Me.TrackLocation.UseVisualStyleBackColor = True
-		'
-		'AnimateNPCs
-		'
-		Me.AnimateNPCs.AutoSize = True
-		Me.AnimateNPCs.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.AnimateNPCs
-		Me.AnimateNPCs.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.AnimateNPCs.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "AnimateNPCs", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.AnimateNPCs.Location = New System.Drawing.Point(6, 65)
-		Me.AnimateNPCs.Name = "AnimateNPCs"
-		Me.AnimateNPCs.Size = New System.Drawing.Size(97, 17)
-		Me.AnimateNPCs.TabIndex = 19
-		Me.AnimateNPCs.Text = "Animate NPCs."
-		Me.ToolTip.SetToolTip(Me.AnimateNPCs, "Animate the NPCs in the preview window on the NPC tab.")
-		Me.AnimateNPCs.UseVisualStyleBackColor = True
-		'
-		'AutoComplete
-		'
-		Me.AutoComplete.AutoSize = True
-		Me.AutoComplete.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.AutoComplete
-		Me.AutoComplete.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.AutoComplete.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "AutoComplete", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.AutoComplete.Location = New System.Drawing.Point(6, 42)
-		Me.AutoComplete.Name = "AutoComplete"
-		Me.AutoComplete.Size = New System.Drawing.Size(128, 17)
-		Me.AutoComplete.TabIndex = 18
-		Me.AutoComplete.Text = "Enable AutoComplete"
-		Me.ToolTip.SetToolTip(Me.AutoComplete, "AutoComplete stores previous entries and suggests matches for you.")
-		Me.AutoComplete.UseVisualStyleBackColor = True
-		'
-		'AlwaysOnTopChk
-		'
-		Me.AlwaysOnTopChk.AutoSize = True
-		Me.AlwaysOnTopChk.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.AlwaysOnTop
-		Me.AlwaysOnTopChk.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.AlwaysOnTopChk.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "AlwaysOnTop", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.AlwaysOnTopChk.Location = New System.Drawing.Point(6, 19)
-		Me.AlwaysOnTopChk.Name = "AlwaysOnTopChk"
-		Me.AlwaysOnTopChk.Size = New System.Drawing.Size(92, 17)
-		Me.AlwaysOnTopChk.TabIndex = 17
-		Me.AlwaysOnTopChk.Text = "Always on top"
+        Me.ComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "RenderingQuality", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Highest", "High", "Medium (default)", "Low"})
+        Me.ComboBox1.Location = New System.Drawing.Point(6, 36)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 23
+        Me.ComboBox1.Text = Global.Nightscape_Staff_Assistant.My.MySettings.Default.RenderingQuality
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.ComboBox1)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Location = New System.Drawing.Point(324, 119)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(161, 84)
+        Me.GroupBox2.TabIndex = 18
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Display"
+        '
+        'RetainInputChk
+        '
+        Me.RetainInputChk.AutoSize = True
+        Me.RetainInputChk.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.RetainInput
+        Me.RetainInputChk.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "RetainInput", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.RetainInputChk.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RetainInputChk.Location = New System.Drawing.Point(180, 12)
+        Me.RetainInputChk.Name = "RetainInputChk"
+        Me.RetainInputChk.Size = New System.Drawing.Size(117, 30)
+        Me.RetainInputChk.TabIndex = 21
+        Me.RetainInputChk.Text = "Retain input across" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "sessions."
+        Me.ToolTip.SetToolTip(Me.RetainInputChk, "When you enter text in a dialog box it is cached for the current session only." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Checking this box will cause the information to be retained across sessions.")
+        Me.RetainInputChk.UseVisualStyleBackColor = True
+        '
+        'TrackLocation
+        '
+        Me.TrackLocation.AutoSize = True
+        Me.TrackLocation.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.TrackLocation
+        Me.TrackLocation.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.TrackLocation.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "TrackLocation", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.TrackLocation.Location = New System.Drawing.Point(6, 88)
+        Me.TrackLocation.Name = "TrackLocation"
+        Me.TrackLocation.Size = New System.Drawing.Size(153, 17)
+        Me.TrackLocation.TabIndex = 20
+        Me.TrackLocation.Text = "Track my in-game location."
+        Me.ToolTip.SetToolTip(Me.TrackLocation, "Tracks your in-game location by polling the client every second for your current " & _
+            "location." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Disabling this may reduce CPU usage.")
+        Me.TrackLocation.UseVisualStyleBackColor = True
+        '
+        'AnimateNPCs
+        '
+        Me.AnimateNPCs.AutoSize = True
+        Me.AnimateNPCs.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.AnimateNPCs
+        Me.AnimateNPCs.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.AnimateNPCs.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "AnimateNPCs", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.AnimateNPCs.Location = New System.Drawing.Point(6, 65)
+        Me.AnimateNPCs.Name = "AnimateNPCs"
+        Me.AnimateNPCs.Size = New System.Drawing.Size(97, 17)
+        Me.AnimateNPCs.TabIndex = 19
+        Me.AnimateNPCs.Text = "Animate NPCs."
+        Me.ToolTip.SetToolTip(Me.AnimateNPCs, "Animate the NPCs in the preview window on the NPC tab.")
+        Me.AnimateNPCs.UseVisualStyleBackColor = True
+        '
+        'AutoComplete
+        '
+        Me.AutoComplete.AutoSize = True
+        Me.AutoComplete.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.AutoComplete
+        Me.AutoComplete.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.AutoComplete.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "AutoComplete", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.AutoComplete.Location = New System.Drawing.Point(6, 42)
+        Me.AutoComplete.Name = "AutoComplete"
+        Me.AutoComplete.Size = New System.Drawing.Size(128, 17)
+        Me.AutoComplete.TabIndex = 18
+        Me.AutoComplete.Text = "Enable AutoComplete"
+        Me.ToolTip.SetToolTip(Me.AutoComplete, "AutoComplete stores previous entries and suggests matches for you.")
+        Me.AutoComplete.UseVisualStyleBackColor = True
+        '
+        'AlwaysOnTopChk
+        '
+        Me.AlwaysOnTopChk.AutoSize = True
+        Me.AlwaysOnTopChk.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.AlwaysOnTop
+        Me.AlwaysOnTopChk.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.AlwaysOnTopChk.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "AlwaysOnTop", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.AlwaysOnTopChk.Location = New System.Drawing.Point(6, 19)
+        Me.AlwaysOnTopChk.Name = "AlwaysOnTopChk"
+        Me.AlwaysOnTopChk.Size = New System.Drawing.Size(92, 17)
+        Me.AlwaysOnTopChk.TabIndex = 17
+        Me.AlwaysOnTopChk.Text = "Always on top"
         Me.ToolTip.SetToolTip(Me.AlwaysOnTopChk, "If enabled this program will always remain on top of all other programs.")
-		Me.AlwaysOnTopChk.UseVisualStyleBackColor = True
-		'
-		'EnableTooltips
-		'
-		Me.EnableTooltips.AutoSize = True
-		Me.EnableTooltips.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.EnableTooltips
-		Me.EnableTooltips.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.EnableTooltips.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "EnableTooltips", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.EnableTooltips.Location = New System.Drawing.Point(10, 19)
-		Me.EnableTooltips.Name = "EnableTooltips"
-		Me.EnableTooltips.Size = New System.Drawing.Size(99, 17)
-		Me.EnableTooltips.TabIndex = 12
-		Me.EnableTooltips.Text = "Enable Tooltips"
-		Me.ToolTip.SetToolTip(Me.EnableTooltips, "Enables tooltips (like this one) for the Staff Assistant." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Note: This does not " & _
-						"effect the Advanced Settings window, which always has tooltips enabled.")
-		Me.EnableTooltips.UseVisualStyleBackColor = True
-		'
-		'ShowOnTaskbar
-		'
-		Me.ShowOnTaskbar.AutoSize = True
-		Me.ShowOnTaskbar.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.ShowOnTaskbar
-		Me.ShowOnTaskbar.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.ShowOnTaskbar.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "ShowOnTaskbar", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.ShowOnTaskbar.Location = New System.Drawing.Point(6, 55)
-		Me.ShowOnTaskbar.Name = "ShowOnTaskbar"
-		Me.ShowOnTaskbar.Size = New System.Drawing.Size(100, 17)
-		Me.ShowOnTaskbar.TabIndex = 7
-		Me.ShowOnTaskbar.Text = "On the Taskbar"
-		Me.ToolTip.SetToolTip(Me.ShowOnTaskbar, "Show the GM Tool on the taskbar like normal programs.")
-		Me.ShowOnTaskbar.UseVisualStyleBackColor = True
-		'
-		'ShowInSystray
-		'
-		Me.ShowInSystray.AutoSize = True
-		Me.ShowInSystray.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.ShowInTray
-		Me.ShowInSystray.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.ShowInSystray.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "ShowInTray", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.ShowInSystray.Location = New System.Drawing.Point(6, 19)
-		Me.ShowInSystray.Name = "ShowInSystray"
-		Me.ShowInSystray.Size = New System.Drawing.Size(176, 30)
-		Me.ShowInSystray.TabIndex = 8
-		Me.ShowInSystray.Text = "In the System Tray" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(also enables the context menu)"
-		Me.ToolTip.SetToolTip(Me.ShowInSystray, "Shows the GM Tool in the system tray (near the clock)." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "This also enables the s" & _
-						"ystem tray context menu, with the Quick Commands menu.")
-		Me.ShowInSystray.UseVisualStyleBackColor = True
-		'
-		'StartupTabList
-		'
-		Me.StartupTabList.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "StartupTab", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.StartupTabList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.StartupTabList.FormattingEnabled = True
-		Me.StartupTabList.Items.AddRange(New Object() {"Administration", "Building Creator", "Items", "Items Tweak", "NPCs", "NPC Tweak", "GM", "Travel", "Tools", "Settings"})
-		Me.StartupTabList.Location = New System.Drawing.Point(8, 41)
-		Me.StartupTabList.Name = "StartupTabList"
-		Me.StartupTabList.Size = New System.Drawing.Size(161, 21)
-		Me.StartupTabList.TabIndex = 13
-		Me.StartupTabList.Text = Global.Nightscape_Staff_Assistant.My.MySettings.Default.StartupTab
-		Me.ToolTip.SetToolTip(Me.StartupTabList, "Tab to show when the program is first loaded.")
-		'
-		'ShowSplashScreenChk
-		'
-		Me.ShowSplashScreenChk.AutoSize = True
-		Me.ShowSplashScreenChk.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.ShowSplashScreen
-		Me.ShowSplashScreenChk.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.ShowSplashScreenChk.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "ShowSplashScreen", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.ShowSplashScreenChk.Location = New System.Drawing.Point(8, 78)
-		Me.ShowSplashScreenChk.Name = "ShowSplashScreenChk"
-		Me.ShowSplashScreenChk.Size = New System.Drawing.Size(171, 17)
-		Me.ShowSplashScreenChk.TabIndex = 5
-		Me.ShowSplashScreenChk.Text = "Show splash screen at launch."
-		Me.ToolTip.SetToolTip(Me.ShowSplashScreenChk, "Enables the splash screen when the Staff Assistant first starts.")
-		Me.ShowSplashScreenChk.UseVisualStyleBackColor = True
-		'
-		'AutoLaunchNSChk
-		'
-		Me.AutoLaunchNSChk.AutoSize = True
-		Me.AutoLaunchNSChk.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.AutoLaunchClient
-		Me.AutoLaunchNSChk.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.AutoLaunchNSChk.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "AutoLaunchClient", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.AutoLaunchNSChk.Location = New System.Drawing.Point(6, 19)
-		Me.AutoLaunchNSChk.Name = "AutoLaunchNSChk"
-		Me.AutoLaunchNSChk.Size = New System.Drawing.Size(349, 17)
-		Me.AutoLaunchNSChk.TabIndex = 4
+        Me.AlwaysOnTopChk.UseVisualStyleBackColor = True
+        '
+        'EnableTooltips
+        '
+        Me.EnableTooltips.AutoSize = True
+        Me.EnableTooltips.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.EnableTooltips
+        Me.EnableTooltips.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.EnableTooltips.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "EnableTooltips", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.EnableTooltips.Location = New System.Drawing.Point(10, 19)
+        Me.EnableTooltips.Name = "EnableTooltips"
+        Me.EnableTooltips.Size = New System.Drawing.Size(99, 17)
+        Me.EnableTooltips.TabIndex = 12
+        Me.EnableTooltips.Text = "Enable Tooltips"
+        Me.ToolTip.SetToolTip(Me.EnableTooltips, "Enables tooltips (like this one) for the Staff Assistant." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Note: This does not " & _
+            "effect the Advanced Settings window, which always has tooltips enabled.")
+        Me.EnableTooltips.UseVisualStyleBackColor = True
+        '
+        'ShowOnTaskbar
+        '
+        Me.ShowOnTaskbar.AutoSize = True
+        Me.ShowOnTaskbar.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.ShowOnTaskbar
+        Me.ShowOnTaskbar.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.ShowOnTaskbar.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "ShowOnTaskbar", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.ShowOnTaskbar.Location = New System.Drawing.Point(6, 55)
+        Me.ShowOnTaskbar.Name = "ShowOnTaskbar"
+        Me.ShowOnTaskbar.Size = New System.Drawing.Size(100, 17)
+        Me.ShowOnTaskbar.TabIndex = 7
+        Me.ShowOnTaskbar.Text = "On the Taskbar"
+        Me.ToolTip.SetToolTip(Me.ShowOnTaskbar, "Show the GM Tool on the taskbar like normal programs.")
+        Me.ShowOnTaskbar.UseVisualStyleBackColor = True
+        '
+        'ShowInSystray
+        '
+        Me.ShowInSystray.AutoSize = True
+        Me.ShowInSystray.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.ShowInTray
+        Me.ShowInSystray.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.ShowInSystray.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "ShowInTray", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.ShowInSystray.Location = New System.Drawing.Point(6, 19)
+        Me.ShowInSystray.Name = "ShowInSystray"
+        Me.ShowInSystray.Size = New System.Drawing.Size(176, 30)
+        Me.ShowInSystray.TabIndex = 8
+        Me.ShowInSystray.Text = "In the System Tray" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(also enables the context menu)"
+        Me.ToolTip.SetToolTip(Me.ShowInSystray, "Shows the GM Tool in the system tray (near the clock)." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "This also enables the s" & _
+            "ystem tray context menu, with the Quick Commands menu.")
+        Me.ShowInSystray.UseVisualStyleBackColor = True
+        '
+        'StartupTabList
+        '
+        Me.StartupTabList.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "StartupTab", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.StartupTabList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.StartupTabList.FormattingEnabled = True
+        Me.StartupTabList.Items.AddRange(New Object() {"Administration", "Building Creator", "Items", "Items Tweak", "NPCs", "NPC Tweak", "GM", "Travel", "Tools", "Settings"})
+        Me.StartupTabList.Location = New System.Drawing.Point(8, 41)
+        Me.StartupTabList.Name = "StartupTabList"
+        Me.StartupTabList.Size = New System.Drawing.Size(161, 21)
+        Me.StartupTabList.TabIndex = 13
+        Me.StartupTabList.Text = Global.Nightscape_Staff_Assistant.My.MySettings.Default.StartupTab
+        Me.ToolTip.SetToolTip(Me.StartupTabList, "Tab to show when the program is first loaded.")
+        '
+        'ShowSplashScreenChk
+        '
+        Me.ShowSplashScreenChk.AutoSize = True
+        Me.ShowSplashScreenChk.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.ShowSplashScreen
+        Me.ShowSplashScreenChk.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.ShowSplashScreenChk.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "ShowSplashScreen", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.ShowSplashScreenChk.Location = New System.Drawing.Point(8, 78)
+        Me.ShowSplashScreenChk.Name = "ShowSplashScreenChk"
+        Me.ShowSplashScreenChk.Size = New System.Drawing.Size(171, 17)
+        Me.ShowSplashScreenChk.TabIndex = 5
+        Me.ShowSplashScreenChk.Text = "Show splash screen at launch."
+        Me.ToolTip.SetToolTip(Me.ShowSplashScreenChk, "Enables the splash screen when the Staff Assistant first starts.")
+        Me.ShowSplashScreenChk.UseVisualStyleBackColor = True
+        '
+        'AutoLaunchNSChk
+        '
+        Me.AutoLaunchNSChk.AutoSize = True
+        Me.AutoLaunchNSChk.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.AutoLaunchClient
+        Me.AutoLaunchNSChk.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.AutoLaunchNSChk.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "AutoLaunchClient", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.AutoLaunchNSChk.Location = New System.Drawing.Point(6, 19)
+        Me.AutoLaunchNSChk.Name = "AutoLaunchNSChk"
+        Me.AutoLaunchNSChk.Size = New System.Drawing.Size(349, 17)
+        Me.AutoLaunchNSChk.TabIndex = 4
         Me.AutoLaunchNSChk.Text = "Automatically launch the UO Client when launching the Staff Assistant."
         Me.ToolTip.SetToolTip(Me.AutoLaunchNSChk, "Automatically launches the UO client when the Staff Assistant is started." & _
       "")
-		Me.AutoLaunchNSChk.UseVisualStyleBackColor = True
-		'
-		'QC_ConcealMe
-		'
-		Me.QC_ConcealMe.AutoSize = True
-		Me.QC_ConcealMe.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_ConcealMe
-		Me.QC_ConcealMe.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_ConcealMe", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_ConcealMe.Location = New System.Drawing.Point(6, 19)
-		Me.QC_ConcealMe.Name = "QC_ConcealMe"
-		Me.QC_ConcealMe.Size = New System.Drawing.Size(83, 17)
-		Me.QC_ConcealMe.TabIndex = 17
-		Me.QC_ConcealMe.Text = "Conceal Me"
-		Me.QC_ConcealMe.UseVisualStyleBackColor = True
-		'
-		'QC_RevealMe
-		'
-		Me.QC_RevealMe.AutoSize = True
-		Me.QC_RevealMe.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_RevealMe
-		Me.QC_RevealMe.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_RevealMe", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_RevealMe.Location = New System.Drawing.Point(6, 42)
-		Me.QC_RevealMe.Name = "QC_RevealMe"
-		Me.QC_RevealMe.Size = New System.Drawing.Size(78, 17)
-		Me.QC_RevealMe.TabIndex = 18
-		Me.QC_RevealMe.Text = "Reveal Me"
-		Me.QC_RevealMe.UseVisualStyleBackColor = True
-		'
-		'QC_GMForm
-		'
-		Me.QC_GMForm.AutoSize = True
-		Me.QC_GMForm.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_GMForm
-		Me.QC_GMForm.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_GMForm", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_GMForm.Location = New System.Drawing.Point(6, 65)
-		Me.QC_GMForm.Name = "QC_GMForm"
-		Me.QC_GMForm.Size = New System.Drawing.Size(69, 17)
-		Me.QC_GMForm.TabIndex = 19
-		Me.QC_GMForm.Text = "GM Form"
-		Me.QC_GMForm.UseVisualStyleBackColor = True
-		'
-		'QC_MyForm
-		'
-		Me.QC_MyForm.AutoSize = True
-		Me.QC_MyForm.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_MyForm
-		Me.QC_MyForm.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_MyForm", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_MyForm.Location = New System.Drawing.Point(6, 88)
-		Me.QC_MyForm.Name = "QC_MyForm"
-		Me.QC_MyForm.Size = New System.Drawing.Size(66, 17)
-		Me.QC_MyForm.TabIndex = 20
-		Me.QC_MyForm.Text = "My Form"
-		Me.QC_MyForm.UseVisualStyleBackColor = True
-		'
-		'QC_PropEdit
-		'
-		Me.QC_PropEdit.AutoSize = True
-		Me.QC_PropEdit.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_PropEdit
-		Me.QC_PropEdit.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_PropEdit.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_PropEdit", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_PropEdit.Location = New System.Drawing.Point(111, 88)
-		Me.QC_PropEdit.Name = "QC_PropEdit"
-		Me.QC_PropEdit.Size = New System.Drawing.Size(69, 17)
-		Me.QC_PropEdit.TabIndex = 23
-		Me.QC_PropEdit.Text = "Prop Edit"
-		Me.QC_PropEdit.UseVisualStyleBackColor = True
-		'
-		'QC_SaveShard
-		'
-		Me.QC_SaveShard.AutoSize = True
-		Me.QC_SaveShard.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_SaveShard
-		Me.QC_SaveShard.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_SaveShard.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_SaveShard", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_SaveShard.Location = New System.Drawing.Point(111, 19)
-		Me.QC_SaveShard.Name = "QC_SaveShard"
-		Me.QC_SaveShard.Size = New System.Drawing.Size(82, 17)
-		Me.QC_SaveShard.TabIndex = 1
-		Me.QC_SaveShard.Text = "Save Shard"
-		Me.QC_SaveShard.UseVisualStyleBackColor = True
-		'
-		'QC_HelpQueue
-		'
-		Me.QC_HelpQueue.AutoSize = True
-		Me.QC_HelpQueue.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_HelpQueue
-		Me.QC_HelpQueue.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_HelpQueue", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_HelpQueue.Location = New System.Drawing.Point(111, 65)
-		Me.QC_HelpQueue.Name = "QC_HelpQueue"
-		Me.QC_HelpQueue.Size = New System.Drawing.Size(83, 17)
-		Me.QC_HelpQueue.TabIndex = 22
-		Me.QC_HelpQueue.Text = "Help Queue"
-		Me.QC_HelpQueue.UseVisualStyleBackColor = True
-		'
-		'QC_Nightsight
-		'
-		Me.QC_Nightsight.AutoSize = True
-		Me.QC_Nightsight.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Nightsight
-		Me.QC_Nightsight.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_Nightsight.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Nightsight", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_Nightsight.Location = New System.Drawing.Point(111, 42)
-		Me.QC_Nightsight.Name = "QC_Nightsight"
-		Me.QC_Nightsight.Size = New System.Drawing.Size(73, 17)
-		Me.QC_Nightsight.TabIndex = 21
-		Me.QC_Nightsight.Text = "Nightsight"
-		Me.QC_Nightsight.UseVisualStyleBackColor = True
-		'
-		'QC_SummonPlayer
-		'
-		Me.QC_SummonPlayer.AutoSize = True
-		Me.QC_SummonPlayer.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_SummonPlayer
-		Me.QC_SummonPlayer.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_SummonPlayer", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_SummonPlayer.Location = New System.Drawing.Point(6, 88)
-		Me.QC_SummonPlayer.Name = "QC_SummonPlayer"
-		Me.QC_SummonPlayer.Size = New System.Drawing.Size(99, 17)
-		Me.QC_SummonPlayer.TabIndex = 33
-		Me.QC_SummonPlayer.Text = "Summon Player"
-		Me.QC_SummonPlayer.UseVisualStyleBackColor = True
-		'
-		'QC_Mark
-		'
-		Me.QC_Mark.AutoSize = True
-		Me.QC_Mark.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Mark
-		Me.QC_Mark.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Mark", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_Mark.Location = New System.Drawing.Point(6, 19)
-		Me.QC_Mark.Name = "QC_Mark"
-		Me.QC_Mark.Size = New System.Drawing.Size(50, 17)
-		Me.QC_Mark.TabIndex = 15
-		Me.QC_Mark.Text = "Mark"
-		Me.QC_Mark.UseVisualStyleBackColor = True
-		'
-		'QC_Recall
-		'
-		Me.QC_Recall.AutoSize = True
-		Me.QC_Recall.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Recall
-		Me.QC_Recall.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Recall", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_Recall.Location = New System.Drawing.Point(6, 42)
-		Me.QC_Recall.Name = "QC_Recall"
-		Me.QC_Recall.Size = New System.Drawing.Size(56, 17)
-		Me.QC_Recall.TabIndex = 16
-		Me.QC_Recall.Text = "Recall"
-		Me.QC_Recall.UseVisualStyleBackColor = True
-		'
-		'QC_Where
-		'
-		Me.QC_Where.AutoSize = True
-		Me.QC_Where.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Where
-		Me.QC_Where.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_Where.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Where", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_Where.Location = New System.Drawing.Point(111, 88)
-		Me.QC_Where.Name = "QC_Where"
-		Me.QC_Where.Size = New System.Drawing.Size(58, 17)
-		Me.QC_Where.TabIndex = 28
-		Me.QC_Where.Text = "Where"
-		Me.QC_Where.UseVisualStyleBackColor = True
-		'
-		'QC_Goto
-		'
-		Me.QC_Goto.AutoSize = True
-		Me.QC_Goto.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Goto
-		Me.QC_Goto.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_Goto.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Goto", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_Goto.Location = New System.Drawing.Point(6, 65)
-		Me.QC_Goto.Name = "QC_Goto"
-		Me.QC_Goto.Size = New System.Drawing.Size(49, 17)
-		Me.QC_Goto.TabIndex = 32
-		Me.QC_Goto.Text = "Goto"
-		Me.QC_Goto.UseVisualStyleBackColor = True
-		'
-		'QC_TeleTo
-		'
-		Me.QC_TeleTo.AutoSize = True
-		Me.QC_TeleTo.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_TeleTo
-		Me.QC_TeleTo.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_TeleTo.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_TeleTo", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_TeleTo.Location = New System.Drawing.Point(109, 65)
-		Me.QC_TeleTo.Name = "QC_TeleTo"
-		Me.QC_TeleTo.Size = New System.Drawing.Size(63, 17)
-		Me.QC_TeleTo.TabIndex = 29
-		Me.QC_TeleTo.Text = "Tele To"
-		Me.QC_TeleTo.UseVisualStyleBackColor = True
-		'
-		'QC_Tele
-		'
-		Me.QC_Tele.AutoSize = True
-		Me.QC_Tele.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Tele
-		Me.QC_Tele.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_Tele.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Tele", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_Tele.Location = New System.Drawing.Point(109, 19)
-		Me.QC_Tele.Name = "QC_Tele"
-		Me.QC_Tele.Size = New System.Drawing.Size(47, 17)
-		Me.QC_Tele.TabIndex = 31
-		Me.QC_Tele.Text = "Tele"
-		Me.QC_Tele.UseVisualStyleBackColor = True
-		'
-		'QC_MTele
-		'
-		Me.QC_MTele.AutoSize = True
-		Me.QC_MTele.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_MTele
-		Me.QC_MTele.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_MTele.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_MTele", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_MTele.Location = New System.Drawing.Point(109, 42)
-		Me.QC_MTele.Name = "QC_MTele"
-		Me.QC_MTele.Size = New System.Drawing.Size(86, 17)
-		Me.QC_MTele.TabIndex = 30
-		Me.QC_MTele.Text = "Multiple Tele"
-		Me.QC_MTele.UseVisualStyleBackColor = True
-		'
-		'QC_RoofCreator
-		'
-		Me.QC_RoofCreator.AutoSize = True
-		Me.QC_RoofCreator.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_RoofCreator
-		Me.QC_RoofCreator.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_RoofCreator.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_RoofCreator", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_RoofCreator.Location = New System.Drawing.Point(6, 65)
-		Me.QC_RoofCreator.Name = "QC_RoofCreator"
-		Me.QC_RoofCreator.Size = New System.Drawing.Size(86, 17)
-		Me.QC_RoofCreator.TabIndex = 10
-		Me.QC_RoofCreator.Text = "Roof Creator"
-		Me.QC_RoofCreator.UseVisualStyleBackColor = True
-		'
-		'QC_Destroy
-		'
-		Me.QC_Destroy.AutoSize = True
-		Me.QC_Destroy.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Destroy
-		Me.QC_Destroy.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_Destroy.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Destroy", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_Destroy.Location = New System.Drawing.Point(6, 19)
-		Me.QC_Destroy.Name = "QC_Destroy"
-		Me.QC_Destroy.Size = New System.Drawing.Size(62, 17)
-		Me.QC_Destroy.TabIndex = 8
-		Me.QC_Destroy.Text = "Destroy"
-		Me.QC_Destroy.UseVisualStyleBackColor = True
-		'
-		'QC_MDestroy
-		'
-		Me.QC_MDestroy.AutoSize = True
-		Me.QC_MDestroy.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_MDestroy
-		Me.QC_MDestroy.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_MDestroy.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_MDestroy", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_MDestroy.Location = New System.Drawing.Point(6, 42)
-		Me.QC_MDestroy.Name = "QC_MDestroy"
-		Me.QC_MDestroy.Size = New System.Drawing.Size(101, 17)
-		Me.QC_MDestroy.TabIndex = 9
-		Me.QC_MDestroy.Text = "Destroy Multiple"
-		Me.QC_MDestroy.UseVisualStyleBackColor = True
-		'
-		'QC_LockdownItem
-		'
-		Me.QC_LockdownItem.AutoSize = True
-		Me.QC_LockdownItem.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_LockItem
-		Me.QC_LockdownItem.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_LockdownItem.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_LockItem", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_LockdownItem.Location = New System.Drawing.Point(107, 19)
-		Me.QC_LockdownItem.Name = "QC_LockdownItem"
-		Me.QC_LockdownItem.Size = New System.Drawing.Size(99, 17)
-		Me.QC_LockdownItem.TabIndex = 11
-		Me.QC_LockdownItem.Text = "Lockdown Item"
-		Me.QC_LockdownItem.UseVisualStyleBackColor = True
-		'
-		'QC_LockRadius5
-		'
-		Me.QC_LockRadius5.AutoSize = True
-		Me.QC_LockRadius5.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Lockdown5
-		Me.QC_LockRadius5.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_LockRadius5.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Lockdown5", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_LockRadius5.Location = New System.Drawing.Point(107, 42)
-		Me.QC_LockRadius5.Name = "QC_LockRadius5"
-		Me.QC_LockRadius5.Size = New System.Drawing.Size(98, 17)
-		Me.QC_LockRadius5.TabIndex = 12
-		Me.QC_LockRadius5.Text = "Lock Radius: 5"
-		Me.QC_LockRadius5.UseVisualStyleBackColor = True
-		'
-		'QC_LockRadius10
-		'
-		Me.QC_LockRadius10.AutoSize = True
-		Me.QC_LockRadius10.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Lockdown10
-		Me.QC_LockRadius10.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_LockRadius10.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Lockdown10", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_LockRadius10.Location = New System.Drawing.Point(107, 65)
-		Me.QC_LockRadius10.Name = "QC_LockRadius10"
-		Me.QC_LockRadius10.Size = New System.Drawing.Size(104, 17)
-		Me.QC_LockRadius10.TabIndex = 13
-		Me.QC_LockRadius10.Text = "Lock Radius: 10"
-		Me.QC_LockRadius10.UseVisualStyleBackColor = True
-		'
-		'QC_ItemInfo
-		'
-		Me.QC_ItemInfo.AutoSize = True
-		Me.QC_ItemInfo.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_ItemInfo
-		Me.QC_ItemInfo.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.QC_ItemInfo.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_ItemInfo", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_ItemInfo.Location = New System.Drawing.Point(6, 88)
-		Me.QC_ItemInfo.Name = "QC_ItemInfo"
-		Me.QC_ItemInfo.Size = New System.Drawing.Size(67, 17)
-		Me.QC_ItemInfo.TabIndex = 14
-		Me.QC_ItemInfo.Text = "Item Info"
-		Me.QC_ItemInfo.UseVisualStyleBackColor = True
-		'
-		'QC_GetInfo
-		'
-		Me.QC_GetInfo.AutoSize = True
-		Me.QC_GetInfo.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_GetInfo
-		Me.QC_GetInfo.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_GetInfo", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_GetInfo.Location = New System.Drawing.Point(6, 19)
-		Me.QC_GetInfo.Name = "QC_GetInfo"
-		Me.QC_GetInfo.Size = New System.Drawing.Size(64, 17)
-		Me.QC_GetInfo.TabIndex = 2
-		Me.QC_GetInfo.Text = "Get Info"
-		Me.QC_GetInfo.UseVisualStyleBackColor = True
-		'
-		'QC_Kill
-		'
-		Me.QC_Kill.AutoSize = True
-		Me.QC_Kill.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Kill
-		Me.QC_Kill.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Kill", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_Kill.Location = New System.Drawing.Point(6, 42)
-		Me.QC_Kill.Name = "QC_Kill"
-		Me.QC_Kill.Size = New System.Drawing.Size(39, 17)
-		Me.QC_Kill.TabIndex = 3
-		Me.QC_Kill.Text = "Kill"
-		Me.QC_Kill.UseVisualStyleBackColor = True
-		'
-		'QC_Ressurect
-		'
-		Me.QC_Ressurect.AutoSize = True
-		Me.QC_Ressurect.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Ressurect
-		Me.QC_Ressurect.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Ressurect", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_Ressurect.Location = New System.Drawing.Point(6, 65)
-		Me.QC_Ressurect.Name = "QC_Ressurect"
-		Me.QC_Ressurect.Size = New System.Drawing.Size(74, 17)
-		Me.QC_Ressurect.TabIndex = 4
-		Me.QC_Ressurect.Text = "Ressurect"
-		Me.QC_Ressurect.UseVisualStyleBackColor = True
-		'
-		'QC_Jail
-		'
-		Me.QC_Jail.AutoSize = True
-		Me.QC_Jail.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Jail
-		Me.QC_Jail.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Jail", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_Jail.Location = New System.Drawing.Point(6, 88)
-		Me.QC_Jail.Name = "QC_Jail"
-		Me.QC_Jail.Size = New System.Drawing.Size(41, 17)
-		Me.QC_Jail.TabIndex = 5
-		Me.QC_Jail.Text = "Jail"
-		Me.QC_Jail.UseVisualStyleBackColor = True
-		'
-		'QC_Kick
-		'
-		Me.QC_Kick.AutoSize = True
-		Me.QC_Kick.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Kick
-		Me.QC_Kick.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Kick", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_Kick.Location = New System.Drawing.Point(107, 19)
-		Me.QC_Kick.Name = "QC_Kick"
-		Me.QC_Kick.Size = New System.Drawing.Size(47, 17)
-		Me.QC_Kick.TabIndex = 6
-		Me.QC_Kick.Text = "Kick"
-		Me.QC_Kick.UseVisualStyleBackColor = True
-		'
-		'QC_Hide
-		'
-		Me.QC_Hide.AutoSize = True
-		Me.QC_Hide.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Hide
-		Me.QC_Hide.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Hide", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.QC_Hide.Location = New System.Drawing.Point(107, 42)
-		Me.QC_Hide.Name = "QC_Hide"
-		Me.QC_Hide.Size = New System.Drawing.Size(48, 17)
-		Me.QC_Hide.TabIndex = 7
-		Me.QC_Hide.Text = "Hide"
-		Me.QC_Hide.UseVisualStyleBackColor = True
-		'
-		'AutoUpdateTravelList
-		'
-		Me.AutoUpdateTravelList.AutoSize = True
-		Me.AutoUpdateTravelList.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.UpdateLocationList
-		Me.AutoUpdateTravelList.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "UpdateLocationList", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.AutoUpdateTravelList.Location = New System.Drawing.Point(34, 153)
-		Me.AutoUpdateTravelList.Name = "AutoUpdateTravelList"
-		Me.AutoUpdateTravelList.Size = New System.Drawing.Size(129, 17)
-		Me.AutoUpdateTravelList.TabIndex = 5
-		Me.AutoUpdateTravelList.Text = "Travel Locations Lists"
-		Me.ToolTip.SetToolTip(Me.AutoUpdateTravelList, "Automatically downloads and installs updates for the Travel locations list." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Un" & _
-						"check this option if you have customized the list, it'll over write your changes" & _
-						".")
-		Me.AutoUpdateTravelList.UseVisualStyleBackColor = True
-		'
-		'AutoUpdateNPCList
-		'
-		Me.AutoUpdateNPCList.AutoSize = True
-		Me.AutoUpdateNPCList.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.UpdateNPCList
-		Me.AutoUpdateNPCList.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "UpdateNPCList", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.AutoUpdateNPCList.Location = New System.Drawing.Point(34, 130)
-		Me.AutoUpdateNPCList.Name = "AutoUpdateNPCList"
-		Me.AutoUpdateNPCList.Size = New System.Drawing.Size(72, 17)
-		Me.AutoUpdateNPCList.TabIndex = 4
-		Me.AutoUpdateNPCList.Text = "NPCs List"
-		Me.ToolTip.SetToolTip(Me.AutoUpdateNPCList, "Automatically downloads and installs updates for the NPCs list." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Uncheck this o" & _
-						"ption if you have customized the list, it'll over write your changes.")
-		Me.AutoUpdateNPCList.UseVisualStyleBackColor = True
-		'
-		'AutoUpdateItemList
-		'
-		Me.AutoUpdateItemList.AutoSize = True
-		Me.AutoUpdateItemList.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.UpdateItemList
-		Me.AutoUpdateItemList.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "UpdateItemList", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.AutoUpdateItemList.Location = New System.Drawing.Point(34, 107)
-		Me.AutoUpdateItemList.Name = "AutoUpdateItemList"
-		Me.AutoUpdateItemList.Size = New System.Drawing.Size(110, 17)
-		Me.AutoUpdateItemList.TabIndex = 3
-		Me.AutoUpdateItemList.Text = "General Items List"
-		Me.ToolTip.SetToolTip(Me.AutoUpdateItemList, "Automatically downloads and installs updates for the Items tab item list." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Unch" & _
-						"eck this option if you have customized the list, it'll over write your changes.")
-		Me.AutoUpdateItemList.UseVisualStyleBackColor = True
-		'
-		'AutoUpdateBuildList
-		'
-		Me.AutoUpdateBuildList.AutoSize = True
-		Me.AutoUpdateBuildList.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.UpdateBuildList
-		Me.AutoUpdateBuildList.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "UpdateBuildList", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.AutoUpdateBuildList.Location = New System.Drawing.Point(34, 84)
-		Me.AutoUpdateBuildList.Name = "AutoUpdateBuildList"
-		Me.AutoUpdateBuildList.Size = New System.Drawing.Size(147, 17)
-		Me.AutoUpdateBuildList.TabIndex = 2
-		Me.AutoUpdateBuildList.Text = "Building Creator Items List"
-		Me.ToolTip.SetToolTip(Me.AutoUpdateBuildList, "Automatically downloads and installs updates for the Building Creator item list." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Uncheck this option if you have customized the list, it'll over write your ch" & _
-						"anges.")
-		Me.AutoUpdateBuildList.UseVisualStyleBackColor = True
-		'
-		'AutoUpdateCore
-		'
-		Me.AutoUpdateCore.AutoSize = True
-		Me.AutoUpdateCore.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.UpdateCore
-		Me.AutoUpdateCore.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "UpdateCore", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.AutoUpdateCore.Location = New System.Drawing.Point(34, 61)
-		Me.AutoUpdateCore.Name = "AutoUpdateCore"
-		Me.AutoUpdateCore.Size = New System.Drawing.Size(107, 17)
-		Me.AutoUpdateCore.TabIndex = 1
-		Me.AutoUpdateCore.Text = "Core Executable."
-		Me.ToolTip.SetToolTip(Me.AutoUpdateCore, "Automatically downloads and installs updates for the core executable.")
-		Me.AutoUpdateCore.UseVisualStyleBackColor = True
-		'
-		'AutoUpdates
-		'
-		Me.AutoUpdates.AutoSize = True
-		Me.AutoUpdates.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.CheckUpdates
-		Me.AutoUpdates.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.AutoUpdates.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "CheckUpdates", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.AutoLaunchNSChk.UseVisualStyleBackColor = True
+        '
+        'QC_ConcealMe
+        '
+        Me.QC_ConcealMe.AutoSize = True
+        Me.QC_ConcealMe.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_ConcealMe
+        Me.QC_ConcealMe.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_ConcealMe", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_ConcealMe.Location = New System.Drawing.Point(6, 19)
+        Me.QC_ConcealMe.Name = "QC_ConcealMe"
+        Me.QC_ConcealMe.Size = New System.Drawing.Size(83, 17)
+        Me.QC_ConcealMe.TabIndex = 17
+        Me.QC_ConcealMe.Text = "Conceal Me"
+        Me.QC_ConcealMe.UseVisualStyleBackColor = True
+        '
+        'QC_RevealMe
+        '
+        Me.QC_RevealMe.AutoSize = True
+        Me.QC_RevealMe.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_RevealMe
+        Me.QC_RevealMe.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_RevealMe", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_RevealMe.Location = New System.Drawing.Point(6, 42)
+        Me.QC_RevealMe.Name = "QC_RevealMe"
+        Me.QC_RevealMe.Size = New System.Drawing.Size(78, 17)
+        Me.QC_RevealMe.TabIndex = 18
+        Me.QC_RevealMe.Text = "Reveal Me"
+        Me.QC_RevealMe.UseVisualStyleBackColor = True
+        '
+        'QC_GMForm
+        '
+        Me.QC_GMForm.AutoSize = True
+        Me.QC_GMForm.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_GMForm
+        Me.QC_GMForm.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_GMForm", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_GMForm.Location = New System.Drawing.Point(6, 65)
+        Me.QC_GMForm.Name = "QC_GMForm"
+        Me.QC_GMForm.Size = New System.Drawing.Size(69, 17)
+        Me.QC_GMForm.TabIndex = 19
+        Me.QC_GMForm.Text = "GM Form"
+        Me.QC_GMForm.UseVisualStyleBackColor = True
+        '
+        'QC_MyForm
+        '
+        Me.QC_MyForm.AutoSize = True
+        Me.QC_MyForm.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_MyForm
+        Me.QC_MyForm.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_MyForm", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_MyForm.Location = New System.Drawing.Point(6, 88)
+        Me.QC_MyForm.Name = "QC_MyForm"
+        Me.QC_MyForm.Size = New System.Drawing.Size(66, 17)
+        Me.QC_MyForm.TabIndex = 20
+        Me.QC_MyForm.Text = "My Form"
+        Me.QC_MyForm.UseVisualStyleBackColor = True
+        '
+        'QC_PropEdit
+        '
+        Me.QC_PropEdit.AutoSize = True
+        Me.QC_PropEdit.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_PropEdit
+        Me.QC_PropEdit.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_PropEdit.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_PropEdit", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_PropEdit.Location = New System.Drawing.Point(111, 88)
+        Me.QC_PropEdit.Name = "QC_PropEdit"
+        Me.QC_PropEdit.Size = New System.Drawing.Size(69, 17)
+        Me.QC_PropEdit.TabIndex = 23
+        Me.QC_PropEdit.Text = "Prop Edit"
+        Me.QC_PropEdit.UseVisualStyleBackColor = True
+        '
+        'QC_SaveShard
+        '
+        Me.QC_SaveShard.AutoSize = True
+        Me.QC_SaveShard.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_SaveShard
+        Me.QC_SaveShard.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_SaveShard.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_SaveShard", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_SaveShard.Location = New System.Drawing.Point(111, 19)
+        Me.QC_SaveShard.Name = "QC_SaveShard"
+        Me.QC_SaveShard.Size = New System.Drawing.Size(82, 17)
+        Me.QC_SaveShard.TabIndex = 1
+        Me.QC_SaveShard.Text = "Save Shard"
+        Me.QC_SaveShard.UseVisualStyleBackColor = True
+        '
+        'QC_HelpQueue
+        '
+        Me.QC_HelpQueue.AutoSize = True
+        Me.QC_HelpQueue.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_HelpQueue
+        Me.QC_HelpQueue.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_HelpQueue", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_HelpQueue.Location = New System.Drawing.Point(111, 65)
+        Me.QC_HelpQueue.Name = "QC_HelpQueue"
+        Me.QC_HelpQueue.Size = New System.Drawing.Size(83, 17)
+        Me.QC_HelpQueue.TabIndex = 22
+        Me.QC_HelpQueue.Text = "Help Queue"
+        Me.QC_HelpQueue.UseVisualStyleBackColor = True
+        '
+        'QC_Nightsight
+        '
+        Me.QC_Nightsight.AutoSize = True
+        Me.QC_Nightsight.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Nightsight
+        Me.QC_Nightsight.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_Nightsight.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Nightsight", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_Nightsight.Location = New System.Drawing.Point(111, 42)
+        Me.QC_Nightsight.Name = "QC_Nightsight"
+        Me.QC_Nightsight.Size = New System.Drawing.Size(73, 17)
+        Me.QC_Nightsight.TabIndex = 21
+        Me.QC_Nightsight.Text = "Nightsight"
+        Me.QC_Nightsight.UseVisualStyleBackColor = True
+        '
+        'QC_SummonPlayer
+        '
+        Me.QC_SummonPlayer.AutoSize = True
+        Me.QC_SummonPlayer.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_SummonPlayer
+        Me.QC_SummonPlayer.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_SummonPlayer", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_SummonPlayer.Location = New System.Drawing.Point(6, 88)
+        Me.QC_SummonPlayer.Name = "QC_SummonPlayer"
+        Me.QC_SummonPlayer.Size = New System.Drawing.Size(99, 17)
+        Me.QC_SummonPlayer.TabIndex = 33
+        Me.QC_SummonPlayer.Text = "Summon Player"
+        Me.QC_SummonPlayer.UseVisualStyleBackColor = True
+        '
+        'QC_Mark
+        '
+        Me.QC_Mark.AutoSize = True
+        Me.QC_Mark.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Mark
+        Me.QC_Mark.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Mark", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_Mark.Location = New System.Drawing.Point(6, 19)
+        Me.QC_Mark.Name = "QC_Mark"
+        Me.QC_Mark.Size = New System.Drawing.Size(50, 17)
+        Me.QC_Mark.TabIndex = 15
+        Me.QC_Mark.Text = "Mark"
+        Me.QC_Mark.UseVisualStyleBackColor = True
+        '
+        'QC_Recall
+        '
+        Me.QC_Recall.AutoSize = True
+        Me.QC_Recall.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Recall
+        Me.QC_Recall.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Recall", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_Recall.Location = New System.Drawing.Point(6, 42)
+        Me.QC_Recall.Name = "QC_Recall"
+        Me.QC_Recall.Size = New System.Drawing.Size(56, 17)
+        Me.QC_Recall.TabIndex = 16
+        Me.QC_Recall.Text = "Recall"
+        Me.QC_Recall.UseVisualStyleBackColor = True
+        '
+        'QC_Where
+        '
+        Me.QC_Where.AutoSize = True
+        Me.QC_Where.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Where
+        Me.QC_Where.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_Where.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Where", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_Where.Location = New System.Drawing.Point(111, 88)
+        Me.QC_Where.Name = "QC_Where"
+        Me.QC_Where.Size = New System.Drawing.Size(58, 17)
+        Me.QC_Where.TabIndex = 28
+        Me.QC_Where.Text = "Where"
+        Me.QC_Where.UseVisualStyleBackColor = True
+        '
+        'QC_Goto
+        '
+        Me.QC_Goto.AutoSize = True
+        Me.QC_Goto.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Goto
+        Me.QC_Goto.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_Goto.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Goto", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_Goto.Location = New System.Drawing.Point(6, 65)
+        Me.QC_Goto.Name = "QC_Goto"
+        Me.QC_Goto.Size = New System.Drawing.Size(49, 17)
+        Me.QC_Goto.TabIndex = 32
+        Me.QC_Goto.Text = "Goto"
+        Me.QC_Goto.UseVisualStyleBackColor = True
+        '
+        'QC_TeleTo
+        '
+        Me.QC_TeleTo.AutoSize = True
+        Me.QC_TeleTo.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_TeleTo
+        Me.QC_TeleTo.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_TeleTo.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_TeleTo", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_TeleTo.Location = New System.Drawing.Point(109, 65)
+        Me.QC_TeleTo.Name = "QC_TeleTo"
+        Me.QC_TeleTo.Size = New System.Drawing.Size(63, 17)
+        Me.QC_TeleTo.TabIndex = 29
+        Me.QC_TeleTo.Text = "Tele To"
+        Me.QC_TeleTo.UseVisualStyleBackColor = True
+        '
+        'QC_Tele
+        '
+        Me.QC_Tele.AutoSize = True
+        Me.QC_Tele.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Tele
+        Me.QC_Tele.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_Tele.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Tele", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_Tele.Location = New System.Drawing.Point(109, 19)
+        Me.QC_Tele.Name = "QC_Tele"
+        Me.QC_Tele.Size = New System.Drawing.Size(47, 17)
+        Me.QC_Tele.TabIndex = 31
+        Me.QC_Tele.Text = "Tele"
+        Me.QC_Tele.UseVisualStyleBackColor = True
+        '
+        'QC_MTele
+        '
+        Me.QC_MTele.AutoSize = True
+        Me.QC_MTele.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_MTele
+        Me.QC_MTele.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_MTele.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_MTele", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_MTele.Location = New System.Drawing.Point(109, 42)
+        Me.QC_MTele.Name = "QC_MTele"
+        Me.QC_MTele.Size = New System.Drawing.Size(86, 17)
+        Me.QC_MTele.TabIndex = 30
+        Me.QC_MTele.Text = "Multiple Tele"
+        Me.QC_MTele.UseVisualStyleBackColor = True
+        '
+        'QC_RoofCreator
+        '
+        Me.QC_RoofCreator.AutoSize = True
+        Me.QC_RoofCreator.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_RoofCreator
+        Me.QC_RoofCreator.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_RoofCreator.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_RoofCreator", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_RoofCreator.Location = New System.Drawing.Point(6, 65)
+        Me.QC_RoofCreator.Name = "QC_RoofCreator"
+        Me.QC_RoofCreator.Size = New System.Drawing.Size(86, 17)
+        Me.QC_RoofCreator.TabIndex = 10
+        Me.QC_RoofCreator.Text = "Roof Creator"
+        Me.QC_RoofCreator.UseVisualStyleBackColor = True
+        '
+        'QC_Destroy
+        '
+        Me.QC_Destroy.AutoSize = True
+        Me.QC_Destroy.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Destroy
+        Me.QC_Destroy.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_Destroy.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Destroy", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_Destroy.Location = New System.Drawing.Point(6, 19)
+        Me.QC_Destroy.Name = "QC_Destroy"
+        Me.QC_Destroy.Size = New System.Drawing.Size(62, 17)
+        Me.QC_Destroy.TabIndex = 8
+        Me.QC_Destroy.Text = "Destroy"
+        Me.QC_Destroy.UseVisualStyleBackColor = True
+        '
+        'QC_MDestroy
+        '
+        Me.QC_MDestroy.AutoSize = True
+        Me.QC_MDestroy.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_MDestroy
+        Me.QC_MDestroy.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_MDestroy.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_MDestroy", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_MDestroy.Location = New System.Drawing.Point(6, 42)
+        Me.QC_MDestroy.Name = "QC_MDestroy"
+        Me.QC_MDestroy.Size = New System.Drawing.Size(101, 17)
+        Me.QC_MDestroy.TabIndex = 9
+        Me.QC_MDestroy.Text = "Destroy Multiple"
+        Me.QC_MDestroy.UseVisualStyleBackColor = True
+        '
+        'QC_LockdownItem
+        '
+        Me.QC_LockdownItem.AutoSize = True
+        Me.QC_LockdownItem.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_LockItem
+        Me.QC_LockdownItem.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_LockdownItem.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_LockItem", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_LockdownItem.Location = New System.Drawing.Point(107, 19)
+        Me.QC_LockdownItem.Name = "QC_LockdownItem"
+        Me.QC_LockdownItem.Size = New System.Drawing.Size(99, 17)
+        Me.QC_LockdownItem.TabIndex = 11
+        Me.QC_LockdownItem.Text = "Lockdown Item"
+        Me.QC_LockdownItem.UseVisualStyleBackColor = True
+        '
+        'QC_LockRadius5
+        '
+        Me.QC_LockRadius5.AutoSize = True
+        Me.QC_LockRadius5.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Lockdown5
+        Me.QC_LockRadius5.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_LockRadius5.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Lockdown5", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_LockRadius5.Location = New System.Drawing.Point(107, 42)
+        Me.QC_LockRadius5.Name = "QC_LockRadius5"
+        Me.QC_LockRadius5.Size = New System.Drawing.Size(98, 17)
+        Me.QC_LockRadius5.TabIndex = 12
+        Me.QC_LockRadius5.Text = "Lock Radius: 5"
+        Me.QC_LockRadius5.UseVisualStyleBackColor = True
+        '
+        'QC_LockRadius10
+        '
+        Me.QC_LockRadius10.AutoSize = True
+        Me.QC_LockRadius10.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Lockdown10
+        Me.QC_LockRadius10.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_LockRadius10.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Lockdown10", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_LockRadius10.Location = New System.Drawing.Point(107, 65)
+        Me.QC_LockRadius10.Name = "QC_LockRadius10"
+        Me.QC_LockRadius10.Size = New System.Drawing.Size(104, 17)
+        Me.QC_LockRadius10.TabIndex = 13
+        Me.QC_LockRadius10.Text = "Lock Radius: 10"
+        Me.QC_LockRadius10.UseVisualStyleBackColor = True
+        '
+        'QC_ItemInfo
+        '
+        Me.QC_ItemInfo.AutoSize = True
+        Me.QC_ItemInfo.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_ItemInfo
+        Me.QC_ItemInfo.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.QC_ItemInfo.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_ItemInfo", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_ItemInfo.Location = New System.Drawing.Point(6, 88)
+        Me.QC_ItemInfo.Name = "QC_ItemInfo"
+        Me.QC_ItemInfo.Size = New System.Drawing.Size(67, 17)
+        Me.QC_ItemInfo.TabIndex = 14
+        Me.QC_ItemInfo.Text = "Item Info"
+        Me.QC_ItemInfo.UseVisualStyleBackColor = True
+        '
+        'QC_GetInfo
+        '
+        Me.QC_GetInfo.AutoSize = True
+        Me.QC_GetInfo.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_GetInfo
+        Me.QC_GetInfo.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_GetInfo", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_GetInfo.Location = New System.Drawing.Point(6, 19)
+        Me.QC_GetInfo.Name = "QC_GetInfo"
+        Me.QC_GetInfo.Size = New System.Drawing.Size(64, 17)
+        Me.QC_GetInfo.TabIndex = 2
+        Me.QC_GetInfo.Text = "Get Info"
+        Me.QC_GetInfo.UseVisualStyleBackColor = True
+        '
+        'QC_Kill
+        '
+        Me.QC_Kill.AutoSize = True
+        Me.QC_Kill.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Kill
+        Me.QC_Kill.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Kill", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_Kill.Location = New System.Drawing.Point(6, 42)
+        Me.QC_Kill.Name = "QC_Kill"
+        Me.QC_Kill.Size = New System.Drawing.Size(39, 17)
+        Me.QC_Kill.TabIndex = 3
+        Me.QC_Kill.Text = "Kill"
+        Me.QC_Kill.UseVisualStyleBackColor = True
+        '
+        'QC_Ressurect
+        '
+        Me.QC_Ressurect.AutoSize = True
+        Me.QC_Ressurect.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Ressurect
+        Me.QC_Ressurect.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Ressurect", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_Ressurect.Location = New System.Drawing.Point(6, 65)
+        Me.QC_Ressurect.Name = "QC_Ressurect"
+        Me.QC_Ressurect.Size = New System.Drawing.Size(74, 17)
+        Me.QC_Ressurect.TabIndex = 4
+        Me.QC_Ressurect.Text = "Ressurect"
+        Me.QC_Ressurect.UseVisualStyleBackColor = True
+        '
+        'QC_Jail
+        '
+        Me.QC_Jail.AutoSize = True
+        Me.QC_Jail.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Jail
+        Me.QC_Jail.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Jail", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_Jail.Location = New System.Drawing.Point(6, 88)
+        Me.QC_Jail.Name = "QC_Jail"
+        Me.QC_Jail.Size = New System.Drawing.Size(41, 17)
+        Me.QC_Jail.TabIndex = 5
+        Me.QC_Jail.Text = "Jail"
+        Me.QC_Jail.UseVisualStyleBackColor = True
+        '
+        'QC_Kick
+        '
+        Me.QC_Kick.AutoSize = True
+        Me.QC_Kick.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Kick
+        Me.QC_Kick.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Kick", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_Kick.Location = New System.Drawing.Point(107, 19)
+        Me.QC_Kick.Name = "QC_Kick"
+        Me.QC_Kick.Size = New System.Drawing.Size(47, 17)
+        Me.QC_Kick.TabIndex = 6
+        Me.QC_Kick.Text = "Kick"
+        Me.QC_Kick.UseVisualStyleBackColor = True
+        '
+        'QC_Hide
+        '
+        Me.QC_Hide.AutoSize = True
+        Me.QC_Hide.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.QC_Hide
+        Me.QC_Hide.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "QC_Hide", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.QC_Hide.Location = New System.Drawing.Point(107, 42)
+        Me.QC_Hide.Name = "QC_Hide"
+        Me.QC_Hide.Size = New System.Drawing.Size(48, 17)
+        Me.QC_Hide.TabIndex = 7
+        Me.QC_Hide.Text = "Hide"
+        Me.QC_Hide.UseVisualStyleBackColor = True
+        '
+        'AutoUpdateTravelList
+        '
+        Me.AutoUpdateTravelList.AutoSize = True
+        Me.AutoUpdateTravelList.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.UpdateLocationList
+        Me.AutoUpdateTravelList.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "UpdateLocationList", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.AutoUpdateTravelList.Location = New System.Drawing.Point(34, 153)
+        Me.AutoUpdateTravelList.Name = "AutoUpdateTravelList"
+        Me.AutoUpdateTravelList.Size = New System.Drawing.Size(129, 17)
+        Me.AutoUpdateTravelList.TabIndex = 5
+        Me.AutoUpdateTravelList.Text = "Travel Locations Lists"
+        Me.ToolTip.SetToolTip(Me.AutoUpdateTravelList, "Automatically downloads and installs updates for the Travel locations list." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Un" & _
+            "check this option if you have customized the list, it'll over write your changes" & _
+            ".")
+        Me.AutoUpdateTravelList.UseVisualStyleBackColor = True
+        '
+        'AutoUpdateNPCList
+        '
+        Me.AutoUpdateNPCList.AutoSize = True
+        Me.AutoUpdateNPCList.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.UpdateNPCList
+        Me.AutoUpdateNPCList.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "UpdateNPCList", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.AutoUpdateNPCList.Location = New System.Drawing.Point(34, 130)
+        Me.AutoUpdateNPCList.Name = "AutoUpdateNPCList"
+        Me.AutoUpdateNPCList.Size = New System.Drawing.Size(72, 17)
+        Me.AutoUpdateNPCList.TabIndex = 4
+        Me.AutoUpdateNPCList.Text = "NPCs List"
+        Me.ToolTip.SetToolTip(Me.AutoUpdateNPCList, "Automatically downloads and installs updates for the NPCs list." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Uncheck this o" & _
+            "ption if you have customized the list, it'll over write your changes.")
+        Me.AutoUpdateNPCList.UseVisualStyleBackColor = True
+        '
+        'AutoUpdateItemList
+        '
+        Me.AutoUpdateItemList.AutoSize = True
+        Me.AutoUpdateItemList.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.UpdateItemList
+        Me.AutoUpdateItemList.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "UpdateItemList", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.AutoUpdateItemList.Location = New System.Drawing.Point(34, 107)
+        Me.AutoUpdateItemList.Name = "AutoUpdateItemList"
+        Me.AutoUpdateItemList.Size = New System.Drawing.Size(110, 17)
+        Me.AutoUpdateItemList.TabIndex = 3
+        Me.AutoUpdateItemList.Text = "General Items List"
+        Me.ToolTip.SetToolTip(Me.AutoUpdateItemList, "Automatically downloads and installs updates for the Items tab item list." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Unch" & _
+            "eck this option if you have customized the list, it'll over write your changes.")
+        Me.AutoUpdateItemList.UseVisualStyleBackColor = True
+        '
+        'AutoUpdateBuildList
+        '
+        Me.AutoUpdateBuildList.AutoSize = True
+        Me.AutoUpdateBuildList.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.UpdateBuildList
+        Me.AutoUpdateBuildList.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "UpdateBuildList", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.AutoUpdateBuildList.Location = New System.Drawing.Point(34, 84)
+        Me.AutoUpdateBuildList.Name = "AutoUpdateBuildList"
+        Me.AutoUpdateBuildList.Size = New System.Drawing.Size(147, 17)
+        Me.AutoUpdateBuildList.TabIndex = 2
+        Me.AutoUpdateBuildList.Text = "Building Creator Items List"
+        Me.ToolTip.SetToolTip(Me.AutoUpdateBuildList, "Automatically downloads and installs updates for the Building Creator item list." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Uncheck this option if you have customized the list, it'll over write your ch" & _
+            "anges.")
+        Me.AutoUpdateBuildList.UseVisualStyleBackColor = True
+        '
+        'AutoUpdateCore
+        '
+        Me.AutoUpdateCore.AutoSize = True
+        Me.AutoUpdateCore.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.UpdateCore
+        Me.AutoUpdateCore.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "UpdateCore", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.AutoUpdateCore.Location = New System.Drawing.Point(34, 61)
+        Me.AutoUpdateCore.Name = "AutoUpdateCore"
+        Me.AutoUpdateCore.Size = New System.Drawing.Size(107, 17)
+        Me.AutoUpdateCore.TabIndex = 1
+        Me.AutoUpdateCore.Text = "Core Executable."
+        Me.ToolTip.SetToolTip(Me.AutoUpdateCore, "Automatically downloads and installs updates for the core executable.")
+        Me.AutoUpdateCore.UseVisualStyleBackColor = True
+        '
+        'AutoUpdates
+        '
+        Me.AutoUpdates.AutoSize = True
+        Me.AutoUpdates.Checked = Global.Nightscape_Staff_Assistant.My.MySettings.Default.CheckUpdates
+        Me.AutoUpdates.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.AutoUpdates.DataBindings.Add(New System.Windows.Forms.Binding("Checked", Global.Nightscape_Staff_Assistant.My.MySettings.Default, "CheckUpdates", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.AutoUpdates.Location = New System.Drawing.Point(23, 29)
 		Me.AutoUpdates.Name = "AutoUpdates"
 		Me.AutoUpdates.Size = New System.Drawing.Size(299, 17)

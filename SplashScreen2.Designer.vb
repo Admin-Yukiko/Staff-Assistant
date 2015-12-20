@@ -111,7 +111,7 @@ Partial Class SplashScreen2
 		'
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
 		Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
-		Me.BackgroundImage = Global.Nightscape_Staff_Assistant.My.Resources.Resources.splash_screen
+        Me.BackgroundImage = Global.Nightscape_Staff_Assistant.My.Resources.Resources.splash_screen
 		Me.CausesValidation = False
 		Me.ClientSize = New System.Drawing.Size(516, 416)
 		Me.ControlBox = False

@@ -21,7 +21,7 @@ Public Class AdvancedSettingsDialog
 
 		'Splash Screen
     If (My.Settings.ShowSplashScreen = True) Then
-			My.Application.SplashScreen = Nightscape_Staff_Assistant.SplashScreen2
+            My.Application.SplashScreen = Nightscape_Staff_Assistant.SplashScreen2
     Else
 			My.Application.SplashScreen = Nothing
     End If

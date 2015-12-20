@@ -131,57 +131,57 @@ Partial Class TextReaderDialog
 		'
 		'FastForwardBtn
 		'
-		Me.FastForwardBtn.Image = Global.Nightscape_Staff_Assistant.My.Resources.Resources.fast_forward
-		Me.FastForwardBtn.Location = New System.Drawing.Point(275, 19)
-		Me.FastForwardBtn.Name = "FastForwardBtn"
-		Me.FastForwardBtn.Size = New System.Drawing.Size(52, 23)
-		Me.FastForwardBtn.TabIndex = 5
-		Me.ToolTip.SetToolTip(Me.FastForwardBtn, "Fast Forward")
-		Me.FastForwardBtn.UseVisualStyleBackColor = True
-		'
-		'StopBtn
-		'
-		Me.StopBtn.Image = Global.Nightscape_Staff_Assistant.My.Resources.Resources.stop_icon
-		Me.StopBtn.Location = New System.Drawing.Point(166, 19)
-		Me.StopBtn.Name = "StopBtn"
-		Me.StopBtn.Size = New System.Drawing.Size(51, 23)
-		Me.StopBtn.TabIndex = 4
-		Me.ToolTip.SetToolTip(Me.StopBtn, "Stop")
-		Me.StopBtn.UseVisualStyleBackColor = True
-		'
-		'ForwardBtn
-		'
-		Me.ForwardBtn.Image = Global.Nightscape_Staff_Assistant.My.Resources.Resources.forward
-		Me.ForwardBtn.Location = New System.Drawing.Point(223, 19)
-		Me.ForwardBtn.Name = "ForwardBtn"
-		Me.ForwardBtn.Size = New System.Drawing.Size(46, 23)
-		Me.ForwardBtn.TabIndex = 3
-		Me.ToolTip.SetToolTip(Me.ForwardBtn, "Forward 1 Line")
-		Me.ForwardBtn.UseVisualStyleBackColor = True
-		'
-		'PlayPauseBtn
-		'
-		Me.PlayPauseBtn.Image = Global.Nightscape_Staff_Assistant.My.Resources.Resources.play
-		Me.PlayPauseBtn.Location = New System.Drawing.Point(112, 19)
-		Me.PlayPauseBtn.Name = "PlayPauseBtn"
-		Me.PlayPauseBtn.Size = New System.Drawing.Size(48, 23)
-		Me.PlayPauseBtn.TabIndex = 2
-		Me.ToolTip.SetToolTip(Me.PlayPauseBtn, "Play")
-		Me.PlayPauseBtn.UseVisualStyleBackColor = True
-		'
-		'ReverseBtn
-		'
-		Me.ReverseBtn.Image = Global.Nightscape_Staff_Assistant.My.Resources.Resources.reverse
-		Me.ReverseBtn.Location = New System.Drawing.Point(59, 19)
-		Me.ReverseBtn.Name = "ReverseBtn"
-		Me.ReverseBtn.Size = New System.Drawing.Size(47, 23)
-		Me.ReverseBtn.TabIndex = 1
-		Me.ToolTip.SetToolTip(Me.ReverseBtn, "Back 1 Line")
-		Me.ReverseBtn.UseVisualStyleBackColor = True
-		'
-		'RewindBtn
-		'
-		Me.RewindBtn.Image = Global.Nightscape_Staff_Assistant.My.Resources.Resources.rewind
+        Me.FastForwardBtn.Image = Global.Nightscape_Staff_Assistant.My.Resources.Resources.fast_forward
+        Me.FastForwardBtn.Location = New System.Drawing.Point(275, 19)
+        Me.FastForwardBtn.Name = "FastForwardBtn"
+        Me.FastForwardBtn.Size = New System.Drawing.Size(52, 23)
+        Me.FastForwardBtn.TabIndex = 5
+        Me.ToolTip.SetToolTip(Me.FastForwardBtn, "Fast Forward")
+        Me.FastForwardBtn.UseVisualStyleBackColor = True
+        '
+        'StopBtn
+        '
+        Me.StopBtn.Image = Global.Nightscape_Staff_Assistant.My.Resources.Resources.stop_icon
+        Me.StopBtn.Location = New System.Drawing.Point(166, 19)
+        Me.StopBtn.Name = "StopBtn"
+        Me.StopBtn.Size = New System.Drawing.Size(51, 23)
+        Me.StopBtn.TabIndex = 4
+        Me.ToolTip.SetToolTip(Me.StopBtn, "Stop")
+        Me.StopBtn.UseVisualStyleBackColor = True
+        '
+        'ForwardBtn
+        '
+        Me.ForwardBtn.Image = Global.Nightscape_Staff_Assistant.My.Resources.Resources.forward
+        Me.ForwardBtn.Location = New System.Drawing.Point(223, 19)
+        Me.ForwardBtn.Name = "ForwardBtn"
+        Me.ForwardBtn.Size = New System.Drawing.Size(46, 23)
+        Me.ForwardBtn.TabIndex = 3
+        Me.ToolTip.SetToolTip(Me.ForwardBtn, "Forward 1 Line")
+        Me.ForwardBtn.UseVisualStyleBackColor = True
+        '
+        'PlayPauseBtn
+        '
+        Me.PlayPauseBtn.Image = Global.Nightscape_Staff_Assistant.My.Resources.Resources.play
+        Me.PlayPauseBtn.Location = New System.Drawing.Point(112, 19)
+        Me.PlayPauseBtn.Name = "PlayPauseBtn"
+        Me.PlayPauseBtn.Size = New System.Drawing.Size(48, 23)
+        Me.PlayPauseBtn.TabIndex = 2
+        Me.ToolTip.SetToolTip(Me.PlayPauseBtn, "Play")
+        Me.PlayPauseBtn.UseVisualStyleBackColor = True
+        '
+        'ReverseBtn
+        '
+        Me.ReverseBtn.Image = Global.Nightscape_Staff_Assistant.My.Resources.Resources.reverse
+        Me.ReverseBtn.Location = New System.Drawing.Point(59, 19)
+        Me.ReverseBtn.Name = "ReverseBtn"
+        Me.ReverseBtn.Size = New System.Drawing.Size(47, 23)
+        Me.ReverseBtn.TabIndex = 1
+        Me.ToolTip.SetToolTip(Me.ReverseBtn, "Back 1 Line")
+        Me.ReverseBtn.UseVisualStyleBackColor = True
+        '
+        'RewindBtn
+        '
+        Me.RewindBtn.Image = Global.Nightscape_Staff_Assistant.My.Resources.Resources.rewind
 		Me.RewindBtn.Location = New System.Drawing.Point(6, 19)
 		Me.RewindBtn.Name = "RewindBtn"
 		Me.RewindBtn.Size = New System.Drawing.Size(47, 23)

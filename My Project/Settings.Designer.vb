@@ -63,10 +63,10 @@ Namespace My
          Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property NightscapeLocation() As String
             Get
-                Return CType(Me("NightscapeLocation"), String)
+                Return CType(Me("NightscapeLocation"),String)
             End Get
             Set
-                Me("NightscapeLocation") = Value
+                Me("NightscapeLocation") = value
             End Set
         End Property
         

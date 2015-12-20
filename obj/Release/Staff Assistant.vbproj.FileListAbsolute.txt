@@ -6,6 +6,14 @@ T:\GitHub\Staff-Assistant\bin\Release\Ultima.dll
 T:\GitHub\Staff-Assistant\bin\Release\INI Parser.pdb
 T:\GitHub\Staff-Assistant\bin\Release\INI Parser.xml
 T:\GitHub\Staff-Assistant\obj\Release\Staff Assistant.vbprojResolveAssemblyReference.cache
+T:\GitHub\Staff-Assistant\obj\Release\Staff Assistant.vbproj.GenerateResource.Cache
+T:\GitHub\Staff-Assistant\bin\Release\Staff Assistant.exe.config
+T:\GitHub\Staff-Assistant\bin\Release\Staff Assistant.exe
+T:\GitHub\Staff-Assistant\bin\Release\Staff Assistant.pdb
+T:\GitHub\Staff-Assistant\bin\Release\Staff Assistant.xml
+T:\GitHub\Staff-Assistant\obj\Release\Staff Assistant.exe
+T:\GitHub\Staff-Assistant\obj\Release\Staff Assistant.xml
+T:\GitHub\Staff-Assistant\obj\Release\Staff Assistant.pdb
 T:\GitHub\Staff-Assistant\obj\Release\Nightscape_Staff_Assistant.AboutBox.resources
 T:\GitHub\Staff-Assistant\obj\Release\Nightscape_Staff_Assistant.AddAccountDialog.resources
 T:\GitHub\Staff-Assistant\obj\Release\Nightscape_Staff_Assistant.AdvancedSettingsDialog.resources
@@ -29,11 +37,3 @@ T:\GitHub\Staff-Assistant\obj\Release\Nightscape_Staff_Assistant.SetSkillDialog.
 T:\GitHub\Staff-Assistant\obj\Release\Nightscape_Staff_Assistant.SetStatDialog.resources
 T:\GitHub\Staff-Assistant\obj\Release\Nightscape_Staff_Assistant.SplashScreen2.resources
 T:\GitHub\Staff-Assistant\obj\Release\Nightscape_Staff_Assistant.TextReaderDialog.resources
-T:\GitHub\Staff-Assistant\obj\Release\Staff Assistant.vbproj.GenerateResource.Cache
-T:\GitHub\Staff-Assistant\bin\Release\Staff Assistant.exe.config
-T:\GitHub\Staff-Assistant\bin\Release\Staff Assistant.exe
-T:\GitHub\Staff-Assistant\bin\Release\Staff Assistant.pdb
-T:\GitHub\Staff-Assistant\bin\Release\Staff Assistant.xml
-T:\GitHub\Staff-Assistant\obj\Release\Staff Assistant.exe
-T:\GitHub\Staff-Assistant\obj\Release\Staff Assistant.xml
-T:\GitHub\Staff-Assistant\obj\Release\Staff Assistant.pdb
