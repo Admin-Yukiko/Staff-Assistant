@@ -2,7 +2,7 @@
 
 use uo;
 
-include ":gumps:yesno";
+include ":gumps:yesNo";
 
 program disable_acct(who, acctnm)
 

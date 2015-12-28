@@ -3,18 +3,7 @@ use uo;
 
 program my_form( who )
 
-		var pre_myform_graphic := GetObjProperty(who, "pre_myform_graphic");
-		
-		if(!pre_myform_graphic)
-			SendSysMessage(who, "You are missing the 'pre_myform_graphic' CProp that");
-			SendSysMessage(who, "the .myform command requires to return you to your");
-			SendSysMessage(who, "original graphic. You can fix this using the .propedit");
-			SendSysMessage(who, "command. Create the CProp and set it to your original");
-			SendSysMessage(who, "graphic number: 0x190 = human male, 0x191 = human female,");
-			SendSysMessage(who, "0x25D = elf male, 0x25E = elf female.");
-			return;
-		endif
-
-		who.graphic := pre_myform_graphic;
+		SendSysMessage(who, "You are now back to your true graphic.", color := 88);
+		who.graphic := who.trueobjtype;
 
 endprogram
